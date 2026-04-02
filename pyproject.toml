@@ -1,0 +1,15 @@
+[project]
+name = "trio-tristeza-ods"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "folium>=0.20.0",
+    "geopandas>=1.1.3",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.8",
+    "notebook>=7.5.5",
+    "pandas>=3.0.2",
+    "plotly>=6.6.0",
+]
