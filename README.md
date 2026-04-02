@@ -11,14 +11,21 @@ Este proyecto tiene como objetivo el análisis y la visualización de datos rela
 
 ## Estructura del proyecto
 
-- `dashboard/`: Archivos fuente del sitio web Quarto.
-- `presentacion/`: Diapositivas de la presentación en Quarto (revealjs).
-- `datos/`:
-  - `crudos/`: Datos originales sin procesar.
-  - `procesados/`: Datos limpios y listos para el dashboard.
-- `notebooks/`: Espacio para cuadernos Jupyter de exploración y análisis.
-- `scripts/`: Scripts de Python para automatización y procesamiento.
-- `main.py`: Script orquestador para la ejecución del flujo de datos.
+```text
+.
+├── .github/workflows/       # Automatización de despliegue (CI/CD)
+├── dashboard/               # Archivos fuente del dashboard Quarto
+├── presentacion/            # Diapositivas en Quarto (RevealJS)
+├── datos/                   # Gestión de conjuntos de datos
+│   ├── crudos/              # Datos originales sin procesar
+│   └── procesados/          # Datos limpios para el dashboard
+├── notebooks/               # Cuadernos Jupyter para exploración
+├── scripts/                 # Scripts Python de automatización
+├── main.py                  # Script orquestador del flujo
+├── ai-log.md                # Registro de uso de Inteligencia Artificial
+├── LICENSE                  # Licencia Creative Commons CC BY-SA 4.0
+└── README.md                # Documentación del proyecto
+```
 
 ## Cómo empezar
 
@@ -35,9 +42,15 @@ Este proyecto utiliza `uv` para la gestión de dependencias. Para configurar el 
    quarto render
    ```
 
+## Despliegue
+
+El proyecto se publica automáticamente mediante GitHub Actions en las siguientes rutas:
+- **Dashboard**: `https://trio-tristeza.github.io/hackods-unam/`
+- **Presentación**: `https://trio-tristeza.github.io/hackods-unam/presentacion/`
+
 ## Licencia
 
 Este proyecto está bajo la licencia **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-
-
+---
+Proyecto en desarrollo para el seguimiento de indicadores ODS.
