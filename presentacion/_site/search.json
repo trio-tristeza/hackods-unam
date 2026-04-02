@@ -1,37 +1,16 @@
 [
   {
-    "objectID": "index.html#introducción",
-    "href": "index.html#introducción",
-    "title": "Análisis ODS: Trío Tristeza",
-    "section": "Introducción",
-    "text": "Introducción\nEste proyecto busca hacer una crítica al cumplimiento de las metas del indicador del ODS 11."
+    "objectID": "index.html#pregunta-guía",
+    "href": "index.html#pregunta-guía",
+    "title": "Trío Tristeza",
+    "section": "Pregunta guía",
+    "text": "Pregunta guía\n¿En qué medida el incumplimiento del ODS 11 puede explicarse como una representación espacial de dinámicas sociales, económicas y urbanas?\n\n¿Qué quieren visibilizar o demostrar con datos?\n¿Qué fuentes de datos están considerando y cómo se relacionan con su pregunta y su ODS?"
   },
   {
-    "objectID": "index.html#objetivos",
-    "href": "index.html#objetivos",
-    "title": "Análisis ODS: Trío Tristeza",
-    "section": "Objetivos",
-    "text": "Objetivos\n\nRecopilación: Obtener datos de fuentes abiertas (ODS).\nProcesamiento: Limpieza y normalización de indicadores.\nVisualización: Mapas y gráficos dinámicos."
-  },
-  {
-    "objectID": "index.html#metodología",
-    "href": "index.html#metodología",
-    "title": "Análisis ODS: Trío Tristeza",
-    "section": "Metodología",
-    "text": "Metodología\n\nEnfoque en datos geográficos.\nVisualización interactiva.\nProcesamiento eficiente con Python."
-  },
-  {
-    "objectID": "index.html#estructura-de-datos",
-    "href": "index.html#estructura-de-datos",
-    "title": "Análisis ODS: Trío Tristeza",
-    "section": "Estructura de Datos",
-    "text": "Estructura de Datos\nUtilizamos una jerarquía clara:\n\ndatos/crudos/: Datos originales.\ndatos/procesados/: Datos listos para el análisis."
-  },
-  {
-    "objectID": "index.html#tecnologías",
-    "href": "index.html#tecnologías",
-    "title": "Análisis ODS: Trío Tristeza",
-    "section": "Tecnologías",
-    "text": "Tecnologías\n\nPython: pandas, geopandas, plotly.\nQuarto: Dashboards y esta presentación.\nUV: Gestión de dependencias rápida y fiable."
+    "objectID": "index.html#puntos-de-orientación",
+    "href": "index.html#puntos-de-orientación",
+    "title": "Trío Tristeza",
+    "section": "Puntos de orientación",
+    "text": "Puntos de orientación\n\n¿En qué parte de su historia sienten que necesitan más claridad?\n¿Hay algo que no estén seguros de cómo enfocar?"
   }
 ]

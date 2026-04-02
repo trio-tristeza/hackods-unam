@@ -1,7 +1,10 @@
 ---
-title: "Análisis ODS: Trío Tristeza"
-subtitle: "HackODS UNAM 2026"
-author: "Equipo Trío Tristeza"
+title: "Trío Tristeza"
+subtitle: "**ODS 11**: Para que la ciudad deje de pensarse una mercancía para convertirse en un derecho"
+author: 
+  - "Garcia León Eduardo Levi"
+  - "Herrera Díaz Arturo" 
+  - "Martínez Torres Luis Donaldo"
 format:
   revealjs:
     theme: simple
@@ -9,32 +12,14 @@ format:
     scrollable: true
 ---
 
-## Introducción
+## Pregunta guía
 
-Este proyecto busca hacer una crítica al cumplimiento de las metas del indicador del ODS 11.
+¿En qué medida el incumplimiento del ODS 11 puede explicarse como una representación espacial de dinámicas sociales, económicas y urbanas?
 
+  * ¿Qué quieren visibilizar o demostrar con datos?
+  * ¿Qué fuentes de datos están considerando y cómo se relacionan con su pregunta y su ODS?
 
-## Objetivos
+## Puntos de orientación
 
-1. **Recopilación**: Obtener datos de fuentes abiertas (ODS).
-2. **Procesamiento**: Limpieza y normalización de indicadores.
-3. **Visualización**: Mapas y gráficos dinámicos.
-
-## Metodología 
-
-- Enfoque en datos geográficos.
-- Visualización interactiva.
-- Procesamiento eficiente con Python.
-
-## Estructura de Datos
-
-Utilizamos una jerarquía clara:
-
-- `datos/crudos/`: Datos originales.
-- `datos/procesados/`: Datos listos para el análisis.
-
-## Tecnologías
-
-- **Python**: `pandas`, `geopandas`, `plotly`.
-- **Quarto**: Dashboards y esta presentación.
-- **UV**: Gestión de dependencias rápida y fiable.
+  * ¿En qué parte de su historia sienten que necesitan más claridad?
+  * ¿Hay algo que no estén seguros de cómo enfocar?
