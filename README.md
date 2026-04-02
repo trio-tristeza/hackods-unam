@@ -12,6 +12,7 @@ Este proyecto tiene como objetivo el análisis y la visualización de datos rela
 ## Estructura del proyecto
 
 - `dashboard/`: Archivos fuente del sitio web Quarto.
+- `presentacion/`: Diapositivas de la presentación en Quarto (revealjs).
 - `datos/`:
   - `crudos/`: Datos originales sin procesar.
   - `procesados/`: Datos limpios y listos para el dashboard.
@@ -33,4 +34,10 @@ Este proyecto utiliza `uv` para la gestión de dependencias. Para configurar el 
    cd dashboard
    quarto render
    ```
+
+## Licencia
+
+Este proyecto está bajo la licencia **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+
 
