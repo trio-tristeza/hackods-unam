@@ -1,0 +1,68 @@
+name: Publish Dashboard and Presentation
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Render Dashboard
+        run: |
+          cd dashboard
+          quarto render
+
+      - name: Render Presentation
+        run: |
+          cd presentacion
+          quarto render
+
+      - name: Prepare Deployment Directory
+        run: |
+          mkdir -p public
+          # Mover el contenido del dashboard al root de public
+          cp -r dashboard/_site/* public/
+          # Crear carpeta para la presentación
+          mkdir -p public/presentacion
+          # Mover el contenido de la presentación a su carpeta
+          cp -r presentacion/_site/* public/presentacion/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
