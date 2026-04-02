@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html#introducción",
+    "href": "index.html#introducción",
+    "title": "Análisis ODS: Trío Tristeza",
+    "section": "Introducción",
+    "text": "Introducción\nEste proyecto busca hacer una crítica al cumplimiento de las metas del indicador del ODS 11."
+  },
+  {
+    "objectID": "index.html#objetivos",
+    "href": "index.html#objetivos",
+    "title": "Análisis ODS: Trío Tristeza",
+    "section": "Objetivos",
+    "text": "Objetivos\n\nRecopilación: Obtener datos de fuentes abiertas (ODS).\nProcesamiento: Limpieza y normalización de indicadores.\nVisualización: Mapas y gráficos dinámicos."
+  },
+  {
+    "objectID": "index.html#metodología",
+    "href": "index.html#metodología",
+    "title": "Análisis ODS: Trío Tristeza",
+    "section": "Metodología",
+    "text": "Metodología\n\nEnfoque en datos geográficos.\nVisualización interactiva.\nProcesamiento eficiente con Python."
+  },
+  {
+    "objectID": "index.html#estructura-de-datos",
+    "href": "index.html#estructura-de-datos",
+    "title": "Análisis ODS: Trío Tristeza",
+    "section": "Estructura de Datos",
+    "text": "Estructura de Datos\nUtilizamos una jerarquía clara:\n\ndatos/crudos/: Datos originales.\ndatos/procesados/: Datos listos para el análisis."
+  },
+  {
+    "objectID": "index.html#tecnologías",
+    "href": "index.html#tecnologías",
+    "title": "Análisis ODS: Trío Tristeza",
+    "section": "Tecnologías",
+    "text": "Tecnologías\n\nPython: pandas, geopandas, plotly.\nQuarto: Dashboards y esta presentación.\nUV: Gestión de dependencias rápida y fiable."
+  }
+]

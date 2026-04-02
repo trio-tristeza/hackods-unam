@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Presentación Trío Tristeza"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Diapositivas
+
+format:
+  revealjs:
+    theme: simple
+    transition: slide
+    scrollable: true
+    slide-number: true
+    footer: "HackODS UNAM 2026 - Trío Tristeza"

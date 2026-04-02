@@ -1,0 +1,40 @@
+---
+title: "Análisis ODS: Trío Tristeza"
+subtitle: "HackODS UNAM 2026"
+author: "Equipo Trío Tristeza"
+format:
+  revealjs:
+    theme: simple
+    transition: slide
+    scrollable: true
+---
+
+## Introducción
+
+Este proyecto busca hacer una crítica al cumplimiento de las metas del indicador del ODS 11.
+
+
+## Objetivos
+
+1. **Recopilación**: Obtener datos de fuentes abiertas (ODS).
+2. **Procesamiento**: Limpieza y normalización de indicadores.
+3. **Visualización**: Mapas y gráficos dinámicos.
+
+## Metodología 
+
+- Enfoque en datos geográficos.
+- Visualización interactiva.
+- Procesamiento eficiente con Python.
+
+## Estructura de Datos
+
+Utilizamos una jerarquía clara:
+
+- `datos/crudos/`: Datos originales.
+- `datos/procesados/`: Datos listos para el análisis.
+
+## Tecnologías
+
+- **Python**: `pandas`, `geopandas`, `plotly`.
+- **Quarto**: Dashboards y esta presentación.
+- **UV**: Gestión de dependencias rápida y fiable.
