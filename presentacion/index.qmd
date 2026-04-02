@@ -2,8 +2,8 @@
 title: "Trío Tristeza"
 subtitle: "**ODS 11**: Para que la ciudad deje de pensarse como una mercancía para convertirse en un derecho"
 author: 
-  - "Garcia León Eduardo Levi"
   - "Herrera Díaz Arturo" 
+  - "León García Eduardo Levi"
   - "Martínez Torres Luis Donaldo"
 format:
   revealjs:
