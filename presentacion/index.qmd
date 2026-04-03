@@ -16,6 +16,36 @@ format:
 
 ¿En qué medida el incumplimiento del ODS 11 puede explicarse como una representación espacial de dinámicas sociales, económicas y urbanas?
 
+
+  * Accesibilidad, segregación, marginación
+
+  * Construcción del espacio, definición de ciudad, pct pob zonas urbanas, políticas neoliberales
+
+  * Por qué ciudad, concentraciones de población, escenarios de análisis de impactos diferenciados
+
+  * Escala, la escala nacional/estatal invisibiliza desigualdades
+
+  * Paper 15 min o los 500 m caminables, como base metológica, que zonas cumplen y por qué
+
+  * Hip (zonas con cierto poder adquisitivo se apropian de las mejores zonas)
+
+## Tareas
+
+ - [ ] Revisar met 15 min, como lo hacen, que variables
+ - [ ] Buscar met 500 m 
+ - [ ] De ambas metodologías extraer listas de posibles variables
+ - [ ] Hacer una relación de variables con sus posibles fuentes
+
+## Acuerdos
+
+ - [x] Definición de la zona de estudio CDMX
+ - [x] Objetivo (nombre de lo que haremos) accesibilidad/segregación
+ - [x] Metodología de correlación espacial  
+
+
+## Preguntas
+
+
   * ¿Qué quieren visibilizar o demostrar con datos?
   * ¿Qué fuentes de datos están considerando y cómo se relacionan con su pregunta y su ODS?
 
@@ -23,3 +53,10 @@ format:
 
   * ¿En qué parte de su historia sienten que necesitan más claridad?
   * ¿Hay algo que no estén seguros de cómo enfocar?
+
+
+
+
+
+
+
