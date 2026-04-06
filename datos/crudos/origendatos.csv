@@ -1,0 +1,44 @@
+nombre, origen, variable
+ifraestructura vial ciclista, https://datos.cdmx.gob.mx/dataset/infraestructura-vial-ciclista, proximidad
+lineas y estaciones de metro, https://datos.cdmx.gob.mx/dataset/lineas-y-estaciones-del-metro/resource/288b10dd-4f21-4338-b1ed-239487820512?inner_span=True, proximidad
+Ubicación de líneas y estaciones del Metrobús, https://datos.cdmx.gob.mx/dataset/geolocalizacion-metrobus, proximidad
+Rutas de RTP en formato SHP, https://datos.cdmx.gob.mx/dataset/e5e67126-8964-4457-a88b-ed0194bb5eb5/resource/391b1ea2-d5e6-4a60-a1fe-114ccb99ee82?activity_id=20c29c35-2c90-4c24-83be-411802c68e3b, proximidad
+Ubicación de líneas y estaciones/paradas del Servicio de Transportes Eléctricos, https://datos.cdmx.gob.mx/dataset/geolocalizacion-de-lineas-y-estaciones-paradas-del-servicio-de-transportes-electricos, proximidad
+Ubicación de rutas del Transporte Público Concesionado de Ruta, https://datos.cdmx.gob.mx/dataset/ubicacion-de-rutas-del-transporte-publico-concesionado-de-ruta, proximidad
+Hospitales y Centros de Salud, https://datos.cdmx.gob.mx/dataset/hospitales-y-centros-de-salud, diversidad
+Escuelas Publicas, https://datos.cdmx.gob.mx/dataset/escuelas-publicas/resource/2aace691-0dc3-4e80-9564-92d56a9e9022, diversidad
+Escuelas privadas, https://datos.cdmx.gob.mx/dataset/escuelas-privadas, diversidad
+Áreas verdes de la Ciudad de México, https://datos.cdmx.gob.mx/dataset/cdmx_areas_verdes_2017, diversidad
+Catastro cdmx, https://sig.cdmx.gob.mx/datos/descarga#d_datos_cat, densidad
+Censo de Población y Vivienda (CPV) 2020, https://www.inegi.org.mx/programas/ccpv/2020/#datos_abiertos, densidad
+Información vial de apoyo a la gestión del transito, https://datos.cdmx.gob.mx/dataset/informacion-vial-de-apoyo-a-la-gestion-del-transito-infovial, proximidad
+Vialidades primarias de la Ciudad de México, https://datos.cdmx.gob.mx/dataset/vialidades-de-la-ciudad-de-mexico, proximidad
+Vialidades de acceso controlado, https://datos.cdmx.gob.mx/dataset/vialidades-de-acceso-controlado, proximidad
+Puntos de acceso WiFi en la CDMX, https://datos.cdmx.gob.mx/dataset/puntos-de-acceso-wifi-en-la-cdmx, digitalizacion
+WiFi gratuito en Postes Mi Calle, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-postes-mi-calle, digitalizacion
+WiFi gratuito en Colonias Periféricas de la CDMX, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-colonias-perifericas-de-la-cdmx, digitalizacion
+WiFi gratuito en Utopías de la CDMX, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-utopias-de-la-cdmx, digitalizacion
+WiFi gratuito en Pilares de la CDMX, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-pilares-de-la-cdmx, digitalizacion
+WiFi gratuito en Unidades Habitacionales de la CDMX, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-unidades-habitacionales-de-la-cdmx, digitalizacion
+WiFi gratuito en Postes del C5, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-postes-del-c5, digitalizacion
+WiFi gratuito en Escuelas Públicas de la CDMX, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-escuelas-publicas-de-la-cdmx, digitalizacion
+WiFi gratuito en Sitios Públicos de la CDMX, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-sitios-publicos-de-la-cdmx-albergues-bibliotecas-etc, digitalizacion
+WiFi gratuito en el Transporte de la CDMX, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-el-transporte-de-la-cdmx-metrobus-cablebus-tren-ligero-trolebus-etc, digitalizacion
+WiFi gratuito en Centros de Salud, https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-centros-de-salud-clinicas-y-hospitales-de-la-cdmx, digitalizacion
+Catálogo de colonias, https://datos.cdmx.gob.mx/dataset/catalogo-de-colonias-datos-abiertos, proximidad
+Red de recarga externa de la Tarjeta de Movilidad Integrada, https://datos.cdmx.gob.mx/dataset/red-de-recarga-externa-de-la-tarjeta-de-movilidad-integrada, proximidad
+Datos de bicicletas (Ecobici), https://datos.cdmx.gob.mx/dataset/datos-de-bicicletas-ecobici, proximidad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
