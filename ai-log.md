@@ -25,3 +25,8 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Prompt**: "puedes ayudarme a configurar dos sitios github pages uno para el dashboard y otr para la presentacion que funcionen con integracion continua".
 - **Resultado**: Archivo `.github/workflows/publish.yml` configurado para renderizar ambos proyectos con Quarto y desplegarlos en `https://trio-tristeza.github.io/hackods-unam/` y `/presentacion/`.
 - **Decisión**: Se optó por centralizar el despliegue en un solo flujo de trabajo de GitHub Actions para mayor eficiencia. Se configuró el Dashboard en el root y la presentación en una subcarpeta para mantener la organización.
+
+### 2026-04-06 | Gemini CLI | Generación de Notebook Hello World
+- **Tarea**: Generar un notebook de prueba llamado `hello_world.ipynb`.
+- **Resultado**: Creación del archivo `notebooks/hello_world.ipynb` con celdas de código base.
+- **Decisión**: Modifiqué el archivo generado para realizar la ejecución y pruebas pertinentes.
