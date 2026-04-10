@@ -1,0 +1,21 @@
+.reveal {
+  font-size: 28px;
+}
+.reveal h1 {
+  font-size: 1.2em;
+}
+.reveal h2 {
+  font-size: 1.1em;
+}
+.reveal h3 {
+  font-size: 0.9em;
+}
+.reveal .subtitle {
+  font-size: 0.7em;
+}
+.reveal .quarto-title-author-name {
+  font-size: 0.7em;
+}
+.reveal p, .reveal li {
+  font-size: 0.7em;
+}
