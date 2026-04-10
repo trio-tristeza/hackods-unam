@@ -1,6 +1,6 @@
 ---
 title: "Trío Tristeza"
-subtitle: "**ODS 11**: Para que la ciudad deje de pensarse como una mercancía para convertirse en un derecho"
+subtitle: "**ODS 11: Lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles**: Para que la ciudad deje de pensarse como una mercancía para convertirse en un derecho"
 author: 
   - "Herrera Díaz Arturo" 
   - "León García Eduardo Levi"
