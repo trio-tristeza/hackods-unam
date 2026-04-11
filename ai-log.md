@@ -26,7 +26,14 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Resultado**: Archivo `.github/workflows/publish.yml` configurado para renderizar ambos proyectos con Quarto y desplegarlos en `https://trio-tristeza.github.io/hackods-unam/` y `/presentacion/`.
 - **Decisión**: Se optó por centralizar el despliegue en un solo flujo de trabajo de GitHub Actions para mayor eficiencia. Se configuró el Dashboard en el root y la presentación en una subcarpeta para mantener la organización.
 
-### 2026-04-06 | Gemini CLI | Generación de Notebook Hello World
-- **Tarea**: Generar un notebook de prueba llamado `hello_world.ipynb`.
-- **Resultado**: Creación del archivo `notebooks/hello_world.ipynb` con celdas de código base.
-- **Decisión**: Modifiqué el archivo generado para realizar la ejecución y pruebas pertinentes.
+### 2026-04-10 | Gemini CLI | Función Robusta de Carga de Capas Espaciales
+- **Tarea**: Implementar la carga de insumos espaciales directamente de carpetas comprimidas.
+- **Prompt**: "ayudarme a crear un funcion para buscar archivos shp en capas comprimidas donde no pueda utilizar directamente la carga zip con pandas o geopandas por el metodo de compresion original del archivo".
+- **Resultado**: Creación e integración de la función `cargarCapaComprimida` en `notebooks/carga_insumos.ipynb`, la cual resuelve dinámicamente rutas internas en archivos ZIP (incluyendo subcarpetas y metadatos de macOS).
+- **Decisión**: Se decidió utilizar esta función para todos los insumos espaciales, ajustando los parámetros de entrada según las rutas de los archivos definidas en el proyecto ante diferentes estructuras de compresión.
+
+### 2026-04-10 | Gemini CLI | Unificación del Catastro CDMX
+- **Tarea**: Consolidar la información fragmentada del Catastro por alcaldías.
+- **Prompt**: "como podría general la unificación de los disntintos archivos de catastro de la cdmx, dividos por alcaldia, que al tener tanta información dificulta su análsis, podrías darme el flujo base para generar una búsqueda recursiva en la ruta especificada para cada zip".
+- **Resultado**: Propuesta de ciclo de carga que localiza y concatena los 16 archivos ZIP de catastro.
+- **Decisión**: Se decidió usar la base del ciclo resultante y se ajustó para procesar, limpiar y unir todo en un solo archivo `catastro_unificado_cdmx.gpkg` en la carpeta de procesados para optimizar futuros análisis.

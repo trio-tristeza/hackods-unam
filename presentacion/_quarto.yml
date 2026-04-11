@@ -16,3 +16,4 @@ format:
     scrollable: true
     slide-number: true
     footer: "HackODS UNAM 2026 - Trío Tristeza"
+    css: custom.css
