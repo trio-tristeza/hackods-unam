@@ -37,3 +37,9 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Prompt**: "como podría general la unificación de los disntintos archivos de catastro de la cdmx, dividos por alcaldia, que al tener tanta información dificulta su análsis, podrías darme el flujo base para generar una búsqueda recursiva en la ruta especificada para cada zip".
 - **Resultado**: Propuesta de ciclo de carga que localiza y concatena los 16 archivos ZIP de catastro.
 - **Decisión**: Se decidió usar la base del ciclo resultante y se ajustó para procesar, limpiar y unir todo en un solo archivo `catastro_unificado_cdmx.gpkg` en la carpeta de procesados para optimizar futuros análisis.
+
+### 2026-04-11 | Gemini CLI | Corrección de Codificación en Nombres de Hospitales
+- **Tarea**: Encontrar caracteres raros o inválidos en nombres de hospitales.
+- **Prompt**: "tengo una lista de nombres de hospitales con errores de codificación, ayudame a crear una función en python para que los detecte y corrija".
+- **Resultado**: Una función en Python que detecta y corrige errores de codificación en cadenas de texto.
+- **Decisión**: Se decidió modificar el campo "nombre" que contiene los caracteres y se aplicó la función con los errores encontrados para limpiar los datos.
