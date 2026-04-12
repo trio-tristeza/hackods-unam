@@ -44,8 +44,8 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Resultado**: Una función en Python que detecta y corrige errores de codificación en cadenas de texto.
 - **Decisión**: Se decidió modificar el campo "nombre" que contiene los caracteres y se aplicó la función con los errores encontrados para limpiar los datos.
 
-### 2026-04-11 | Gemini CLI | Espacialización de CSV con GeoJSON
-- **Tarea**: Espacializar un archivo CSV que contiene una columna geo_shape con geometrías válidas en formato GeoJSON para exportarlo como GeoPackage.
-- **Prompt**: "tengo un csv de áreas verdes con una columna geo_shape en formato geojson, como lo convierto a geodataframe y lo exporto como gpkg".
-- **Resultado**: Se usó json.loads() con shape() de shapely para parsear la columna geo_shape y construir un GeoDataFrame con crs EPSG:4326.
-- **Decisión**: Se decidió hacer uso de shapely ya que se intentó usar geopandas con gpd.read_file() pero no soportaba la geometría a través de un csv.
+### 2026-04-12 | Gemini CLI | Procesamiento Eficiente del Censo por Manzanas (ITER)
+- **Tarea**: Realizar una revisión y unificación del Censo de Población 2020 por manzanas con su capa geométrica, optimizando el uso de memoria para variables de sexo y edad.
+- **Prompt**: "quiero que me ayudes a analizar el insusmo del censo de población por manzanas, estoy teniendo problemas para integrarlo por medio de la clave manzana con el insumo de geometrías"
+- **Resultado**: Implementación de un flujo de procesamiento que lee el archivo tabular nacional de forma fragmentada (chunks) directamente desde el ZIP, filtra por CDMX y limpia valores no numéricos ('*').
+- **Decisión**: Ante la solicitud de una integración más adecuada, se propuso e implementó la carga por **chunks** (fragmentos) para manejar el gran volumen de datos del ITER nacional sin saturar la memoria. Se utilizó la inspección previa del archivo para asegurar la unión correcta con la capa de geometrías de manzanas mediante la clave manzanas.
