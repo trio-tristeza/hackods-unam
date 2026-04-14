@@ -76,5 +76,20 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
     4.  **Reproyección:** Conversión a EPSG:32614.
     5.  **Exportación:** Guardado en formato GeoPackage optimizado para la región.
 
+## 8. Puntos de acceso gratuito WiFi en la CDMX
+   **Archivo:** 'rp_WifiCDMX.gpkg'
+   **Fuentes:*
+    1. Puntos de acceso WiFi en la CDMX (https://datos.cdmx.gob.mx/dataset/puntos-de-acceso-wifi-en-la-cdmx)
+    2. WiFi gratuito en Postes Mi Calle (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-postes-mi-calle)
+    3. WiFi gratuito en Colonias Periféricas de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-colonias-perifericas-de-la-cdmx)
+    4. WiFi gratuito en Utopías de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-utopias-de-la-cdmx)
+    5. WiFi gratuito en Pilares de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-pilares-de-la-cdmx)
+    6. WiFi gratuito en Unidades Habitacionales de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-unidades-habitacionales-de-la-cdmx)
+    7. WiFi gratuito en Postes del C5 (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-postes-del-c5)
+    8. WiFi gratuito en Escuelas Públicas de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-escuelas-publicas-de-la-cdmx)
+    9. WiFi gratuito en Sitios Públicos de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-sitios-publicos-de-la-cdmx-albergues-bibliotecas-etc)
+    10.	WiFi gratuito en el Transporte de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-el-transporte-de-la-cdmx-metrobus-cablebus-tren-ligero-trolebus-etc)
+    11. WiFi gratuito en Centros de Salud (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-centros-de-salud-clinicas-y-hospitales-de-la-cdmx)
+   
 ---
 **Nota:** Todos los archivos procesados se encuentran optimizados para su uso en herramientas SIG (QGIS, ArcGIS) y librerías de Python (GeoPandas).
