@@ -49,3 +49,10 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Prompt**: "quiero que me ayudes a analizar el insusmo del censo de población por manzanas, estoy teniendo problemas para integrarlo por medio de la clave manzana con el insumo de geometrías"
 - **Resultado**: Implementación de un flujo de procesamiento que lee el archivo tabular nacional de forma fragmentada (chunks) directamente desde el ZIP, filtra por CDMX y limpia valores no numéricos ('*').
 - **Decisión**: Ante la solicitud de una integración más adecuada, se propuso e implementó la carga por **chunks** (fragmentos) para manejar el gran volumen de datos del ITER nacional sin saturar la memoria. Se utilizó la inspección previa del archivo para asegurar la unión correcta con la capa de geometrías de manzanas mediante la clave manzanas.
+
+### 2026-04-13 | ChatGPT | Expresión para calcular campos
+- **Tarea**: Realizar la revisión y ajuste al código para categorizar las vialidades por cadenas de texto.
+- **Prompt**: "¿cómo puedo hacer que el siguiente código funcione?"
+- **Resultado**: "Expresión recomendada y alternativa más comparta."
+- **Decisión**:  "Debido a la presentación de la propuesta de código, se incorporo esta en un CASE"
+

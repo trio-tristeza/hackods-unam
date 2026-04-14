@@ -77,19 +77,41 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
     5.  **Exportación:** Guardado en formato GeoPackage optimizado para la región.
 
 ## 8. Puntos de acceso gratuito WiFi en la CDMX
-   **Archivo:** 'rp_WifiCDMX.gpkg'
-   **Fuentes:*
-    1. Puntos de acceso WiFi en la CDMX (https://datos.cdmx.gob.mx/dataset/puntos-de-acceso-wifi-en-la-cdmx)
-    2. WiFi gratuito en Postes Mi Calle (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-postes-mi-calle)
-    3. WiFi gratuito en Colonias Periféricas de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-colonias-perifericas-de-la-cdmx)
-    4. WiFi gratuito en Utopías de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-utopias-de-la-cdmx)
-    5. WiFi gratuito en Pilares de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-pilares-de-la-cdmx)
-    6. WiFi gratuito en Unidades Habitacionales de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-unidades-habitacionales-de-la-cdmx)
-    7. WiFi gratuito en Postes del C5 (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-postes-del-c5)
-    8. WiFi gratuito en Escuelas Públicas de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-escuelas-publicas-de-la-cdmx)
-    9. WiFi gratuito en Sitios Públicos de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-sitios-publicos-de-la-cdmx-albergues-bibliotecas-etc)
-    10.	WiFi gratuito en el Transporte de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-el-transporte-de-la-cdmx-metrobus-cablebus-tren-ligero-trolebus-etc)
-    11. WiFi gratuito en Centros de Salud (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-centros-de-salud-clinicas-y-hospitales-de-la-cdmx)
-   
+*   **Archivo:** `rp_WifiCDMX.gpkg`
+*   **Fuentes:**
+    1. Puntos de acceso WiFi en la CDMX (https://datos.cdmx.gob.mx/dataset/puntos-de-acceso-wifi-en-la-cdmx) - `00-2025-wifi_gratuito_en_cdmx.xlsx`
+    2. WiFi gratuito en Postes Mi Calle (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-postes-mi-calle) - `06-2025-wifi_gratuito_en_postes-mi-calle.xlsx`
+    3. WiFi gratuito en Colonias Periféricas de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-colonias-perifericas-de-la-cdmx) - `03-2025-wifi_gratuito_en_colonias-perifericas-de-la-cdmx.xlsx`
+    4. WiFi gratuito en Utopías de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-utopias-de-la-cdmx) - `11-2025-wifi_gratuito_en_utopias-de-la-cdmx.xlsx`
+    5. WiFi gratuito en Pilares de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-pilares-de-la-cdmx) - `05-2025-wifi_gratuito_en_pilares-de-la-cdmx.xlsx`
+    6. WiFi gratuito en Unidades Habitacionales de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-unidades-habitacionales-de-la-cdmx) - `10-2025-wifi_gratuito_en_unidades-habitacionales-de-la-cdmx.xlsx`
+    7. WiFi gratuito en Postes del C5 (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-postes-del-c5) - `07-2025-wifi_gratuito_en_postes-del-c5.xlsx`
+    8. WiFi gratuito en Escuelas Públicas de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-escuelas-publicas-de-la-cdmx) - `04-2025-wifi_gratuito_en_escuelas-publicas-de-la-cdmx.xlsx`
+    9. WiFi gratuito en Sitios Públicos de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-sitios-publicos-de-la-cdmx-albergues-bibliotecas-etc) - `08-2025-wifi_gratuito_en_sitios-publicos-de-la-cdmx-albergues-bibliotecas-centros-culturales-em.xlsx`
+    10.	WiFi gratuito en el Transporte de la CDMX (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-el-transporte-de-la-cdmx-metrobus-cablebus-tren-ligero-trolebus-etc) - `09-2025-wifi_gratuito_en_transporte-de-la-cdmx-metrobus-cablebus-tren-ligero-trolebus-etc.xlsx`
+    11. WiFi gratuito en Centros de Salud (https://datos.cdmx.gob.mx/dataset/wifi-gratuito-en-centros-de-salud-clinicas-y-hospitales-de-la-cdmx) - `02-2025-wifi_gratuito_en_centros-de-salud-clinicas-y-hospitales-de-la-cdmx.xlsx`
+*   **Pasos de procesamiento:**
+    1. **Integración:** Se realizó la unión de todos los datos en un solo archivo de Excel y se guardo como ".csv".
+    2. **Carga de puntos:** Se realizó la carga del archivo integrador ".csv" como textos separados por coma y considerando los campos de latitud/longitud para georreferenciar.
+    3. **Reproyección:** Conversión a EPSG:32614.
+    4. **Exportación:** Guardado en formato GeoPackage.
+
+## 9. Categorización de vialidades
+*   **Archivo:** `rnc_vial_cdmx_cat.gpkg`
+*   **Fuentes:** 
+    *   Vialidades: [Red Nacional de Caminos (RNC) - Recorte CDMX] - `rnc_vial_cdmx.gpkg`
+*   **Pasos de procesamiento:**
+    1. **Definición**: Establecer las categorias a partir de la información de SEMOVI, CDMX (https://www.semovi.cdmx.gob.mx/storage/app/media/Publicaciones/guia_basica_seguridad_vial.pdf#:~:text=Sabías%20que%2C%20de%20acuerdo%20con%20el%20RTCDMX,total%20para%20permitir%20el%20paso%20de%20peatones).
+        - 10 Vías peatonales o estacionamiento (Seguridad peatonal: Alta)
+		- 20 Zonas de seguridad(Seguridad peatonal: Idónea) [Idónea debido al rango de velocidad adecuado para bicicletas y tránsito peatonal]
+		- 30 Zonas de tránsito(Seguridad peatonal: Moderada)
+		- 40 Vías secundarias (Seguridad peatonal: Limitada) [Limitada porque depende de carriles laterales de acceso controlado]
+		- 50 Vías primarias (Seguridad peatonal: Baja)
+		- 60 - 80 Vías rápidas (Seguridad peatonal: Nula)
+    2. **Categorización**: Aplicación de valores categóricos y pseudo-numéricos
+        - Se realizó una columna nueva con los valores tipo cadena de texto para colocar el nombre de las categorias establecidas.
+        - Se realizó una columna nueva con los valores pseudo-numéricos del 0 al 5, siendo el 0 el valor con mayor inseguridad vial por la alta velocidad estalecidas en las vialidades.
+    3. **Exportación:** Guardado en formato GeoPackage.
+
 ---
 **Nota:** Todos los archivos procesados se encuentran optimizados para su uso en herramientas SIG (QGIS, ArcGIS) y librerías de Python (GeoPandas).
