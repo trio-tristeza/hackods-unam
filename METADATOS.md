@@ -64,5 +64,17 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
     3.  **Reproyección:** Conversión a EPSG:32614 para cálculos de distancia lineales.
     4.  **Exportación:** Guardado individual en GeoPackage.
 
+## 7. Red Nacional de Caminos (RNC) - Recorte CDMX
+*   **Archivo:** `rnc_vial_cdmx.gpkg`
+*   **Fuentes:** 
+    *   Vialidades: [Red Nacional de Caminos (RNC)](https://www.gob.mx/imt/acciones-y-programas/red-nacional-de-caminos) - `794551163030_gpk.zip`
+    *   Límites: [Marco Geoestadístico (Estados)](https://www.inegi.org.mx/temas/mg/) - `dest25gw_c.zip`
+*   **Pasos de Procesamiento:**
+    1.  **Extracción de Polígono:** Obtención de la geometría de la Ciudad de México del archivo de estados de México mediante la clave de entidad `09`.
+    2.  **Pre-filtrado Espacial:** Uso del *bounding box* de la CDMX para realizar una carga selectiva y eficiente de la capa `red_vial` del GeoPackage nacional.
+    3.  **Recorte Espacial (Clip):** Recorte preciso de la red vial nacional utilizando el polígono oficial de la CDMX.
+    4.  **Reproyección:** Conversión a EPSG:32614.
+    5.  **Exportación:** Guardado en formato GeoPackage optimizado para la región.
+
 ---
 **Nota:** Todos los archivos procesados se encuentran optimizados para su uso en herramientas SIG (QGIS, ArcGIS) y librerías de Python (GeoPandas).
