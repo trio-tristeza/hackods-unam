@@ -53,6 +53,11 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 ### 2026-04-13 | ChatGPT | Expresión para calcular campos
 - **Tarea**: Realizar la revisión y ajuste al código para categorizar las vialidades por cadenas de texto.
 - **Prompt**: "¿cómo puedo hacer que el siguiente código funcione?"
-- **Resultado**: "Expresión recomendada y alternativa más comparta."
+- **Resultado**: "Expresión recomendada y alternativa más compacta."
 - **Decisión**:  "Debido a la presentación de la propuesta de código, se incorporo esta en un CASE"
 
+### 2026-04-13 | Gemini | Creación de plantilla para metadatos
+- **Tarea**: Realizar la plantilla que conforma a los metadatos de los archivos geográficos ".gpkg" en un ".json".
+- **Prompt**: "Quiero generar una estructura de metadato en un archivo json"
+- **Resultado**: "Estructura recomendada y guía de los campos del metadato."
+- **Decisión**: "La estructura principal nos oriento a decidir como estructurar mejor los metadatos de las capas"

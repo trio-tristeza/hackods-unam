@@ -102,12 +102,12 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
     *   Vialidades: [Red Nacional de Caminos (RNC) - Recorte CDMX] - `rnc_vial_cdmx.gpkg`
 *   **Pasos de procesamiento:**
     1. **Definición**: Establecer las categorias a partir de la información de SEMOVI, CDMX (https://www.semovi.cdmx.gob.mx/storage/app/media/Publicaciones/guia_basica_seguridad_vial.pdf#:~:text=Sabías%20que%2C%20de%20acuerdo%20con%20el%20RTCDMX,total%20para%20permitir%20el%20paso%20de%20peatones).
-        - 10 Vías peatonales o estacionamiento (Seguridad peatonal: Alta)
-		- 20 Zonas de seguridad(Seguridad peatonal: Idónea) [Idónea debido al rango de velocidad adecuado para bicicletas y tránsito peatonal]
-		- 30 Zonas de tránsito(Seguridad peatonal: Moderada)
-		- 40 Vías secundarias (Seguridad peatonal: Limitada) [Limitada porque depende de carriles laterales de acceso controlado]
-		- 50 Vías primarias (Seguridad peatonal: Baja)
-		- 60 - 80 Vías rápidas (Seguridad peatonal: Nula)
+        - 10 km/h Vías peatonales o estacionamiento (Seguridad peatonal: Alta)
+		- 20 km/h Zonas de seguridad(Seguridad peatonal: Idónea) [Idónea debido al rango de velocidad adecuado para bicicletas y tránsito peatonal]
+		- 30 km/h Zonas de tránsito(Seguridad peatonal: Moderada)
+		- 40 km/h Vías secundarias (Seguridad peatonal: Limitada) [Limitada porque depende de carriles laterales de acceso controlado]
+		- 50 km/h Vías primarias (Seguridad peatonal: Baja)
+		- 60 - 80 km/h Vías rápidas (Seguridad peatonal: Nula)
     2. **Categorización**: Aplicación de valores categóricos y pseudo-numéricos
         - Se realizó una columna nueva con los valores tipo cadena de texto para colocar el nombre de las categorias establecidas.
         - Se realizó una columna nueva con los valores pseudo-numéricos del 0 al 5, siendo el 0 el valor con mayor inseguridad vial por la alta velocidad estalecidas en las vialidades.
