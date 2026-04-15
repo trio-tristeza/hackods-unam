@@ -203,6 +203,25 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
     4. **Espacialización:** Conversión de la columna `geo_shape` en formato GeoJSON embebido a geometría válida usando `json.loads()` y `shape()` de shapely.
     5. **Exportación:** Guardado en formato GeoPackage con CRS EPSG:32614.
 
+## 19. Indicadores ODS 11 (INEGI API - Nacional y Estatal)
+* **Archivo:** `datos/indicadoresODS11/ods11_final.json`
+* **Fuente:** [INEGI - API de Indicadores (Banco de Indicadores BISE)](https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/...)
+* **Indicadores Incluidos:**
+    * **11.1.1**: Viviendas precarias (%).
+    * **11.2.1**: Acceso a transporte público (%).
+    * **11.3.1**: Relación de expansión del suelo urbano.
+    * **11.r.2.1a/b**: Tiempo de traslado al trabajo (General e Indígena).
+    * **11.6.1.a**: Gestión de residuos sólidos (%).
+    * **11.6.2.a/b**: Concentración de partículas suspendidas (PM2.5 y PM10).
+    * **11.4.1**: Gasto en patrimonio cultural y natural ($).
+    * **11.7.1**: Disponibilidad de espacios públicos abiertos (%).
+* **Pasos de Procesamiento:**
+    1. **Automatización:** Ejecución del script `scripts/generar_indicadores_ods11.py` para realizar consultas masivas a la API del INEGI.
+    2. **Alcance Multiescalar:** Extracción sistemática de datos para el nivel Nacional (`00`) y las 32 Entidades Federativas (`01` a `32`).
+    3. **Sincronización de Series:** Mapeo de identificadores de series históricas del BISE con las metas globales del ODS 11.
+    4. **Consolidación de Datos:** Integración de los valores nacionales como referencia base frente a los datos estatales en una estructura JSON anidada.
+    5. **Estructuración para Dashboard:** Formateo de la salida para facilitar la comparativa geográfica y temporal en el tablero de visualización.
+
 ---
 **Nota:** Todos los archivos procesados se encuentran documentados en los Notebooks del proyecto, donde se detalla el flujo de trabajo, la limpieza y el análisis de los datos.
 

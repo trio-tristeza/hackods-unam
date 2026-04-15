@@ -1,7 +1,7 @@
 ---
 title: "Accesibilidad en la CDMX: Un Análisis ODS 11"
 subtitle: "Trío triteza"
-format: 
+format:
   html:
     css: styles.css
     toc: false
@@ -22,20 +22,173 @@ A través de un análisis de 1,250 metros de caminata desde cada manzana, evalua
 ::: {.scrolly-container}
 
 ::: {.map-sidebar}
+
+::: {#panel-ods .panel-content}
+
+```{ojs}
+//| output: false
+ods_data = FileAttachment("datos/ods11_final.json").json()
+```
+
+```{ojs}
+//| output: false
+ods_texts = [
+  {
+    titulo: "11.1.1 — Viviendas Precarias (%)",
+    texto: `Mide la proporción de la población urbana que habita en asentamientos precarios: sin acceso adecuado a agua potable, saneamiento, espacio habitable suficiente o materiales de construcción duraderos.
+
+La Ciudad de México (3.36%) se ubica por debajo del promedio nacional (4.42%). Sin embargo, las alcaldías periféricas como Milpa Alta, Tláhuac y Xochimilco concentran los rezagos habitacionales más pronunciados, revelando una asimetría estructural al interior de la propia ciudad.`,
+    mejor: "menor"
+  },
+  {
+    titulo: "11.2.1 — Acceso a Transporte Público (%)",
+    texto: `Proporción de la población con acceso conveniente a transporte público según criterios de proximidad y cobertura de red.
+
+A pesar de contar con una red multimodal extensa (Metro, Metrobús, Cablebús, RTP, Trolebús), la CDMX (3.02%) registra un valor por debajo del promedio nacional (4.22%). Esto refleja que la cobertura no es homogénea: las alcaldías centrales concentran la infraestructura mientras las periféricas dependen de transporte concesionado con menor regularidad.`,
+    mejor: "mayor"
+  },
+  {
+    titulo: "11.3.1 — Relación de Expansión del Suelo",
+    texto: `Razón entre la tasa de consumo de suelo urbano y la tasa de crecimiento de la población. Valores más bajos indican un uso más eficiente del territorio, con crecimiento vertical o densificación en lugar de expansión horizontal.
+
+La CDMX (2,162) muestra una expansión más contenida que el promedio nacional (559,262), consistente con su carácter de ciudad densa y consolidada. La presión sobre el suelo de conservación en el sur de la ciudad sigue siendo un reto permanente.`,
+    mejor: "menor"
+  },
+  {
+    titulo: "11.r.2.1a — Tiempo de Traslado al Trabajo (min)",
+    texto: `Tiempo promedio en minutos que tarda la población en llegar a su lugar de trabajo. Este indicador es central para evaluar la propuesta de ciudad de 15 minutos: si vivir, trabajar y descansar puede ocurrir en recorridos cortos.
+
+La CDMX (27.6 min) supera el promedio nacional (23.9 min), evidenciando que la congestión vial y la concentración de empleo en zonas específicas generan trayectos costosos en tiempo, particularmente para quienes habitan en la periferia.`,
+    mejor: "menor"
+  },
+  {
+    titulo: "11.6.1.a — Residuos Sólidos Gestionados (%)",
+    texto: `Proporción de residuos sólidos urbanos que son recolectados y gestionados de manera adecuada (disposición final controlada, reciclaje o tratamiento).
+
+La CDMX (18.0%) se ubica muy por debajo del promedio nacional (35.47%), lo que representa un área de rezago significativo. Una gestión deficiente de residuos impacta directamente en la resiliencia ambiental urbana y el riesgo de contaminación de mantos freáticos.`,
+    mejor: "mayor"
+  },
+  {
+    titulo: "11.6.2.a — Partículas PM2.5",
+    texto: `Concentración de partículas finas en suspensión (PM2.5). Estas partículas, menores a 2.5 micrómetros, penetran profundamente en el sistema respiratorio y cardiovascular, representando uno de los principales riesgos de salud pública en zonas de alta densidad vehicular e industrial.
+
+La CDMX (0.54) registra valores por debajo del promedio nacional (6.48). La distribución de la contaminación atmosférica al interior de la ciudad varía por alcaldía, con zonas de alta actividad industrial y vial que superan los límites recomendados por la OMS.`,
+    mejor: "menor"
+  },
+  {
+    titulo: "11.6.2.b — Partículas PM10",
+    texto: `Concentración de partículas gruesas en suspensión (PM10), asociadas al polvo urbano, emisiones vehiculares, obras de construcción y actividad industrial.
+
+La CDMX (9,375) se ubica muy por debajo del promedio nacional (482,360). La diferencia en escala entre entidades refleja tanto la actividad económica como la capacidad de monitoreo y regulación ambiental. En la CDMX, las condiciones de inversión térmica agravan episodios de contaminación estacional.`,
+    mejor: "menor"
+  },
+  {
+    titulo: "11.4.1 — Gasto en Patrimonio Cultural ($)",
+    texto: `Gasto total destinado a la preservación y salvaguarda del patrimonio cultural y natural. La inversión en patrimonio refleja la apuesta institucional por la identidad colectiva, la memoria urbana y el desarrollo del turismo cultural sostenible.
+
+La CDMX (3,596) se ubica por debajo del promedio nacional (141,305). Esta diferencia puede señalar una brecha en la capacidad de proteger el vasto patrimonio histórico y arquitectónico de la ciudad frente a la presión inmobiliaria y el deterioro urbano.`,
+    mejor: "mayor"
+  },
+  {
+    titulo: "11.7.1 — Espacios Públicos (%)",
+    texto: `Proporción de la superficie urbana dedicada a espacios públicos abiertos, plazas, parques y áreas verdes accesibles a la población. El acceso equitativo a estos espacios es fundamental para la salud mental, la cohesión social y la resiliencia climática.
+
+La CDMX (1.24%) se ubica muy por debajo del promedio nacional (12.19%), reflejo de la alta densidad y la presión inmobiliaria sobre el territorio. Esta brecha refuerza la hipótesis de asimetría urbana: no todas las colonias tienen igual acceso a espacios de recreación y descanso.`,
+    mejor: "mayor"
+  },
+  {
+    titulo: "11.r.2.1b — Traslado de Población Indígena (min)",
+    texto: `Tiempo promedio de traslado al trabajo de la población indígena. Este indicador visibiliza las brechas de accesibilidad que enfrentan los pueblos originarios en contextos urbanos, frecuentemente desplazados hacia zonas con menor infraestructura de movilidad.
+
+La CDMX (1.60 min) supera el promedio nacional (1.29 min), señalando que la población indígena en la ciudad enfrenta tiempos relativamente más altos, un indicador de exclusión espacial vinculado a dinámicas estructurales de segregación urbana.`,
+    mejor: "menor"
+  }
+]
+```
+
+```{ojs}
+viewof ods_idx = {
+  let i = 0;
+  const n = ods_data.length;
+
+  const prevBtn = html`<button class="ods-btn ods-btn-disabled">&#8592; Anterior</button>`;
+  const nextBtn = html`<button class="ods-btn">Siguiente &#8594;</button>`;
+  const label   = html`<span class="ods-nav-label"></span>`;
+
+  function sync() {
+    label.innerHTML = `<strong>${i + 1} de ${n}</strong> &nbsp;&mdash;&nbsp; ${ods_data[i].nombre}`;
+    prevBtn.className = "ods-btn" + (i === 0     ? " ods-btn-disabled" : "");
+    nextBtn.className = "ods-btn" + (i === n - 1 ? " ods-btn-disabled" : "");
+    div.value = i;
+    div.dispatchEvent(new CustomEvent("input", { bubbles: true }));
+  }
+
+  prevBtn.addEventListener("click", () => { if (i > 0)     { i--; sync(); } });
+  nextBtn.addEventListener("click", () => { if (i < n - 1) { i++; sync(); } });
+
+  const div = html`<div class="ods-nav">${prevBtn}${label}${nextBtn}</div>`;
+  div.value = i;
+  sync();
+  return div;
+}
+```
+
+```{ojs}
+{
+  const ind  = ods_data[ods_idx];
+  const cdmxEntry = ind.datos.find(d => d.cvegeo === "09");
+  const cdmxVal   = cdmxEntry ? cdmxEntry.valor : 0;
+
+  const plotH = Math.max(ind.datos.length * 22, Math.round(window.innerHeight * 0.76) - 70);
+
+  return Plot.plot({
+    marginLeft: 75,
+    marginRight: 15,
+    marginTop: 10,
+    marginBottom: 35,
+    width: width,
+    height: plotH,
+    style: { fontSize: "13px", fontFamily: "inherit" },
+    x: { grid: true, label: ind.nombre },
+    y: { label: null },
+    marks: [
+      Plot.barX(ind.datos, {
+        x: "valor",
+        y: "cvegeo",
+        fill: d => d.cvegeo === "09" ? "#e74c3c" : "#3498db",
+        sort: { y: "x", reverse: true },
+        title: d => `Estado ${d.cvegeo}: ${d.valor.toFixed(2)}`
+      }),
+      Plot.ruleX([ind.nacional], {
+        stroke: "#f39c12",
+        strokeWidth: 2.5,
+        strokeDasharray: "6,4"
+      })
+    ]
+  });
+}
+```
+
+<div class="ods-legend">
+  <span style="color:#e74c3c; font-size:15px;">&#9632;</span> CDMX &nbsp;&nbsp;
+  <span style="color:#3498db; font-size:15px;">&#9632;</span> Otros estados &nbsp;&nbsp;
+  <span style="color:#f39c12; font-weight:bold; font-size:15px;">&#8212;</span> Promedio nacional
+</div>
+
+:::
+
+::: {#panel-map .panel-content}
 ```{python}
 import geopandas as gpd
 import folium
 import os
 
-# Cargar datos base
 path_gpkg = '../pruebaCrucePreliminar/cruce_accesibilidad.gpkg'
 m1 = folium.Map(location=[19.4326, -99.1332], zoom_start=11, tiles='CartoDB positron')
 
 if os.path.exists(path_gpkg):
-    # Cargamos y transformamos a EPSG:4326 para Folium
     gdf = gpd.read_file(path_gpkg).to_crs(epsg=4326)
-    
-    # Estilo simple por nivel
+
     def style_fn(feature):
         n = feature['properties'].get('nivel_accesibilidad', 'Baja')
         return {
@@ -44,7 +197,7 @@ if os.path.exists(path_gpkg):
         }
 
     folium.GeoJson(
-        gdf, 
+        gdf,
         style_function=style_fn,
         tooltip=folium.GeoJsonTooltip(fields=['colonia', 'nivel_accesibilidad'])
     ).add_to(m1)
@@ -53,15 +206,53 @@ m1
 ```
 :::
 
-::: {.story-column}
-::: {.story-section}
-### 1. Indicadores ODS 11 en México
-El cumplimiento de las metas globales de sostenibilidad urbana varía drásticamente en el territorio nacional. En este mapa vemos el desempeño de México, con un **zoom estratégico en la CDMX** para cada uno de los indicadores del ODS 11.
-
-* **Indicador 11.2.1:** Proporción de la población que tiene acceso a transporte público.
 :::
 
-::: {.story-section}
+::: {.story-column}
+
+::: {.story-section data-panel="ods"}
+### 1. Indicadores ODS 11 en México
+
+El cumplimiento de las metas globales de sostenibilidad urbana varía drásticamente en el territorio nacional. Usa los botones **← Anterior / Siguiente →** para explorar el posicionamiento de la CDMX frente a los 32 estados del país en cada indicador.
+
+```{ojs}
+{
+  const ind  = ods_data[ods_idx];
+  const desc = ods_texts[ods_idx];
+  const cdmxEntry = ind.datos.find(d => d.cvegeo === "09");
+  const cdmxVal   = cdmxEntry ? cdmxEntry.valor : 0;
+  const isBetter  = desc.mejor === "menor"
+    ? cdmxVal <= ind.nacional
+    : cdmxVal >= ind.nacional;
+
+  return html`<div class="ods-text-col">
+    <h4 style="color:#2c3e50; border-bottom:2px solid #3498db; padding-bottom:8px; margin-top:16px;">
+      ${desc.titulo}
+    </h4>
+    <p style="line-height:1.75; color:#444; white-space:pre-line;">${desc.texto}</p>
+    <div class="ods-vals">
+      <div class="ods-val-item">
+        <span class="ods-val-label" style="color:#e74c3c;">CDMX</span>
+        <span class="ods-val-num">${cdmxVal.toLocaleString("es-MX", {maximumFractionDigits: 2})}</span>
+      </div>
+      <div class="ods-val-item">
+        <span class="ods-val-label" style="color:#f39c12;">Promedio Nacional</span>
+        <span class="ods-val-num">${ind.nacional.toLocaleString("es-MX", {maximumFractionDigits: 2})}</span>
+      </div>
+      <div class="ods-val-item" style="grid-column: 1 / -1;">
+        <span class="ods-badge" style="background:${isBetter ? '#27ae60' : '#c0392b'};">
+          ${(isBetter ? "✓ " : "✗ ") + (cdmxVal >= ind.nacional
+            ? "CDMX por encima del promedio nacional"
+            : "CDMX por debajo del promedio nacional")}
+        </span>
+      </div>
+    </div>
+  </div>`;
+}
+```
+:::
+
+::: {.story-section data-panel="map"}
 ### 2. Insumos y Metodología
 Para este análisis, unificamos capas geoespaciales críticas:
 
@@ -72,13 +263,51 @@ Para este análisis, unificamos capas geoespaciales críticas:
 *Metodología:* Cada manzana proyecta una ruta de 1,250m de caminata real para detectar colindancia con estos servicios.
 :::
 
-::: {.story-section}
+::: {.story-section data-panel="map"}
 ### 3. Resultados de Accesibilidad
 En esta visualización, exploramos lo que en este trabajo podríamos llamar el  **Índice de Diversidad de Servicios**.
 Los colores indican si una zona tiene alta (verde), media (naranja) o baja (rojo) diversidad de servicios básicos a una distancia caminable.
 :::
+
 :::
 
 :::
+
+```{=html}
+<script>
+(function () {
+  function init() {
+    var sections = document.querySelectorAll('.story-section[data-panel]');
+    var panelOds = document.getElementById('panel-ods');
+    var panelMap = document.getElementById('panel-map');
+    if (!sections.length || !panelOds || !panelMap) return;
+
+    function showPanel(name) {
+      panelOds.classList.toggle('active', name === 'ods');
+      panelMap.classList.toggle('active', name === 'map');
+    }
+
+    // Panel inicial
+    showPanel('ods');
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          showPanel(entry.target.dataset.panel);
+        }
+      });
+    }, { threshold: 0, rootMargin: '-20% 0px -50% 0px' });
+
+    sections.forEach(function (s) { observer.observe(s); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+```
 
 :::
