@@ -1,7 +1,84 @@
 ---
-title: "Dashboard trío tristeza"
+title: "Accesibilidad en la CDMX: Un Análisis ODS 11"
+subtitle: "Trío triteza"
+format: 
+  html:
+    css: styles.css
+    toc: false
+    page-layout: full
+execute:
+  echo: false
 ---
 
-This is a Quarto website.
+::: {.column-page}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Introducción
+Este tablero tiene como objetivo el análisis y la visualización de datos para realizar una evaluación de la accesibilidad en la Ciudad de México. Buscando identificar las zonas de la CDMX en las que vivir, trabajar y descansar pueda suceder en en recorridos de menos de 15 minutos.
+
+A través de un análisis de 1,250 metros de caminata desde cada manzana, evaluamos qué tan accesible es la ciudad para sus habitantes.
+
+---
+
+::: {.scrolly-container}
+
+::: {.map-sidebar}
+```{python}
+import geopandas as gpd
+import folium
+import os
+
+# Cargar datos base
+path_gpkg = '../pruebaCrucePreliminar/cruce_accesibilidad.gpkg'
+m1 = folium.Map(location=[19.4326, -99.1332], zoom_start=11, tiles='CartoDB positron')
+
+if os.path.exists(path_gpkg):
+    # Cargamos y transformamos a EPSG:4326 para Folium
+    gdf = gpd.read_file(path_gpkg).to_crs(epsg=4326)
+    
+    # Estilo simple por nivel
+    def style_fn(feature):
+        n = feature['properties'].get('nivel_accesibilidad', 'Baja')
+        return {
+            'fillColor': 'green' if n == 'Alta' else ('orange' if n == 'Media' else 'red'),
+            'color': 'white', 'weight': 0.5, 'fillOpacity': 0.6
+        }
+
+    folium.GeoJson(
+        gdf, 
+        style_function=style_fn,
+        tooltip=folium.GeoJsonTooltip(fields=['colonia', 'nivel_accesibilidad'])
+    ).add_to(m1)
+
+m1
+```
+:::
+
+::: {.story-column}
+::: {.story-section}
+### 1. Indicadores ODS 11 en México
+El cumplimiento de las metas globales de sostenibilidad urbana varía drásticamente en el territorio nacional. En este mapa vemos el desempeño de México, con un **zoom estratégico en la CDMX** para cada uno de los indicadores del ODS 11.
+
+* **Indicador 11.2.1:** Proporción de la población que tiene acceso a transporte público.
+:::
+
+::: {.story-section}
+### 2. Insumos y Metodología
+Para este análisis, unificamos capas geoespaciales críticas:
+
+* **DENUE:** Servicios y comercios.
+* **RNC:** Red Nacional de Caminos.
+* **Equipamiento:** Salud, Educación y WiFi.
+
+*Metodología:* Cada manzana proyecta una ruta de 1,250m de caminata real para detectar colindancia con estos servicios.
+:::
+
+::: {.story-section}
+### 3. Resultados de Accesibilidad
+En esta visualización, exploramos lo que en este trabajo podríamos llamar el  **Índice de Diversidad de Servicios**.
+Los colores indican si una zona tiene alta (verde), media (naranja) o baja (rojo) diversidad de servicios básicos a una distancia caminable.
+:::
+:::
+
+:::
+
+:::
