@@ -35,12 +35,19 @@ jobs:
       - name: Sync dependencies
         run: uv sync
 
+      - name: Set Quarto Python
+        # Apunta Quarto al Python del venv de uv para que encuentre
+        # geopandas, folium y demás dependencias del proyecto
+        run: echo "QUARTO_PYTHON=$(pwd)/.venv/bin/python" >> $GITHUB_ENV
+
       - name: Render Dashboard
+        # format: html renderiza index.html in-place (no genera _site/)
         run: |
           cd dashboard
-          quarto render
+          quarto render index.qmd
 
       - name: Render Presentation
+        # type: website genera _site/
         run: |
           cd presentacion
           quarto render
@@ -48,11 +55,15 @@ jobs:
       - name: Prepare Deployment Directory
         run: |
           mkdir -p public
-          # Mover el contenido del dashboard al root de public
-          cp -r dashboard/_site/* public/
-          # Crear carpeta para la presentación
+
+          # Dashboard (format: html): copiar artefactos renderizados in-place
+          cp dashboard/index.html public/
+          cp dashboard/styles.css public/
+          cp -r dashboard/index_files public/
+          cp -r dashboard/datos     public/
+
+          # Presentación (type: website): copiar desde _site/
           mkdir -p public/presentacion
-          # Mover el contenido de la presentación a su carpeta
           cp -r presentacion/_site/* public/presentacion/
 
       - name: Setup Pages
