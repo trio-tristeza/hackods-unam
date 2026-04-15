@@ -68,3 +68,9 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Prompt**: "¿puedes apoyarme para estilizar la visualización de indicadores?"
 - **Resultado**: Propuesta de inclusión de una sección interactiva en el dashboard con gráficas de barras horizontales para cada indicador ODS 11, navegación con botones de flechas, panel de texto descriptivo reactivo y etiquetas de posicionamiento de la CDMX frente al promedio nacional.
 - **Decisión**: Se decidió aceptar la propuesta de modificación de estilo, integrando la visualización dentro del flujo de scrollytelling del dashboard de forma que el panel izquierdo alterna entre la gráfica de indicadores y el mapa de accesibilidad según la sección visible.
+
+### 2026-04-14 | Claude Code (claude-sonnet-4-6) | Corrección del flujo de despliegue continuo
+- **Tarea**: Corregir el workflow de GitHub Actions tras cambios en la estructura del directorio `dashboard/`.
+- **Prompt**: "¿puedes apoyarme a corregir el despliegue continuo, cambié la estructura de dashboard y ahora tiene fallo?"
+- **Resultado**: Se actualizaron los archivos correspondientes al flujo de CI/CD: se corrigió la ruta de copia del dashboard de `dashboard/_site/*` a los artefactos renderizados in-place (`index.html`, `index_files/`, `styles.css`, `datos/`), y se añadió la variable de entorno `QUARTO_PYTHON` para que Quarto utilice el entorno virtual de `uv` con las dependencias del proyecto.
+- **Decisión**: Se aceptaron los cambios validando que corresponden a la estructura actual del directorio `dashboard/`, donde `format: html` genera archivos en el mismo directorio en lugar de un subdirectorio `_site/`.
