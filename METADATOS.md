@@ -98,20 +98,112 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
 
 ## 9. Categorización de vialidades
 *   **Archivo:** `rnc_vial_cdmx_cat.gpkg`
-*   **Fuentes:** 
-    *   Vialidades: [Red Nacional de Caminos (RNC) - Recorte CDMX] - `rnc_vial_cdmx.gpkg`
+*   **Fuentes:** Vialidades: [Red Nacional de Caminos (RNC) - Recorte CDMX] - `rnc_vial_cdmx.gpkg`
 *   **Pasos de procesamiento:**
     1. **Definición**: Establecer las categorias a partir de la información de SEMOVI, CDMX (https://www.semovi.cdmx.gob.mx/storage/app/media/Publicaciones/guia_basica_seguridad_vial.pdf#:~:text=Sabías%20que%2C%20de%20acuerdo%20con%20el%20RTCDMX,total%20para%20permitir%20el%20paso%20de%20peatones).
-        - 10 km/h Vías peatonales o estacionamiento (Seguridad peatonal: Alta)
-		- 20 km/h Zonas de seguridad(Seguridad peatonal: Idónea) [Idónea debido al rango de velocidad adecuado para bicicletas y tránsito peatonal]
-		- 30 km/h Zonas de tránsito(Seguridad peatonal: Moderada)
-		- 40 km/h Vías secundarias (Seguridad peatonal: Limitada) [Limitada porque depende de carriles laterales de acceso controlado]
-		- 50 km/h Vías primarias (Seguridad peatonal: Baja)
-		- 60 - 80 km/h Vías rápidas (Seguridad peatonal: Nula)
+        - 10 Vías peatonales o estacionamiento (Seguridad peatonal: Alta)
+		- 20 Zonas de seguridad(Seguridad peatonal: Idónea) [Idónea debido al rango de velocidad adecuado para bicicletas y tránsito peatonal]
+		- 30 Zonas de tránsito(Seguridad peatonal: Moderada)
+		- 40 Vías secundarias (Seguridad peatonal: Limitada) [Limitada porque depende de carriles laterales de acceso controlado]
+		- 50 Vías primarias (Seguridad peatonal: Baja)
+		- 60 - 80 Vías rápidas (Seguridad peatonal: Nula)
     2. **Categorización**: Aplicación de valores categóricos y pseudo-numéricos
         - Se realizó una columna nueva con los valores tipo cadena de texto para colocar el nombre de las categorias establecidas.
         - Se realizó una columna nueva con los valores pseudo-numéricos del 0 al 5, siendo el 0 el valor con mayor inseguridad vial por la alta velocidad estalecidas en las vialidades.
     3. **Exportación:** Guardado en formato GeoPackage.
 
+## 10. Infraestructura Vial Ciclista
+* **Archivo:** `infra_ciclista_total.gpkg`
+* **Fuente:** [Portal de datos abiertos (SEMOVI)](https://datos.cdmx.gob.mx/dataset/infraestructura-vial-ciclista)
+
+* **Pasos de Procesamiento:**
+    1. **Lectura:** Carga de archivos Shapefile desde carpeta descomprimida.
+    2. **Filtrado:** Se conservaron únicamente los registros con `ESTADO == "En operacion"`.
+    3. **Limpieza de Atributos:** Se seleccionaron las columnas `ALCALDIA`, `TIPO_IC`, `TIPO_VIA`, `TIPO_CONEC`, `LONG_KM` y `geometry`, descartando identificadores internos irre.
+    4. **Unificación:** Se unificaron en una sola capa espacial toda la información relacionada a infraestructura ciclista
+    5. **Reproyección:** Conversión a EPSG:32614.
+    6. **Exportación:** Guardado en formato GeoPackage.
+
+## 11. Líneas y estaciones de Metro
+* **Archivo:** `estaciones_metro.gpkg` y `lineas_metro.gpkg`
+* **Fuente:** [STC Metro CDMX](https://datos.cdmx.gob.mx/dataset/lineas-y-estaciones-del-metro/resource/288b10dd-4f21-4338-b1ed-239487820512?inner_span=True)
+* **Pasos de Procesamiento:**
+    1. **Lectura:** Carga de archivos Shapefile de líneas y estaciones.
+    2. **Limpieza de Atributos:** Se conservaron `SISTEMA`, `NOMBRE`, `LINEA`, `TIPO` y `ALCALDIAS`, descartando claves internas (`EST`, `CVE_EST`, `CVE_EOD17`) y año.
+    3. **Reproyección:** Conversión a EPSG:32614.
+    4. **Exportación:** Guardado en formato GeoPackage.
+
+## 12. Líneas y Estaciones del Metrobús
+* **Archivo:** `metrobus_estaciones.gpkg` y `metrobus_lineas.gpkg`
+* **Fuente:** [Portal de datos abiertos (Metrobús CDMX)](https://datos.cdmx.gob.mx/dataset/geolocalizacion-metrobus)
+* **Pasos de Procesamiento:**
+    1. **Lectura:** Carga de archivos Shapefile de líneas y estaciones.
+    2. **Limpieza de Atributos:** Se conservaron `SISTEMA`, `NOMBRE`, `LINEA`, `TIPO` y `ALCALDIAS`, descartando claves internas 
+    3. **Reproyección:** Conversión a EPSG:32614.
+    4. **Exportación:** Guardado en formato GeoPackage.
+
+## 13. Rutas de RTP
+* **Archivo:** `rtp_lineas.gpkg`, `rtp_paradas.gpkg`
+* **Fuente:** [Portal de datos abiertos CDMX: Red de Transporte de Pasajeros](https://datos.cdmx.gob.mx/dataset/e5e67126-8964-4457-a88b-ed0194bb5eb5/resource/391b1ea2-d5e6-4a60-a1fe-114ccb99ee82?activity_id=20c29c35-2c90-4c24-83be-411802c68e3b)
+* **Indicador:** Proximidad
+* **Pasos de Procesamiento:**
+    1. **Lectura Espacial:** Carga de Shapefiles de líneas y paradas.
+    2. **Filtrado:** Se conservaron únicamente registros con `ESTATUS == "ACTIVO"`.
+    3. **Limpieza de Atributos:** En líneas se conservaron `NOMBRE`, `SISTEMA`, `RUTA`, `ORIGEN`, `DESTINO`. En paradas `RUTA`, `SENTIDO`, `ORIG_DEST`, `SISTEMA`. Se descartaron módulo, corredor e intersección.
+    4. **Reproyección:** Conversión a EPSG:32614.
+    5. **Exportación:** Guardado en formato GeoPackage.
+    
+## 14. Servicio de Transportes Eléctricos (Cablebus, Tren Ligero, Trolebús)
+* **Archivos:** `cablebus_estaciones.gpkg`, `cablebus_lineas.gpkg`, `tren_ligero_estaciones.gpkg`, `tren_ligero_linea.gpkg`, `trolebus_lineas.gpkg`, `trolebus_paradas.gpkg`
+* **Fuente:** [Portal de datos abiertos CDMX: Servicio de Transportes Eléctricos](https://datos.cdmx.gob.mx/dataset/geolocalizacion-de-lineas-y-estaciones-paradas-del-servicio-de-transportes-electricos)
+* **Pasos de Procesamiento:**
+    1. **Lectura de datos:** Carga de Shapefiles por modo de transporte.
+    2. **Limpieza de Atributos:** Se conservaron `SISTEMA`, `NOMBRE`, `LINEA`, `TIPO` y `ALCALDIAS`. Se descartaron claves internas, año, y campos de accesibilidad universal (`Elevadores`, `Guia_tact`, `P_braile`, `Ramp_s_rue`).
+    3. **Reproyección:** Conversión a EPSG:32614.
+    4. **Exportación:** Guardado en formato GeoPackage por modo de transporte.
+
+## 15. Hospitales y Centros de Salud
+* **Archivo:** `hospitales_centros_salud.gpkg`
+* **Fuente:** [Portal de datos abiertos CDMX: Secretaría de Salud CDMX](https://datos.cdmx.gob.mx/dataset/hospitales-y-centros-de-salud)
+
+* **Pasos de Procesamiento:**
+    1. **Lectura:** Carga de Shapefile de unidades de salud.
+    2. **Limpieza de Atributos:** Se conservaron campos de nombre, tipo de unidad y alcaldía.
+    3. **Reproyección:** Conversión a EPSG:32614.
+    4. **Exportación:** Guardado en formato GeoPackage.
+
+## 16. Escuelas Públicas
+* **Archivo:** `escuelas_publicas.gpkg`
+* **Fuente:** [Portal de datos abiertos: Secretaría de Educación CDMX](https://datos.cdmx.gob.mx/dataset/escuelas-publicas)
+* **Pasos de Procesamiento:**
+    1. **Lectura Tabular:** Carga desde archivo CSV ya que no contiene geometría nativa.
+    2. **Limpieza de Atributos:** Se conservaron `nombre`, `colonia` y `alcaldia`. Se descartaron `domicilio`, `latitud` y `longitud` por ser redundantes con la geometría generada.
+    3. **Eliminación de nulos:** Se eliminaron 141 registros sin coordenadas mediante `dropna`.
+    4. **Espacialización:** Construcción de geometría de puntos a partir de columnas `longitud` y `latitud` con `gpd.points_from_xy`.
+    5. **Exportación:** Guardado en formato GeoPackage con CRS EPSG:32614.
+
+## 17. Escuelas Privadas
+* **Archivo:** `escuelas_privadas.gpkg`
+* **Fuente:** [Secretaría de Educación CDMX](https://datos.cdmx.gob.mx/dataset/escuelas-privadas)
+* **Pasos de Procesamiento:**
+    1. **Lectura Espacial:** Carga desde Shapefile.
+    2. **Limpieza de Atributos:** Se conservaron `nombre`, `nivel`, `colonia` y `alcaldi`. Se descartaron `turno`, `sstnmnt`, `domicil` y `ubicacn` por ser redundantes con la geometría.
+    3. **Reproyección:** Conversión a EPSG:32614.
+    4. **Exportación:** Guardado en formato GeoPackage.
+
 ---
-**Nota:** Todos los archivos procesados se encuentran optimizados para su uso en herramientas SIG (QGIS, ArcGIS) y librerías de Python (GeoPandas).
+
+## 18. Áreas Verdes de la Ciudad de México
+* **Archivo:** `areas_verdes.gpkg`
+* **Fuente:** [Secretaría del Medio Ambiente CDMX](ttps://datos.cdmx.gob.mx/dataset/cdmx_areas_verdes_2017)
+* **Pasos de Procesamiento:**
+    1. **Lectura Tabular:** Carga desde archivo CSV `cdmx_areas_verdes_2017.csv`.
+    2. **Limpieza de Atributos:** Se conservaron `categoria`, `subcve_sed`, `superficie` y `zonifica`. Se descartaron metadatos administrativos y campos redundantes con la geometría.
+    3. **Eliminación de nulos:** Se eliminaron registros sin geometría mediante `dropna` sobre la columna `geo_shape`.
+    4. **Espacialización:** Conversión de la columna `geo_shape` en formato GeoJSON embebido a geometría válida usando `json.loads()` y `shape()` de shapely.
+    5. **Exportación:** Guardado en formato GeoPackage con CRS EPSG:32614.
+
+---
+**Nota:** Todos los archivos procesados se encuentran documentados en los Notebooks del proyecto, donde se detalla el flujo de trabajo, la limpieza y el análisis de los datos.
+
+[Ver Notebooks del proyecto](./notebooks/)
