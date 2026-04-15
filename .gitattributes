@@ -1,1 +1,2 @@
 datos/** filter=lfs diff=lfs merge=lfs -text
+notebooks/03_limpieza_datos_l.ipynb filter=lfs diff=lfs merge=lfs -text
