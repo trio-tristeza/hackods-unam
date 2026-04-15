@@ -2,6 +2,7 @@
 
 ## Herramientas
 - **Gemini CLI**: Interfaz de línea de comandos para interactuar con Gemini Pro.
+- **Claude Code (claude-sonnet-4-6)** Interfaz de línea de comandos para interactuar con Claude.
 
 ## Filosofía de uso 
 Utilizamos herramientas de IA para agilizar la descripción de la arquitectura del proyecto y la consulta sobre el uso de parámetros en distintas librerías para facilitar su uso.
@@ -61,3 +62,9 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Prompt**: "Quiero generar una estructura de metadato en un archivo json"
 - **Resultado**: "Estructura recomendada y guía de los campos del metadato."
 - **Decisión**: "La estructura principal nos oriento a decidir como estructurar mejor los metadatos de las capas"
+
+### 2026-04-14 | Claude Code (claude-sonnet-4-6) | Estilización de la visualización de indicadores ODS 11
+- **Tarea**: Integrar y estilizar la visualización interactiva de los indicadores ODS 11 en el dashboard principal.
+- **Prompt**: "¿puedes apoyarme para estilizar la visualización de indicadores?"
+- **Resultado**: Propuesta de inclusión de una sección interactiva en el dashboard con gráficas de barras horizontales para cada indicador ODS 11, navegación con botones de flechas, panel de texto descriptivo reactivo y etiquetas de posicionamiento de la CDMX frente al promedio nacional.
+- **Decisión**: Se decidió aceptar la propuesta de modificación de estilo, integrando la visualización dentro del flujo de scrollytelling del dashboard de forma que el panel izquierdo alterna entre la gráfica de indicadores y el mapa de accesibilidad según la sección visible.
