@@ -15,7 +15,7 @@ format:
 
 ## Pregunta guía, datos y enfoque
 
-¿Qué tan cercana está la Ciudad de México de cumplir las metas del ODS 11 para convertirse en un espacio donde la movilidad, la seguridad, la inclusividad, y la sostenibilidad sean un derecho y no un privilegio?
+¿Qué tan cercana está la Ciudad de México de cumplir las metas del ODS 11 para convertirse en un espacio donde la movilidad, la seguridad, la inclusión, y la sostenibilidad sean un derecho y no un privilegio?
 
  - Identificar las zonas de la CDMX en las que vivir, trabajar y descansar pueda suceder en en recorridos de menos de 15 minutos (Moreno, 2021), ya sea a pie o en bicicleta, desde el hogar.
  - A partir del análisis anterior, identificar la asimetría urbana (Ziccardi-Contigiani y Dammert, 2024) relacionada con la movilidad, la inclusividad y la sostenibilidad.
@@ -27,10 +27,10 @@ Datos relacionados con la cercanía de transporte, la infraestructura urbana, la
 
 Necesidad de claridad
 
- - ¿Qué tanto peso tendrá explicar la metodología propuesta?
+ - ¿Podríamos expicar un ejemplo o hacer que el usuario pueda sacar las conclusiones a partir de lo que representan los datos en el mapa?
 
 Dudas de enfoque
 
- - Unidad básica de análisis espacial (manzana, hexágono, ageb).
- - Profundidad del análisis espacial (geoestadística, cruce espacial simple).
+ - Unidad básica de análisis espacial: manzana. Visualización a partir de: colonias.
+ - Es un análisis espacial simple en donde la representación de diferentes variables permitirá al usuario identificar que tan cerca vive de la meta en el ODS 11 para el 2030
 
