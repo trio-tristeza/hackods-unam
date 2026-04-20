@@ -27,7 +27,7 @@ Datos relacionados con la cercanía de transporte, la infraestructura urbana, la
 
 Necesidad de claridad
 
- - ¿Podríamos expicar un ejemplo o hacer que el usuario pueda sacar las conclusiones a partir de lo que representan los datos en el mapa?
+ - ¿Podríamos explicar un ejemplo o hacer que el usuario pueda sacar las conclusiones a partir de lo que representan los datos en el mapa?
 
 Dudas de enfoque
 
