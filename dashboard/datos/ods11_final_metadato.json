@@ -1,0 +1,115 @@
+{
+  "titulo": "Indicadores ODS 11 (INEGI API - Nacional y Estatal)",
+  "archivo": "datos/indicadoresODS11/ods11_final.json",
+  "descripcion": "Dataset consolidado de indicadores del Objetivo de Desarrollo Sostenible 11 (Ciudades y comunidades sostenibles) para México, generado a partir de consultas automatizadas a la API del Banco de Indicadores del INEGI (BISE). Incluye valores a nivel nacional y para las 32 entidades federativas, estructurados para análisis comparativo y visualización en dashboards.",
+  
+  "fuentes": [
+    {
+      "nombre": "INEGI - Banco de Indicadores (BISE)",
+      "tipo": "API",
+      "url": "https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/...",
+      "descripcion": "Servicio de consulta de series estadísticas oficiales utilizadas para mapear indicadores ODS 11."
+    }
+  ],
+
+  "fecha_descarga": "2026-04-14",
+  "fecha_actualizacion": "2026-04-14",
+
+  "licencia": {
+    "tipo": "Datos abiertos",
+    "descripcion": "Uso sujeto a los términos y condiciones de INEGI",
+    "fuente": "INEGI"
+  },
+
+  "cobertura": {
+    "espacial": "México",
+    "nivel": ["Nacional", "Estatal"],
+    "detalle": "Incluye clave 00 para nacional y claves 01 a 32 para entidades federativas"
+  },
+
+  "estructura_datos": {
+    "tipo": "JSON",
+    "descripcion": "Lista de indicadores con valores nacionales y desglose estatal",
+    "unidad_registro": "Indicador ODS",
+    "campos": [
+      "nombre",
+      "nacional",
+      "datos"
+    ]
+  },
+
+  "descripcion_variables": [
+    {
+      "variable": "nombre",
+      "tipo": "string",
+      "descripcion": "Nombre del indicador ODS 11 con su descripción temática"
+    },
+    {
+      "variable": "nacional",
+      "tipo": "number",
+      "descripcion": "Valor agregado nacional del indicador, utilizado como referencia comparativa"
+    },
+    {
+      "variable": "datos",
+      "tipo": "array",
+      "descripcion": "Colección de valores por entidad federativa"
+    },
+    {
+      "variable": "datos[].cvegeo",
+      "tipo": "string",
+      "descripcion": "Clave geoestadística estatal (01–32) según catálogo INEGI"
+    },
+    {
+      "variable": "datos[].valor",
+      "tipo": "number",
+      "descripcion": "Valor del indicador correspondiente a la entidad federativa"
+    }
+  ],
+
+  "indicadores": [
+    "11.1.1 Viviendas precarias (%)",
+    "11.2.1 Acceso a transporte público (%)",
+    "11.3.1 Relación de expansión del suelo urbano",
+    "11.r.2.1a Tiempo de traslado al trabajo (general)",
+    "11.r.2.1b Tiempo de traslado al trabajo (población indígena)",
+    "11.6.1.a Gestión de residuos sólidos (%)",
+    "11.6.2.a Concentración de partículas PM2.5",
+    "11.6.2.b Concentración de partículas PM10",
+    "11.4.1 Gasto en patrimonio cultural y natural ($)",
+    "11.7.1 Disponibilidad de espacios públicos abiertos (%)"
+  ],
+
+  "proceso": {
+    "script": "scripts/generar_indicadores_ods11.py",
+    "metodologia": [
+      "Consulta automatizada a la API del INEGI (BISE)",
+      "Extracción multiescalar (nacional y estatal)",
+      "Mapeo de series estadísticas a indicadores ODS 11",
+      "Consolidación en estructura JSON anidada",
+      "Formateo para consumo en dashboard"
+    ]
+  },
+
+  "uso": [
+    "Visualización en dashboards",
+    "Análisis territorial comparativo",
+    "Monitoreo de indicadores ODS 11",
+    "Integración en sistemas geoespaciales"
+  ],
+
+  "observaciones": [
+    "La temporalidad específica de cada indicador depende de la serie original consultada en el BISE.",
+    "Las unidades de algunos indicadores deben verificarse directamente en la ficha técnica del INEGI.",
+    "El valor nacional se incluye como referencia base para comparación con entidades federativas."
+  ],
+
+  "palabras_clave": [
+    "ODS 11",
+    "INEGI",
+    "Indicadores",
+    "México",
+    "Datos abiertos",
+    "Urbanismo",
+    "Sostenibilidad"
+  ]
+}
