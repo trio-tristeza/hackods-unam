@@ -222,6 +222,24 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
     4. **Consolidación de Datos:** Integración de los valores nacionales como referencia base frente a los datos estatales en una estructura JSON anidada.
     5. **Estructuración para Dashboard:** Formateo de la salida para facilitar la comparativa geográfica y temporal en el tablero de visualización.
 
+## 20. Cruce de Accesibilidad Urbana (Etapa 3)
+*   **Archivos:** `cruce_[ALCALDIA].gpkg` (16 archivos en `datos/procesados/procesados_3_etapa/`)
+*   **Script de Generación:** `scripts/cruce_accesibilidad.py`
+*   **Metodología y Pasos de Procesamiento:**
+    1.  **Cálculo Dinámico de Rutas:** Para cada manzana de la CDMX (63,174 registros), el script calcula internamente la red vial alcanzable en un radio de 1,250 metros (aprox. 15-20 min caminando) utilizando el algoritmo de Dijkstra sobre la Red Nacional de Caminos (RNC). No depende de capas de rutas pre-calculadas para asegurar consistencia.
+    2.  **Paralelismo:** El proceso utiliza `multiprocessing` para distribuir el cálculo de Dijkstra y los cruces espaciales entre todos los núcleos disponibles del CPU.
+    3.  **Cruce de Equipamiento (Puntos):** Se realiza un join espacial con un buffer de 15m para contabilizar el acceso a:
+        - Unidades económicas (DENUE) clasificadas por prioridad (Alta, Media, Baja).
+        - Escuelas públicas y privadas.
+        - Hospitales y centros de salud.
+        - Puntos de WiFi gratuito.
+        - Estaciones de transporte masivo.
+    4.  **Cruce de Infraestructura (Líneas):** Se calcula la longitud en metros de ciclovías, rutas de transporte y vialidades según su nivel de seguridad peatonal (categorías de velocidad).
+    5.  **Generación de Indicadores:**
+        - **Diversidad:** Conteo de tipos de servicios únicos accesibles.
+        - **Nivel de Accesibilidad:** Clasificación cualitativa (**Alta**, **Media**, **Baja**).
+    6.  **Exportación Incremental:** Los resultados se guardan por alcaldía para optimizar el uso de memoria y permitir la recuperación del proceso ante interrupciones.
+
 ---
 **Nota:** Todos los archivos procesados se encuentran documentados en los Notebooks del proyecto, donde se detalla el flujo de trabajo, la limpieza y el análisis de los datos.
 
