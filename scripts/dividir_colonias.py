@@ -30,11 +30,13 @@ Cada GeoJSON de colonia contiene únicamente: clavegeo, clasificacion, geometry.
 
 import geopandas as gpd
 import json
+import shutil
 import unicodedata
 from pathlib import Path
 
-INPUT_DIR  = Path("datos/procesados/procesados_4_etapa/")
-OUTPUT_DIR = INPUT_DIR / "colonias"
+INPUT_DIR   = Path("datos/procesados/procesados_4_etapa/")
+OUTPUT_DIR  = INPUT_DIR / "colonias"
+DASH_DIR    = Path("dashboard/datos/colonias")
 
 
 def normalizar(texto: str) -> str:
@@ -104,6 +106,11 @@ def main():
     print(f"\n{total_colonias} colonias en total")
     print(f"Índice → {out_index}")
     print(f"Archivos en: {OUTPUT_DIR.resolve()}")
+
+    if DASH_DIR.exists():
+        shutil.rmtree(DASH_DIR)
+    shutil.copytree(OUTPUT_DIR, DASH_DIR)
+    print(f"Sincronizado → {DASH_DIR.resolve()}")
 
 
 if __name__ == "__main__":

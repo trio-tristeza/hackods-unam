@@ -206,6 +206,113 @@ m1
 ```
 :::
 
+::: {#panel-accesibilidad .panel-content}
+
+```{=html}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script>/* Leaflet detecta define() de RequireJS/OJS y falla como módulo AMD; lo ocultamos temporalmente */var _def=window.define;window.define=undefined;</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>window.define=_def;</script>
+
+<div style="display:flex;gap:12px;padding:8px 0;flex-shrink:0;">
+  <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
+    <label style="font-size:11px;font-weight:600;text-transform:uppercase;color:#555;">Alcaldía</label>
+    <select id="acc-alc" style="padding:7px 10px;border:1px solid #ccc;border-radius:4px;font-size:13px;">
+      <option value="">— Selecciona alcaldía —</option>
+    </select>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
+    <label style="font-size:11px;font-weight:600;text-transform:uppercase;color:#555;">Colonia</label>
+    <select id="acc-col" disabled style="padding:7px 10px;border:1px solid #ccc;border-radius:4px;font-size:13px;">
+      <option value="">— Selecciona colonia —</option>
+    </select>
+  </div>
+</div>
+<div id="acc-map" style="width:100%;height:450px;border-radius:4px;border:1px solid #e0e0e0;"></div>
+<div id="acc-legend" class="acc-legend"></div>
+
+<script>
+(function () {
+  var COLORS = { 'Muy bajo': '#fc8d59', 'Bajo': '#fee08b', 'Medio': '#e6f598', 'Alto': '#99d594' };
+  var CLASES  = ['Muy bajo', 'Bajo', 'Medio', 'Alto'];
+  var accMap = null, accLayer = null, accIndex = null;
+
+  function init() {
+    /* El panel usa visibility:hidden (no display:none), así el div tiene dimensiones reales */
+    accMap = L.map('acc-map').setView([19.4326, -99.1332], 11);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; CARTO', maxZoom: 19
+    }).addTo(accMap);
+
+    document.getElementById('acc-legend').innerHTML = CLASES.map(function(c) {
+      return '<span class="acc-leg-item"><span class="acc-leg-swatch" style="background:' +
+             COLORS[c] + '"></span>' + c + '</span>';
+    }).join('');
+
+    fetch('datos/colonias/index.json')
+      .then(function(r) { return r.json(); })
+      .then(function(idx) {
+        accIndex = idx;
+        var alcSel = document.getElementById('acc-alc');
+        idx.forEach(function(a) {
+          var o = document.createElement('option');
+          o.value = a.nombre; o.textContent = a.nombre;
+          alcSel.appendChild(o);
+        });
+        alcSel.addEventListener('change', function() {
+          var colSel = document.getElementById('acc-col');
+          colSel.innerHTML = '<option value="">— Selecciona colonia —</option>';
+          colSel.disabled = true;
+          var entry = accIndex.find(function(a) { return a.nombre === alcSel.value; });
+          if (!entry) return;
+          entry.colonias.forEach(function(c) {
+            var o = document.createElement('option');
+            o.value = entry.carpeta + '/' + c.archivo;
+            o.textContent = c.nombre;
+            colSel.appendChild(o);
+          });
+          colSel.disabled = false;
+        });
+        document.getElementById('acc-col').addEventListener('change', function() {
+          var val = document.getElementById('acc-col').value;
+          if (!val) return;
+          fetch('datos/colonias/' + val)
+            .then(function(r) { return r.json(); })
+            .then(function(gj) {
+              if (accLayer) accMap.removeLayer(accLayer);
+              accLayer = L.geoJSON(gj, {
+                style: function(f) {
+                  return { fillColor: COLORS[f.properties.clasificacion] || '#ccc',
+                           color: '#fff', weight: 0.5, fillOpacity: 0.8 };
+                },
+                onEachFeature: function(f, l) {
+                  l.bindTooltip('<b>' + f.properties.clasificacion + '</b><br>' +
+                                '<small>' + f.properties.clavegeo + '</small>', { sticky: true });
+                }
+              }).addTo(accMap);
+              accMap.fitBounds(accLayer.getBounds(), { padding: [20, 20] });
+            })
+            .catch(function(e) { console.error('colonia:', e); });
+        });
+      })
+      .catch(function(e) { console.error('index.json:', e); });
+  }
+
+  window._accOnActive = function() {
+    if (accMap) setTimeout(function() { accMap.invalidateSize(); }, 50);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+```
+
+:::
+
 :::
 
 ::: {.story-column}
@@ -263,10 +370,19 @@ Para este análisis, unificamos capas geoespaciales críticas:
 *Metodología:* Cada manzana proyecta una ruta de 1,250m de caminata real para detectar colindancia con estos servicios.
 :::
 
-::: {.story-section data-panel="map"}
+::: {.story-section data-panel="accesibilidad"}
 ### 3. Resultados de Accesibilidad
-En esta visualización, exploramos lo que en este trabajo podríamos llamar el  **Índice de Diversidad de Servicios**.
-Los colores indican si una zona tiene alta (verde), media (naranja) o baja (rojo) diversidad de servicios básicos a una distancia caminable.
+
+Explora la clasificación de accesibilidad urbana manzana a manzana. Selecciona una **alcaldía** y luego una **colonia** para visualizar en el mapa la diversidad de servicios accesibles a pie desde cada manzana.
+
+| Nivel | Diversidad |
+|---|---|
+| Alto | 6 – 8 servicios |
+| Medio | 5 servicios |
+| Bajo | 3 – 4 servicios |
+| Muy bajo | 0 – 2 servicios |
+
+La diversidad mide cuántos tipos de equipamiento —comercios, escuelas, hospitales, WiFi, transporte y ciclovías— son alcanzables en un radio de 1,250 m desde el centroide de cada manzana.
 :::
 
 :::
@@ -280,11 +396,18 @@ Los colores indican si una zona tiene alta (verde), media (naranja) o baja (rojo
     var sections = document.querySelectorAll('.story-section[data-panel]');
     var panelOds = document.getElementById('panel-ods');
     var panelMap = document.getElementById('panel-map');
+    var panelAcc = document.getElementById('panel-accesibilidad');
     if (!sections.length || !panelOds || !panelMap) return;
 
     function showPanel(name) {
       panelOds.classList.toggle('active', name === 'ods');
       panelMap.classList.toggle('active', name === 'map');
+      if (panelAcc) {
+        panelAcc.classList.toggle('active', name === 'accesibilidad');
+        if (name === 'accesibilidad' && typeof window._accOnActive === 'function') {
+          window._accOnActive();
+        }
+      }
     }
 
     // Panel inicial

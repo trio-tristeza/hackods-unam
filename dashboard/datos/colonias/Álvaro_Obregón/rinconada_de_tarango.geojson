@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "rinconada_de_tarango",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "clavegeo": "0901000012292035", "clasificacion": "Bajo" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -99.221942230416275, 19.362727660410748 ], [ -99.221447999695243, 19.36191105039347 ], [ -99.221837629769155, 19.36178912011172 ], [ -99.22228837951576, 19.362554080345678 ], [ -99.221942230416275, 19.362727660410748 ] ] ] } }
+]
+}

@@ -1,0 +1,6114 @@
+[
+  {
+    "nombre": "Azcapotzalco",
+    "carpeta": "Azcapotzalco",
+    "colonias": [
+      {
+        "nombre": "Aguilera",
+        "archivo": "aguilera.geojson"
+      },
+      {
+        "nombre": "Aldana",
+        "archivo": "aldana.geojson"
+      },
+      {
+        "nombre": "Ampliacion Cosmopolita",
+        "archivo": "ampliacion_cosmopolita.geojson"
+      },
+      {
+        "nombre": "Ampliacion Del Gas",
+        "archivo": "ampliacion_del_gas.geojson"
+      },
+      {
+        "nombre": "Ampliacion Petrolera",
+        "archivo": "ampliacion_petrolera.geojson"
+      },
+      {
+        "nombre": "Ampliacion San Pedro Xalpa",
+        "archivo": "ampliacion_san_pedro_xalpa.geojson"
+      },
+      {
+        "nombre": "Angel Zimbron",
+        "archivo": "angel_zimbron.geojson"
+      },
+      {
+        "nombre": "Arenal",
+        "archivo": "arenal.geojson"
+      },
+      {
+        "nombre": "Barrio Coltongo",
+        "archivo": "barrio_coltongo.geojson"
+      },
+      {
+        "nombre": "Barrio Huautla De Las Salinas",
+        "archivo": "barrio_huautla_de_las_salinas.geojson"
+      },
+      {
+        "nombre": "Barrio Los Reyes",
+        "archivo": "barrio_los_reyes.geojson"
+      },
+      {
+        "nombre": "Barrio Nextengo",
+        "archivo": "barrio_nextengo.geojson"
+      },
+      {
+        "nombre": "Barrio San Andres",
+        "archivo": "barrio_san_andres.geojson"
+      },
+      {
+        "nombre": "Barrio San Bernabe",
+        "archivo": "barrio_san_bernabe.geojson"
+      },
+      {
+        "nombre": "Barrio San Marcos",
+        "archivo": "barrio_san_marcos.geojson"
+      },
+      {
+        "nombre": "Barrio San Mateo",
+        "archivo": "barrio_san_mateo.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Apolonia",
+        "archivo": "barrio_santa_apolonia.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Lucia",
+        "archivo": "barrio_santa_lucia.geojson"
+      },
+      {
+        "nombre": "Centro De Azcapotzalco",
+        "archivo": "centro_de_azcapotzalco.geojson"
+      },
+      {
+        "nombre": "Claveria",
+        "archivo": "claveria.geojson"
+      },
+      {
+        "nombre": "Coltongo",
+        "archivo": "coltongo.geojson"
+      },
+      {
+        "nombre": "Cosmopolita",
+        "archivo": "cosmopolita.geojson"
+      },
+      {
+        "nombre": "Del Gas",
+        "archivo": "del_gas.geojson"
+      },
+      {
+        "nombre": "Del Maestro",
+        "archivo": "del_maestro.geojson"
+      },
+      {
+        "nombre": "Del Recreo",
+        "archivo": "del_recreo.geojson"
+      },
+      {
+        "nombre": "El Jaguey",
+        "archivo": "el_jaguey.geojson"
+      },
+      {
+        "nombre": "El Rosario",
+        "archivo": "el_rosario.geojson"
+      },
+      {
+        "nombre": "Estacion Pantaco",
+        "archivo": "estacion_pantaco.geojson"
+      },
+      {
+        "nombre": "Euzkadi",
+        "archivo": "euzkadi.geojson"
+      },
+      {
+        "nombre": "Ex-Hacienda El Rosario",
+        "archivo": "ex-hacienda_el_rosario.geojson"
+      },
+      {
+        "nombre": "Ferreria",
+        "archivo": "ferreria.geojson"
+      },
+      {
+        "nombre": "Ignacio Allende",
+        "archivo": "ignacio_allende.geojson"
+      },
+      {
+        "nombre": "Industrial San Antonio",
+        "archivo": "industrial_san_antonio.geojson"
+      },
+      {
+        "nombre": "Industrial Vallejo",
+        "archivo": "industrial_vallejo.geojson"
+      },
+      {
+        "nombre": "Jardin Azpeitia",
+        "archivo": "jardin_azpeitia.geojson"
+      },
+      {
+        "nombre": "La Preciosa",
+        "archivo": "la_preciosa.geojson"
+      },
+      {
+        "nombre": "La Raza",
+        "archivo": "la_raza.geojson"
+      },
+      {
+        "nombre": "Las Salinas",
+        "archivo": "las_salinas.geojson"
+      },
+      {
+        "nombre": "Liberacion",
+        "archivo": "liberacion.geojson"
+      },
+      {
+        "nombre": "Libertad",
+        "archivo": "libertad.geojson"
+      },
+      {
+        "nombre": "Monte Alto",
+        "archivo": "monte_alto.geojson"
+      },
+      {
+        "nombre": "Nueva El Rosario",
+        "archivo": "nueva_el_rosario.geojson"
+      },
+      {
+        "nombre": "Nueva España",
+        "archivo": "nueva_espana.geojson"
+      },
+      {
+        "nombre": "Nueva Santa Maria",
+        "archivo": "nueva_santa_maria.geojson"
+      },
+      {
+        "nombre": "Nuevo Barrio San Rafael",
+        "archivo": "nuevo_barrio_san_rafael.geojson"
+      },
+      {
+        "nombre": "Obrero Popular",
+        "archivo": "obrero_popular.geojson"
+      },
+      {
+        "nombre": "Pasteros",
+        "archivo": "pasteros.geojson"
+      },
+      {
+        "nombre": "Patrimonio Familiar",
+        "archivo": "patrimonio_familiar.geojson"
+      },
+      {
+        "nombre": "Petrolera",
+        "archivo": "petrolera.geojson"
+      },
+      {
+        "nombre": "Plenitud",
+        "archivo": "plenitud.geojson"
+      },
+      {
+        "nombre": "Porvenir",
+        "archivo": "porvenir.geojson"
+      },
+      {
+        "nombre": "Potrero Del Llano",
+        "archivo": "potrero_del_llano.geojson"
+      },
+      {
+        "nombre": "Prados Del Rosario",
+        "archivo": "prados_del_rosario.geojson"
+      },
+      {
+        "nombre": "Pro Hogar",
+        "archivo": "pro_hogar.geojson"
+      },
+      {
+        "nombre": "Providencia",
+        "archivo": "providencia.geojson"
+      },
+      {
+        "nombre": "Pueblo San Andres",
+        "archivo": "pueblo_san_andres.geojson"
+      },
+      {
+        "nombre": "Pueblo San Andres De Las Salinas",
+        "archivo": "pueblo_san_andres_de_las_salinas.geojson"
+      },
+      {
+        "nombre": "Pueblo San Bartolo Cahualtongo",
+        "archivo": "pueblo_san_bartolo_cahualtongo.geojson"
+      },
+      {
+        "nombre": "Pueblo San Francisco Tetecala",
+        "archivo": "pueblo_san_francisco_tetecala.geojson"
+      },
+      {
+        "nombre": "Pueblo San Francisco Xocotitla",
+        "archivo": "pueblo_san_francisco_xocotitla.geojson"
+      },
+      {
+        "nombre": "Pueblo San Juan Tlihuaca",
+        "archivo": "pueblo_san_juan_tlihuaca.geojson"
+      },
+      {
+        "nombre": "Pueblo San Martin Xochinahuac",
+        "archivo": "pueblo_san_martin_xochinahuac.geojson"
+      },
+      {
+        "nombre": "Pueblo San Miguel Amantla",
+        "archivo": "pueblo_san_miguel_amantla.geojson"
+      },
+      {
+        "nombre": "Pueblo San Pedro Xalpa",
+        "archivo": "pueblo_san_pedro_xalpa.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Barbara",
+        "archivo": "pueblo_santa_barbara.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Catarina",
+        "archivo": "pueblo_santa_catarina.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Cruz Acayucan",
+        "archivo": "pueblo_santa_cruz_acayucan.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Maria Malinalco",
+        "archivo": "pueblo_santa_maria_malinalco.geojson"
+      },
+      {
+        "nombre": "Pueblo Santiago Ahuizotla",
+        "archivo": "pueblo_santiago_ahuizotla.geojson"
+      },
+      {
+        "nombre": "Pueblo Santo Domingo",
+        "archivo": "pueblo_santo_domingo.geojson"
+      },
+      {
+        "nombre": "Reynosa Tamaulipas",
+        "archivo": "reynosa_tamaulipas.geojson"
+      },
+      {
+        "nombre": "San Alvaro",
+        "archivo": "san_alvaro.geojson"
+      },
+      {
+        "nombre": "San Antonio",
+        "archivo": "san_antonio.geojson"
+      },
+      {
+        "nombre": "San Rafael",
+        "archivo": "san_rafael.geojson"
+      },
+      {
+        "nombre": "San Salvador Xochimanca",
+        "archivo": "san_salvador_xochimanca.geojson"
+      },
+      {
+        "nombre": "San Sebastian",
+        "archivo": "san_sebastian.geojson"
+      },
+      {
+        "nombre": "Santa Cruz De Las Salinas",
+        "archivo": "santa_cruz_de_las_salinas.geojson"
+      },
+      {
+        "nombre": "Santa Ines",
+        "archivo": "santa_ines.geojson"
+      },
+      {
+        "nombre": "Santo Tomas",
+        "archivo": "santo_tomas.geojson"
+      },
+      {
+        "nombre": "Sector Naval",
+        "archivo": "sector_naval.geojson"
+      },
+      {
+        "nombre": "Sindicato Mexicano De Electricistas",
+        "archivo": "sindicato_mexicano_de_electricistas.geojson"
+      },
+      {
+        "nombre": "Tezozomoc",
+        "archivo": "tezozomoc.geojson"
+      },
+      {
+        "nombre": "Tierra Nueva",
+        "archivo": "tierra_nueva.geojson"
+      },
+      {
+        "nombre": "Tlatilco",
+        "archivo": "tlatilco.geojson"
+      },
+      {
+        "nombre": "Trabajadores De Hierro",
+        "archivo": "trabajadores_de_hierro.geojson"
+      },
+      {
+        "nombre": "Un Hogar Para Cada Trabajador",
+        "archivo": "un_hogar_para_cada_trabajador.geojson"
+      },
+      {
+        "nombre": "Unidad Cuitlahuac",
+        "archivo": "unidad_cuitlahuac.geojson"
+      },
+      {
+        "nombre": "Victoria De Las Democracias",
+        "archivo": "victoria_de_las_democracias.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Benito Juárez",
+    "carpeta": "Benito_Juárez",
+    "colonias": [
+      {
+        "nombre": "8 De Agosto",
+        "archivo": "8_de_agosto.geojson"
+      },
+      {
+        "nombre": "Acacias",
+        "archivo": "acacias.geojson"
+      },
+      {
+        "nombre": "Actipan",
+        "archivo": "actipan.geojson"
+      },
+      {
+        "nombre": "Alamos",
+        "archivo": "alamos.geojson"
+      },
+      {
+        "nombre": "Albert",
+        "archivo": "albert.geojson"
+      },
+      {
+        "nombre": "Americas Unidas",
+        "archivo": "americas_unidas.geojson"
+      },
+      {
+        "nombre": "Ampliacion Napoles",
+        "archivo": "ampliacion_napoles.geojson"
+      },
+      {
+        "nombre": "Atenor Salas",
+        "archivo": "atenor_salas.geojson"
+      },
+      {
+        "nombre": "Ciudad De Los Deportes",
+        "archivo": "ciudad_de_los_deportes.geojson"
+      },
+      {
+        "nombre": "Credito Constructor",
+        "archivo": "credito_constructor.geojson"
+      },
+      {
+        "nombre": "Del Carmen",
+        "archivo": "del_carmen.geojson"
+      },
+      {
+        "nombre": "Del Lago",
+        "archivo": "del_lago.geojson"
+      },
+      {
+        "nombre": "Del Valle Centro",
+        "archivo": "del_valle_centro.geojson"
+      },
+      {
+        "nombre": "Del Valle Norte",
+        "archivo": "del_valle_norte.geojson"
+      },
+      {
+        "nombre": "Del Valle Sur",
+        "archivo": "del_valle_sur.geojson"
+      },
+      {
+        "nombre": "Ermita",
+        "archivo": "ermita.geojson"
+      },
+      {
+        "nombre": "Extremadura Insurgentes",
+        "archivo": "extremadura_insurgentes.geojson"
+      },
+      {
+        "nombre": "General Pedro Ma Anaya",
+        "archivo": "general_pedro_ma_anaya.geojson"
+      },
+      {
+        "nombre": "Independencia",
+        "archivo": "independencia.geojson"
+      },
+      {
+        "nombre": "Insurgentes Mixcoac",
+        "archivo": "insurgentes_mixcoac.geojson"
+      },
+      {
+        "nombre": "Insurgentes San Borja",
+        "archivo": "insurgentes_san_borja.geojson"
+      },
+      {
+        "nombre": "Iztaccihuatl",
+        "archivo": "iztaccihuatl.geojson"
+      },
+      {
+        "nombre": "Josefa Ortiz De Dominguez",
+        "archivo": "josefa_ortiz_de_dominguez.geojson"
+      },
+      {
+        "nombre": "Letran Valle",
+        "archivo": "letran_valle.geojson"
+      },
+      {
+        "nombre": "Merced Gomez",
+        "archivo": "merced_gomez.geojson"
+      },
+      {
+        "nombre": "Miguel Aleman",
+        "archivo": "miguel_aleman.geojson"
+      },
+      {
+        "nombre": "Miravalle",
+        "archivo": "miravalle.geojson"
+      },
+      {
+        "nombre": "Mixcoac",
+        "archivo": "mixcoac.geojson"
+      },
+      {
+        "nombre": "Moderna",
+        "archivo": "moderna.geojson"
+      },
+      {
+        "nombre": "Napoles",
+        "archivo": "napoles.geojson"
+      },
+      {
+        "nombre": "Narvarte Oriente",
+        "archivo": "narvarte_oriente.geojson"
+      },
+      {
+        "nombre": "Narvarte Poniente",
+        "archivo": "narvarte_poniente.geojson"
+      },
+      {
+        "nombre": "Nativitas",
+        "archivo": "nativitas.geojson"
+      },
+      {
+        "nombre": "Niños Heroes",
+        "archivo": "ninos_heroes.geojson"
+      },
+      {
+        "nombre": "Noche Buena",
+        "archivo": "noche_buena.geojson"
+      },
+      {
+        "nombre": "Periodista",
+        "archivo": "periodista.geojson"
+      },
+      {
+        "nombre": "Piedad Narvarte",
+        "archivo": "piedad_narvarte.geojson"
+      },
+      {
+        "nombre": "Portales Norte",
+        "archivo": "portales_norte.geojson"
+      },
+      {
+        "nombre": "Portales Oriente",
+        "archivo": "portales_oriente.geojson"
+      },
+      {
+        "nombre": "Portales Sur",
+        "archivo": "portales_sur.geojson"
+      },
+      {
+        "nombre": "Postal",
+        "archivo": "postal.geojson"
+      },
+      {
+        "nombre": "Residencial Emperadores",
+        "archivo": "residencial_emperadores.geojson"
+      },
+      {
+        "nombre": "San Jose Insurgentes",
+        "archivo": "san_jose_insurgentes.geojson"
+      },
+      {
+        "nombre": "San Juan",
+        "archivo": "san_juan.geojson"
+      },
+      {
+        "nombre": "San Pedro De Los Pinos",
+        "archivo": "san_pedro_de_los_pinos.geojson"
+      },
+      {
+        "nombre": "San Simon Ticumac",
+        "archivo": "san_simon_ticumac.geojson"
+      },
+      {
+        "nombre": "Santa Cruz Atoyac",
+        "archivo": "santa_cruz_atoyac.geojson"
+      },
+      {
+        "nombre": "Santa Maria Nonoalco",
+        "archivo": "santa_maria_nonoalco.geojson"
+      },
+      {
+        "nombre": "Tlacoquemecatl",
+        "archivo": "tlacoquemecatl.geojson"
+      },
+      {
+        "nombre": "Vertiz Narvarte",
+        "archivo": "vertiz_narvarte.geojson"
+      },
+      {
+        "nombre": "Villa De Cortes",
+        "archivo": "villa_de_cortes.geojson"
+      },
+      {
+        "nombre": "Xoco",
+        "archivo": "xoco.geojson"
+      },
+      {
+        "nombre": "Zacahuitzco",
+        "archivo": "zacahuitzco.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Coyoacán",
+    "carpeta": "Coyoacán",
+    "colonias": [
+      {
+        "nombre": "Adolfo Ruiz Cortinez",
+        "archivo": "adolfo_ruiz_cortinez.geojson"
+      },
+      {
+        "nombre": "Ajusco",
+        "archivo": "ajusco.geojson"
+      },
+      {
+        "nombre": "Alianza Popular Revolucionaria",
+        "archivo": "alianza_popular_revolucionaria.geojson"
+      },
+      {
+        "nombre": "Atlantida",
+        "archivo": "atlantida.geojson"
+      },
+      {
+        "nombre": "Avante",
+        "archivo": "avante.geojson"
+      },
+      {
+        "nombre": "Barrio Del Niño Jesus",
+        "archivo": "barrio_del_nino_jesus.geojson"
+      },
+      {
+        "nombre": "Barrio La Concepcion",
+        "archivo": "barrio_la_concepcion.geojson"
+      },
+      {
+        "nombre": "Barrio Oxtopulco Universidad",
+        "archivo": "barrio_oxtopulco_universidad.geojson"
+      },
+      {
+        "nombre": "Barrio San Lucas",
+        "archivo": "barrio_san_lucas.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Catarina",
+        "archivo": "barrio_santa_catarina.geojson"
+      },
+      {
+        "nombre": "Bosques De Tetlameya",
+        "archivo": "bosques_de_tetlameya.geojson"
+      },
+      {
+        "nombre": "Cafetales",
+        "archivo": "cafetales.geojson"
+      },
+      {
+        "nombre": "Campestre Churubusco",
+        "archivo": "campestre_churubusco.geojson"
+      },
+      {
+        "nombre": "Campestre Coyoacan",
+        "archivo": "campestre_coyoacan.geojson"
+      },
+      {
+        "nombre": "Cantil Del Pedregal",
+        "archivo": "cantil_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Carmen Serdan",
+        "archivo": "carmen_serdan.geojson"
+      },
+      {
+        "nombre": "Churubusco Country Club",
+        "archivo": "churubusco_country_club.geojson"
+      },
+      {
+        "nombre": "Ciudad Jardin",
+        "archivo": "ciudad_jardin.geojson"
+      },
+      {
+        "nombre": "Ciudad Universitaria",
+        "archivo": "ciudad_universitaria.geojson"
+      },
+      {
+        "nombre": "Copilco El Alto",
+        "archivo": "copilco_el_alto.geojson"
+      },
+      {
+        "nombre": "Copilco El Bajo",
+        "archivo": "copilco_el_bajo.geojson"
+      },
+      {
+        "nombre": "Copilco Universidad",
+        "archivo": "copilco_universidad.geojson"
+      },
+      {
+        "nombre": "Cuadrante De San Francisco",
+        "archivo": "cuadrante_de_san_francisco.geojson"
+      },
+      {
+        "nombre": "Culhuacan C.t.m. Secciën X",
+        "archivo": "culhuacan_ctm_seccien_x.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Canal Nacional",
+        "archivo": "culhuacan_ctm_canal_nacional.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Croc",
+        "archivo": "culhuacan_ctm_croc.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion  I",
+        "archivo": "culhuacan_ctm_seccion__i.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion  Ii",
+        "archivo": "culhuacan_ctm_seccion__ii.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion Iii",
+        "archivo": "culhuacan_ctm_seccion_iii.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion Ix-A",
+        "archivo": "culhuacan_ctm_seccion_ix-a.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion Ix-B",
+        "archivo": "culhuacan_ctm_seccion_ix-b.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion Piloto",
+        "archivo": "culhuacan_ctm_seccion_piloto.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion V",
+        "archivo": "culhuacan_ctm_seccion_v.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion Vi",
+        "archivo": "culhuacan_ctm_seccion_vi.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion Vii",
+        "archivo": "culhuacan_ctm_seccion_vii.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion Viii",
+        "archivo": "culhuacan_ctm_seccion_viii.geojson"
+      },
+      {
+        "nombre": "Culhuacan Ctm Seccion X-A",
+        "archivo": "culhuacan_ctm_seccion_x-a.geojson"
+      },
+      {
+        "nombre": "Del Carmen",
+        "archivo": "del_carmen.geojson"
+      },
+      {
+        "nombre": "Educacion",
+        "archivo": "educacion.geojson"
+      },
+      {
+        "nombre": "El Caracol",
+        "archivo": "el_caracol.geojson"
+      },
+      {
+        "nombre": "El Centinela",
+        "archivo": "el_centinela.geojson"
+      },
+      {
+        "nombre": "El Mirador",
+        "archivo": "el_mirador.geojson"
+      },
+      {
+        "nombre": "El Parque De Coyoacan",
+        "archivo": "el_parque_de_coyoacan.geojson"
+      },
+      {
+        "nombre": "El Reloj",
+        "archivo": "el_reloj.geojson"
+      },
+      {
+        "nombre": "El Rosario",
+        "archivo": "el_rosario.geojson"
+      },
+      {
+        "nombre": "El Rosedal",
+        "archivo": "el_rosedal.geojson"
+      },
+      {
+        "nombre": "Emiliano Zapata",
+        "archivo": "emiliano_zapata.geojson"
+      },
+      {
+        "nombre": "Emiliano Zapata Fraccionamiento Popular",
+        "archivo": "emiliano_zapata_fraccionamiento_popular.geojson"
+      },
+      {
+        "nombre": "Espartaco",
+        "archivo": "espartaco.geojson"
+      },
+      {
+        "nombre": "Ex Ejido San Pablo Tepetlapa",
+        "archivo": "ex_ejido_san_pablo_tepetlapa.geojson"
+      },
+      {
+        "nombre": "Ex Hacienda Coapa",
+        "archivo": "ex_hacienda_coapa.geojson"
+      },
+      {
+        "nombre": "Ex-Ejido De San Francisco Culhuacan",
+        "archivo": "ex-ejido_de_san_francisco_culhuacan.geojson"
+      },
+      {
+        "nombre": "Haciendas De Coyoacan",
+        "archivo": "haciendas_de_coyoacan.geojson"
+      },
+      {
+        "nombre": "Hermosillo",
+        "archivo": "hermosillo.geojson"
+      },
+      {
+        "nombre": "Huayamilpas",
+        "archivo": "huayamilpas.geojson"
+      },
+      {
+        "nombre": "Insurgentes Cuicuilco",
+        "archivo": "insurgentes_cuicuilco.geojson"
+      },
+      {
+        "nombre": "Jardines De Coyoacan",
+        "archivo": "jardines_de_coyoacan.geojson"
+      },
+      {
+        "nombre": "Jardines Del Pedregal De San Angel",
+        "archivo": "jardines_del_pedregal_de_san_angel.geojson"
+      },
+      {
+        "nombre": "Joyas Del Pedregal",
+        "archivo": "joyas_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Las Campanas",
+        "archivo": "las_campanas.geojson"
+      },
+      {
+        "nombre": "Los Cedros",
+        "archivo": "los_cedros.geojson"
+      },
+      {
+        "nombre": "Los Cipreses",
+        "archivo": "los_cipreses.geojson"
+      },
+      {
+        "nombre": "Los Girasoles",
+        "archivo": "los_girasoles.geojson"
+      },
+      {
+        "nombre": "Los Olivos",
+        "archivo": "los_olivos.geojson"
+      },
+      {
+        "nombre": "Los Sauces",
+        "archivo": "los_sauces.geojson"
+      },
+      {
+        "nombre": "Nueva Diaz Ordaz",
+        "archivo": "nueva_diaz_ordaz.geojson"
+      },
+      {
+        "nombre": "Olimpica",
+        "archivo": "olimpica.geojson"
+      },
+      {
+        "nombre": "Parque San Andres",
+        "archivo": "parque_san_andres.geojson"
+      },
+      {
+        "nombre": "Paseos De Taxqueña",
+        "archivo": "paseos_de_taxquena.geojson"
+      },
+      {
+        "nombre": "Pedregal De Carrasco",
+        "archivo": "pedregal_de_carrasco.geojson"
+      },
+      {
+        "nombre": "Pedregal De Santa Ursula",
+        "archivo": "pedregal_de_santa_ursula.geojson"
+      },
+      {
+        "nombre": "Pedregal De Santo Domingo",
+        "archivo": "pedregal_de_santo_domingo.geojson"
+      },
+      {
+        "nombre": "Pedregal De Sn Francisco",
+        "archivo": "pedregal_de_sn_francisco.geojson"
+      },
+      {
+        "nombre": "Petrolera Taxqueña",
+        "archivo": "petrolera_taxquena.geojson"
+      },
+      {
+        "nombre": "Prado Churubusco",
+        "archivo": "prado_churubusco.geojson"
+      },
+      {
+        "nombre": "Prados De Coyoacan",
+        "archivo": "prados_de_coyoacan.geojson"
+      },
+      {
+        "nombre": "Presidentes Ejidales 1a Seccion",
+        "archivo": "presidentes_ejidales_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Presidentes Ejidales 2a Seccion",
+        "archivo": "presidentes_ejidales_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Pueblo De Los Reyes",
+        "archivo": "pueblo_de_los_reyes.geojson"
+      },
+      {
+        "nombre": "Pueblo De Santa Ursula Coapa",
+        "archivo": "pueblo_de_santa_ursula_coapa.geojson"
+      },
+      {
+        "nombre": "Pueblo La Candelaria",
+        "archivo": "pueblo_la_candelaria.geojson"
+      },
+      {
+        "nombre": "Pueblo San Pablo Tepetlapa",
+        "archivo": "pueblo_san_pablo_tepetlapa.geojson"
+      },
+      {
+        "nombre": "Romero De Terreros",
+        "archivo": "romero_de_terreros.geojson"
+      },
+      {
+        "nombre": "San Diego Churubusco",
+        "archivo": "san_diego_churubusco.geojson"
+      },
+      {
+        "nombre": "San Francisco Culhuacan Barrio De La Magdalena",
+        "archivo": "san_francisco_culhuacan_barrio_de_la_magdalena.geojson"
+      },
+      {
+        "nombre": "San Francisco Culhuacan Barrio De San Francisco",
+        "archivo": "san_francisco_culhuacan_barrio_de_san_francisco.geojson"
+      },
+      {
+        "nombre": "San Francisco Culhuacan Barrio De San Juan",
+        "archivo": "san_francisco_culhuacan_barrio_de_san_juan.geojson"
+      },
+      {
+        "nombre": "San Francisco Culhuacan Barrio De Santa Ana",
+        "archivo": "san_francisco_culhuacan_barrio_de_santa_ana.geojson"
+      },
+      {
+        "nombre": "San Mateo",
+        "archivo": "san_mateo.geojson"
+      },
+      {
+        "nombre": "Santa Cecilia",
+        "archivo": "santa_cecilia.geojson"
+      },
+      {
+        "nombre": "Viejo Ejido Santa Ursula Coapa",
+        "archivo": "viejo_ejido_santa_ursula_coapa.geojson"
+      },
+      {
+        "nombre": "Villa Coyoacan",
+        "archivo": "villa_coyoacan.geojson"
+      },
+      {
+        "nombre": "Villa Quietud",
+        "archivo": "villa_quietud.geojson"
+      },
+      {
+        "nombre": "Xotepingo",
+        "archivo": "xotepingo.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Cuajimalpa de Morelos",
+    "carpeta": "Cuajimalpa_de_Morelos",
+    "colonias": [
+      {
+        "nombre": "1ro De Mayo",
+        "archivo": "1ro_de_mayo.geojson"
+      },
+      {
+        "nombre": "Abdias Garcia Soto",
+        "archivo": "abdias_garcia_soto.geojson"
+      },
+      {
+        "nombre": "Adolfo Lopez Mateos",
+        "archivo": "adolfo_lopez_mateos.geojson"
+      },
+      {
+        "nombre": "Agua Bendita",
+        "archivo": "agua_bendita.geojson"
+      },
+      {
+        "nombre": "Ahuatenco",
+        "archivo": "ahuatenco.geojson"
+      },
+      {
+        "nombre": "Ampliacion Memetla",
+        "archivo": "ampliacion_memetla.geojson"
+      },
+      {
+        "nombre": "Bosques De Las Lomas",
+        "archivo": "bosques_de_las_lomas.geojson"
+      },
+      {
+        "nombre": "Campestre Palo Alto",
+        "archivo": "campestre_palo_alto.geojson"
+      },
+      {
+        "nombre": "Contadero",
+        "archivo": "contadero.geojson"
+      },
+      {
+        "nombre": "Cooperativa Palo Alto",
+        "archivo": "cooperativa_palo_alto.geojson"
+      },
+      {
+        "nombre": "Cruz Blanca",
+        "archivo": "cruz_blanca.geojson"
+      },
+      {
+        "nombre": "Cuajimalpa",
+        "archivo": "cuajimalpa.geojson"
+      },
+      {
+        "nombre": "El Ebano",
+        "archivo": "el_ebano.geojson"
+      },
+      {
+        "nombre": "El Molinito",
+        "archivo": "el_molinito.geojson"
+      },
+      {
+        "nombre": "El Molino",
+        "archivo": "el_molino.geojson"
+      },
+      {
+        "nombre": "El Tianguillo",
+        "archivo": "el_tianguillo.geojson"
+      },
+      {
+        "nombre": "El Yaqui",
+        "archivo": "el_yaqui.geojson"
+      },
+      {
+        "nombre": "Granjas Navidad",
+        "archivo": "granjas_navidad.geojson"
+      },
+      {
+        "nombre": "Granjas Palo Alto",
+        "archivo": "granjas_palo_alto.geojson"
+      },
+      {
+        "nombre": "Jesus Del Monte",
+        "archivo": "jesus_del_monte.geojson"
+      },
+      {
+        "nombre": "La Manzanita",
+        "archivo": "la_manzanita.geojson"
+      },
+      {
+        "nombre": "La Pila",
+        "archivo": "la_pila.geojson"
+      },
+      {
+        "nombre": "Las Lajas",
+        "archivo": "las_lajas.geojson"
+      },
+      {
+        "nombre": "Las Maromas",
+        "archivo": "las_maromas.geojson"
+      },
+      {
+        "nombre": "Las Tinajas",
+        "archivo": "las_tinajas.geojson"
+      },
+      {
+        "nombre": "Locaxco",
+        "archivo": "locaxco.geojson"
+      },
+      {
+        "nombre": "Loma Del Padre",
+        "archivo": "loma_del_padre.geojson"
+      },
+      {
+        "nombre": "Lomas De Memetla",
+        "archivo": "lomas_de_memetla.geojson"
+      },
+      {
+        "nombre": "Lomas De Sn Pedro",
+        "archivo": "lomas_de_sn_pedro.geojson"
+      },
+      {
+        "nombre": "Lomas De Vista Hermosa",
+        "archivo": "lomas_de_vista_hermosa.geojson"
+      },
+      {
+        "nombre": "Manzanastitla",
+        "archivo": "manzanastitla.geojson"
+      },
+      {
+        "nombre": "Memetla",
+        "archivo": "memetla.geojson"
+      },
+      {
+        "nombre": "Pueblo San Lorenzo Acopilco",
+        "archivo": "pueblo_san_lorenzo_acopilco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Mateo Tlaltenango",
+        "archivo": "pueblo_san_mateo_tlaltenango.geojson"
+      },
+      {
+        "nombre": "Pueblo San Pablo Chimalpa",
+        "archivo": "pueblo_san_pablo_chimalpa.geojson"
+      },
+      {
+        "nombre": "San Jose De Los Cedros",
+        "archivo": "san_jose_de_los_cedros.geojson"
+      },
+      {
+        "nombre": "San Pedro",
+        "archivo": "san_pedro.geojson"
+      },
+      {
+        "nombre": "Santa Fe Cuajimalpa",
+        "archivo": "santa_fe_cuajimalpa.geojson"
+      },
+      {
+        "nombre": "Tepetongo",
+        "archivo": "tepetongo.geojson"
+      },
+      {
+        "nombre": "Xalpa",
+        "archivo": "xalpa.geojson"
+      },
+      {
+        "nombre": "Zacamulpa",
+        "archivo": "zacamulpa.geojson"
+      },
+      {
+        "nombre": "Zentlapatl",
+        "archivo": "zentlapatl.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Cuauhtémoc",
+    "carpeta": "Cuauhtémoc",
+    "colonias": [
+      {
+        "nombre": "Algarin",
+        "archivo": "algarin.geojson"
+      },
+      {
+        "nombre": "Ampl. Asturias",
+        "archivo": "ampl_asturias.geojson"
+      },
+      {
+        "nombre": "Asturias",
+        "archivo": "asturias.geojson"
+      },
+      {
+        "nombre": "Atlampa",
+        "archivo": "atlampa.geojson"
+      },
+      {
+        "nombre": "Buenavista",
+        "archivo": "buenavista.geojson"
+      },
+      {
+        "nombre": "Buenos Aires",
+        "archivo": "buenos_aires.geojson"
+      },
+      {
+        "nombre": "Centro",
+        "archivo": "centro.geojson"
+      },
+      {
+        "nombre": "Condesa",
+        "archivo": "condesa.geojson"
+      },
+      {
+        "nombre": "Cuauhtemoc",
+        "archivo": "cuauhtemoc.geojson"
+      },
+      {
+        "nombre": "Doctores",
+        "archivo": "doctores.geojson"
+      },
+      {
+        "nombre": "Esperanza",
+        "archivo": "esperanza.geojson"
+      },
+      {
+        "nombre": "Ex Hipodromo De Peralvillo",
+        "archivo": "ex_hipodromo_de_peralvillo.geojson"
+      },
+      {
+        "nombre": "Felipe Pescador",
+        "archivo": "felipe_pescador.geojson"
+      },
+      {
+        "nombre": "Guerrero",
+        "archivo": "guerrero.geojson"
+      },
+      {
+        "nombre": "Hipodromo",
+        "archivo": "hipodromo.geojson"
+      },
+      {
+        "nombre": "Hipodromo Condesa",
+        "archivo": "hipodromo_condesa.geojson"
+      },
+      {
+        "nombre": "Juarez",
+        "archivo": "juarez.geojson"
+      },
+      {
+        "nombre": "Maza",
+        "archivo": "maza.geojson"
+      },
+      {
+        "nombre": "Morelos",
+        "archivo": "morelos.geojson"
+      },
+      {
+        "nombre": "Nonoalco Tlatelolco",
+        "archivo": "nonoalco_tlatelolco.geojson"
+      },
+      {
+        "nombre": "Obrera",
+        "archivo": "obrera.geojson"
+      },
+      {
+        "nombre": "Paulino Navarro",
+        "archivo": "paulino_navarro.geojson"
+      },
+      {
+        "nombre": "Peralvillo",
+        "archivo": "peralvillo.geojson"
+      },
+      {
+        "nombre": "Roma Norte",
+        "archivo": "roma_norte.geojson"
+      },
+      {
+        "nombre": "Roma Sur",
+        "archivo": "roma_sur.geojson"
+      },
+      {
+        "nombre": "San Rafael",
+        "archivo": "san_rafael.geojson"
+      },
+      {
+        "nombre": "San Simon Tolnahuac",
+        "archivo": "san_simon_tolnahuac.geojson"
+      },
+      {
+        "nombre": "Santa Maria Insurgentes",
+        "archivo": "santa_maria_insurgentes.geojson"
+      },
+      {
+        "nombre": "Santa Maria La Ribera",
+        "archivo": "santa_maria_la_ribera.geojson"
+      },
+      {
+        "nombre": "Tabacalera",
+        "archivo": "tabacalera.geojson"
+      },
+      {
+        "nombre": "Transito",
+        "archivo": "transito.geojson"
+      },
+      {
+        "nombre": "Valle Gomez",
+        "archivo": "valle_gomez.geojson"
+      },
+      {
+        "nombre": "Vista Alegre",
+        "archivo": "vista_alegre.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Gustavo A. Madero",
+    "carpeta": "Gustavo_A._Madero",
+    "colonias": [
+      {
+        "nombre": "15 De Agosto",
+        "archivo": "15_de_agosto.geojson"
+      },
+      {
+        "nombre": "25 De Julio",
+        "archivo": "25_de_julio.geojson"
+      },
+      {
+        "nombre": "6 De Junio",
+        "archivo": "6_de_junio.geojson"
+      },
+      {
+        "nombre": "7 De Noviembre",
+        "archivo": "7_de_noviembre.geojson"
+      },
+      {
+        "nombre": "Acueducto De Guadalupe",
+        "archivo": "acueducto_de_guadalupe.geojson"
+      },
+      {
+        "nombre": "Ahuehuetes",
+        "archivo": "ahuehuetes.geojson"
+      },
+      {
+        "nombre": "Ampliacion Arboledas",
+        "archivo": "ampliacion_arboledas.geojson"
+      },
+      {
+        "nombre": "Ampliacion Benito Juarez",
+        "archivo": "ampliacion_benito_juarez.geojson"
+      },
+      {
+        "nombre": "Ampliacion Casas Aleman",
+        "archivo": "ampliacion_casas_aleman.geojson"
+      },
+      {
+        "nombre": "Ampliacion Castillo Grande",
+        "archivo": "ampliacion_castillo_grande.geojson"
+      },
+      {
+        "nombre": "Ampliacion Chalma De Guadalupe",
+        "archivo": "ampliacion_chalma_de_guadalupe.geojson"
+      },
+      {
+        "nombre": "Ampliacion Cocoyotes",
+        "archivo": "ampliacion_cocoyotes.geojson"
+      },
+      {
+        "nombre": "Ampliacion Emiliano Zapata",
+        "archivo": "ampliacion_emiliano_zapata.geojson"
+      },
+      {
+        "nombre": "Ampliacion Gabriel Hernandez",
+        "archivo": "ampliacion_gabriel_hernandez.geojson"
+      },
+      {
+        "nombre": "Ampliacion Guadalupe Proletaria",
+        "archivo": "ampliacion_guadalupe_proletaria.geojson"
+      },
+      {
+        "nombre": "Ampliacion Malacates",
+        "archivo": "ampliacion_malacates.geojson"
+      },
+      {
+        "nombre": "Ampliacion Martires De Rio Blanco",
+        "archivo": "ampliacion_martires_de_rio_blanco.geojson"
+      },
+      {
+        "nombre": "Ampliacion Panamericana",
+        "archivo": "ampliacion_panamericana.geojson"
+      },
+      {
+        "nombre": "Ampliacion Progreso Nacional",
+        "archivo": "ampliacion_progreso_nacional.geojson"
+      },
+      {
+        "nombre": "Ampliacion Providencia",
+        "archivo": "ampliacion_providencia.geojson"
+      },
+      {
+        "nombre": "Ampliacion San Juan De Aragon",
+        "archivo": "ampliacion_san_juan_de_aragon.geojson"
+      },
+      {
+        "nombre": "Aragon Inguaran",
+        "archivo": "aragon_inguaran.geojson"
+      },
+      {
+        "nombre": "Aragon La Villa",
+        "archivo": "aragon_la_villa.geojson"
+      },
+      {
+        "nombre": "Arboledas",
+        "archivo": "arboledas.geojson"
+      },
+      {
+        "nombre": "Barrio Candelaria Ticoman",
+        "archivo": "barrio_candelaria_ticoman.geojson"
+      },
+      {
+        "nombre": "Barrio Guadalupe Ticoman",
+        "archivo": "barrio_guadalupe_ticoman.geojson"
+      },
+      {
+        "nombre": "Barrio La Laguna Ticoman",
+        "archivo": "barrio_la_laguna_ticoman.geojson"
+      },
+      {
+        "nombre": "Barrio La Purisima Ticoman",
+        "archivo": "barrio_la_purisima_ticoman.geojson"
+      },
+      {
+        "nombre": "Barrio San Juan Y Guadalupe Ticoman",
+        "archivo": "barrio_san_juan_y_guadalupe_ticoman.geojson"
+      },
+      {
+        "nombre": "Barrio San Rafael Ticoman",
+        "archivo": "barrio_san_rafael_ticoman.geojson"
+      },
+      {
+        "nombre": "Belisario Dominguez",
+        "archivo": "belisario_dominguez.geojson"
+      },
+      {
+        "nombre": "Benito Juarez",
+        "archivo": "benito_juarez.geojson"
+      },
+      {
+        "nombre": "Bondojito",
+        "archivo": "bondojito.geojson"
+      },
+      {
+        "nombre": "C T M Aragon",
+        "archivo": "c_t_m_aragon.geojson"
+      },
+      {
+        "nombre": "C T M Atzacoalco",
+        "archivo": "c_t_m_atzacoalco.geojson"
+      },
+      {
+        "nombre": "C T M El Risco",
+        "archivo": "c_t_m_el_risco.geojson"
+      },
+      {
+        "nombre": "Campestre Aragon",
+        "archivo": "campestre_aragon.geojson"
+      },
+      {
+        "nombre": "Capultitlan",
+        "archivo": "capultitlan.geojson"
+      },
+      {
+        "nombre": "Castillo Chico",
+        "archivo": "castillo_chico.geojson"
+      },
+      {
+        "nombre": "Castillo Grande",
+        "archivo": "castillo_grande.geojson"
+      },
+      {
+        "nombre": "Cerro Del Guerrero",
+        "archivo": "cerro_del_guerrero.geojson"
+      },
+      {
+        "nombre": "Cerro Los Gachupines",
+        "archivo": "cerro_los_gachupines.geojson"
+      },
+      {
+        "nombre": "Chalma De Guadalupe",
+        "archivo": "chalma_de_guadalupe.geojson"
+      },
+      {
+        "nombre": "Churubusco Tepeyac",
+        "archivo": "churubusco_tepeyac.geojson"
+      },
+      {
+        "nombre": "Cocoyotes",
+        "archivo": "cocoyotes.geojson"
+      },
+      {
+        "nombre": "Compositores Mexicanos",
+        "archivo": "compositores_mexicanos.geojson"
+      },
+      {
+        "nombre": "Constitucion De La Republica",
+        "archivo": "constitucion_de_la_republica.geojson"
+      },
+      {
+        "nombre": "Cuautepec Barrio Alto",
+        "archivo": "cuautepec_barrio_alto.geojson"
+      },
+      {
+        "nombre": "Cuautepec De Madero",
+        "archivo": "cuautepec_de_madero.geojson"
+      },
+      {
+        "nombre": "Cuchilla Del Tesoro",
+        "archivo": "cuchilla_del_tesoro.geojson"
+      },
+      {
+        "nombre": "Cuchilla La Joya",
+        "archivo": "cuchilla_la_joya.geojson"
+      },
+      {
+        "nombre": "D M Nacional",
+        "archivo": "d_m_nacional.geojson"
+      },
+      {
+        "nombre": "Defensores De La Republica",
+        "archivo": "defensores_de_la_republica.geojson"
+      },
+      {
+        "nombre": "Del Bosque",
+        "archivo": "del_bosque.geojson"
+      },
+      {
+        "nombre": "Del Carmen",
+        "archivo": "del_carmen.geojson"
+      },
+      {
+        "nombre": "Del Obrero",
+        "archivo": "del_obrero.geojson"
+      },
+      {
+        "nombre": "Dinamita",
+        "archivo": "dinamita.geojson"
+      },
+      {
+        "nombre": "El Arbolillo",
+        "archivo": "el_arbolillo.geojson"
+      },
+      {
+        "nombre": "El Coyol",
+        "archivo": "el_coyol.geojson"
+      },
+      {
+        "nombre": "El Olivo",
+        "archivo": "el_olivo.geojson"
+      },
+      {
+        "nombre": "El Tepetatal",
+        "archivo": "el_tepetatal.geojson"
+      },
+      {
+        "nombre": "Emiliano Zapata",
+        "archivo": "emiliano_zapata.geojson"
+      },
+      {
+        "nombre": "Estanzuela",
+        "archivo": "estanzuela.geojson"
+      },
+      {
+        "nombre": "Estrella",
+        "archivo": "estrella.geojson"
+      },
+      {
+        "nombre": "Ex Ejido San Juan De Aragon Sector 32",
+        "archivo": "ex_ejido_san_juan_de_aragon_sector_32.geojson"
+      },
+      {
+        "nombre": "Ex Ejido San Juan De Aragon Sector 33",
+        "archivo": "ex_ejido_san_juan_de_aragon_sector_33.geojson"
+      },
+      {
+        "nombre": "Ex Escuela De Tiro",
+        "archivo": "ex_escuela_de_tiro.geojson"
+      },
+      {
+        "nombre": "Faja De Oro",
+        "archivo": "faja_de_oro.geojson"
+      },
+      {
+        "nombre": "Fernando Casas Aleman",
+        "archivo": "fernando_casas_aleman.geojson"
+      },
+      {
+        "nombre": "Ferrocarrilera",
+        "archivo": "ferrocarrilera.geojson"
+      },
+      {
+        "nombre": "Forestal",
+        "archivo": "forestal.geojson"
+      },
+      {
+        "nombre": "Forestal I",
+        "archivo": "forestal_i.geojson"
+      },
+      {
+        "nombre": "Forestal Ii",
+        "archivo": "forestal_ii.geojson"
+      },
+      {
+        "nombre": "Gabriel Hernandez",
+        "archivo": "gabriel_hernandez.geojson"
+      },
+      {
+        "nombre": "General Felipe Berriozabal",
+        "archivo": "general_felipe_berriozabal.geojson"
+      },
+      {
+        "nombre": "Gertrudis Sanchez 1a Seccion",
+        "archivo": "gertrudis_sanchez_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Gertrudis Sanchez 2a Seccion",
+        "archivo": "gertrudis_sanchez_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Gertrudis Sanchez 3a Seccion",
+        "archivo": "gertrudis_sanchez_3a_seccion.geojson"
+      },
+      {
+        "nombre": "Granjas Modernas",
+        "archivo": "granjas_modernas.geojson"
+      },
+      {
+        "nombre": "Guadalupe Insurgentes",
+        "archivo": "guadalupe_insurgentes.geojson"
+      },
+      {
+        "nombre": "Guadalupe Proletaria",
+        "archivo": "guadalupe_proletaria.geojson"
+      },
+      {
+        "nombre": "Guadalupe Tepeyac",
+        "archivo": "guadalupe_tepeyac.geojson"
+      },
+      {
+        "nombre": "Guadalupe Victoria",
+        "archivo": "guadalupe_victoria.geojson"
+      },
+      {
+        "nombre": "Guadalupe Victoria Cuautepec",
+        "archivo": "guadalupe_victoria_cuautepec.geojson"
+      },
+      {
+        "nombre": "Heroe De Nacozari",
+        "archivo": "heroe_de_nacozari.geojson"
+      },
+      {
+        "nombre": "Heroes De Cerro Prieto",
+        "archivo": "heroes_de_cerro_prieto.geojson"
+      },
+      {
+        "nombre": "Heroes De Chapultepec",
+        "archivo": "heroes_de_chapultepec.geojson"
+      },
+      {
+        "nombre": "Indeco",
+        "archivo": "indeco.geojson"
+      },
+      {
+        "nombre": "Industrial",
+        "archivo": "industrial.geojson"
+      },
+      {
+        "nombre": "Jorge Negrete",
+        "archivo": "jorge_negrete.geojson"
+      },
+      {
+        "nombre": "Juan Gonzalez Romero",
+        "archivo": "juan_gonzalez_romero.geojson"
+      },
+      {
+        "nombre": "Juventino Rosas",
+        "archivo": "juventino_rosas.geojson"
+      },
+      {
+        "nombre": "La Casilda",
+        "archivo": "la_casilda.geojson"
+      },
+      {
+        "nombre": "La Cruz",
+        "archivo": "la_cruz.geojson"
+      },
+      {
+        "nombre": "La Esmeralda",
+        "archivo": "la_esmeralda.geojson"
+      },
+      {
+        "nombre": "La Joya",
+        "archivo": "la_joya.geojson"
+      },
+      {
+        "nombre": "La Joyita",
+        "archivo": "la_joyita.geojson"
+      },
+      {
+        "nombre": "La Lengueta",
+        "archivo": "la_lengueta.geojson"
+      },
+      {
+        "nombre": "La Malinche",
+        "archivo": "la_malinche.geojson"
+      },
+      {
+        "nombre": "La Pastora",
+        "archivo": "la_pastora.geojson"
+      },
+      {
+        "nombre": "La Pradera",
+        "archivo": "la_pradera.geojson"
+      },
+      {
+        "nombre": "Li Legislatura",
+        "archivo": "li_legislatura.geojson"
+      },
+      {
+        "nombre": "Lindavista Norte",
+        "archivo": "lindavista_norte.geojson"
+      },
+      {
+        "nombre": "Lindavista Sur",
+        "archivo": "lindavista_sur.geojson"
+      },
+      {
+        "nombre": "Lindavista Vallejo 1a Seccion",
+        "archivo": "lindavista_vallejo_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Lindavista Vallejo 2a Seccion",
+        "archivo": "lindavista_vallejo_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Lindavista Vallejo 3a Seccion",
+        "archivo": "lindavista_vallejo_3a_seccion.geojson"
+      },
+      {
+        "nombre": "Loma La Palma",
+        "archivo": "loma_la_palma.geojson"
+      },
+      {
+        "nombre": "Lomas De Cuautepec",
+        "archivo": "lomas_de_cuautepec.geojson"
+      },
+      {
+        "nombre": "Luis Donaldo Colosio",
+        "archivo": "luis_donaldo_colosio.geojson"
+      },
+      {
+        "nombre": "Magdalena De Las Salinas",
+        "archivo": "magdalena_de_las_salinas.geojson"
+      },
+      {
+        "nombre": "Malacates",
+        "archivo": "malacates.geojson"
+      },
+      {
+        "nombre": "Martin Carrera",
+        "archivo": "martin_carrera.geojson"
+      },
+      {
+        "nombre": "Martires De Rio Blanco",
+        "archivo": "martires_de_rio_blanco.geojson"
+      },
+      {
+        "nombre": "Maximino Avila Camacho",
+        "archivo": "maximino_avila_camacho.geojson"
+      },
+      {
+        "nombre": "Montevideo",
+        "archivo": "montevideo.geojson"
+      },
+      {
+        "nombre": "Narciso Bassols",
+        "archivo": "narciso_bassols.geojson"
+      },
+      {
+        "nombre": "Nueva Atzacoalco",
+        "archivo": "nueva_atzacoalco.geojson"
+      },
+      {
+        "nombre": "Nueva Industrial Vallejo",
+        "archivo": "nueva_industrial_vallejo.geojson"
+      },
+      {
+        "nombre": "Nueva Tenochtitlan",
+        "archivo": "nueva_tenochtitlan.geojson"
+      },
+      {
+        "nombre": "Nueva Vallejo",
+        "archivo": "nueva_vallejo.geojson"
+      },
+      {
+        "nombre": "Palmatitla",
+        "archivo": "palmatitla.geojson"
+      },
+      {
+        "nombre": "Panamericana",
+        "archivo": "panamericana.geojson"
+      },
+      {
+        "nombre": "Parque Metropolitano",
+        "archivo": "parque_metropolitano.geojson"
+      },
+      {
+        "nombre": "Planetario Lindavista",
+        "archivo": "planetario_lindavista.geojson"
+      },
+      {
+        "nombre": "Pradera 2a Seccion",
+        "archivo": "pradera_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Prados De Cuautepec",
+        "archivo": "prados_de_cuautepec.geojson"
+      },
+      {
+        "nombre": "Progreso Nacional",
+        "archivo": "progreso_nacional.geojson"
+      },
+      {
+        "nombre": "Providencia",
+        "archivo": "providencia.geojson"
+      },
+      {
+        "nombre": "Pueblo De Santiago Atzacoalco",
+        "archivo": "pueblo_de_santiago_atzacoalco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Juan De Aragon",
+        "archivo": "pueblo_san_juan_de_aragon.geojson"
+      },
+      {
+        "nombre": "Residencial Acueducto De Guadalupe",
+        "archivo": "residencial_acueducto_de_guadalupe.geojson"
+      },
+      {
+        "nombre": "Residencial La Escalera",
+        "archivo": "residencial_la_escalera.geojson"
+      },
+      {
+        "nombre": "Residencial Zacatenco",
+        "archivo": "residencial_zacatenco.geojson"
+      },
+      {
+        "nombre": "Rosas Del Tepeyac",
+        "archivo": "rosas_del_tepeyac.geojson"
+      },
+      {
+        "nombre": "Salvador Diaz Miron",
+        "archivo": "salvador_diaz_miron.geojson"
+      },
+      {
+        "nombre": "San Antonio",
+        "archivo": "san_antonio.geojson"
+      },
+      {
+        "nombre": "San Bartolo Atepehuacan",
+        "archivo": "san_bartolo_atepehuacan.geojson"
+      },
+      {
+        "nombre": "San Felipe De Jesus",
+        "archivo": "san_felipe_de_jesus.geojson"
+      },
+      {
+        "nombre": "San Jose De La Escalera",
+        "archivo": "san_jose_de_la_escalera.geojson"
+      },
+      {
+        "nombre": "San Jose Ticoman",
+        "archivo": "san_jose_ticoman.geojson"
+      },
+      {
+        "nombre": "San Juan De Aragon",
+        "archivo": "san_juan_de_aragon.geojson"
+      },
+      {
+        "nombre": "San Juan De Aragon I Seccion",
+        "archivo": "san_juan_de_aragon_i_seccion.geojson"
+      },
+      {
+        "nombre": "San Juan De Aragon Ii Seccion",
+        "archivo": "san_juan_de_aragon_ii_seccion.geojson"
+      },
+      {
+        "nombre": "San Juan De Aragon Iii Seccion",
+        "archivo": "san_juan_de_aragon_iii_seccion.geojson"
+      },
+      {
+        "nombre": "San Juan De Aragon Iv Seccion",
+        "archivo": "san_juan_de_aragon_iv_seccion.geojson"
+      },
+      {
+        "nombre": "San Juan De Aragon V Seccion",
+        "archivo": "san_juan_de_aragon_v_seccion.geojson"
+      },
+      {
+        "nombre": "San Juan De Aragon Vi Seccion",
+        "archivo": "san_juan_de_aragon_vi_seccion.geojson"
+      },
+      {
+        "nombre": "San Juan De Aragon Vii Seccion",
+        "archivo": "san_juan_de_aragon_vii_seccion.geojson"
+      },
+      {
+        "nombre": "San Miguel",
+        "archivo": "san_miguel.geojson"
+      },
+      {
+        "nombre": "San Pedro El Chico",
+        "archivo": "san_pedro_el_chico.geojson"
+      },
+      {
+        "nombre": "San Pedro Zacatenco",
+        "archivo": "san_pedro_zacatenco.geojson"
+      },
+      {
+        "nombre": "Santa Isabel Tola",
+        "archivo": "santa_isabel_tola.geojson"
+      },
+      {
+        "nombre": "Santa Maria Ticoman",
+        "archivo": "santa_maria_ticoman.geojson"
+      },
+      {
+        "nombre": "Santa Rosa",
+        "archivo": "santa_rosa.geojson"
+      },
+      {
+        "nombre": "Santiago Atepetlac",
+        "archivo": "santiago_atepetlac.geojson"
+      },
+      {
+        "nombre": "Siete Maravillas",
+        "archivo": "siete_maravillas.geojson"
+      },
+      {
+        "nombre": "Solidaridad Nacional",
+        "archivo": "solidaridad_nacional.geojson"
+      },
+      {
+        "nombre": "Tablas De San Agustin",
+        "archivo": "tablas_de_san_agustin.geojson"
+      },
+      {
+        "nombre": "Tepetates",
+        "archivo": "tepetates.geojson"
+      },
+      {
+        "nombre": "Tepeyac Insurgentes",
+        "archivo": "tepeyac_insurgentes.geojson"
+      },
+      {
+        "nombre": "Tlacaelel",
+        "archivo": "tlacaelel.geojson"
+      },
+      {
+        "nombre": "Tlacamaca",
+        "archivo": "tlacamaca.geojson"
+      },
+      {
+        "nombre": "Tlalpexco",
+        "archivo": "tlalpexco.geojson"
+      },
+      {
+        "nombre": "Torres Lindavista",
+        "archivo": "torres_lindavista.geojson"
+      },
+      {
+        "nombre": "Tres Estrellas",
+        "archivo": "tres_estrellas.geojson"
+      },
+      {
+        "nombre": "Triunfo De La Republica",
+        "archivo": "triunfo_de_la_republica.geojson"
+      },
+      {
+        "nombre": "U.habit. Cuchilla Del Tesoro",
+        "archivo": "uhabit_cuchilla_del_tesoro.geojson"
+      },
+      {
+        "nombre": "Valle De Madero",
+        "archivo": "valle_de_madero.geojson"
+      },
+      {
+        "nombre": "Valle Del Tepeyac",
+        "archivo": "valle_del_tepeyac.geojson"
+      },
+      {
+        "nombre": "Vallejo",
+        "archivo": "vallejo.geojson"
+      },
+      {
+        "nombre": "Vallejo Poniente",
+        "archivo": "vallejo_poniente.geojson"
+      },
+      {
+        "nombre": "Vasco De Quiroga",
+        "archivo": "vasco_de_quiroga.geojson"
+      },
+      {
+        "nombre": "Villa De Aragon",
+        "archivo": "villa_de_aragon.geojson"
+      },
+      {
+        "nombre": "Villa Gustavo A Madero",
+        "archivo": "villa_gustavo_a_madero.geojson"
+      },
+      {
+        "nombre": "Villa Hermosa",
+        "archivo": "villa_hermosa.geojson"
+      },
+      {
+        "nombre": "Vista Hermosa",
+        "archivo": "vista_hermosa.geojson"
+      },
+      {
+        "nombre": "Zona Escolar",
+        "archivo": "zona_escolar.geojson"
+      },
+      {
+        "nombre": "Zona Escolar Oriente",
+        "archivo": "zona_escolar_oriente.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Iztacalco",
+    "carpeta": "Iztacalco",
+    "colonias": [
+      {
+        "nombre": "Agricola Oriental",
+        "archivo": "agricola_oriental.geojson"
+      },
+      {
+        "nombre": "Agricola Pantitlan",
+        "archivo": "agricola_pantitlan.geojson"
+      },
+      {
+        "nombre": "Ampliacion Gabriel Ramos Millan",
+        "archivo": "ampliacion_gabriel_ramos_millan.geojson"
+      },
+      {
+        "nombre": "Barrio La Asuncion",
+        "archivo": "barrio_la_asuncion.geojson"
+      },
+      {
+        "nombre": "Barrio Los Reyes",
+        "archivo": "barrio_los_reyes.geojson"
+      },
+      {
+        "nombre": "Barrio San Francisco Xicaltongo",
+        "archivo": "barrio_san_francisco_xicaltongo.geojson"
+      },
+      {
+        "nombre": "Barrio San Miguel",
+        "archivo": "barrio_san_miguel.geojson"
+      },
+      {
+        "nombre": "Barrio San Pedro",
+        "archivo": "barrio_san_pedro.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Cruz",
+        "archivo": "barrio_santa_cruz.geojson"
+      },
+      {
+        "nombre": "Barrio Santiago Norte",
+        "archivo": "barrio_santiago_norte.geojson"
+      },
+      {
+        "nombre": "Barrio Santiago Sur",
+        "archivo": "barrio_santiago_sur.geojson"
+      },
+      {
+        "nombre": "Barrio Zapotla",
+        "archivo": "barrio_zapotla.geojson"
+      },
+      {
+        "nombre": "Campamento 2 De Octubre",
+        "archivo": "campamento_2_de_octubre.geojson"
+      },
+      {
+        "nombre": "Carlos Zapata Vela",
+        "archivo": "carlos_zapata_vela.geojson"
+      },
+      {
+        "nombre": "Cuchilla Agricola Oriental",
+        "archivo": "cuchilla_agricola_oriental.geojson"
+      },
+      {
+        "nombre": "El Rodeo",
+        "archivo": "el_rodeo.geojson"
+      },
+      {
+        "nombre": "Ex-Ejido La Magdalena Mixhuca",
+        "archivo": "ex-ejido_la_magdalena_mixhuca.geojson"
+      },
+      {
+        "nombre": "Fraccionamiento Coyuya",
+        "archivo": "fraccionamiento_coyuya.geojson"
+      },
+      {
+        "nombre": "Gabriel Ramos Millan",
+        "archivo": "gabriel_ramos_millan.geojson"
+      },
+      {
+        "nombre": "Gabriel Ramos Millan Secc Tlacotal",
+        "archivo": "gabriel_ramos_millan_secc_tlacotal.geojson"
+      },
+      {
+        "nombre": "Gabriel Ramos Millan Seccion Bramadero",
+        "archivo": "gabriel_ramos_millan_seccion_bramadero.geojson"
+      },
+      {
+        "nombre": "Gabriel Ramos Millan Seccion Cuchilla",
+        "archivo": "gabriel_ramos_millan_seccion_cuchilla.geojson"
+      },
+      {
+        "nombre": "Granjas Mexico",
+        "archivo": "granjas_mexico.geojson"
+      },
+      {
+        "nombre": "Infonavit Iztacalco",
+        "archivo": "infonavit_iztacalco.geojson"
+      },
+      {
+        "nombre": "Inpi Picos",
+        "archivo": "inpi_picos.geojson"
+      },
+      {
+        "nombre": "Jardines Tecma",
+        "archivo": "jardines_tecma.geojson"
+      },
+      {
+        "nombre": "Juventino Rosas",
+        "archivo": "juventino_rosas.geojson"
+      },
+      {
+        "nombre": "La Cruz",
+        "archivo": "la_cruz.geojson"
+      },
+      {
+        "nombre": "Los Picos De Iztacalco Seccion 1 A",
+        "archivo": "los_picos_de_iztacalco_seccion_1_a.geojson"
+      },
+      {
+        "nombre": "Los Picos De Iztacalco Seccion 1 B",
+        "archivo": "los_picos_de_iztacalco_seccion_1_b.geojson"
+      },
+      {
+        "nombre": "Los Picos De Iztacalco Seccion 2 A",
+        "archivo": "los_picos_de_iztacalco_seccion_2_a.geojson"
+      },
+      {
+        "nombre": "Militar Marte",
+        "archivo": "militar_marte.geojson"
+      },
+      {
+        "nombre": "Nueva Santa Anita",
+        "archivo": "nueva_santa_anita.geojson"
+      },
+      {
+        "nombre": "Reforma Iztaccihuatl Norte",
+        "archivo": "reforma_iztaccihuatl_norte.geojson"
+      },
+      {
+        "nombre": "Reforma Iztaccihuatl Sur",
+        "archivo": "reforma_iztaccihuatl_sur.geojson"
+      },
+      {
+        "nombre": "Santa Anita",
+        "archivo": "santa_anita.geojson"
+      },
+      {
+        "nombre": "Tlazintla",
+        "archivo": "tlazintla.geojson"
+      },
+      {
+        "nombre": "Viaducto Piedad",
+        "archivo": "viaducto_piedad.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Iztapalapa",
+    "carpeta": "Iztapalapa",
+    "colonias": [
+      {
+        "nombre": "12 De Diciembre",
+        "archivo": "12_de_diciembre.geojson"
+      },
+      {
+        "nombre": "Albarrada",
+        "archivo": "albarrada.geojson"
+      },
+      {
+        "nombre": "Alvaro Obregon",
+        "archivo": "alvaro_obregon.geojson"
+      },
+      {
+        "nombre": "Ampliacion Bellavista",
+        "archivo": "ampliacion_bellavista.geojson"
+      },
+      {
+        "nombre": "Ampliacion El Santuario",
+        "archivo": "ampliacion_el_santuario.geojson"
+      },
+      {
+        "nombre": "Ampliacion El Triunfo",
+        "archivo": "ampliacion_el_triunfo.geojson"
+      },
+      {
+        "nombre": "Ampliacion Emiliano Zapata",
+        "archivo": "ampliacion_emiliano_zapata.geojson"
+      },
+      {
+        "nombre": "Ampliacion Los Reyes",
+        "archivo": "ampliacion_los_reyes.geojson"
+      },
+      {
+        "nombre": "Ampliacion Paraje San Juan",
+        "archivo": "ampliacion_paraje_san_juan.geojson"
+      },
+      {
+        "nombre": "Ampliacion Ricardo Flores Magon",
+        "archivo": "ampliacion_ricardo_flores_magon.geojson"
+      },
+      {
+        "nombre": "Ampliacion San Miguel",
+        "archivo": "ampliacion_san_miguel.geojson"
+      },
+      {
+        "nombre": "Ampliacion Santa Maria Aztahuacan",
+        "archivo": "ampliacion_santa_maria_aztahuacan.geojson"
+      },
+      {
+        "nombre": "Ampliacion Sinatel",
+        "archivo": "ampliacion_sinatel.geojson"
+      },
+      {
+        "nombre": "Ampliacion Veracruzana",
+        "archivo": "ampliacion_veracruzana.geojson"
+      },
+      {
+        "nombre": "Apatlaco",
+        "archivo": "apatlaco.geojson"
+      },
+      {
+        "nombre": "Año De Juarez",
+        "archivo": "ano_de_juarez.geojson"
+      },
+      {
+        "nombre": "Banjidal",
+        "archivo": "banjidal.geojson"
+      },
+      {
+        "nombre": "Barranca De Guadalupe",
+        "archivo": "barranca_de_guadalupe.geojson"
+      },
+      {
+        "nombre": "Barrio Guadalupe",
+        "archivo": "barrio_guadalupe.geojson"
+      },
+      {
+        "nombre": "Barrio La Asuncion",
+        "archivo": "barrio_la_asuncion.geojson"
+      },
+      {
+        "nombre": "Barrio San Antonio",
+        "archivo": "barrio_san_antonio.geojson"
+      },
+      {
+        "nombre": "Barrio San Antonio Culhuacan",
+        "archivo": "barrio_san_antonio_culhuacan.geojson"
+      },
+      {
+        "nombre": "Barrio San Ignacio",
+        "archivo": "barrio_san_ignacio.geojson"
+      },
+      {
+        "nombre": "Barrio San Jose",
+        "archivo": "barrio_san_jose.geojson"
+      },
+      {
+        "nombre": "Barrio San Lorenzo",
+        "archivo": "barrio_san_lorenzo.geojson"
+      },
+      {
+        "nombre": "Barrio San Lucas",
+        "archivo": "barrio_san_lucas.geojson"
+      },
+      {
+        "nombre": "Barrio San Miguel",
+        "archivo": "barrio_san_miguel.geojson"
+      },
+      {
+        "nombre": "Barrio San Pablo",
+        "archivo": "barrio_san_pablo.geojson"
+      },
+      {
+        "nombre": "Barrio San Pedro",
+        "archivo": "barrio_san_pedro.geojson"
+      },
+      {
+        "nombre": "Barrio San Simon Culhuacan",
+        "archivo": "barrio_san_simon_culhuacan.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Barbara",
+        "archivo": "barrio_santa_barbara.geojson"
+      },
+      {
+        "nombre": "Barrio Tula",
+        "archivo": "barrio_tula.geojson"
+      },
+      {
+        "nombre": "Bellavista",
+        "archivo": "bellavista.geojson"
+      },
+      {
+        "nombre": "Benito Juarez",
+        "archivo": "benito_juarez.geojson"
+      },
+      {
+        "nombre": "Buenavista",
+        "archivo": "buenavista.geojson"
+      },
+      {
+        "nombre": "Cacama",
+        "archivo": "cacama.geojson"
+      },
+      {
+        "nombre": "Campestre Potrero",
+        "archivo": "campestre_potrero.geojson"
+      },
+      {
+        "nombre": "Cananea",
+        "archivo": "cananea.geojson"
+      },
+      {
+        "nombre": "Carlos Hank Gonzalez",
+        "archivo": "carlos_hank_gonzalez.geojson"
+      },
+      {
+        "nombre": "Carlos Jonguitud Barrios",
+        "archivo": "carlos_jonguitud_barrios.geojson"
+      },
+      {
+        "nombre": "Casa Blanca",
+        "archivo": "casa_blanca.geojson"
+      },
+      {
+        "nombre": "Celoalliotli",
+        "archivo": "celoalliotli.geojson"
+      },
+      {
+        "nombre": "Central De Abasto",
+        "archivo": "central_de_abasto.geojson"
+      },
+      {
+        "nombre": "Cerro De La Estrella",
+        "archivo": "cerro_de_la_estrella.geojson"
+      },
+      {
+        "nombre": "Chinampac De Juarez",
+        "archivo": "chinampac_de_juarez.geojson"
+      },
+      {
+        "nombre": "Citlalli",
+        "archivo": "citlalli.geojson"
+      },
+      {
+        "nombre": "Colonial Iztapalapa",
+        "archivo": "colonial_iztapalapa.geojson"
+      },
+      {
+        "nombre": "Consejo Agrarista Mexicano",
+        "archivo": "consejo_agrarista_mexicano.geojson"
+      },
+      {
+        "nombre": "Constitucion De 1917",
+        "archivo": "constitucion_de_1917.geojson"
+      },
+      {
+        "nombre": "Coop Allapetlalli",
+        "archivo": "coop_allapetlalli.geojson"
+      },
+      {
+        "nombre": "Cuchilla Del Moral",
+        "archivo": "cuchilla_del_moral.geojson"
+      },
+      {
+        "nombre": "Degollado",
+        "archivo": "degollado.geojson"
+      },
+      {
+        "nombre": "Degollado-Mexicatlalli",
+        "archivo": "degollado-mexicatlalli.geojson"
+      },
+      {
+        "nombre": "Desarrollo Urbano Quetzalcoatl",
+        "archivo": "desarrollo_urbano_quetzalcoatl.geojson"
+      },
+      {
+        "nombre": "Dr Alfonso Ortiz Tirado",
+        "archivo": "dr_alfonso_ortiz_tirado.geojson"
+      },
+      {
+        "nombre": "Ejercito De Agua Prieta",
+        "archivo": "ejercito_de_agua_prieta.geojson"
+      },
+      {
+        "nombre": "Ejercito De Oriente",
+        "archivo": "ejercito_de_oriente.geojson"
+      },
+      {
+        "nombre": "Ejercito De Oriente Zona Peñon",
+        "archivo": "ejercito_de_oriente_zona_penon.geojson"
+      },
+      {
+        "nombre": "El Eden",
+        "archivo": "el_eden.geojson"
+      },
+      {
+        "nombre": "El Manto",
+        "archivo": "el_manto.geojson"
+      },
+      {
+        "nombre": "El Mirador",
+        "archivo": "el_mirador.geojson"
+      },
+      {
+        "nombre": "El Molino",
+        "archivo": "el_molino.geojson"
+      },
+      {
+        "nombre": "El Molino Tezonco",
+        "archivo": "el_molino_tezonco.geojson"
+      },
+      {
+        "nombre": "El Paraiso",
+        "archivo": "el_paraiso.geojson"
+      },
+      {
+        "nombre": "El Prado",
+        "archivo": "el_prado.geojson"
+      },
+      {
+        "nombre": "El Retoño",
+        "archivo": "el_retono.geojson"
+      },
+      {
+        "nombre": "El Rodeo",
+        "archivo": "el_rodeo.geojson"
+      },
+      {
+        "nombre": "El Rosario",
+        "archivo": "el_rosario.geojson"
+      },
+      {
+        "nombre": "El Santuario",
+        "archivo": "el_santuario.geojson"
+      },
+      {
+        "nombre": "El Sifon",
+        "archivo": "el_sifon.geojson"
+      },
+      {
+        "nombre": "El Triangulo",
+        "archivo": "el_triangulo.geojson"
+      },
+      {
+        "nombre": "El Triunfo",
+        "archivo": "el_triunfo.geojson"
+      },
+      {
+        "nombre": "El Vergel",
+        "archivo": "el_vergel.geojson"
+      },
+      {
+        "nombre": "Ermita Zaragoza",
+        "archivo": "ermita_zaragoza.geojson"
+      },
+      {
+        "nombre": "Escuadron 201",
+        "archivo": "escuadron_201.geojson"
+      },
+      {
+        "nombre": "Estado De Veracruz",
+        "archivo": "estado_de_veracruz.geojson"
+      },
+      {
+        "nombre": "Estrella Culhuacan",
+        "archivo": "estrella_culhuacan.geojson"
+      },
+      {
+        "nombre": "Estrella Del Sur",
+        "archivo": "estrella_del_sur.geojson"
+      },
+      {
+        "nombre": "Eva Samano De Lopez Mateos",
+        "archivo": "eva_samano_de_lopez_mateos.geojson"
+      },
+      {
+        "nombre": "Francisco Villa",
+        "archivo": "francisco_villa.geojson"
+      },
+      {
+        "nombre": "Fuego Nuevo",
+        "archivo": "fuego_nuevo.geojson"
+      },
+      {
+        "nombre": "Granjas De San Antonio",
+        "archivo": "granjas_de_san_antonio.geojson"
+      },
+      {
+        "nombre": "Granjas Esmeralda",
+        "archivo": "granjas_esmeralda.geojson"
+      },
+      {
+        "nombre": "Granjas Estrella",
+        "archivo": "granjas_estrella.geojson"
+      },
+      {
+        "nombre": "Guadalupe Del Moral",
+        "archivo": "guadalupe_del_moral.geojson"
+      },
+      {
+        "nombre": "Heroes De Churubusco",
+        "archivo": "heroes_de_churubusco.geojson"
+      },
+      {
+        "nombre": "Insurgentes",
+        "archivo": "insurgentes.geojson"
+      },
+      {
+        "nombre": "Ixtlahuacan",
+        "archivo": "ixtlahuacan.geojson"
+      },
+      {
+        "nombre": "Jacarandas",
+        "archivo": "jacarandas.geojson"
+      },
+      {
+        "nombre": "Jardines De Churubusco",
+        "archivo": "jardines_de_churubusco.geojson"
+      },
+      {
+        "nombre": "Jardines De San Lorenzo Tezonco",
+        "archivo": "jardines_de_san_lorenzo_tezonco.geojson"
+      },
+      {
+        "nombre": "Jose Lopez Portillo",
+        "archivo": "jose_lopez_portillo.geojson"
+      },
+      {
+        "nombre": "Jose Maria Morelos Y Pavon",
+        "archivo": "jose_maria_morelos_y_pavon.geojson"
+      },
+      {
+        "nombre": "Juan Escutia",
+        "archivo": "juan_escutia.geojson"
+      },
+      {
+        "nombre": "Justo Sierra",
+        "archivo": "justo_sierra.geojson"
+      },
+      {
+        "nombre": "La Era",
+        "archivo": "la_era.geojson"
+      },
+      {
+        "nombre": "La Esperanza",
+        "archivo": "la_esperanza.geojson"
+      },
+      {
+        "nombre": "La Planta",
+        "archivo": "la_planta.geojson"
+      },
+      {
+        "nombre": "La Regadera",
+        "archivo": "la_regadera.geojson"
+      },
+      {
+        "nombre": "Las Peñas",
+        "archivo": "las_penas.geojson"
+      },
+      {
+        "nombre": "Leyes De Reforma 1a Seccion",
+        "archivo": "leyes_de_reforma_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Leyes De Reforma 2a Seccion",
+        "archivo": "leyes_de_reforma_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Leyes De Reforma 3a Seccion",
+        "archivo": "leyes_de_reforma_3a_seccion.geojson"
+      },
+      {
+        "nombre": "Lomas De La Estancia",
+        "archivo": "lomas_de_la_estancia.geojson"
+      },
+      {
+        "nombre": "Lomas De San Lorenzo",
+        "archivo": "lomas_de_san_lorenzo.geojson"
+      },
+      {
+        "nombre": "Lomas De Sta Cruz",
+        "archivo": "lomas_de_sta_cruz.geojson"
+      },
+      {
+        "nombre": "Lomas De Zaragoza",
+        "archivo": "lomas_de_zaragoza.geojson"
+      },
+      {
+        "nombre": "Lomas El Manto",
+        "archivo": "lomas_el_manto.geojson"
+      },
+      {
+        "nombre": "Lomas Estrella",
+        "archivo": "lomas_estrella.geojson"
+      },
+      {
+        "nombre": "Los Angeles",
+        "archivo": "los_angeles.geojson"
+      },
+      {
+        "nombre": "Los Angeles Apanoaya",
+        "archivo": "los_angeles_apanoaya.geojson"
+      },
+      {
+        "nombre": "Los Cipreses",
+        "archivo": "los_cipreses.geojson"
+      },
+      {
+        "nombre": "Los Picos",
+        "archivo": "los_picos.geojson"
+      },
+      {
+        "nombre": "Miguel De La Madrid Hurtado",
+        "archivo": "miguel_de_la_madrid_hurtado.geojson"
+      },
+      {
+        "nombre": "Minerva",
+        "archivo": "minerva.geojson"
+      },
+      {
+        "nombre": "Miravalles",
+        "archivo": "miravalles.geojson"
+      },
+      {
+        "nombre": "Mixcoatl",
+        "archivo": "mixcoatl.geojson"
+      },
+      {
+        "nombre": "Monte Alban",
+        "archivo": "monte_alban.geojson"
+      },
+      {
+        "nombre": "Nueva Rosita",
+        "archivo": "nueva_rosita.geojson"
+      },
+      {
+        "nombre": "Palmitas",
+        "archivo": "palmitas.geojson"
+      },
+      {
+        "nombre": "Paraje San Juan",
+        "archivo": "paraje_san_juan.geojson"
+      },
+      {
+        "nombre": "Paraje San Juan Cerro",
+        "archivo": "paraje_san_juan_cerro.geojson"
+      },
+      {
+        "nombre": "Paraje Zacatepec",
+        "archivo": "paraje_zacatepec.geojson"
+      },
+      {
+        "nombre": "Parque Nacional Cerro De La Estrella",
+        "archivo": "parque_nacional_cerro_de_la_estrella.geojson"
+      },
+      {
+        "nombre": "Paseos De Churubusco",
+        "archivo": "paseos_de_churubusco.geojson"
+      },
+      {
+        "nombre": "Plan De Iguala",
+        "archivo": "plan_de_iguala.geojson"
+      },
+      {
+        "nombre": "Polvorilla",
+        "archivo": "polvorilla.geojson"
+      },
+      {
+        "nombre": "Presidentes De Mexico",
+        "archivo": "presidentes_de_mexico.geojson"
+      },
+      {
+        "nombre": "Progresista",
+        "archivo": "progresista.geojson"
+      },
+      {
+        "nombre": "Progreso Del Sur",
+        "archivo": "progreso_del_sur.geojson"
+      },
+      {
+        "nombre": "Pueblo Aculco",
+        "archivo": "pueblo_aculco.geojson"
+      },
+      {
+        "nombre": "Pueblo Culhuacan",
+        "archivo": "pueblo_culhuacan.geojson"
+      },
+      {
+        "nombre": "Pueblo Los Reyes Culhuacan",
+        "archivo": "pueblo_los_reyes_culhuacan.geojson"
+      },
+      {
+        "nombre": "Pueblo Magdalena Atlazolpa",
+        "archivo": "pueblo_magdalena_atlazolpa.geojson"
+      },
+      {
+        "nombre": "Pueblo Mexicaltzingo",
+        "archivo": "pueblo_mexicaltzingo.geojson"
+      },
+      {
+        "nombre": "Pueblo San Andres Tomatlan",
+        "archivo": "pueblo_san_andres_tomatlan.geojson"
+      },
+      {
+        "nombre": "Pueblo San Juanico Nextipac",
+        "archivo": "pueblo_san_juanico_nextipac.geojson"
+      },
+      {
+        "nombre": "Pueblo San Lorenzo Tezonco",
+        "archivo": "pueblo_san_lorenzo_tezonco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Lorenzo Xicotencatl",
+        "archivo": "pueblo_san_lorenzo_xicotencatl.geojson"
+      },
+      {
+        "nombre": "Pueblo San Sebastian Tecoloxtitla",
+        "archivo": "pueblo_san_sebastian_tecoloxtitla.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Maria Aztahuacan",
+        "archivo": "pueblo_santa_maria_aztahuacan.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Maria Tomatlan",
+        "archivo": "pueblo_santa_maria_tomatlan.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Martha Acatitla",
+        "archivo": "pueblo_santa_martha_acatitla.geojson"
+      },
+      {
+        "nombre": "Pueblo Santiago Acahualtepec",
+        "archivo": "pueblo_santiago_acahualtepec.geojson"
+      },
+      {
+        "nombre": "Pueblo Sta Cruz Meyehualco",
+        "archivo": "pueblo_sta_cruz_meyehualco.geojson"
+      },
+      {
+        "nombre": "Puente Blanco",
+        "archivo": "puente_blanco.geojson"
+      },
+      {
+        "nombre": "Purisima Atlazolpa",
+        "archivo": "purisima_atlazolpa.geojson"
+      },
+      {
+        "nombre": "Real Del Moral",
+        "archivo": "real_del_moral.geojson"
+      },
+      {
+        "nombre": "Reforma Politica",
+        "archivo": "reforma_politica.geojson"
+      },
+      {
+        "nombre": "Renovacion",
+        "archivo": "renovacion.geojson"
+      },
+      {
+        "nombre": "Ricardo Flores Magon",
+        "archivo": "ricardo_flores_magon.geojson"
+      },
+      {
+        "nombre": "San Andres Tetepilco",
+        "archivo": "san_andres_tetepilco.geojson"
+      },
+      {
+        "nombre": "San Antonio Culhuacan",
+        "archivo": "san_antonio_culhuacan.geojson"
+      },
+      {
+        "nombre": "San Jose Aculco",
+        "archivo": "san_jose_aculco.geojson"
+      },
+      {
+        "nombre": "San Jose Buenavista",
+        "archivo": "san_jose_buenavista.geojson"
+      },
+      {
+        "nombre": "San Juan Estrella",
+        "archivo": "san_juan_estrella.geojson"
+      },
+      {
+        "nombre": "San Juan Joya",
+        "archivo": "san_juan_joya.geojson"
+      },
+      {
+        "nombre": "San Juan Xalpa",
+        "archivo": "san_juan_xalpa.geojson"
+      },
+      {
+        "nombre": "San Miguel 8va Ampliacion",
+        "archivo": "san_miguel_8va_ampliacion.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo (Secc La Cruz)",
+        "archivo": "san_miguel_teotongo_secc_la_cruz.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo (Secc Las Torres)",
+        "archivo": "san_miguel_teotongo_secc_las_torres.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Acorralado",
+        "archivo": "san_miguel_teotongo_secc_acorralado.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Avisadero",
+        "archivo": "san_miguel_teotongo_secc_avisadero.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Capilla",
+        "archivo": "san_miguel_teotongo_secc_capilla.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Corrales",
+        "archivo": "san_miguel_teotongo_secc_corrales.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Guadalupe",
+        "archivo": "san_miguel_teotongo_secc_guadalupe.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Jardines",
+        "archivo": "san_miguel_teotongo_secc_jardines.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Loma Alta",
+        "archivo": "san_miguel_teotongo_secc_loma_alta.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Mercedes",
+        "archivo": "san_miguel_teotongo_secc_mercedes.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Palmitas",
+        "archivo": "san_miguel_teotongo_secc_palmitas.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Puente",
+        "archivo": "san_miguel_teotongo_secc_puente.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Ranchito",
+        "archivo": "san_miguel_teotongo_secc_ranchito.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Secc Rancho Bajo",
+        "archivo": "san_miguel_teotongo_secc_rancho_bajo.geojson"
+      },
+      {
+        "nombre": "San Miguel Teotongo Seccion Iztlahuaca",
+        "archivo": "san_miguel_teotongo_seccion_iztlahuaca.geojson"
+      },
+      {
+        "nombre": "San Nicolas Tolentino",
+        "archivo": "san_nicolas_tolentino.geojson"
+      },
+      {
+        "nombre": "San Pablo",
+        "archivo": "san_pablo.geojson"
+      },
+      {
+        "nombre": "Santa Isabel Industrial",
+        "archivo": "santa_isabel_industrial.geojson"
+      },
+      {
+        "nombre": "Santa Maria Aztahuacan",
+        "archivo": "santa_maria_aztahuacan.geojson"
+      },
+      {
+        "nombre": "Santa Maria Del Monte",
+        "archivo": "santa_maria_del_monte.geojson"
+      },
+      {
+        "nombre": "Santa Martha Acatitla Norte",
+        "archivo": "santa_martha_acatitla_norte.geojson"
+      },
+      {
+        "nombre": "Santa Martha Acatitla Sur",
+        "archivo": "santa_martha_acatitla_sur.geojson"
+      },
+      {
+        "nombre": "Santiago Acahualtepec 1a Ampliaciën",
+        "archivo": "santiago_acahualtepec_1a_ampliacien.geojson"
+      },
+      {
+        "nombre": "Santiago Acahualtepec 2a Ampliacion",
+        "archivo": "santiago_acahualtepec_2a_ampliacion.geojson"
+      },
+      {
+        "nombre": "Sector Popular",
+        "archivo": "sector_popular.geojson"
+      },
+      {
+        "nombre": "Sideral",
+        "archivo": "sideral.geojson"
+      },
+      {
+        "nombre": "Sinatel",
+        "archivo": "sinatel.geojson"
+      },
+      {
+        "nombre": "Tenorios",
+        "archivo": "tenorios.geojson"
+      },
+      {
+        "nombre": "Tepalcates",
+        "archivo": "tepalcates.geojson"
+      },
+      {
+        "nombre": "Unidad Ejercito Constitucionalista",
+        "archivo": "unidad_ejercito_constitucionalista.geojson"
+      },
+      {
+        "nombre": "Unidad Modelo",
+        "archivo": "unidad_modelo.geojson"
+      },
+      {
+        "nombre": "Unidad Santa Cruz Meyehualco",
+        "archivo": "unidad_santa_cruz_meyehualco.geojson"
+      },
+      {
+        "nombre": "Unidad Vicente Guerrero",
+        "archivo": "unidad_vicente_guerrero.geojson"
+      },
+      {
+        "nombre": "Uscovi",
+        "archivo": "uscovi.geojson"
+      },
+      {
+        "nombre": "Valle De Luces",
+        "archivo": "valle_de_luces.geojson"
+      },
+      {
+        "nombre": "Valle De San Lorenzo",
+        "archivo": "valle_de_san_lorenzo.geojson"
+      },
+      {
+        "nombre": "Valle Del Sur",
+        "archivo": "valle_del_sur.geojson"
+      },
+      {
+        "nombre": "Xalpa",
+        "archivo": "xalpa.geojson"
+      },
+      {
+        "nombre": "Zacahuitzco",
+        "archivo": "zacahuitzco.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "La Magdalena Contreras",
+    "carpeta": "La_Magdalena_Contreras",
+    "colonias": [
+      {
+        "nombre": "Ampliacion Lomas De San Bernabe",
+        "archivo": "ampliacion_lomas_de_san_bernabe.geojson"
+      },
+      {
+        "nombre": "Ampliacion Potrerillo",
+        "archivo": "ampliacion_potrerillo.geojson"
+      },
+      {
+        "nombre": "Atacaxco",
+        "archivo": "atacaxco.geojson"
+      },
+      {
+        "nombre": "Barranca Seca",
+        "archivo": "barranca_seca.geojson"
+      },
+      {
+        "nombre": "Barrio Las Calles",
+        "archivo": "barrio_las_calles.geojson"
+      },
+      {
+        "nombre": "Barrio San Francisco",
+        "archivo": "barrio_san_francisco.geojson"
+      },
+      {
+        "nombre": "Barros Sierra",
+        "archivo": "barros_sierra.geojson"
+      },
+      {
+        "nombre": "Cerro Del Judio - Av",
+        "archivo": "cerro_del_judio_-_av.geojson"
+      },
+      {
+        "nombre": "Crescencio Juarez Chavira",
+        "archivo": "crescencio_juarez_chavira.geojson"
+      },
+      {
+        "nombre": "Cuauhtemoc",
+        "archivo": "cuauhtemoc.geojson"
+      },
+      {
+        "nombre": "El Ermitaño",
+        "archivo": "el_ermitano.geojson"
+      },
+      {
+        "nombre": "El Maestro",
+        "archivo": "el_maestro.geojson"
+      },
+      {
+        "nombre": "El Ocotal",
+        "archivo": "el_ocotal.geojson"
+      },
+      {
+        "nombre": "El Rosal",
+        "archivo": "el_rosal.geojson"
+      },
+      {
+        "nombre": "El Tanque",
+        "archivo": "el_tanque.geojson"
+      },
+      {
+        "nombre": "El Toro",
+        "archivo": "el_toro.geojson"
+      },
+      {
+        "nombre": "Heroes De Padierna",
+        "archivo": "heroes_de_padierna.geojson"
+      },
+      {
+        "nombre": "Huayatla",
+        "archivo": "huayatla.geojson"
+      },
+      {
+        "nombre": "La Carbonera",
+        "archivo": "la_carbonera.geojson"
+      },
+      {
+        "nombre": "La Concepcion",
+        "archivo": "la_concepcion.geojson"
+      },
+      {
+        "nombre": "La Cruz",
+        "archivo": "la_cruz.geojson"
+      },
+      {
+        "nombre": "La Guadalupe",
+        "archivo": "la_guadalupe.geojson"
+      },
+      {
+        "nombre": "La Malinche",
+        "archivo": "la_malinche.geojson"
+      },
+      {
+        "nombre": "Las Cruces",
+        "archivo": "las_cruces.geojson"
+      },
+      {
+        "nombre": "Las Huertas",
+        "archivo": "las_huertas.geojson"
+      },
+      {
+        "nombre": "Lomas Quebradas",
+        "archivo": "lomas_quebradas.geojson"
+      },
+      {
+        "nombre": "Los Padres",
+        "archivo": "los_padres.geojson"
+      },
+      {
+        "nombre": "Palmas",
+        "archivo": "palmas.geojson"
+      },
+      {
+        "nombre": "Plazuela Del Pedregal",
+        "archivo": "plazuela_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Potrerillo",
+        "archivo": "potrerillo.geojson"
+      },
+      {
+        "nombre": "Pueblo La Magdalena",
+        "archivo": "pueblo_la_magdalena.geojson"
+      },
+      {
+        "nombre": "Pueblo Nuevo Alto",
+        "archivo": "pueblo_nuevo_alto.geojson"
+      },
+      {
+        "nombre": "Pueblo Nuevo Bajo",
+        "archivo": "pueblo_nuevo_bajo.geojson"
+      },
+      {
+        "nombre": "Pueblo San Bernabe Ocotepec",
+        "archivo": "pueblo_san_bernabe_ocotepec.geojson"
+      },
+      {
+        "nombre": "Pueblo San Nicolas Totolapan",
+        "archivo": "pueblo_san_nicolas_totolapan.geojson"
+      },
+      {
+        "nombre": "San Bartolo Ameyalco",
+        "archivo": "san_bartolo_ameyalco.geojson"
+      },
+      {
+        "nombre": "San Francisco",
+        "archivo": "san_francisco.geojson"
+      },
+      {
+        "nombre": "San Jeronimo Aculco",
+        "archivo": "san_jeronimo_aculco.geojson"
+      },
+      {
+        "nombre": "San Jeronimo Lidice",
+        "archivo": "san_jeronimo_lidice.geojson"
+      },
+      {
+        "nombre": "Santa Teresa",
+        "archivo": "santa_teresa.geojson"
+      },
+      {
+        "nombre": "Tierra Unida",
+        "archivo": "tierra_unida.geojson"
+      },
+      {
+        "nombre": "Vista Hermosa",
+        "archivo": "vista_hermosa.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Miguel Hidalgo",
+    "carpeta": "Miguel_Hidalgo",
+    "colonias": [
+      {
+        "nombre": "10 De Abril",
+        "archivo": "10_de_abril.geojson"
+      },
+      {
+        "nombre": "16 De Septiembre",
+        "archivo": "16_de_septiembre.geojson"
+      },
+      {
+        "nombre": "5 De Mayo",
+        "archivo": "5_de_mayo.geojson"
+      },
+      {
+        "nombre": "Agricultura",
+        "archivo": "agricultura.geojson"
+      },
+      {
+        "nombre": "Ahuehuetes Anahuac",
+        "archivo": "ahuehuetes_anahuac.geojson"
+      },
+      {
+        "nombre": "America",
+        "archivo": "america.geojson"
+      },
+      {
+        "nombre": "Ampliacion Daniel Garza",
+        "archivo": "ampliacion_daniel_garza.geojson"
+      },
+      {
+        "nombre": "Ampliacion Granada",
+        "archivo": "ampliacion_granada.geojson"
+      },
+      {
+        "nombre": "Ampliacion Popo",
+        "archivo": "ampliacion_popo.geojson"
+      },
+      {
+        "nombre": "Ampliacion Torre Blanca",
+        "archivo": "ampliacion_torre_blanca.geojson"
+      },
+      {
+        "nombre": "Anahuac I Seccion",
+        "archivo": "anahuac_i_seccion.geojson"
+      },
+      {
+        "nombre": "Anahuac Ii Seccion",
+        "archivo": "anahuac_ii_seccion.geojson"
+      },
+      {
+        "nombre": "Anzures",
+        "archivo": "anzures.geojson"
+      },
+      {
+        "nombre": "Argentina Antigua",
+        "archivo": "argentina_antigua.geojson"
+      },
+      {
+        "nombre": "Argentina Poniente",
+        "archivo": "argentina_poniente.geojson"
+      },
+      {
+        "nombre": "Bosque De Chapultepec I Seccion",
+        "archivo": "bosque_de_chapultepec_i_seccion.geojson"
+      },
+      {
+        "nombre": "Bosque De Chapultepec Ii Seccion",
+        "archivo": "bosque_de_chapultepec_ii_seccion.geojson"
+      },
+      {
+        "nombre": "Bosque De Chapultepec Iii Seccion",
+        "archivo": "bosque_de_chapultepec_iii_seccion.geojson"
+      },
+      {
+        "nombre": "Bosque De Las Lomas",
+        "archivo": "bosque_de_las_lomas.geojson"
+      },
+      {
+        "nombre": "Cuauhtemoc Pensil",
+        "archivo": "cuauhtemoc_pensil.geojson"
+      },
+      {
+        "nombre": "Daniel Garza",
+        "archivo": "daniel_garza.geojson"
+      },
+      {
+        "nombre": "Deportivo Pensil",
+        "archivo": "deportivo_pensil.geojson"
+      },
+      {
+        "nombre": "Dos Lagos",
+        "archivo": "dos_lagos.geojson"
+      },
+      {
+        "nombre": "Escandon I Seccion",
+        "archivo": "escandon_i_seccion.geojson"
+      },
+      {
+        "nombre": "Escandon Ii Seccion",
+        "archivo": "escandon_ii_seccion.geojson"
+      },
+      {
+        "nombre": "Francisco I Madero",
+        "archivo": "francisco_i_madero.geojson"
+      },
+      {
+        "nombre": "Granada",
+        "archivo": "granada.geojson"
+      },
+      {
+        "nombre": "Huichapan",
+        "archivo": "huichapan.geojson"
+      },
+      {
+        "nombre": "Ignacio Manuel Altamirano",
+        "archivo": "ignacio_manuel_altamirano.geojson"
+      },
+      {
+        "nombre": "Irrigacion",
+        "archivo": "irrigacion.geojson"
+      },
+      {
+        "nombre": "Lago Norte",
+        "archivo": "lago_norte.geojson"
+      },
+      {
+        "nombre": "Lago Sur",
+        "archivo": "lago_sur.geojson"
+      },
+      {
+        "nombre": "Legaria",
+        "archivo": "legaria.geojson"
+      },
+      {
+        "nombre": "Loma Hermosa",
+        "archivo": "loma_hermosa.geojson"
+      },
+      {
+        "nombre": "Lomas Altas",
+        "archivo": "lomas_altas.geojson"
+      },
+      {
+        "nombre": "Lomas De Bezares",
+        "archivo": "lomas_de_bezares.geojson"
+      },
+      {
+        "nombre": "Lomas De Chapultepec I Seccion",
+        "archivo": "lomas_de_chapultepec_i_seccion.geojson"
+      },
+      {
+        "nombre": "Lomas De Chapultepec Ii Seccion",
+        "archivo": "lomas_de_chapultepec_ii_seccion.geojson"
+      },
+      {
+        "nombre": "Lomas De Chapultepec Iii Seccion",
+        "archivo": "lomas_de_chapultepec_iii_seccion.geojson"
+      },
+      {
+        "nombre": "Lomas De Chapultepec Iv Seccion",
+        "archivo": "lomas_de_chapultepec_iv_seccion.geojson"
+      },
+      {
+        "nombre": "Lomas De Chapultepec V Seccion",
+        "archivo": "lomas_de_chapultepec_v_seccion.geojson"
+      },
+      {
+        "nombre": "Lomas De Chapultepec Vi Seccion",
+        "archivo": "lomas_de_chapultepec_vi_seccion.geojson"
+      },
+      {
+        "nombre": "Lomas De Chapultepec Vii Seccion",
+        "archivo": "lomas_de_chapultepec_vii_seccion.geojson"
+      },
+      {
+        "nombre": "Lomas De Chapultepec Viii Seccion",
+        "archivo": "lomas_de_chapultepec_viii_seccion.geojson"
+      },
+      {
+        "nombre": "Lomas De Reforma",
+        "archivo": "lomas_de_reforma.geojson"
+      },
+      {
+        "nombre": "Lomas De Sotelo",
+        "archivo": "lomas_de_sotelo.geojson"
+      },
+      {
+        "nombre": "Los Manzanos",
+        "archivo": "los_manzanos.geojson"
+      },
+      {
+        "nombre": "Manuel Avila Camacho",
+        "archivo": "manuel_avila_camacho.geojson"
+      },
+      {
+        "nombre": "Mariano Escobedo",
+        "archivo": "mariano_escobedo.geojson"
+      },
+      {
+        "nombre": "Mexico Nuevo",
+        "archivo": "mexico_nuevo.geojson"
+      },
+      {
+        "nombre": "Modelo Pensil",
+        "archivo": "modelo_pensil.geojson"
+      },
+      {
+        "nombre": "Molino Del Rey",
+        "archivo": "molino_del_rey.geojson"
+      },
+      {
+        "nombre": "Nextitla",
+        "archivo": "nextitla.geojson"
+      },
+      {
+        "nombre": "Observatorio",
+        "archivo": "observatorio.geojson"
+      },
+      {
+        "nombre": "Pensil Norte",
+        "archivo": "pensil_norte.geojson"
+      },
+      {
+        "nombre": "Pensil Sur",
+        "archivo": "pensil_sur.geojson"
+      },
+      {
+        "nombre": "Peralitos",
+        "archivo": "peralitos.geojson"
+      },
+      {
+        "nombre": "Periodista",
+        "archivo": "periodista.geojson"
+      },
+      {
+        "nombre": "Plutarco Elias Calles",
+        "archivo": "plutarco_elias_calles.geojson"
+      },
+      {
+        "nombre": "Polanco I Seccion",
+        "archivo": "polanco_i_seccion.geojson"
+      },
+      {
+        "nombre": "Polanco Ii Seccion",
+        "archivo": "polanco_ii_seccion.geojson"
+      },
+      {
+        "nombre": "Polanco Iii Seccion",
+        "archivo": "polanco_iii_seccion.geojson"
+      },
+      {
+        "nombre": "Polanco Iv Seccion",
+        "archivo": "polanco_iv_seccion.geojson"
+      },
+      {
+        "nombre": "Polanco V Seccion",
+        "archivo": "polanco_v_seccion.geojson"
+      },
+      {
+        "nombre": "Popo",
+        "archivo": "popo.geojson"
+      },
+      {
+        "nombre": "Popotla",
+        "archivo": "popotla.geojson"
+      },
+      {
+        "nombre": "Real De Las Lomas",
+        "archivo": "real_de_las_lomas.geojson"
+      },
+      {
+        "nombre": "Reforma Pensil",
+        "archivo": "reforma_pensil.geojson"
+      },
+      {
+        "nombre": "Reforma Social",
+        "archivo": "reforma_social.geojson"
+      },
+      {
+        "nombre": "Residencial Militar",
+        "archivo": "residencial_militar.geojson"
+      },
+      {
+        "nombre": "San Diego Ocoyoacac",
+        "archivo": "san_diego_ocoyoacac.geojson"
+      },
+      {
+        "nombre": "San Joaquin",
+        "archivo": "san_joaquin.geojson"
+      },
+      {
+        "nombre": "San Juanico",
+        "archivo": "san_juanico.geojson"
+      },
+      {
+        "nombre": "San Lorenzo Tlatenango",
+        "archivo": "san_lorenzo_tlatenango.geojson"
+      },
+      {
+        "nombre": "San Miguel Chapultepec I Seccion",
+        "archivo": "san_miguel_chapultepec_i_seccion.geojson"
+      },
+      {
+        "nombre": "San Miguel Chapultepec Ii Seccion",
+        "archivo": "san_miguel_chapultepec_ii_seccion.geojson"
+      },
+      {
+        "nombre": "Santo Tomas",
+        "archivo": "santo_tomas.geojson"
+      },
+      {
+        "nombre": "Tacuba",
+        "archivo": "tacuba.geojson"
+      },
+      {
+        "nombre": "Tacubaya",
+        "archivo": "tacubaya.geojson"
+      },
+      {
+        "nombre": "Tlaxpana",
+        "archivo": "tlaxpana.geojson"
+      },
+      {
+        "nombre": "Torre Blanca",
+        "archivo": "torre_blanca.geojson"
+      },
+      {
+        "nombre": "Un Hogar Para Nosotros",
+        "archivo": "un_hogar_para_nosotros.geojson"
+      },
+      {
+        "nombre": "Ventura Perez De Alva",
+        "archivo": "ventura_perez_de_alva.geojson"
+      },
+      {
+        "nombre": "Veronica Anzures",
+        "archivo": "veronica_anzures.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Milpa Alta",
+    "carpeta": "Milpa_Alta",
+    "colonias": [
+      {
+        "nombre": "Barrio Centro",
+        "archivo": "barrio_centro.geojson"
+      },
+      {
+        "nombre": "Barrio Chalmita",
+        "archivo": "barrio_chalmita.geojson"
+      },
+      {
+        "nombre": "Barrio Cruztitla",
+        "archivo": "barrio_cruztitla.geojson"
+      },
+      {
+        "nombre": "Barrio La Concepcion",
+        "archivo": "barrio_la_concepcion.geojson"
+      },
+      {
+        "nombre": "Barrio La Lupita Teticpac",
+        "archivo": "barrio_la_lupita_teticpac.geojson"
+      },
+      {
+        "nombre": "Barrio La Lupita Xolco",
+        "archivo": "barrio_la_lupita_xolco.geojson"
+      },
+      {
+        "nombre": "Barrio La Luz",
+        "archivo": "barrio_la_luz.geojson"
+      },
+      {
+        "nombre": "Barrio Los Angeles",
+        "archivo": "barrio_los_angeles.geojson"
+      },
+      {
+        "nombre": "Barrio Nochtla",
+        "archivo": "barrio_nochtla.geojson"
+      },
+      {
+        "nombre": "Barrio Ocotitla",
+        "archivo": "barrio_ocotitla.geojson"
+      },
+      {
+        "nombre": "Barrio Panchimalco",
+        "archivo": "barrio_panchimalco.geojson"
+      },
+      {
+        "nombre": "Barrio San Agustin",
+        "archivo": "barrio_san_agustin.geojson"
+      },
+      {
+        "nombre": "Barrio San Jose",
+        "archivo": "barrio_san_jose.geojson"
+      },
+      {
+        "nombre": "Barrio San Juan",
+        "archivo": "barrio_san_juan.geojson"
+      },
+      {
+        "nombre": "Barrio San Marcos",
+        "archivo": "barrio_san_marcos.geojson"
+      },
+      {
+        "nombre": "Barrio San Mateo",
+        "archivo": "barrio_san_mateo.geojson"
+      },
+      {
+        "nombre": "Barrio San Miguel",
+        "archivo": "barrio_san_miguel.geojson"
+      },
+      {
+        "nombre": "Barrio San Miguel Pueblo Santa Ana Tlacotenco",
+        "archivo": "barrio_san_miguel_pueblo_santa_ana_tlacotenco.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Cruz",
+        "archivo": "barrio_santa_cruz.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Martha",
+        "archivo": "barrio_santa_martha.geojson"
+      },
+      {
+        "nombre": "Barrio Tecaxtitla",
+        "archivo": "barrio_tecaxtitla.geojson"
+      },
+      {
+        "nombre": "Barrio Tenantitla",
+        "archivo": "barrio_tenantitla.geojson"
+      },
+      {
+        "nombre": "Barrio Tula",
+        "archivo": "barrio_tula.geojson"
+      },
+      {
+        "nombre": "Barrio Xaltipac",
+        "archivo": "barrio_xaltipac.geojson"
+      },
+      {
+        "nombre": "Barrio Xochitepetl",
+        "archivo": "barrio_xochitepetl.geojson"
+      },
+      {
+        "nombre": "La Conchita",
+        "archivo": "la_conchita.geojson"
+      },
+      {
+        "nombre": "Pueblo San Agustin Ohtenco",
+        "archivo": "pueblo_san_agustin_ohtenco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Bartolome Xicomulco",
+        "archivo": "pueblo_san_bartolome_xicomulco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Francisco Tecoxpa",
+        "archivo": "pueblo_san_francisco_tecoxpa.geojson"
+      },
+      {
+        "nombre": "Pueblo San Jeronimo Miacatlan",
+        "archivo": "pueblo_san_jeronimo_miacatlan.geojson"
+      },
+      {
+        "nombre": "Pueblo San Juan Tepenahuac",
+        "archivo": "pueblo_san_juan_tepenahuac.geojson"
+      },
+      {
+        "nombre": "Pueblo San Lorenzo Tlacoyucan",
+        "archivo": "pueblo_san_lorenzo_tlacoyucan.geojson"
+      },
+      {
+        "nombre": "Pueblo San Salvador Cuauhtenco",
+        "archivo": "pueblo_san_salvador_cuauhtenco.geojson"
+      },
+      {
+        "nombre": "Villa Milpa Alta Centro",
+        "archivo": "villa_milpa_alta_centro.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Tlalpan",
+    "carpeta": "Tlalpan",
+    "colonias": [
+      {
+        "nombre": "2 De Octubre",
+        "archivo": "2_de_octubre.geojson"
+      },
+      {
+        "nombre": "A M S A",
+        "archivo": "a_m_s_a.geojson"
+      },
+      {
+        "nombre": "Ampliacion Fuentes Del Pedregal",
+        "archivo": "ampliacion_fuentes_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Ampliacion Isidro Fabela",
+        "archivo": "ampliacion_isidro_fabela.geojson"
+      },
+      {
+        "nombre": "Arboledas  Del Sur",
+        "archivo": "arboledas__del_sur.geojson"
+      },
+      {
+        "nombre": "Arenal De Guadalupe",
+        "archivo": "arenal_de_guadalupe.geojson"
+      },
+      {
+        "nombre": "Arenal Tepepan",
+        "archivo": "arenal_tepepan.geojson"
+      },
+      {
+        "nombre": "Barrio De Caramaguey",
+        "archivo": "barrio_de_caramaguey.geojson"
+      },
+      {
+        "nombre": "Barrio Del Niño Jesus",
+        "archivo": "barrio_del_nino_jesus.geojson"
+      },
+      {
+        "nombre": "Barrio El Capulin",
+        "archivo": "barrio_el_capulin.geojson"
+      },
+      {
+        "nombre": "Barrio El Truenito",
+        "archivo": "barrio_el_truenito.geojson"
+      },
+      {
+        "nombre": "Barrio La Fama",
+        "archivo": "barrio_la_fama.geojson"
+      },
+      {
+        "nombre": "Barrio La Lonja",
+        "archivo": "barrio_la_lonja.geojson"
+      },
+      {
+        "nombre": "Barrio San Fernando",
+        "archivo": "barrio_san_fernando.geojson"
+      },
+      {
+        "nombre": "Belisario Dominguez",
+        "archivo": "belisario_dominguez.geojson"
+      },
+      {
+        "nombre": "Belisario Dominguez Seccion Xvi",
+        "archivo": "belisario_dominguez_seccion_xvi.geojson"
+      },
+      {
+        "nombre": "Belvedere Ajusco",
+        "archivo": "belvedere_ajusco.geojson"
+      },
+      {
+        "nombre": "Bosques De Tepeximilpa",
+        "archivo": "bosques_de_tepeximilpa.geojson"
+      },
+      {
+        "nombre": "Bosques Del Pedregal",
+        "archivo": "bosques_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Cantera Puente De Piedra",
+        "archivo": "cantera_puente_de_piedra.geojson"
+      },
+      {
+        "nombre": "Chichicaspatl",
+        "archivo": "chichicaspatl.geojson"
+      },
+      {
+        "nombre": "Chimalli",
+        "archivo": "chimalli.geojson"
+      },
+      {
+        "nombre": "Chimilli",
+        "archivo": "chimilli.geojson"
+      },
+      {
+        "nombre": "Club De Golf Mexico",
+        "archivo": "club_de_golf_mexico.geojson"
+      },
+      {
+        "nombre": "Colinas Del Ajusco",
+        "archivo": "colinas_del_ajusco.geojson"
+      },
+      {
+        "nombre": "Colinas Del Bosque",
+        "archivo": "colinas_del_bosque.geojson"
+      },
+      {
+        "nombre": "Comuneros De Santa Ursula",
+        "archivo": "comuneros_de_santa_ursula.geojson"
+      },
+      {
+        "nombre": "Cruz Del Farol",
+        "archivo": "cruz_del_farol.geojson"
+      },
+      {
+        "nombre": "Cuchilla De Padierna",
+        "archivo": "cuchilla_de_padierna.geojson"
+      },
+      {
+        "nombre": "Cultura Maya",
+        "archivo": "cultura_maya.geojson"
+      },
+      {
+        "nombre": "Cumbres De Tepetongo",
+        "archivo": "cumbres_de_tepetongo.geojson"
+      },
+      {
+        "nombre": "Diamante",
+        "archivo": "diamante.geojson"
+      },
+      {
+        "nombre": "Divisadero",
+        "archivo": "divisadero.geojson"
+      },
+      {
+        "nombre": "Dolores Tlali",
+        "archivo": "dolores_tlali.geojson"
+      },
+      {
+        "nombre": "Ejidos De San Pedro Martir",
+        "archivo": "ejidos_de_san_pedro_martir.geojson"
+      },
+      {
+        "nombre": "El Cantil",
+        "archivo": "el_cantil.geojson"
+      },
+      {
+        "nombre": "El Charco",
+        "archivo": "el_charco.geojson"
+      },
+      {
+        "nombre": "El Fresno",
+        "archivo": "el_fresno.geojson"
+      },
+      {
+        "nombre": "El Mirador 1a Seccion",
+        "archivo": "el_mirador_1a_seccion.geojson"
+      },
+      {
+        "nombre": "El Mirador 2a Seccion",
+        "archivo": "el_mirador_2a_seccion.geojson"
+      },
+      {
+        "nombre": "El Mirador 3a Seccion",
+        "archivo": "el_mirador_3a_seccion.geojson"
+      },
+      {
+        "nombre": "Ex Hacienda Coapa",
+        "archivo": "ex_hacienda_coapa.geojson"
+      },
+      {
+        "nombre": "Ex Hacienda San Juan De Dios",
+        "archivo": "ex_hacienda_san_juan_de_dios.geojson"
+      },
+      {
+        "nombre": "Floresta Coyoacan",
+        "archivo": "floresta_coyoacan.geojson"
+      },
+      {
+        "nombre": "Fuentes Brotantes",
+        "archivo": "fuentes_brotantes.geojson"
+      },
+      {
+        "nombre": "Fuentes De Tepepan",
+        "archivo": "fuentes_de_tepepan.geojson"
+      },
+      {
+        "nombre": "Fuentes Del Pedregal",
+        "archivo": "fuentes_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Granjas Coapa",
+        "archivo": "granjas_coapa.geojson"
+      },
+      {
+        "nombre": "Guadalupe",
+        "archivo": "guadalupe.geojson"
+      },
+      {
+        "nombre": "Hacienda San Juan",
+        "archivo": "hacienda_san_juan.geojson"
+      },
+      {
+        "nombre": "Heroes De 1910",
+        "archivo": "heroes_de_1910.geojson"
+      },
+      {
+        "nombre": "Heroes De Padierna",
+        "archivo": "heroes_de_padierna.geojson"
+      },
+      {
+        "nombre": "Heroico Colegio Militar",
+        "archivo": "heroico_colegio_militar.geojson"
+      },
+      {
+        "nombre": "Isidro Fabela",
+        "archivo": "isidro_fabela.geojson"
+      },
+      {
+        "nombre": "Jardines Del Ajusco",
+        "archivo": "jardines_del_ajusco.geojson"
+      },
+      {
+        "nombre": "Jardines En La Montaña",
+        "archivo": "jardines_en_la_montana.geojson"
+      },
+      {
+        "nombre": "Juventud Unida",
+        "archivo": "juventud_unida.geojson"
+      },
+      {
+        "nombre": "La Joya",
+        "archivo": "la_joya.geojson"
+      },
+      {
+        "nombre": "La Palma",
+        "archivo": "la_palma.geojson"
+      },
+      {
+        "nombre": "Las Tortolas",
+        "archivo": "las_tortolas.geojson"
+      },
+      {
+        "nombre": "Lomas De Cuilotepec",
+        "archivo": "lomas_de_cuilotepec.geojson"
+      },
+      {
+        "nombre": "Lomas De Padierna",
+        "archivo": "lomas_de_padierna.geojson"
+      },
+      {
+        "nombre": "Lomas De Padierna Sur",
+        "archivo": "lomas_de_padierna_sur.geojson"
+      },
+      {
+        "nombre": "Lomas Del Pedregal",
+        "archivo": "lomas_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Lomas Del Pedregal Framboyanes",
+        "archivo": "lomas_del_pedregal_framboyanes.geojson"
+      },
+      {
+        "nombre": "Lomas Hidalgo",
+        "archivo": "lomas_hidalgo.geojson"
+      },
+      {
+        "nombre": "Los Encinos",
+        "archivo": "los_encinos.geojson"
+      },
+      {
+        "nombre": "Los Volcanes",
+        "archivo": "los_volcanes.geojson"
+      },
+      {
+        "nombre": "Magisterial",
+        "archivo": "magisterial.geojson"
+      },
+      {
+        "nombre": "Magisterial Coapa",
+        "archivo": "magisterial_coapa.geojson"
+      },
+      {
+        "nombre": "Maria Esther Zuno De Echeverria",
+        "archivo": "maria_esther_zuno_de_echeverria.geojson"
+      },
+      {
+        "nombre": "Mesa De Los Hornos",
+        "archivo": "mesa_de_los_hornos.geojson"
+      },
+      {
+        "nombre": "Miguel Hidalgo",
+        "archivo": "miguel_hidalgo.geojson"
+      },
+      {
+        "nombre": "Miguel Hidalgo 1a Seccion",
+        "archivo": "miguel_hidalgo_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Miguel Hidalgo 2a Seccion",
+        "archivo": "miguel_hidalgo_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Miguel Hidalgo 3a Seccion",
+        "archivo": "miguel_hidalgo_3a_seccion.geojson"
+      },
+      {
+        "nombre": "Miguel Hidalgo 4a Seccion",
+        "archivo": "miguel_hidalgo_4a_seccion.geojson"
+      },
+      {
+        "nombre": "Mirador Del Valle",
+        "archivo": "mirador_del_valle.geojson"
+      },
+      {
+        "nombre": "Mirador I",
+        "archivo": "mirador_i.geojson"
+      },
+      {
+        "nombre": "Mirador Ii",
+        "archivo": "mirador_ii.geojson"
+      },
+      {
+        "nombre": "Movimiento Organizado De Tlalpan",
+        "archivo": "movimiento_organizado_de_tlalpan.geojson"
+      },
+      {
+        "nombre": "Narciso Mendoza",
+        "archivo": "narciso_mendoza.geojson"
+      },
+      {
+        "nombre": "Nueva Oriental Coapa",
+        "archivo": "nueva_oriental_coapa.geojson"
+      },
+      {
+        "nombre": "Nuevo Renacimiento De Axalco",
+        "archivo": "nuevo_renacimiento_de_axalco.geojson"
+      },
+      {
+        "nombre": "Paraje 38",
+        "archivo": "paraje_38.geojson"
+      },
+      {
+        "nombre": "Parque Del Pedregal",
+        "archivo": "parque_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Parque Nacional Bosque Del Pedregal",
+        "archivo": "parque_nacional_bosque_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Pedregal De Las Aguilas",
+        "archivo": "pedregal_de_las_aguilas.geojson"
+      },
+      {
+        "nombre": "Pedregal De San Nicolas 1a Seccion",
+        "archivo": "pedregal_de_san_nicolas_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Pedregal De San Nicolas 2a Seccion",
+        "archivo": "pedregal_de_san_nicolas_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Pedregal De San Nicolas 3a Seccion",
+        "archivo": "pedregal_de_san_nicolas_3a_seccion.geojson"
+      },
+      {
+        "nombre": "Pedregal De San Nicolas 4a Seccion",
+        "archivo": "pedregal_de_san_nicolas_4a_seccion.geojson"
+      },
+      {
+        "nombre": "Pedregal De San Nicolas 5a Seccion",
+        "archivo": "pedregal_de_san_nicolas_5a_seccion.geojson"
+      },
+      {
+        "nombre": "Pedregal De Santa Ursula Xitla",
+        "archivo": "pedregal_de_santa_ursula_xitla.geojson"
+      },
+      {
+        "nombre": "Peña Pobre",
+        "archivo": "pena_pobre.geojson"
+      },
+      {
+        "nombre": "Plan De Ayala",
+        "archivo": "plan_de_ayala.geojson"
+      },
+      {
+        "nombre": "Popular Santa Teresa",
+        "archivo": "popular_santa_teresa.geojson"
+      },
+      {
+        "nombre": "Prado Coapa 1a Seccion",
+        "archivo": "prado_coapa_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Prado Coapa 2a Seccion",
+        "archivo": "prado_coapa_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Prado Coapa 3a Seccion",
+        "archivo": "prado_coapa_3a_seccion.geojson"
+      },
+      {
+        "nombre": "Primavera",
+        "archivo": "primavera.geojson"
+      },
+      {
+        "nombre": "Pueblo Chimalcoyotl",
+        "archivo": "pueblo_chimalcoyotl.geojson"
+      },
+      {
+        "nombre": "Pueblo Jardines De San Juan",
+        "archivo": "pueblo_jardines_de_san_juan.geojson"
+      },
+      {
+        "nombre": "Pueblo La Magdalena Petlacalco",
+        "archivo": "pueblo_la_magdalena_petlacalco.geojson"
+      },
+      {
+        "nombre": "Pueblo Ocotla",
+        "archivo": "pueblo_ocotla.geojson"
+      },
+      {
+        "nombre": "Pueblo Parres El Guarda",
+        "archivo": "pueblo_parres_el_guarda.geojson"
+      },
+      {
+        "nombre": "Pueblo San Andres Totoltepec",
+        "archivo": "pueblo_san_andres_totoltepec.geojson"
+      },
+      {
+        "nombre": "Pueblo San Lorenzo Huipulco",
+        "archivo": "pueblo_san_lorenzo_huipulco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Miguel Ajusco",
+        "archivo": "pueblo_san_miguel_ajusco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Miguel Topilejo",
+        "archivo": "pueblo_san_miguel_topilejo.geojson"
+      },
+      {
+        "nombre": "Pueblo San Miguel Xicalco",
+        "archivo": "pueblo_san_miguel_xicalco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Pedro Martir",
+        "archivo": "pueblo_san_pedro_martir.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Ursula Xitla",
+        "archivo": "pueblo_santa_ursula_xitla.geojson"
+      },
+      {
+        "nombre": "Pueblo Santo Tomas Ajusco",
+        "archivo": "pueblo_santo_tomas_ajusco.geojson"
+      },
+      {
+        "nombre": "Rancho Los Colorines",
+        "archivo": "rancho_los_colorines.geojson"
+      },
+      {
+        "nombre": "Residencial Acoxpa",
+        "archivo": "residencial_acoxpa.geojson"
+      },
+      {
+        "nombre": "Residencial Miramontes",
+        "archivo": "residencial_miramontes.geojson"
+      },
+      {
+        "nombre": "Residencial Villa Coapa",
+        "archivo": "residencial_villa_coapa.geojson"
+      },
+      {
+        "nombre": "Rincon Del Pedregal",
+        "archivo": "rincon_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Rinconada Coapa 1a Seccion",
+        "archivo": "rinconada_coapa_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Rinconada Coapa 2a Seccion",
+        "archivo": "rinconada_coapa_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Rinconada El Mirador",
+        "archivo": "rinconada_el_mirador.geojson"
+      },
+      {
+        "nombre": "Rinconada Las Hadas",
+        "archivo": "rinconada_las_hadas.geojson"
+      },
+      {
+        "nombre": "Roca De Cristal",
+        "archivo": "roca_de_cristal.geojson"
+      },
+      {
+        "nombre": "Romulo Sanchez Mireles",
+        "archivo": "romulo_sanchez_mireles.geojson"
+      },
+      {
+        "nombre": "San Bartolo El Chico",
+        "archivo": "san_bartolo_el_chico.geojson"
+      },
+      {
+        "nombre": "San Buenaventura",
+        "archivo": "san_buenaventura.geojson"
+      },
+      {
+        "nombre": "San Juan Tepeximilpa",
+        "archivo": "san_juan_tepeximilpa.geojson"
+      },
+      {
+        "nombre": "San Pedro Apostol",
+        "archivo": "san_pedro_apostol.geojson"
+      },
+      {
+        "nombre": "Santisima Trinidad",
+        "archivo": "santisima_trinidad.geojson"
+      },
+      {
+        "nombre": "Tecorral",
+        "archivo": "tecorral.geojson"
+      },
+      {
+        "nombre": "Tenorios",
+        "archivo": "tenorios.geojson"
+      },
+      {
+        "nombre": "Texcaltenco",
+        "archivo": "texcaltenco.geojson"
+      },
+      {
+        "nombre": "Tlalcoligia",
+        "archivo": "tlalcoligia.geojson"
+      },
+      {
+        "nombre": "Tlalmille",
+        "archivo": "tlalmille.geojson"
+      },
+      {
+        "nombre": "Tlalpan",
+        "archivo": "tlalpan.geojson"
+      },
+      {
+        "nombre": "Tlalpan Centro",
+        "archivo": "tlalpan_centro.geojson"
+      },
+      {
+        "nombre": "Tlalpuente",
+        "archivo": "tlalpuente.geojson"
+      },
+      {
+        "nombre": "Tlaxcaltenco La Mesa",
+        "archivo": "tlaxcaltenco_la_mesa.geojson"
+      },
+      {
+        "nombre": "Toriello Guerra",
+        "archivo": "toriello_guerra.geojson"
+      },
+      {
+        "nombre": "Torres De Padierna",
+        "archivo": "torres_de_padierna.geojson"
+      },
+      {
+        "nombre": "U.habit. Zapote 1",
+        "archivo": "uhabit_zapote_1.geojson"
+      },
+      {
+        "nombre": "Valle De Tepepan",
+        "archivo": "valle_de_tepepan.geojson"
+      },
+      {
+        "nombre": "Valle Escondido",
+        "archivo": "valle_escondido.geojson"
+      },
+      {
+        "nombre": "Valle Verde",
+        "archivo": "valle_verde.geojson"
+      },
+      {
+        "nombre": "Verano",
+        "archivo": "verano.geojson"
+      },
+      {
+        "nombre": "Vergel Coapa",
+        "archivo": "vergel_coapa.geojson"
+      },
+      {
+        "nombre": "Vergel De Coyoacan",
+        "archivo": "vergel_de_coyoacan.geojson"
+      },
+      {
+        "nombre": "Vergel Del Sur",
+        "archivo": "vergel_del_sur.geojson"
+      },
+      {
+        "nombre": "Villa Coapa",
+        "archivo": "villa_coapa.geojson"
+      },
+      {
+        "nombre": "Villa Lazaro Cardenas",
+        "archivo": "villa_lazaro_cardenas.geojson"
+      },
+      {
+        "nombre": "Villa Olimpica",
+        "archivo": "villa_olimpica.geojson"
+      },
+      {
+        "nombre": "Villa Tlalpan",
+        "archivo": "villa_tlalpan.geojson"
+      },
+      {
+        "nombre": "Vistas Del Pedregal",
+        "archivo": "vistas_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Viveros Coatectlan",
+        "archivo": "viveros_coatectlan.geojson"
+      },
+      {
+        "nombre": "Zacayucan Peña Pobre",
+        "archivo": "zacayucan_pena_pobre.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Tláhuac",
+    "carpeta": "Tláhuac",
+    "colonias": [
+      {
+        "nombre": "Agricola Metropolitana",
+        "archivo": "agricola_metropolitana.geojson"
+      },
+      {
+        "nombre": "Ampliacion  Zapotitla",
+        "archivo": "ampliacion__zapotitla.geojson"
+      },
+      {
+        "nombre": "Ampliacion Jose Lopez Portillo",
+        "archivo": "ampliacion_jose_lopez_portillo.geojson"
+      },
+      {
+        "nombre": "Ampliacion La Conchita",
+        "archivo": "ampliacion_la_conchita.geojson"
+      },
+      {
+        "nombre": "Ampliacion Los Olivos",
+        "archivo": "ampliacion_los_olivos.geojson"
+      },
+      {
+        "nombre": "Ampliacion Santa Catarina",
+        "archivo": "ampliacion_santa_catarina.geojson"
+      },
+      {
+        "nombre": "Ampliacion Selene",
+        "archivo": "ampliacion_selene.geojson"
+      },
+      {
+        "nombre": "Barrio Guadalupe Sta Catarina Yec",
+        "archivo": "barrio_guadalupe_sta_catarina_yec.geojson"
+      },
+      {
+        "nombre": "Barrio La Asuncion",
+        "archivo": "barrio_la_asuncion.geojson"
+      },
+      {
+        "nombre": "Barrio La Concepcion Pueblo San Juan Ixtayopan",
+        "archivo": "barrio_la_concepcion_pueblo_san_juan_ixtayopan.geojson"
+      },
+      {
+        "nombre": "Barrio La Guadalupe",
+        "archivo": "barrio_la_guadalupe.geojson"
+      },
+      {
+        "nombre": "Barrio La Guadalupe Pueblo San Pedro Tlahuac",
+        "archivo": "barrio_la_guadalupe_pueblo_san_pedro_tlahuac.geojson"
+      },
+      {
+        "nombre": "Barrio La Magdalena",
+        "archivo": "barrio_la_magdalena.geojson"
+      },
+      {
+        "nombre": "Barrio La Soledad Del Pueblo  San Juan Ixtayopan",
+        "archivo": "barrio_la_soledad_del_pueblo__san_juan_ixtayopan.geojson"
+      },
+      {
+        "nombre": "Barrio Los Reyes",
+        "archivo": "barrio_los_reyes.geojson"
+      },
+      {
+        "nombre": "Barrio San Agustin",
+        "archivo": "barrio_san_agustin.geojson"
+      },
+      {
+        "nombre": "Barrio San Agustin Pueblo San Juan Ixtayopan",
+        "archivo": "barrio_san_agustin_pueblo_san_juan_ixtayopan.geojson"
+      },
+      {
+        "nombre": "Barrio San Andres",
+        "archivo": "barrio_san_andres.geojson"
+      },
+      {
+        "nombre": "Barrio San Bartolome",
+        "archivo": "barrio_san_bartolome.geojson"
+      },
+      {
+        "nombre": "Barrio San Juan",
+        "archivo": "barrio_san_juan.geojson"
+      },
+      {
+        "nombre": "Barrio San Mateo",
+        "archivo": "barrio_san_mateo.geojson"
+      },
+      {
+        "nombre": "Barrio San Miguel",
+        "archivo": "barrio_san_miguel.geojson"
+      },
+      {
+        "nombre": "Barrio San Miguel Pueblo San Pedro Tlahuac",
+        "archivo": "barrio_san_miguel_pueblo_san_pedro_tlahuac.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Ana",
+        "archivo": "barrio_santa_ana.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Ana Centro",
+        "archivo": "barrio_santa_ana_centro.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Ana Norte",
+        "archivo": "barrio_santa_ana_norte.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Ana Poniente",
+        "archivo": "barrio_santa_ana_poniente.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Ana Sur",
+        "archivo": "barrio_santa_ana_sur.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Cruz",
+        "archivo": "barrio_santa_cruz.geojson"
+      },
+      {
+        "nombre": "Barrio Santiago",
+        "archivo": "barrio_santiago.geojson"
+      },
+      {
+        "nombre": "Barrio Santiago Centro Del Pueblo Santiago Zapotitlan",
+        "archivo": "barrio_santiago_centro_del_pueblo_santiago_zapotitlan.geojson"
+      },
+      {
+        "nombre": "Barrio Santiago Norte Del Pueblo Santiago Zapotitlan",
+        "archivo": "barrio_santiago_norte_del_pueblo_santiago_zapotitlan.geojson"
+      },
+      {
+        "nombre": "Barrio Santiago Sur",
+        "archivo": "barrio_santiago_sur.geojson"
+      },
+      {
+        "nombre": "Chichilaula",
+        "archivo": "chichilaula.geojson"
+      },
+      {
+        "nombre": "Del Mar",
+        "archivo": "del_mar.geojson"
+      },
+      {
+        "nombre": "El Rosario",
+        "archivo": "el_rosario.geojson"
+      },
+      {
+        "nombre": "El Triangulo",
+        "archivo": "el_triangulo.geojson"
+      },
+      {
+        "nombre": "El Triangulo Del Pblo. De Sn. Fco. Tlaltenco",
+        "archivo": "el_triangulo_del_pblo_de_sn_fco_tlaltenco.geojson"
+      },
+      {
+        "nombre": "Francisco Villa",
+        "archivo": "francisco_villa.geojson"
+      },
+      {
+        "nombre": "Granjas Cabrera",
+        "archivo": "granjas_cabrera.geojson"
+      },
+      {
+        "nombre": "Guadalupe Tlaltenco",
+        "archivo": "guadalupe_tlaltenco.geojson"
+      },
+      {
+        "nombre": "Jaime Torres Bodet",
+        "archivo": "jaime_torres_bodet.geojson"
+      },
+      {
+        "nombre": "Jardines Del Llano",
+        "archivo": "jardines_del_llano.geojson"
+      },
+      {
+        "nombre": "La Asuncion",
+        "archivo": "la_asuncion.geojson"
+      },
+      {
+        "nombre": "La Concepcion",
+        "archivo": "la_concepcion.geojson"
+      },
+      {
+        "nombre": "La Conchita Zapotitlan",
+        "archivo": "la_conchita_zapotitlan.geojson"
+      },
+      {
+        "nombre": "La Draga",
+        "archivo": "la_draga.geojson"
+      },
+      {
+        "nombre": "La Estacion",
+        "archivo": "la_estacion.geojson"
+      },
+      {
+        "nombre": "La Habana",
+        "archivo": "la_habana.geojson"
+      },
+      {
+        "nombre": "La Lupita",
+        "archivo": "la_lupita.geojson"
+      },
+      {
+        "nombre": "La Meza",
+        "archivo": "la_meza.geojson"
+      },
+      {
+        "nombre": "La Nopalera",
+        "archivo": "la_nopalera.geojson"
+      },
+      {
+        "nombre": "La Turba",
+        "archivo": "la_turba.geojson"
+      },
+      {
+        "nombre": "Las Arboledas",
+        "archivo": "las_arboledas.geojson"
+      },
+      {
+        "nombre": "Los Olivos",
+        "archivo": "los_olivos.geojson"
+      },
+      {
+        "nombre": "Miguel Hidalgo",
+        "archivo": "miguel_hidalgo.geojson"
+      },
+      {
+        "nombre": "Ojo De Agua",
+        "archivo": "ojo_de_agua.geojson"
+      },
+      {
+        "nombre": "Peña Alta",
+        "archivo": "pena_alta.geojson"
+      },
+      {
+        "nombre": "Potrero Del Llano",
+        "archivo": "potrero_del_llano.geojson"
+      },
+      {
+        "nombre": "Pueblo San Francisco Tlaltenco",
+        "archivo": "pueblo_san_francisco_tlaltenco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Nicolas Tetelco",
+        "archivo": "pueblo_san_nicolas_tetelco.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Catarina Yecahuizotl",
+        "archivo": "pueblo_santa_catarina_yecahuizotl.geojson"
+      },
+      {
+        "nombre": "Pueblo Tulyehualco",
+        "archivo": "pueblo_tulyehualco.geojson"
+      },
+      {
+        "nombre": "Quiahuatla",
+        "archivo": "quiahuatla.geojson"
+      },
+      {
+        "nombre": "San Isidro",
+        "archivo": "san_isidro.geojson"
+      },
+      {
+        "nombre": "San Jose Tlahuac Del Pueblo San Pedro Tlahuac",
+        "archivo": "san_jose_tlahuac_del_pueblo_san_pedro_tlahuac.geojson"
+      },
+      {
+        "nombre": "San Sebastian Del Pueblo San Pedro Tlahuac",
+        "archivo": "san_sebastian_del_pueblo_san_pedro_tlahuac.geojson"
+      },
+      {
+        "nombre": "Santa Cecilia",
+        "archivo": "santa_cecilia.geojson"
+      },
+      {
+        "nombre": "Selene",
+        "archivo": "selene.geojson"
+      },
+      {
+        "nombre": "Selene Del Pueblo San Francisco Tlaltenco",
+        "archivo": "selene_del_pueblo_san_francisco_tlaltenco.geojson"
+      },
+      {
+        "nombre": "Tempiluli",
+        "archivo": "tempiluli.geojson"
+      },
+      {
+        "nombre": "Teozoma",
+        "archivo": "teozoma.geojson"
+      },
+      {
+        "nombre": "Tierra Blanca",
+        "archivo": "tierra_blanca.geojson"
+      },
+      {
+        "nombre": "Villa Centroamericana",
+        "archivo": "villa_centroamericana.geojson"
+      },
+      {
+        "nombre": "Zacatenco",
+        "archivo": "zacatenco.geojson"
+      },
+      {
+        "nombre": "Zapotitla",
+        "archivo": "zapotitla.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Venustiano Carranza",
+    "carpeta": "Venustiano_Carranza",
+    "colonias": [
+      {
+        "nombre": "10 De Mayo",
+        "archivo": "10_de_mayo.geojson"
+      },
+      {
+        "nombre": "1o De Mayo",
+        "archivo": "1o_de_mayo.geojson"
+      },
+      {
+        "nombre": "20 De Noviembre",
+        "archivo": "20_de_noviembre.geojson"
+      },
+      {
+        "nombre": "24 De Abril",
+        "archivo": "24_de_abril.geojson"
+      },
+      {
+        "nombre": "4 Arboles",
+        "archivo": "4_arboles.geojson"
+      },
+      {
+        "nombre": "5to Tramo 20 De Noviembre",
+        "archivo": "5to_tramo_20_de_noviembre.geojson"
+      },
+      {
+        "nombre": "7 De Julio",
+        "archivo": "7_de_julio.geojson"
+      },
+      {
+        "nombre": "Aaron Saenz",
+        "archivo": "aaron_saenz.geojson"
+      },
+      {
+        "nombre": "Adolfo Lopez Mateos",
+        "archivo": "adolfo_lopez_mateos.geojson"
+      },
+      {
+        "nombre": "Aeronautica Militar",
+        "archivo": "aeronautica_militar.geojson"
+      },
+      {
+        "nombre": "Alvaro Obregon",
+        "archivo": "alvaro_obregon.geojson"
+      },
+      {
+        "nombre": "Ampliacion 20 De Noviembre",
+        "archivo": "ampliacion_20_de_noviembre.geojson"
+      },
+      {
+        "nombre": "Ampliacion Aviacion Civil",
+        "archivo": "ampliacion_aviacion_civil.geojson"
+      },
+      {
+        "nombre": "Ampliacion Caracol",
+        "archivo": "ampliacion_caracol.geojson"
+      },
+      {
+        "nombre": "Ampliacion Michoacana",
+        "archivo": "ampliacion_michoacana.geojson"
+      },
+      {
+        "nombre": "Ampliacion Penitenciaria",
+        "archivo": "ampliacion_penitenciaria.geojson"
+      },
+      {
+        "nombre": "Ampliacion Simon Bolivar",
+        "archivo": "ampliacion_simon_bolivar.geojson"
+      },
+      {
+        "nombre": "Ampliacion Venustiano Carranza",
+        "archivo": "ampliacion_venustiano_carranza.geojson"
+      },
+      {
+        "nombre": "Aquiles Serdan",
+        "archivo": "aquiles_serdan.geojson"
+      },
+      {
+        "nombre": "Arenal 1a. Seccion",
+        "archivo": "arenal_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Arenal 2a. Seccion",
+        "archivo": "arenal_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Arenal 3a. Seccion",
+        "archivo": "arenal_3a_seccion.geojson"
+      },
+      {
+        "nombre": "Arenal 4a. Seccion",
+        "archivo": "arenal_4a_seccion.geojson"
+      },
+      {
+        "nombre": "Arenal Puerto Aereo",
+        "archivo": "arenal_puerto_aereo.geojson"
+      },
+      {
+        "nombre": "Artes Graficas",
+        "archivo": "artes_graficas.geojson"
+      },
+      {
+        "nombre": "Aviacion Civil",
+        "archivo": "aviacion_civil.geojson"
+      },
+      {
+        "nombre": "Azteca",
+        "archivo": "azteca.geojson"
+      },
+      {
+        "nombre": "Caracol",
+        "archivo": "caracol.geojson"
+      },
+      {
+        "nombre": "Cuchilla Pantitlan",
+        "archivo": "cuchilla_pantitlan.geojson"
+      },
+      {
+        "nombre": "Damian Carmona",
+        "archivo": "damian_carmona.geojson"
+      },
+      {
+        "nombre": "Del Parque",
+        "archivo": "del_parque.geojson"
+      },
+      {
+        "nombre": "Emilio Carranza",
+        "archivo": "emilio_carranza.geojson"
+      },
+      {
+        "nombre": "Escuela De Tiro",
+        "archivo": "escuela_de_tiro.geojson"
+      },
+      {
+        "nombre": "Federal",
+        "archivo": "federal.geojson"
+      },
+      {
+        "nombre": "Felipe Angeles",
+        "archivo": "felipe_angeles.geojson"
+      },
+      {
+        "nombre": "General Ignacio Zaragoza",
+        "archivo": "general_ignacio_zaragoza.geojson"
+      },
+      {
+        "nombre": "Industrial Puerto Aereo",
+        "archivo": "industrial_puerto_aereo.geojson"
+      },
+      {
+        "nombre": "Jamaica",
+        "archivo": "jamaica.geojson"
+      },
+      {
+        "nombre": "Janitzio",
+        "archivo": "janitzio.geojson"
+      },
+      {
+        "nombre": "Jardin Balbuena",
+        "archivo": "jardin_balbuena.geojson"
+      },
+      {
+        "nombre": "Lorenzo Boturini",
+        "archivo": "lorenzo_boturini.geojson"
+      },
+      {
+        "nombre": "Magdalena Mixiuhca",
+        "archivo": "magdalena_mixiuhca.geojson"
+      },
+      {
+        "nombre": "Merced Balbuena",
+        "archivo": "merced_balbuena.geojson"
+      },
+      {
+        "nombre": "Michoacana",
+        "archivo": "michoacana.geojson"
+      },
+      {
+        "nombre": "Miguel Hidalgo",
+        "archivo": "miguel_hidalgo.geojson"
+      },
+      {
+        "nombre": "Moctezuma 1a Seccion",
+        "archivo": "moctezuma_1a_seccion.geojson"
+      },
+      {
+        "nombre": "Moctezuma 2a. Seccion",
+        "archivo": "moctezuma_2a_seccion.geojson"
+      },
+      {
+        "nombre": "Morelos",
+        "archivo": "morelos.geojson"
+      },
+      {
+        "nombre": "Nicolas Bravo",
+        "archivo": "nicolas_bravo.geojson"
+      },
+      {
+        "nombre": "Penitenciaria",
+        "archivo": "penitenciaria.geojson"
+      },
+      {
+        "nombre": "Pensador Mexicano",
+        "archivo": "pensador_mexicano.geojson"
+      },
+      {
+        "nombre": "Peñon De Los Baños",
+        "archivo": "penon_de_los_banos.geojson"
+      },
+      {
+        "nombre": "Popular Rastro",
+        "archivo": "popular_rastro.geojson"
+      },
+      {
+        "nombre": "Progresista",
+        "archivo": "progresista.geojson"
+      },
+      {
+        "nombre": "Puebla",
+        "archivo": "puebla.geojson"
+      },
+      {
+        "nombre": "Pueblo De La Magdalena Mixiuhca",
+        "archivo": "pueblo_de_la_magdalena_mixiuhca.geojson"
+      },
+      {
+        "nombre": "Revolucion",
+        "archivo": "revolucion.geojson"
+      },
+      {
+        "nombre": "Romero Rubio",
+        "archivo": "romero_rubio.geojson"
+      },
+      {
+        "nombre": "Santa Cruz Aviacion",
+        "archivo": "santa_cruz_aviacion.geojson"
+      },
+      {
+        "nombre": "Sevilla",
+        "archivo": "sevilla.geojson"
+      },
+      {
+        "nombre": "Simon Bolivar",
+        "archivo": "simon_bolivar.geojson"
+      },
+      {
+        "nombre": "Tres Mosqueteros",
+        "archivo": "tres_mosqueteros.geojson"
+      },
+      {
+        "nombre": "Valentin Gomez Farias",
+        "archivo": "valentin_gomez_farias.geojson"
+      },
+      {
+        "nombre": "Valle Gomez",
+        "archivo": "valle_gomez.geojson"
+      },
+      {
+        "nombre": "Venustiano Carranza",
+        "archivo": "venustiano_carranza.geojson"
+      },
+      {
+        "nombre": "Zona Centro",
+        "archivo": "zona_centro.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Xochimilco",
+    "carpeta": "Xochimilco",
+    "colonias": [
+      {
+        "nombre": "Ampliacion Nativitas",
+        "archivo": "ampliacion_nativitas.geojson"
+      },
+      {
+        "nombre": "Ampliacion San Marcos Norte",
+        "archivo": "ampliacion_san_marcos_norte.geojson"
+      },
+      {
+        "nombre": "Ampliacion Tepepan",
+        "archivo": "ampliacion_tepepan.geojson"
+      },
+      {
+        "nombre": "Año De Juarez",
+        "archivo": "ano_de_juarez.geojson"
+      },
+      {
+        "nombre": "Barrio 18",
+        "archivo": "barrio_18.geojson"
+      },
+      {
+        "nombre": "Barrio 3 De Mayo",
+        "archivo": "barrio_3_de_mayo.geojson"
+      },
+      {
+        "nombre": "Barrio Ahualapa",
+        "archivo": "barrio_ahualapa.geojson"
+      },
+      {
+        "nombre": "Barrio Apatlaco",
+        "archivo": "barrio_apatlaco.geojson"
+      },
+      {
+        "nombre": "Barrio Belen",
+        "archivo": "barrio_belen.geojson"
+      },
+      {
+        "nombre": "Barrio Calpulco",
+        "archivo": "barrio_calpulco.geojson"
+      },
+      {
+        "nombre": "Barrio Caltongo",
+        "archivo": "barrio_caltongo.geojson"
+      },
+      {
+        "nombre": "Barrio Calyequita",
+        "archivo": "barrio_calyequita.geojson"
+      },
+      {
+        "nombre": "Barrio Chapultepec",
+        "archivo": "barrio_chapultepec.geojson"
+      },
+      {
+        "nombre": "Barrio Del Puente",
+        "archivo": "barrio_del_puente.geojson"
+      },
+      {
+        "nombre": "Barrio El Calvario",
+        "archivo": "barrio_el_calvario.geojson"
+      },
+      {
+        "nombre": "Barrio El Rosario",
+        "archivo": "barrio_el_rosario.geojson"
+      },
+      {
+        "nombre": "Barrio La Asuncion",
+        "archivo": "barrio_la_asuncion.geojson"
+      },
+      {
+        "nombre": "Barrio La Concepcion Tlacoapa",
+        "archivo": "barrio_la_concepcion_tlacoapa.geojson"
+      },
+      {
+        "nombre": "Barrio La Gallera",
+        "archivo": "barrio_la_gallera.geojson"
+      },
+      {
+        "nombre": "Barrio La Guadalupana",
+        "archivo": "barrio_la_guadalupana.geojson"
+      },
+      {
+        "nombre": "Barrio La Guadalupita",
+        "archivo": "barrio_la_guadalupita.geojson"
+      },
+      {
+        "nombre": "Barrio La Planta",
+        "archivo": "barrio_la_planta.geojson"
+      },
+      {
+        "nombre": "Barrio La Santisima",
+        "archivo": "barrio_la_santisima.geojson"
+      },
+      {
+        "nombre": "Barrio Las Flores",
+        "archivo": "barrio_las_flores.geojson"
+      },
+      {
+        "nombre": "Barrio Los Reyes",
+        "archivo": "barrio_los_reyes.geojson"
+      },
+      {
+        "nombre": "Barrio Pocitos",
+        "archivo": "barrio_pocitos.geojson"
+      },
+      {
+        "nombre": "Barrio San Andres",
+        "archivo": "barrio_san_andres.geojson"
+      },
+      {
+        "nombre": "Barrio San Antonio",
+        "archivo": "barrio_san_antonio.geojson"
+      },
+      {
+        "nombre": "Barrio San Cristobal",
+        "archivo": "barrio_san_cristobal.geojson"
+      },
+      {
+        "nombre": "Barrio San Diego",
+        "archivo": "barrio_san_diego.geojson"
+      },
+      {
+        "nombre": "Barrio San Esteban",
+        "archivo": "barrio_san_esteban.geojson"
+      },
+      {
+        "nombre": "Barrio San Jose Pueblo San Luis Tlaxialtemalco",
+        "archivo": "barrio_san_jose_pueblo_san_luis_tlaxialtemalco.geojson"
+      },
+      {
+        "nombre": "Barrio San Juan",
+        "archivo": "barrio_san_juan.geojson"
+      },
+      {
+        "nombre": "Barrio San Juan Minas",
+        "archivo": "barrio_san_juan_minas.geojson"
+      },
+      {
+        "nombre": "Barrio San Juan Moyotepec",
+        "archivo": "barrio_san_juan_moyotepec.geojson"
+      },
+      {
+        "nombre": "Barrio San Juan Pueblo San Luis Tlaxialtemalco",
+        "archivo": "barrio_san_juan_pueblo_san_luis_tlaxialtemalco.geojson"
+      },
+      {
+        "nombre": "Barrio San Lorenzo",
+        "archivo": "barrio_san_lorenzo.geojson"
+      },
+      {
+        "nombre": "Barrio San Marcos",
+        "archivo": "barrio_san_marcos.geojson"
+      },
+      {
+        "nombre": "Barrio San Pedro",
+        "archivo": "barrio_san_pedro.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Crucita",
+        "archivo": "barrio_santa_crucita.geojson"
+      },
+      {
+        "nombre": "Barrio Tetitla",
+        "archivo": "barrio_tetitla.geojson"
+      },
+      {
+        "nombre": "Barrio Tetitla Del Pueblo Santa Cruz Acalpixca",
+        "archivo": "barrio_tetitla_del_pueblo_santa_cruz_acalpixca.geojson"
+      },
+      {
+        "nombre": "Barrio Xaltocan",
+        "archivo": "barrio_xaltocan.geojson"
+      },
+      {
+        "nombre": "Bosque Residencial Del Sur",
+        "archivo": "bosque_residencial_del_sur.geojson"
+      },
+      {
+        "nombre": "Cerrillos Primera Seccion",
+        "archivo": "cerrillos_primera_seccion.geojson"
+      },
+      {
+        "nombre": "Cerrillos Segunda Seccion",
+        "archivo": "cerrillos_segunda_seccion.geojson"
+      },
+      {
+        "nombre": "Cerrillos Tercera Seccion",
+        "archivo": "cerrillos_tercera_seccion.geojson"
+      },
+      {
+        "nombre": "Cristo Rey",
+        "archivo": "cristo_rey.geojson"
+      },
+      {
+        "nombre": "Del Carmen",
+        "archivo": "del_carmen.geojson"
+      },
+      {
+        "nombre": "El Arenal",
+        "archivo": "el_arenal.geojson"
+      },
+      {
+        "nombre": "El Jazmin",
+        "archivo": "el_jazmin.geojson"
+      },
+      {
+        "nombre": "El Mirador",
+        "archivo": "el_mirador.geojson"
+      },
+      {
+        "nombre": "El Sacrificio",
+        "archivo": "el_sacrificio.geojson"
+      },
+      {
+        "nombre": "Guadalupita",
+        "archivo": "guadalupita.geojson"
+      },
+      {
+        "nombre": "Huichapan",
+        "archivo": "huichapan.geojson"
+      },
+      {
+        "nombre": "Jardines Del Sur",
+        "archivo": "jardines_del_sur.geojson"
+      },
+      {
+        "nombre": "La Cañada",
+        "archivo": "la_canada.geojson"
+      },
+      {
+        "nombre": "La Concha",
+        "archivo": "la_concha.geojson"
+      },
+      {
+        "nombre": "La Noria",
+        "archivo": "la_noria.geojson"
+      },
+      {
+        "nombre": "Las Animas",
+        "archivo": "las_animas.geojson"
+      },
+      {
+        "nombre": "Las Peritas",
+        "archivo": "las_peritas.geojson"
+      },
+      {
+        "nombre": "Lomas De Nativitas",
+        "archivo": "lomas_de_nativitas.geojson"
+      },
+      {
+        "nombre": "Lomas De Tonalco",
+        "archivo": "lomas_de_tonalco.geojson"
+      },
+      {
+        "nombre": "Nativitas",
+        "archivo": "nativitas.geojson"
+      },
+      {
+        "nombre": "Paseos Del Sur",
+        "archivo": "paseos_del_sur.geojson"
+      },
+      {
+        "nombre": "Potrero San Bernardino",
+        "archivo": "potrero_san_bernardino.geojson"
+      },
+      {
+        "nombre": "Pueblo San Andres Ahuayucan",
+        "archivo": "pueblo_san_andres_ahuayucan.geojson"
+      },
+      {
+        "nombre": "Pueblo San Francisco Tlalnepantla",
+        "archivo": "pueblo_san_francisco_tlalnepantla.geojson"
+      },
+      {
+        "nombre": "Pueblo San Gregorio Atlapulco",
+        "archivo": "pueblo_san_gregorio_atlapulco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Jose Zacatepec",
+        "archivo": "pueblo_san_jose_zacatepec.geojson"
+      },
+      {
+        "nombre": "Pueblo San Lorenzo Atemoaya",
+        "archivo": "pueblo_san_lorenzo_atemoaya.geojson"
+      },
+      {
+        "nombre": "Pueblo San Lucas Xochimanca",
+        "archivo": "pueblo_san_lucas_xochimanca.geojson"
+      },
+      {
+        "nombre": "Pueblo San Luis Tlaxialtemalco",
+        "archivo": "pueblo_san_luis_tlaxialtemalco.geojson"
+      },
+      {
+        "nombre": "Pueblo San Mateo Xalpa",
+        "archivo": "pueblo_san_mateo_xalpa.geojson"
+      },
+      {
+        "nombre": "Pueblo San Salvador Cuauhtenco",
+        "archivo": "pueblo_san_salvador_cuauhtenco.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Cecilia Tepetlapa",
+        "archivo": "pueblo_santa_cecilia_tepetlapa.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Cruz Acalpixca",
+        "archivo": "pueblo_santa_cruz_acalpixca.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Cruz Xochitepec",
+        "archivo": "pueblo_santa_cruz_xochitepec.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Maria Nativitas",
+        "archivo": "pueblo_santa_maria_nativitas.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Maria Tepepan",
+        "archivo": "pueblo_santa_maria_tepepan.geojson"
+      },
+      {
+        "nombre": "Pueblo Santiago Tepalcatlalpan",
+        "archivo": "pueblo_santiago_tepalcatlalpan.geojson"
+      },
+      {
+        "nombre": "Pueblo Santiago Tepalcatlalpan U H Rcda Del Sur",
+        "archivo": "pueblo_santiago_tepalcatlalpan_u_h_rcda_del_sur.geojson"
+      },
+      {
+        "nombre": "Quirino Mendoza",
+        "archivo": "quirino_mendoza.geojson"
+      },
+      {
+        "nombre": "Rancho Tejomulco",
+        "archivo": "rancho_tejomulco.geojson"
+      },
+      {
+        "nombre": "Rinconada Coapa",
+        "archivo": "rinconada_coapa.geojson"
+      },
+      {
+        "nombre": "San Bartolo El Chico",
+        "archivo": "san_bartolo_el_chico.geojson"
+      },
+      {
+        "nombre": "San Felipe",
+        "archivo": "san_felipe.geojson"
+      },
+      {
+        "nombre": "San Isidro",
+        "archivo": "san_isidro.geojson"
+      },
+      {
+        "nombre": "San Jeronimo",
+        "archivo": "san_jeronimo.geojson"
+      },
+      {
+        "nombre": "San Juan Tepepan",
+        "archivo": "san_juan_tepepan.geojson"
+      },
+      {
+        "nombre": "San Lorenzo La Cebada",
+        "archivo": "san_lorenzo_la_cebada.geojson"
+      },
+      {
+        "nombre": "San Lucas Oriente",
+        "archivo": "san_lucas_oriente.geojson"
+      },
+      {
+        "nombre": "Santa Cruz Chavarrieta",
+        "archivo": "santa_cruz_chavarrieta.geojson"
+      },
+      {
+        "nombre": "Santa Cruz De Guadalupe",
+        "archivo": "santa_cruz_de_guadalupe.geojson"
+      },
+      {
+        "nombre": "Santa Ines",
+        "archivo": "santa_ines.geojson"
+      },
+      {
+        "nombre": "Santiaguito",
+        "archivo": "santiaguito.geojson"
+      },
+      {
+        "nombre": "Tablas De San Lorenzo",
+        "archivo": "tablas_de_san_lorenzo.geojson"
+      },
+      {
+        "nombre": "Texmic",
+        "archivo": "texmic.geojson"
+      },
+      {
+        "nombre": "Tierra Nueva",
+        "archivo": "tierra_nueva.geojson"
+      },
+      {
+        "nombre": "Valle De Santa Maria",
+        "archivo": "valle_de_santa_maria.geojson"
+      },
+      {
+        "nombre": "Xochipilli",
+        "archivo": "xochipilli.geojson"
+      }
+    ]
+  },
+  {
+    "nombre": "Álvaro Obregón",
+    "carpeta": "Álvaro_Obregón",
+    "colonias": [
+      {
+        "nombre": "1ra Ampliacion Presidentes",
+        "archivo": "1ra_ampliacion_presidentes.geojson"
+      },
+      {
+        "nombre": "1ra Seccion Cañada",
+        "archivo": "1ra_seccion_canada.geojson"
+      },
+      {
+        "nombre": "1ra Victoria",
+        "archivo": "1ra_victoria.geojson"
+      },
+      {
+        "nombre": "2da Ampliacion Presidentes",
+        "archivo": "2da_ampliacion_presidentes.geojson"
+      },
+      {
+        "nombre": "2da Del Moral Del Pueblo Tetelpan",
+        "archivo": "2da_del_moral_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "2da Seccion Cañada",
+        "archivo": "2da_seccion_canada.geojson"
+      },
+      {
+        "nombre": "2do Reacomodo Tlacuitlapa",
+        "archivo": "2do_reacomodo_tlacuitlapa.geojson"
+      },
+      {
+        "nombre": "8 De Agosto",
+        "archivo": "8_de_agosto.geojson"
+      },
+      {
+        "nombre": "Abraham M Gonzalez",
+        "archivo": "abraham_m_gonzalez.geojson"
+      },
+      {
+        "nombre": "Acueducto",
+        "archivo": "acueducto.geojson"
+      },
+      {
+        "nombre": "Acuilotla",
+        "archivo": "acuilotla.geojson"
+      },
+      {
+        "nombre": "Alcantarilla",
+        "archivo": "alcantarilla.geojson"
+      },
+      {
+        "nombre": "Alfonso Xiii",
+        "archivo": "alfonso_xiii.geojson"
+      },
+      {
+        "nombre": "Altavista",
+        "archivo": "altavista.geojson"
+      },
+      {
+        "nombre": "Ampliacion Acueducto",
+        "archivo": "ampliacion_acueducto.geojson"
+      },
+      {
+        "nombre": "Ampliacion Alpes",
+        "archivo": "ampliacion_alpes.geojson"
+      },
+      {
+        "nombre": "Ampliacion El Capulin",
+        "archivo": "ampliacion_el_capulin.geojson"
+      },
+      {
+        "nombre": "Ampliacion Estado De Hidalgo",
+        "archivo": "ampliacion_estado_de_hidalgo.geojson"
+      },
+      {
+        "nombre": "Ampliacion Jalalpa",
+        "archivo": "ampliacion_jalalpa.geojson"
+      },
+      {
+        "nombre": "Ampliacion La Cebada",
+        "archivo": "ampliacion_la_cebada.geojson"
+      },
+      {
+        "nombre": "Ampliacion La Mexicana",
+        "archivo": "ampliacion_la_mexicana.geojson"
+      },
+      {
+        "nombre": "Ampliacion Las Aguilas",
+        "archivo": "ampliacion_las_aguilas.geojson"
+      },
+      {
+        "nombre": "Ampliacion Los Pirules",
+        "archivo": "ampliacion_los_pirules.geojson"
+      },
+      {
+        "nombre": "Ampliacion Piloto Adolfo Lopez Mateos",
+        "archivo": "ampliacion_piloto_adolfo_lopez_mateos.geojson"
+      },
+      {
+        "nombre": "Ampliacion Tepeaca",
+        "archivo": "ampliacion_tepeaca.geojson"
+      },
+      {
+        "nombre": "Ampliacion Tlacuitlapa",
+        "archivo": "ampliacion_tlacuitlapa.geojson"
+      },
+      {
+        "nombre": "Arcos Centenario",
+        "archivo": "arcos_centenario.geojson"
+      },
+      {
+        "nombre": "Arturo Martinez",
+        "archivo": "arturo_martinez.geojson"
+      },
+      {
+        "nombre": "Arvide",
+        "archivo": "arvide.geojson"
+      },
+      {
+        "nombre": "Atlamaya",
+        "archivo": "atlamaya.geojson"
+      },
+      {
+        "nombre": "Ave Real",
+        "archivo": "ave_real.geojson"
+      },
+      {
+        "nombre": "Balcones De Cehuayo",
+        "archivo": "balcones_de_cehuayo.geojson"
+      },
+      {
+        "nombre": "Barrio Alfalfar",
+        "archivo": "barrio_alfalfar.geojson"
+      },
+      {
+        "nombre": "Barrio La Otra Banda",
+        "archivo": "barrio_la_otra_banda.geojson"
+      },
+      {
+        "nombre": "Barrio Loreto",
+        "archivo": "barrio_loreto.geojson"
+      },
+      {
+        "nombre": "Barrio Norte",
+        "archivo": "barrio_norte.geojson"
+      },
+      {
+        "nombre": "Barrio Santa Maria Nonoalco",
+        "archivo": "barrio_santa_maria_nonoalco.geojson"
+      },
+      {
+        "nombre": "Bejero Del Pueblo Santa Fe",
+        "archivo": "bejero_del_pueblo_santa_fe.geojson"
+      },
+      {
+        "nombre": "Belem De Las Flores",
+        "archivo": "belem_de_las_flores.geojson"
+      },
+      {
+        "nombre": "Bellavista",
+        "archivo": "bellavista.geojson"
+      },
+      {
+        "nombre": "Bonanza",
+        "archivo": "bonanza.geojson"
+      },
+      {
+        "nombre": "Bosque",
+        "archivo": "bosque.geojson"
+      },
+      {
+        "nombre": "Calzada Jalalpa",
+        "archivo": "calzada_jalalpa.geojson"
+      },
+      {
+        "nombre": "Campestre",
+        "archivo": "campestre.geojson"
+      },
+      {
+        "nombre": "Canutillo",
+        "archivo": "canutillo.geojson"
+      },
+      {
+        "nombre": "Canutillo 2da Seccion",
+        "archivo": "canutillo_2da_seccion.geojson"
+      },
+      {
+        "nombre": "Canutillo 3ra Seccion",
+        "archivo": "canutillo_3ra_seccion.geojson"
+      },
+      {
+        "nombre": "Carlos A Madrazo",
+        "archivo": "carlos_a_madrazo.geojson"
+      },
+      {
+        "nombre": "Carola",
+        "archivo": "carola.geojson"
+      },
+      {
+        "nombre": "Cehuaya",
+        "archivo": "cehuaya.geojson"
+      },
+      {
+        "nombre": "Chimalistac",
+        "archivo": "chimalistac.geojson"
+      },
+      {
+        "nombre": "Colina Del Sur",
+        "archivo": "colina_del_sur.geojson"
+      },
+      {
+        "nombre": "Colinas De Tarango",
+        "archivo": "colinas_de_tarango.geojson"
+      },
+      {
+        "nombre": "Cooperativa Union Olivos",
+        "archivo": "cooperativa_union_olivos.geojson"
+      },
+      {
+        "nombre": "Corpus Christy",
+        "archivo": "corpus_christy.geojson"
+      },
+      {
+        "nombre": "Cove",
+        "archivo": "cove.geojson"
+      },
+      {
+        "nombre": "Cristo Rey",
+        "archivo": "cristo_rey.geojson"
+      },
+      {
+        "nombre": "Cuevitas",
+        "archivo": "cuevitas.geojson"
+      },
+      {
+        "nombre": "Desarrollo Urbano",
+        "archivo": "desarrollo_urbano.geojson"
+      },
+      {
+        "nombre": "Dos Rios Del Pueblo De Santa Lucia",
+        "archivo": "dos_rios_del_pueblo_de_santa_lucia.geojson"
+      },
+      {
+        "nombre": "Ejido San Mateo",
+        "archivo": "ejido_san_mateo.geojson"
+      },
+      {
+        "nombre": "El Arbol",
+        "archivo": "el_arbol.geojson"
+      },
+      {
+        "nombre": "El Bosque 2a Secc",
+        "archivo": "el_bosque_2a_secc.geojson"
+      },
+      {
+        "nombre": "El Capulin",
+        "archivo": "el_capulin.geojson"
+      },
+      {
+        "nombre": "El Encino Del Pueblo Tetelpan",
+        "archivo": "el_encino_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "El Mirador Del Pueblo Tetelpan",
+        "archivo": "el_mirador_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "El Piru 2da Ampliacion",
+        "archivo": "el_piru_2da_ampliacion.geojson"
+      },
+      {
+        "nombre": "El Piru Santa Fe",
+        "archivo": "el_piru_santa_fe.geojson"
+      },
+      {
+        "nombre": "El Pirul",
+        "archivo": "el_pirul.geojson"
+      },
+      {
+        "nombre": "El Pocito",
+        "archivo": "el_pocito.geojson"
+      },
+      {
+        "nombre": "El Politoco",
+        "archivo": "el_politoco.geojson"
+      },
+      {
+        "nombre": "El Rincon",
+        "archivo": "el_rincon.geojson"
+      },
+      {
+        "nombre": "El Rodeo",
+        "archivo": "el_rodeo.geojson"
+      },
+      {
+        "nombre": "El Ruedo",
+        "archivo": "el_ruedo.geojson"
+      },
+      {
+        "nombre": "El Tejocote",
+        "archivo": "el_tejocote.geojson"
+      },
+      {
+        "nombre": "Ermita Tizapan",
+        "archivo": "ermita_tizapan.geojson"
+      },
+      {
+        "nombre": "Estado De Hidalgo",
+        "archivo": "estado_de_hidalgo.geojson"
+      },
+      {
+        "nombre": "Ex Hacienda De Tarango",
+        "archivo": "ex_hacienda_de_tarango.geojson"
+      },
+      {
+        "nombre": "Ex-Hacienda De Guadalupe Chimalistac",
+        "archivo": "ex-hacienda_de_guadalupe_chimalistac.geojson"
+      },
+      {
+        "nombre": "Flor De Maria",
+        "archivo": "flor_de_maria.geojson"
+      },
+      {
+        "nombre": "Florida",
+        "archivo": "florida.geojson"
+      },
+      {
+        "nombre": "Francisco Villa",
+        "archivo": "francisco_villa.geojson"
+      },
+      {
+        "nombre": "Galeana",
+        "archivo": "galeana.geojson"
+      },
+      {
+        "nombre": "Garcimarrero",
+        "archivo": "garcimarrero.geojson"
+      },
+      {
+        "nombre": "Golondrinas",
+        "archivo": "golondrinas.geojson"
+      },
+      {
+        "nombre": "Golondrinas 1ra Seccion",
+        "archivo": "golondrinas_1ra_seccion.geojson"
+      },
+      {
+        "nombre": "Golondrinas 2da Seccion",
+        "archivo": "golondrinas_2da_seccion.geojson"
+      },
+      {
+        "nombre": "Guadalupe Inn",
+        "archivo": "guadalupe_inn.geojson"
+      },
+      {
+        "nombre": "Heron Proal",
+        "archivo": "heron_proal.geojson"
+      },
+      {
+        "nombre": "Hidalgo",
+        "archivo": "hidalgo.geojson"
+      },
+      {
+        "nombre": "Hogar Y Redencion",
+        "archivo": "hogar_y_redencion.geojson"
+      },
+      {
+        "nombre": "Hueytlale",
+        "archivo": "hueytlale.geojson"
+      },
+      {
+        "nombre": "Isidro Fabela",
+        "archivo": "isidro_fabela.geojson"
+      },
+      {
+        "nombre": "Jalalpa El Grande",
+        "archivo": "jalalpa_el_grande.geojson"
+      },
+      {
+        "nombre": "Jalalpa Tepito",
+        "archivo": "jalalpa_tepito.geojson"
+      },
+      {
+        "nombre": "Jalalpa Tepito 2da Ampliacion",
+        "archivo": "jalalpa_tepito_2da_ampliacion.geojson"
+      },
+      {
+        "nombre": "Jardines Del Pedregal",
+        "archivo": "jardines_del_pedregal.geojson"
+      },
+      {
+        "nombre": "Jose Maria Pino Suarez",
+        "archivo": "jose_maria_pino_suarez.geojson"
+      },
+      {
+        "nombre": "La Angostura",
+        "archivo": "la_angostura.geojson"
+      },
+      {
+        "nombre": "La Araña",
+        "archivo": "la_arana.geojson"
+      },
+      {
+        "nombre": "La Cascada",
+        "archivo": "la_cascada.geojson"
+      },
+      {
+        "nombre": "La Conchita",
+        "archivo": "la_conchita.geojson"
+      },
+      {
+        "nombre": "La Estrella",
+        "archivo": "la_estrella.geojson"
+      },
+      {
+        "nombre": "La Herradura Del Pueblo Tetelpan",
+        "archivo": "la_herradura_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "La Huerta",
+        "archivo": "la_huerta.geojson"
+      },
+      {
+        "nombre": "La Joya",
+        "archivo": "la_joya.geojson"
+      },
+      {
+        "nombre": "La Joyita Del Pueblo Tetelpan",
+        "archivo": "la_joyita_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "La Martinica",
+        "archivo": "la_martinica.geojson"
+      },
+      {
+        "nombre": "La Mexicana",
+        "archivo": "la_mexicana.geojson"
+      },
+      {
+        "nombre": "La Mexicana 2da Ampliacion",
+        "archivo": "la_mexicana_2da_ampliacion.geojson"
+      },
+      {
+        "nombre": "La Milagrosa",
+        "archivo": "la_milagrosa.geojson"
+      },
+      {
+        "nombre": "La Palmita",
+        "archivo": "la_palmita.geojson"
+      },
+      {
+        "nombre": "La Peñita Del Pueblo Tetelpan",
+        "archivo": "la_penita_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "La Presa",
+        "archivo": "la_presa.geojson"
+      },
+      {
+        "nombre": "Ladera",
+        "archivo": "ladera.geojson"
+      },
+      {
+        "nombre": "Las Aguilas",
+        "archivo": "las_aguilas.geojson"
+      },
+      {
+        "nombre": "Las Aguilas 1ra Seccion",
+        "archivo": "las_aguilas_1ra_seccion.geojson"
+      },
+      {
+        "nombre": "Las Aguilas 2do Parque",
+        "archivo": "las_aguilas_2do_parque.geojson"
+      },
+      {
+        "nombre": "Las Aguilas 3er Parque",
+        "archivo": "las_aguilas_3er_parque.geojson"
+      },
+      {
+        "nombre": "Las Americas",
+        "archivo": "las_americas.geojson"
+      },
+      {
+        "nombre": "Liberacion Proletaria",
+        "archivo": "liberacion_proletaria.geojson"
+      },
+      {
+        "nombre": "Liberales De 1857",
+        "archivo": "liberales_de_1857.geojson"
+      },
+      {
+        "nombre": "Llano Redondo",
+        "archivo": "llano_redondo.geojson"
+      },
+      {
+        "nombre": "Lomas Axomiatla",
+        "archivo": "lomas_axomiatla.geojson"
+      },
+      {
+        "nombre": "Lomas De Becerra",
+        "archivo": "lomas_de_becerra.geojson"
+      },
+      {
+        "nombre": "Lomas De Capula",
+        "archivo": "lomas_de_capula.geojson"
+      },
+      {
+        "nombre": "Lomas De Chamontoya",
+        "archivo": "lomas_de_chamontoya.geojson"
+      },
+      {
+        "nombre": "Lomas De Guadalupe",
+        "archivo": "lomas_de_guadalupe.geojson"
+      },
+      {
+        "nombre": "Lomas De La Era",
+        "archivo": "lomas_de_la_era.geojson"
+      },
+      {
+        "nombre": "Lomas De Las Aguilas",
+        "archivo": "lomas_de_las_aguilas.geojson"
+      },
+      {
+        "nombre": "Lomas De Los Angeles Pueblo Tetelpan",
+        "archivo": "lomas_de_los_angeles_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "Lomas De Los Cedros",
+        "archivo": "lomas_de_los_cedros.geojson"
+      },
+      {
+        "nombre": "Lomas De Nuevo Mexico",
+        "archivo": "lomas_de_nuevo_mexico.geojson"
+      },
+      {
+        "nombre": "Lomas De Plateros",
+        "archivo": "lomas_de_plateros.geojson"
+      },
+      {
+        "nombre": "Lomas De Puerta Grande",
+        "archivo": "lomas_de_puerta_grande.geojson"
+      },
+      {
+        "nombre": "Lomas De San Angel Inn",
+        "archivo": "lomas_de_san_angel_inn.geojson"
+      },
+      {
+        "nombre": "Lomas De San Bernabe",
+        "archivo": "lomas_de_san_bernabe.geojson"
+      },
+      {
+        "nombre": "Lomas De Santa Fe",
+        "archivo": "lomas_de_santa_fe.geojson"
+      },
+      {
+        "nombre": "Lomas De Tarango",
+        "archivo": "lomas_de_tarango.geojson"
+      },
+      {
+        "nombre": "Los Alpes",
+        "archivo": "los_alpes.geojson"
+      },
+      {
+        "nombre": "Los Cedros",
+        "archivo": "los_cedros.geojson"
+      },
+      {
+        "nombre": "Los Gamitos",
+        "archivo": "los_gamitos.geojson"
+      },
+      {
+        "nombre": "Los Juristas",
+        "archivo": "los_juristas.geojson"
+      },
+      {
+        "nombre": "Margarita Maza De Juarez",
+        "archivo": "margarita_maza_de_juarez.geojson"
+      },
+      {
+        "nombre": "Maria G De Garcia Ruiz",
+        "archivo": "maria_g_de_garcia_ruiz.geojson"
+      },
+      {
+        "nombre": "Martires De Tacubaya",
+        "archivo": "martires_de_tacubaya.geojson"
+      },
+      {
+        "nombre": "Merced Gomez",
+        "archivo": "merced_gomez.geojson"
+      },
+      {
+        "nombre": "Miguel Gaona Armenta",
+        "archivo": "miguel_gaona_armenta.geojson"
+      },
+      {
+        "nombre": "Miguel Hidalgo",
+        "archivo": "miguel_hidalgo.geojson"
+      },
+      {
+        "nombre": "Minas Cristo Rey",
+        "archivo": "minas_cristo_rey.geojson"
+      },
+      {
+        "nombre": "Molino De Rosas",
+        "archivo": "molino_de_rosas.geojson"
+      },
+      {
+        "nombre": "Molino De Santo Domingo",
+        "archivo": "molino_de_santo_domingo.geojson"
+      },
+      {
+        "nombre": "Ocotillos Del Pueblo Tetelpan",
+        "archivo": "ocotillos_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "Olivar De Los Padres",
+        "archivo": "olivar_de_los_padres.geojson"
+      },
+      {
+        "nombre": "Olivar Del Conde 1ra Seccion",
+        "archivo": "olivar_del_conde_1ra_seccion.geojson"
+      },
+      {
+        "nombre": "Olivar Del Conde 2da Seccion",
+        "archivo": "olivar_del_conde_2da_seccion.geojson"
+      },
+      {
+        "nombre": "Palmas",
+        "archivo": "palmas.geojson"
+      },
+      {
+        "nombre": "Palmas Axotitla",
+        "archivo": "palmas_axotitla.geojson"
+      },
+      {
+        "nombre": "Paraiso",
+        "archivo": "paraiso.geojson"
+      },
+      {
+        "nombre": "Paseo De Las Lomas",
+        "archivo": "paseo_de_las_lomas.geojson"
+      },
+      {
+        "nombre": "Piloto Adolfo Lopez Mateos",
+        "archivo": "piloto_adolfo_lopez_mateos.geojson"
+      },
+      {
+        "nombre": "Piru Santa Lucia",
+        "archivo": "piru_santa_lucia.geojson"
+      },
+      {
+        "nombre": "Polvora",
+        "archivo": "polvora.geojson"
+      },
+      {
+        "nombre": "Ponciano Arriaga",
+        "archivo": "ponciano_arriaga.geojson"
+      },
+      {
+        "nombre": "Preconcreto",
+        "archivo": "preconcreto.geojson"
+      },
+      {
+        "nombre": "Presidentes",
+        "archivo": "presidentes.geojson"
+      },
+      {
+        "nombre": "Profesor J Arturo Lopez Martinez",
+        "archivo": "profesor_j_arturo_lopez_martinez.geojson"
+      },
+      {
+        "nombre": "Progreso Tizapan",
+        "archivo": "progreso_tizapan.geojson"
+      },
+      {
+        "nombre": "Pueblo Axotla",
+        "archivo": "pueblo_axotla.geojson"
+      },
+      {
+        "nombre": "Pueblo Nuevo",
+        "archivo": "pueblo_nuevo.geojson"
+      },
+      {
+        "nombre": "Pueblo San Bartolo Ameyalco",
+        "archivo": "pueblo_san_bartolo_ameyalco.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Fe",
+        "archivo": "pueblo_santa_fe.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Lucia",
+        "archivo": "pueblo_santa_lucia.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Lucia Chantepec",
+        "archivo": "pueblo_santa_lucia_chantepec.geojson"
+      },
+      {
+        "nombre": "Pueblo Santa Rosa Xochiac",
+        "archivo": "pueblo_santa_rosa_xochiac.geojson"
+      },
+      {
+        "nombre": "Pueblo Tetelpan",
+        "archivo": "pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "Pueblo Tizapan",
+        "archivo": "pueblo_tizapan.geojson"
+      },
+      {
+        "nombre": "Pueblo Tlacopac",
+        "archivo": "pueblo_tlacopac.geojson"
+      },
+      {
+        "nombre": "Puente Colorado",
+        "archivo": "puente_colorado.geojson"
+      },
+      {
+        "nombre": "Puerta Grande",
+        "archivo": "puerta_grande.geojson"
+      },
+      {
+        "nombre": "Punta De Ceguaya",
+        "archivo": "punta_de_ceguaya.geojson"
+      },
+      {
+        "nombre": "Rancho San Francisco Del Pblo San Bartolo Ameyalco",
+        "archivo": "rancho_san_francisco_del_pblo_san_bartolo_ameyalco.geojson"
+      },
+      {
+        "nombre": "Reacomodo El Cuernito",
+        "archivo": "reacomodo_el_cuernito.geojson"
+      },
+      {
+        "nombre": "Reacomodo Pino Suarez",
+        "archivo": "reacomodo_pino_suarez.geojson"
+      },
+      {
+        "nombre": "Reacomodo Valentin Gomez Farias",
+        "archivo": "reacomodo_valentin_gomez_farias.geojson"
+      },
+      {
+        "nombre": "Real Del Monte",
+        "archivo": "real_del_monte.geojson"
+      },
+      {
+        "nombre": "Rincon De La Bolsa",
+        "archivo": "rincon_de_la_bolsa.geojson"
+      },
+      {
+        "nombre": "Rinconada De Tarango",
+        "archivo": "rinconada_de_tarango.geojson"
+      },
+      {
+        "nombre": "Rinconada Las Cuevitas",
+        "archivo": "rinconada_las_cuevitas.geojson"
+      },
+      {
+        "nombre": "Sacramento",
+        "archivo": "sacramento.geojson"
+      },
+      {
+        "nombre": "San Agustin Del Pueblo Tetelpan",
+        "archivo": "san_agustin_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "San Angel",
+        "archivo": "san_angel.geojson"
+      },
+      {
+        "nombre": "San Angel Inn",
+        "archivo": "san_angel_inn.geojson"
+      },
+      {
+        "nombre": "San Clemente Norte",
+        "archivo": "san_clemente_norte.geojson"
+      },
+      {
+        "nombre": "San Clemente Sur",
+        "archivo": "san_clemente_sur.geojson"
+      },
+      {
+        "nombre": "San Gabriel",
+        "archivo": "san_gabriel.geojson"
+      },
+      {
+        "nombre": "San Jeronimo Aculco",
+        "archivo": "san_jeronimo_aculco.geojson"
+      },
+      {
+        "nombre": "San Jose Del Olivar",
+        "archivo": "san_jose_del_olivar.geojson"
+      },
+      {
+        "nombre": "San Pedro De Los Pinos",
+        "archivo": "san_pedro_de_los_pinos.geojson"
+      },
+      {
+        "nombre": "Santa Fe",
+        "archivo": "santa_fe.geojson"
+      },
+      {
+        "nombre": "Santa Fe Centro Ciudad",
+        "archivo": "santa_fe_centro_ciudad.geojson"
+      },
+      {
+        "nombre": "Santa Fe La Loma",
+        "archivo": "santa_fe_la_loma.geojson"
+      },
+      {
+        "nombre": "Santa Fe Peña Blanca",
+        "archivo": "santa_fe_pena_blanca.geojson"
+      },
+      {
+        "nombre": "Santa Lucia Chantepec",
+        "archivo": "santa_lucia_chantepec.geojson"
+      },
+      {
+        "nombre": "Tarango",
+        "archivo": "tarango.geojson"
+      },
+      {
+        "nombre": "Tecalcapa Del Pueblo Tetelpan",
+        "archivo": "tecalcapa_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "Tecolalco",
+        "archivo": "tecolalco.geojson"
+      },
+      {
+        "nombre": "Tepeaca",
+        "archivo": "tepeaca.geojson"
+      },
+      {
+        "nombre": "Tepopotla",
+        "archivo": "tepopotla.geojson"
+      },
+      {
+        "nombre": "Tizampampano Del Pueblo Tetelpan",
+        "archivo": "tizampampano_del_pueblo_tetelpan.geojson"
+      },
+      {
+        "nombre": "Tlacoyaque",
+        "archivo": "tlacoyaque.geojson"
+      },
+      {
+        "nombre": "Tlacuitlapa",
+        "archivo": "tlacuitlapa.geojson"
+      },
+      {
+        "nombre": "Tlapechico",
+        "archivo": "tlapechico.geojson"
+      },
+      {
+        "nombre": "Tolteca",
+        "archivo": "tolteca.geojson"
+      },
+      {
+        "nombre": "Torres De Potrero",
+        "archivo": "torres_de_potrero.geojson"
+      },
+      {
+        "nombre": "Villa Progresista",
+        "archivo": "villa_progresista.geojson"
+      },
+      {
+        "nombre": "Villa Solidaridad",
+        "archivo": "villa_solidaridad.geojson"
+      },
+      {
+        "nombre": "Villa Verdun",
+        "archivo": "villa_verdun.geojson"
+      },
+      {
+        "nombre": "Zenon Delgado",
+        "archivo": "zenon_delgado.geojson"
+      },
+      {
+        "nombre": "Zona Federal",
+        "archivo": "zona_federal.geojson"
+      }
+    ]
+  }
+]
