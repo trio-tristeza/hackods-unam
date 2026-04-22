@@ -240,6 +240,20 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
         - **Nivel de Accesibilidad:** Clasificación cualitativa (**Alta**, **Media**, **Baja**).
     6.  **Exportación Incremental:** Los resultados se guardan por alcaldía para optimizar el uso de memoria y permitir la recuperación del proceso ante interrupciones.
 
+## 21. Clasificación de Accesibilidad Urbana por Manzana (Etapa 4)
+*   **Archivos:** `mnz_clas_[ALCALDIA].geojson` (16 archivos en `datos/procesados/procesados_4_etapa/`)
+*   **Script de Generación:** `scripts/asignar_geometrias.py`
+*   **Metodología y Pasos de Procesamiento:**
+    1.  **Carga de geometrías:** Se carga la capa `manzanas_cdmx_poblacion.gpkg` (etapa 2) conservando únicamente el identificador `CVEGEO` y la geometría poligonal de cada manzana (EPSG:4326).
+    2.  **Unión con resultados de cruce:** Para cada alcaldía, se une la tabla del archivo `cruce_[ALCALDIA].gpkg` (etapa 3) con los polígonos de manzana mediante un *inner join* sobre `CVEGEO`, asignando así geometría real a cada registro de accesibilidad.
+    3.  **Clasificación:** Se genera el campo `clasificacion` a partir del campo `diversidad` (índice de 0 a 8 que cuenta los tipos de equipamiento accesibles), aplicando los siguientes cortes:
+        - **Muy bajo:** diversidad 0 – 2
+        - **Bajo:** diversidad 3 – 4
+        - **Medio:** diversidad 5
+        - **Alto:** diversidad ≥ 6
+    4.  **Limpieza de campos:** Se descartan todas las columnas de detalle de equipamiento, conservando únicamente `clavegeo`, `alcaldia`, `colonia` y `clasificacion`.
+    5.  **Exportación:** Cada alcaldía se exporta como un archivo GeoJSON independiente en `datos/procesados/procesados_4_etapa/`, listo para consumo en el dashboard.
+
 ---
 **Nota:** Todos los archivos procesados se encuentran documentados en los Notebooks del proyecto, donde se detalla el flujo de trabajo, la limpieza y el análisis de los datos.
 
