@@ -86,3 +86,9 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Prompt**: "puedes darme una propuesta de entrada de metadatos para los datos de `datos/procesados/procesados_4_etapa/colonias` para la generación de metadatos".
 - **Resultado**: Se generó un propuesta de entrada en `METADATOS.md` como ítem 22, con la propuesta de descripción de la división por colonia, la normalización de nombres de archivo, la organización en directorios por alcaldía y la generación del `index.json` para selección en cascada en el dashboard.
 - **Decisión**: Se aceptó la propuesta sin modificaciones, ya que las rutas y la estructura corresponden directamente a los archivos generados por `scripts/dividir_colonias.py`.
+
+### 2026-04-21 | Claude Code (claude-sonnet-4-6) | Integración del índice de colonias para filtrado en el mapa
+- **Tarea**: Integrar el índice generado para la búsqueda de colonias por alcaldía y aplicarlo para una búsqueda eficiente en el mapa del dashboard.
+- **Prompt**: "¿puedes ayudarme a integrar el index que he generado para la búsqueda de colonias por alcaldía para hacer una búsqueda eficiente en el mapa?"
+- **Resultado**: Propuesta de aplicación del algoritmo de filtrado usando el `index.json` para la selección en cascada alcaldía → colonia, con carga dinámica del GeoJSON correspondiente para la visualización por filtro en el mapa, y texto descriptivo de la funcionalidad de la sección.
+- **Decisión**: Se aceptó la propuesta de filtrado y se añadió visualización de categorías por medio de una paleta de colores Color Brewer. El texto descriptivo se dejó por ahora pero se modificará más adelante con una adecuación técnica.
