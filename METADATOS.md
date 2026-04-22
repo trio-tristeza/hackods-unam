@@ -254,6 +254,16 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
     4.  **Limpieza de campos:** Se descartan todas las columnas de detalle de equipamiento, conservando únicamente `clavegeo`, `alcaldia`, `colonia` y `clasificacion`.
     5.  **Exportación:** Cada alcaldía se exporta como un archivo GeoJSON independiente en `datos/procesados/procesados_4_etapa/`, listo para consumo en el dashboard.
 
+## 22. División por Colonias para Dashboard (Etapa 4 — Colonias)
+*   **Archivos:** `index.json` y `[ALCALDIA]/[colonia].geojson` en `datos/procesados/procesados_4_etapa/colonias/`
+*   **Script de Generación:** `scripts/dividir_colonias.py`
+*   **Metodología y Pasos de Procesamiento:**
+    1.  **Lectura por alcaldía:** Se leen los 16 archivos `mnz_clas_[ALCALDIA].geojson` de la etapa 4.
+    2.  **División por colonia:** Para cada alcaldía se agrupa el GeoDataFrame por el campo `colonia` y se exporta cada grupo como un GeoJSON independiente, conservando únicamente `clavegeo`, `clasificacion` y `geometry`.
+    3.  **Normalización de nombres de archivo:** Los nombres de colonia se normalizan (minúsculas, sin tildes, espacios sustituidos por guiones bajos) para garantizar rutas de archivo compatibles entre sistemas operativos.
+    4.  **Organización en directorios:** Cada alcaldía genera su propia carpeta dentro de `colonias/`, agrupando todos los GeoJSON de sus colonias.
+    5.  **Generación del índice:** Se produce un archivo `index.json` con la lista de alcaldías y, para cada una, el listado de sus colonias con el nombre legible y el nombre del archivo correspondiente. Este índice permite al dashboard construir la selección en cascada (alcaldía → colonia) sin necesidad de cargar ninguna geometría hasta que el usuario la solicite.
+
 ---
 **Nota:** Todos los archivos procesados se encuentran documentados en los Notebooks del proyecto, donde se detalla el flujo de trabajo, la limpieza y el análisis de los datos.
 

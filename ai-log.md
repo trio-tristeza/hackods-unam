@@ -69,16 +69,20 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Resultado**: Propuesta de inclusión de una sección interactiva en el dashboard con gráficas de barras horizontales para cada indicador ODS 11, navegación con botones de flechas, panel de texto descriptivo reactivo y etiquetas de posicionamiento de la CDMX frente al promedio nacional.
 - **Decisión**: Se decidió aceptar la propuesta de modificación de estilo, integrando la visualización dentro del flujo de scrollytelling del dashboard de forma que el panel izquierdo alterna entre la gráfica de indicadores y el mapa de accesibilidad según la sección visible.
 
-
 ### 2026-04-14 | Claude Code (claude-sonnet-4-6) | Corrección del flujo de despliegue continuo
 - **Tarea**: Corregir el workflow de GitHub Actions tras cambios en la estructura del directorio `dashboard/`.
 - **Prompt**: "¿puedes apoyarme a corregir el despliegue continuo, cambié la estructura de dashboard y ahora tiene fallo?"
 - **Resultado**: Se actualizaron los archivos correspondientes al flujo de CI/CD: se corrigió la ruta de copia del dashboard de `dashboard/_site/*` a los artefactos renderizados in-place (`index.html`, `index_files/`, `styles.css`, `datos/`), y se añadió la variable de entorno `QUARTO_PYTHON` para que Quarto utilice el entorno virtual de `uv` con las dependencias del proyecto.
 - **Decisión**: Se aceptaron los cambios validando que corresponden a la estructura actual del directorio `dashboard/`, donde `format: html` genera archivos en el mismo directorio en lugar de un subdirectorio `_site/`.
 
-
 ### 2026-04-21 | Claude Code (claude-sonnet-4-6) | Generación de metadatos para las etapas 3 y 4
 - **Tarea**: Generar una entrada de metadatos que describa el procedimiento de creación de los archivos de cruce de accesibilidad (etapa 3) y de clasificación por manzana (etapa 4).
 - **Prompt**: "utilizando como base lo descrito en los scripts `asignar_geometrias.py` y `cruce_accesibilidad.py`, apóyame a generar una propuesta de entrada en el archivo de metadatos que describa el procedimiento de creación de los archivos de las etapas 3 y 4".
 - **Resultado**: Se generó una propuesta de entrada en `METADATOS.md` como ítem 21, con la descripción completa del procedimiento, las fuentes, las variables, el índice de diversidad y la metodología de clasificación, siguiendo la estructura del resto del documento.
 - **Decisión**: Se adaptó la propuesta ajustando las rutas de los archivos de entrada y salida a las rutas reales del proyecto, conservando la estructura general propuesta por la IA.
+
+### 2026-04-21 | Claude Code (claude-sonnet-4-6) | Generación de metadatos para la división por colonias (Etapa 4 — Colonias)
+- **Tarea**: Generar una entrada de metadatos que describa el procedimiento de creación de los archivos de división por colonias y el índice para el dashboard.
+- **Prompt**: "puedes darme una propuesta de entrada de metadatos para los datos de `datos/procesados/procesados_4_etapa/colonias` para la generación de metadatos".
+- **Resultado**: Se generó un propuesta de entrada en `METADATOS.md` como ítem 22, con la propuesta de descripción de la división por colonia, la normalización de nombres de archivo, la organización en directorios por alcaldía y la generación del `index.json` para selección en cascada en el dashboard.
+- **Decisión**: Se aceptó la propuesta sin modificaciones, ya que las rutas y la estructura corresponden directamente a los archivos generados por `scripts/dividir_colonias.py`.
