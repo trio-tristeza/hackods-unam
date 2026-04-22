@@ -69,8 +69,16 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Resultado**: Propuesta de inclusión de una sección interactiva en el dashboard con gráficas de barras horizontales para cada indicador ODS 11, navegación con botones de flechas, panel de texto descriptivo reactivo y etiquetas de posicionamiento de la CDMX frente al promedio nacional.
 - **Decisión**: Se decidió aceptar la propuesta de modificación de estilo, integrando la visualización dentro del flujo de scrollytelling del dashboard de forma que el panel izquierdo alterna entre la gráfica de indicadores y el mapa de accesibilidad según la sección visible.
 
+
 ### 2026-04-14 | Claude Code (claude-sonnet-4-6) | Corrección del flujo de despliegue continuo
 - **Tarea**: Corregir el workflow de GitHub Actions tras cambios en la estructura del directorio `dashboard/`.
 - **Prompt**: "¿puedes apoyarme a corregir el despliegue continuo, cambié la estructura de dashboard y ahora tiene fallo?"
 - **Resultado**: Se actualizaron los archivos correspondientes al flujo de CI/CD: se corrigió la ruta de copia del dashboard de `dashboard/_site/*` a los artefactos renderizados in-place (`index.html`, `index_files/`, `styles.css`, `datos/`), y se añadió la variable de entorno `QUARTO_PYTHON` para que Quarto utilice el entorno virtual de `uv` con las dependencias del proyecto.
 - **Decisión**: Se aceptaron los cambios validando que corresponden a la estructura actual del directorio `dashboard/`, donde `format: html` genera archivos en el mismo directorio en lugar de un subdirectorio `_site/`.
+
+
+### 2026-04-21 | Claude Code (claude-sonnet-4-6) | Generación de metadatos para las etapas 3 y 4
+- **Tarea**: Generar una entrada de metadatos que describa el procedimiento de creación de los archivos de cruce de accesibilidad (etapa 3) y de clasificación por manzana (etapa 4).
+- **Prompt**: "utilizando como base lo descrito en los scripts `asignar_geometrias.py` y `cruce_accesibilidad.py`, apóyame a generar una propuesta de entrada en el archivo de metadatos que describa el procedimiento de creación de los archivos de las etapas 3 y 4".
+- **Resultado**: Se generó una propuesta de entrada en `METADATOS.md` como ítem 21, con la descripción completa del procedimiento, las fuentes, las variables, el índice de diversidad y la metodología de clasificación, siguiendo la estructura del resto del documento.
+- **Decisión**: Se adaptó la propuesta ajustando las rutas de los archivos de entrada y salida a las rutas reales del proyecto, conservando la estructura general propuesta por la IA.
