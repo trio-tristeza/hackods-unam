@@ -204,7 +204,7 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
     5. **Exportación:** Guardado en formato GeoPackage con CRS EPSG:32614.
 
 ## 19. Indicadores ODS 11 (INEGI API - Nacional y Estatal)
-* **Archivo:** `datos/indicadoresODS11/ods11_final.json`
+* **Archivo:** `datos/procesados/procesados_2.5_etapa/ods11_final.json`
 * **Fuente:** [INEGI - API de Indicadores (Banco de Indicadores BISE)](https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/...)
 * **Indicadores Incluidos:**
     * **11.1.1**: Viviendas precarias (%).

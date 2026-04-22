@@ -2,7 +2,7 @@
 Genera datos de indicadores ODS 11 para los 32 estados de México
 consultando la API del INEGI (BISE).
 
-Salida: datos/indicadoresODS11/ods11_final.json
+Salida: datos/procesados/procesados_2.5_etapa/ods11_final.json
 
 Formato de salida:
 [
@@ -40,7 +40,7 @@ NACIONAL = "00"
 
 OUTPUT_DIR = os.path.join(
     os.path.dirname(os.path.dirname(__file__)),
-    "datos", "indicadoresODS11"
+    "datos", "procesados", "procesados_2.5_etapa"
 )
 
 

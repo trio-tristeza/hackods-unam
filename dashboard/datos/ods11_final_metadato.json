@@ -1,6 +1,6 @@
 {
   "titulo": "Indicadores ODS 11 (INEGI API - Nacional y Estatal)",
-  "archivo": "datos/indicadoresODS11/ods11_final.json",
+  "archivo": "datos/procesados/procesados_2.5_etapa/ods11_final.json",
   "descripcion": "Dataset consolidado de indicadores del Objetivo de Desarrollo Sostenible 11 (Ciudades y comunidades sostenibles) para México, generado a partir de consultas automatizadas a la API del Banco de Indicadores del INEGI (BISE). Incluye valores a nivel nacional y para las 32 entidades federativas, estructurados para análisis comparativo y visualización en dashboards.",
   
   "fuentes": [
