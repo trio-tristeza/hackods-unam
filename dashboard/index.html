@@ -277,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div id="panel-map" class="panel-content">
-<div id="fe22bf1f" class="cell" data-execution_count="1">
+<div id="4c355a28" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -&gt; Trust Notebook</span><iframe srcdoc="<!DOCTYPE html>
 <html>
@@ -298,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; />
             <style>
-                #map_6ab2a0d94ae89e2d5081bd59f5eca33e {
+                #map_98e4aac6f0622baaacbd0959cd900633 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -335,14 +335,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body>
     
     
-            <div class=&quot;folium-map&quot; id=&quot;map_6ab2a0d94ae89e2d5081bd59f5eca33e&quot; ></div>
+            <div class=&quot;folium-map&quot; id=&quot;map_98e4aac6f0622baaacbd0959cd900633&quot; ></div>
         
 </body>
 <script>
     
     
-            var map_6ab2a0d94ae89e2d5081bd59f5eca33e = L.map(
-                &quot;map_6ab2a0d94ae89e2d5081bd59f5eca33e&quot;,
+            var map_98e4aac6f0622baaacbd0959cd900633 = L.map(
+                &quot;map_98e4aac6f0622baaacbd0959cd900633&quot;,
                 {
                     center: [19.4326, -99.1332],
                     crs: L.CRS.EPSG3857,
@@ -359,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
         
     
-            var tile_layer_b8b7d86ccb6f7cc3d20d20c3afdccb63 = L.tileLayer(
+            var tile_layer_44744f7e66cc7f5d097d9ee705afde62 = L.tileLayer(
                 &quot;https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png&quot;,
                 {
   &quot;minZoom&quot;: 0,
@@ -376,7 +376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             );
         
     
-            tile_layer_b8b7d86ccb6f7cc3d20d20c3afdccb63.addTo(map_6ab2a0d94ae89e2d5081bd59f5eca33e);
+            tile_layer_44744f7e66cc7f5d097d9ee705afde62.addTo(map_98e4aac6f0622baaacbd0959cd900633);
         
 </script>
 </html>" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe></div></div>
@@ -393,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
     <label style="font-size:11px;font-weight:600;text-transform:uppercase;color:#555;">Alcaldía</label>
     <select id="acc-alc" style="padding:7px 10px;border:1px solid #ccc;border-radius:4px;font-size:13px;">
-      <option value="">— Selecciona alcaldía —</option>
+      <option value="">— Toda la CDMX —</option>
     </select>
   </div>
   <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
@@ -403,18 +403,200 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </select>
   </div>
 </div>
-<div id="acc-map" style="width:100%;height:450px;border-radius:4px;border:1px solid #e0e0e0;"></div>
+<div id="acc-map" style="width:100%;flex:1;min-height:0;border-radius:4px;border:1px solid #e0e0e0;"></div>
 <div id="acc-legend" class="acc-legend"></div>
 
 <script>
 (function () {
   var COLORS = { 'Muy bajo': '#fc8d59', 'Bajo': '#fee08b', 'Medio': '#e6f598', 'Alto': '#99d594' };
   var CLASES  = ['Muy bajo', 'Bajo', 'Medio', 'Alto'];
-  var accMap = null, accLayer = null, accIndex = null;
+
+  /*
+   * Breakpoints de zoom — resolución automática independiente del filtro:
+   *   < 12  → vista CDMX   (4 polígonos por clase)
+   *   12–13 → vista alcaldías (~55 features)
+   *   14–15 → colonias simplificadas para las alcaldías visibles en el viewport
+   *   ≥ 16  → manzanas originales (solo si hay colonia seleccionada en el filtro)
+   *
+   * El filtro de alcaldía/colonia únicamente hace zoom hacia la selección;
+   * la resolución siempre la determina el nivel de zoom actual.
+   */
+  var ZOOM_ALC = 12;
+  var ZOOM_COL = 14;
+  var ZOOM_MNZ = 16;
+
+  var accMap = null, activeLayer = null, accIndex = null;
+  var currentLevel    = null;
+  var currentAlcaldia = null;  /* nombre alcaldía seleccionada (solo para manzanas y fitBounds) */
+  var currentColonia  = null;  /* nombre colonia seleccionada  (solo para manzanas y fitBounds) */
+  var currentColArch  = null;  /* archivo .geojson de la colonia seleccionada                   */
+  var currentVisKey   = null;  /* key de alcaldías visibles — evita re-render innecesario       */
+
+  var cdmxCache     = null;
+  var vistaAlcCache = null;
+  var alcBounds     = {};   /* { nombreAlcaldia: L.LatLngBounds } — índice espacial ligero */
+  var vistaColCache = {};   /* keyed por carpeta                                            */
+  var mnzCache      = {};   /* keyed por ruta completa                                      */
+
+  /* ---- utilidades -------------------------------------------------------- */
+
+  function styleFeature(f) {
+    return { fillColor: COLORS[f.properties.clasificacion] || '#ccc',
+             color: '#fff', weight: 0.5, fillOpacity: 0.8 };
+  }
+
+  function tooltipFor(f, nivel) {
+    var p = f.properties;
+    if (nivel === 'manzana')  return p.clasificacion + '<br><small>' + (p.clavegeo || '') + '</small>';
+    if (nivel === 'colonia')  return '<b>' + (p.colonia  || '') + '</b><br>' + p.clasificacion;
+    if (nivel === 'alcaldia') return '<b>' + (p.alcaldia || '') + '</b><br>' + p.clasificacion;
+    return '<b>' + p.clasificacion + '</b>';
+  }
+
+  function pintarCapa(features, nivel) {
+    if (activeLayer) { accMap.removeLayer(activeLayer); activeLayer = null; }
+    if (!features || !features.length) return;
+    activeLayer = L.geoJSON({ type: 'FeatureCollection', features: features }, {
+      style: styleFeature,
+      onEachFeature: function(f, l) { l.bindTooltip(tooltipFor(f, nivel), { sticky: true }); }
+    }).addTo(accMap);
+  }
+
+  /* Construye el índice de bounding boxes por alcaldía (se llama una vez) */
+  function buildAlcBounds(gj) {
+    if (Object.keys(alcBounds).length) return;
+    gj.features.forEach(function(f) {
+      var nombre = f.properties.alcaldia;
+      try {
+        var b = L.geoJSON({ type: 'FeatureCollection', features: [f] }).getBounds();
+        if (!b || !b.isValid()) return;
+        if (!alcBounds[nombre]) alcBounds[nombre] = b;
+        else alcBounds[nombre].extend(b);
+      } catch (e) {}
+    });
+  }
+
+  /* Devuelve los nombres de alcaldías cuyo bounding box intersecta el viewport */
+  function alcaldiasEnViewport() {
+    var mb = accMap.getBounds();
+    return Object.keys(alcBounds).filter(function(n) {
+      return alcBounds[n] && mb.intersects(alcBounds[n]);
+    });
+  }
+
+  /* fetch con caché en memoria */
+  function fetchJSON(url, cached, onDone) {
+    if (cached !== null && cached !== undefined) { onDone(cached); return; }
+    fetch(url)
+      .then(function(r) { return r.json(); })
+      .then(onDone)
+      .catch(function(e) { console.error(url, e); });
+  }
+
+  /* ---- nivel objetivo (zoom manda, filtro solo activa manzanas) ---------- */
+
+  function nivelObjetivo() {
+    var z = accMap.getZoom();
+    if (z >= ZOOM_MNZ && currentColonia) return 'manzana';
+    if (z >= ZOOM_COL)                   return 'colonia';
+    if (z >= ZOOM_ALC)                   return 'alcaldia';
+    return 'cdmx';
+  }
+
+  /* ---- actualización de capa (llamado por zoom, pan y cambios de filtro) - */
+
+  function actualizarCapa() {
+    if (!accIndex) return;
+    var nivel = nivelObjetivo();
+
+    /* CDMX ----------------------------------------------------------------- */
+    if (nivel === 'cdmx') {
+      if (nivel === currentLevel) return;
+      currentLevel = nivel; currentVisKey = null;
+      fetchJSON('datos/vistas/vista_cdmx.geojson', cdmxCache, function(gj) {
+        cdmxCache = gj;
+        pintarCapa(gj.features, 'cdmx');
+      });
+
+    /* ALCALDÍA ------------------------------------------------------------- */
+    } else if (nivel === 'alcaldia') {
+      if (nivel === currentLevel) return;
+      currentLevel = nivel; currentVisKey = null;
+      fetchJSON('datos/vistas/vista_alcaldias.geojson', vistaAlcCache, function(gj) {
+        vistaAlcCache = gj;
+        buildAlcBounds(gj);
+        pintarCapa(gj.features, 'alcaldia');
+      });
+
+    /* COLONIA SIMPLIFICADA (dinámica por viewport) -------------------------- */
+    } else if (nivel === 'colonia') {
+      /* vistaAlcCache se pre-carga en init; si aún no llegó (race condition muy rara)
+         el callback de pre-carga llamará actualizarCapa() al terminar */
+      if (!vistaAlcCache) return;
+      var visAlcs = alcaldiasEnViewport();
+      var visKey  = visAlcs.slice().sort().join('|');
+      if (nivel === currentLevel && visKey === currentVisKey) return;
+      currentLevel = nivel; currentVisKey = visKey;
+
+      if (!visAlcs.length) { pintarCapa([], 'colonia'); return; }
+
+      var pendientes    = visAlcs.length;
+      var todosFeatures = [];
+      visAlcs.forEach(function(alcNombre) {
+        var entry = accIndex.find(function(a) { return a.nombre === alcNombre; });
+        if (!entry) { if (!--pendientes) pintarCapa(todosFeatures, 'colonia'); return; }
+        var url = 'datos/vistas/colonias/' + entry.carpeta + '.geojson';
+        fetchJSON(url, vistaColCache[entry.carpeta], function(gj) {
+          vistaColCache[entry.carpeta] = gj;
+          todosFeatures = todosFeatures.concat(gj.features);
+          if (!--pendientes) pintarCapa(todosFeatures, 'colonia');
+        });
+      });
+
+    /* MANZANAS (solo con colonia seleccionada en filtro) -------------------- */
+    } else if (nivel === 'manzana') {
+      if (nivel === currentLevel) return;
+      currentLevel = nivel; currentVisKey = null;
+      var entry = accIndex.find(function(a) { return a.nombre === currentAlcaldia; });
+      if (!entry || !currentColArch) return;
+      var ruta = 'datos/colonias/' + entry.carpeta + '/' + currentColArch;
+      fetchJSON(ruta, mnzCache[ruta], function(gj) {
+        mnzCache[ruta] = gj;
+        pintarCapa(gj.features, 'manzana');
+      });
+    }
+  }
+
+  /* ---- funciones de navegación (solo mueven el mapa; zoomend actualiza) -- */
+
+  function zoomAAlcaldia(alcNombre) {
+    /* vistaAlcCache siempre pre-cargado en init */
+    if (alcBounds[alcNombre] && alcBounds[alcNombre].isValid()) {
+      currentLevel = null;
+      accMap.fitBounds(alcBounds[alcNombre], { padding: [30, 30] });
+    }
+  }
+
+  function zoomAColonia(alcNombre, colNombre) {
+    var entry = accIndex.find(function(a) { return a.nombre === alcNombre; });
+    if (!entry) return;
+    var url = 'datos/vistas/colonias/' + entry.carpeta + '.geojson';
+    fetchJSON(url, vistaColCache[entry.carpeta], function(gj) {
+      vistaColCache[entry.carpeta] = gj;
+      var features = gj.features.filter(function(f) { return f.properties.colonia === colNombre; });
+      if (!features.length) return;
+      try {
+        var bounds = L.geoJSON({ type: 'FeatureCollection', features: features }).getBounds();
+        if (bounds && bounds.isValid()) { currentLevel = null; accMap.fitBounds(bounds, { padding: [30, 30] }); }
+      } catch (e) {}
+    });
+  }
+
+  /* ---- inicialización ---------------------------------------------------- */
 
   function init() {
-    /* El panel usa visibility:hidden (no display:none), así el div tiene dimensiones reales */
-    accMap = L.map('acc-map').setView([19.4326, -99.1332], 11);
+    accMap = L.map('acc-map');
+    accMap.fitBounds([[19.13, -99.341], [19.579, -98.948]], { padding: [0, 0] });
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; CARTO', maxZoom: 19
     }).addTo(accMap);
@@ -424,51 +606,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
              COLORS[c] + '"></span>' + c + '</span>';
     }).join('');
 
+    /* zoom y pan disparan actualización de resolución automáticamente */
+    accMap.on('zoomend moveend', function() { actualizarCapa(); });
+
+    /* Pre-cargar vista_alcaldias en paralelo para tener alcBounds listos
+       antes de que el usuario haga zoom a nivel colonia (sin esperar filtros) */
+    fetchJSON('datos/vistas/vista_alcaldias.geojson', null, function(gj) {
+      vistaAlcCache = gj;
+      buildAlcBounds(gj);
+      /* Si el usuario ya hizo zoom a nivel colonia mientras cargaba, renderizar */
+      if (accIndex && nivelObjetivo() === 'colonia' && currentLevel !== 'colonia') {
+        actualizarCapa();
+      }
+    });
+
     fetch('datos/colonias/index.json')
       .then(function(r) { return r.json(); })
       .then(function(idx) {
         accIndex = idx;
         var alcSel = document.getElementById('acc-alc');
+        var colSel = document.getElementById('acc-col');
+
         idx.forEach(function(a) {
           var o = document.createElement('option');
           o.value = a.nombre; o.textContent = a.nombre;
           alcSel.appendChild(o);
         });
+
+        /* Alcaldía: pobla colonias y hace zoom, el resto lo resuelve zoomend */
         alcSel.addEventListener('change', function() {
-          var colSel = document.getElementById('acc-col');
+          var alcNombre = alcSel.value;
           colSel.innerHTML = '<option value="">— Selecciona colonia —</option>';
           colSel.disabled = true;
-          var entry = accIndex.find(function(a) { return a.nombre === alcSel.value; });
-          if (!entry) return;
-          entry.colonias.forEach(function(c) {
-            var o = document.createElement('option');
-            o.value = entry.carpeta + '/' + c.archivo;
-            o.textContent = c.nombre;
-            colSel.appendChild(o);
-          });
-          colSel.disabled = false;
+          currentAlcaldia = null; currentColonia = null; currentColArch = null; currentLevel = null;
+
+          if (!alcNombre) { actualizarCapa(); return; }
+
+          currentAlcaldia = alcNombre;
+          var entry = accIndex.find(function(a) { return a.nombre === alcNombre; });
+          if (entry) {
+            entry.colonias.forEach(function(c) {
+              var o = document.createElement('option');
+              o.value = c.nombre; o.textContent = c.nombre;
+              colSel.appendChild(o);
+            });
+            colSel.disabled = false;
+          }
+          zoomAAlcaldia(alcNombre);
         });
-        document.getElementById('acc-col').addEventListener('change', function() {
-          var val = document.getElementById('acc-col').value;
-          if (!val) return;
-          fetch('datos/colonias/' + val)
-            .then(function(r) { return r.json(); })
-            .then(function(gj) {
-              if (accLayer) accMap.removeLayer(accLayer);
-              accLayer = L.geoJSON(gj, {
-                style: function(f) {
-                  return { fillColor: COLORS[f.properties.clasificacion] || '#ccc',
-                           color: '#fff', weight: 0.5, fillOpacity: 0.8 };
-                },
-                onEachFeature: function(f, l) {
-                  l.bindTooltip('<b>' + f.properties.clasificacion + '</b><br>' +
-                                '<small>' + f.properties.clavegeo + '</small>', { sticky: true });
-                }
-              }).addTo(accMap);
-              accMap.fitBounds(accLayer.getBounds(), { padding: [20, 20] });
-            })
-            .catch(function(e) { console.error('colonia:', e); });
+
+        /* Colonia: activa el nivel manzana al llegar a zoom ≥ 16 */
+        colSel.addEventListener('change', function() {
+          var colNombre = this.value;
+          currentColonia = null; currentColArch = null; currentLevel = null;
+
+          if (!colNombre || !currentAlcaldia) { actualizarCapa(); return; }
+
+          var entry    = accIndex.find(function(a) { return a.nombre === currentAlcaldia; });
+          var colEntry = entry && entry.colonias.find(function(c) { return c.nombre === colNombre; });
+          if (!colEntry) return;
+          currentColonia = colNombre;
+          currentColArch = colEntry.archivo;
+          zoomAColonia(currentAlcaldia, colNombre);
         });
+
+        actualizarCapa();  /* render inicial */
       })
       .catch(function(e) { console.error('index.json:', e); });
   }
@@ -491,39 +693,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="indicadores-ods-11-en-méxico">1. Indicadores ODS 11 en México</h3>
 <p>El cumplimiento de las metas globales de sostenibilidad urbana varía drásticamente en el territorio nacional. Usa los botones <strong>← Anterior / Siguiente →</strong> para explorar el posicionamiento de la CDMX frente a los 32 estados del país en cada indicador.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="325" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 324;"><span id="cb5-325"><a href="#cb5-325" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb5-326"><a href="#cb5-326" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> ind  <span class="op">=</span> ods_data[ods_idx]<span class="op">;</span></span>
-<span id="cb5-327"><a href="#cb5-327" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> desc <span class="op">=</span> ods_texts[ods_idx]<span class="op">;</span></span>
-<span id="cb5-328"><a href="#cb5-328" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> cdmxEntry <span class="op">=</span> ind<span class="op">.</span><span class="at">datos</span><span class="op">.</span><span class="fu">find</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">cvegeo</span> <span class="op">===</span> <span class="st">"09"</span>)<span class="op">;</span></span>
-<span id="cb5-329"><a href="#cb5-329" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> cdmxVal   <span class="op">=</span> cdmxEntry <span class="op">?</span> cdmxEntry<span class="op">.</span><span class="at">valor</span> <span class="op">:</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb5-330"><a href="#cb5-330" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> isBetter  <span class="op">=</span> desc<span class="op">.</span><span class="at">mejor</span> <span class="op">===</span> <span class="st">"menor"</span></span>
-<span id="cb5-331"><a href="#cb5-331" aria-hidden="true" tabindex="-1"></a>    <span class="op">?</span> cdmxVal <span class="op">&lt;=</span> ind<span class="op">.</span><span class="at">nacional</span></span>
-<span id="cb5-332"><a href="#cb5-332" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> cdmxVal <span class="op">&gt;=</span> ind<span class="op">.</span><span class="at">nacional</span><span class="op">;</span></span>
-<span id="cb5-333"><a href="#cb5-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-334"><a href="#cb5-334" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;div class="ods-text-col"&gt;</span></span>
-<span id="cb5-335"><a href="#cb5-335" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h4 style="color:#2c3e50; border-bottom:2px solid #3498db; padding-bottom:8px; margin-top:16px;"&gt;</span></span>
-<span id="cb5-336"><a href="#cb5-336" aria-hidden="true" tabindex="-1"></a><span class="vs">      </span><span class="sc">${</span>desc<span class="op">.</span><span class="at">titulo</span><span class="sc">}</span></span>
-<span id="cb5-337"><a href="#cb5-337" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/h4&gt;</span></span>
-<span id="cb5-338"><a href="#cb5-338" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p style="line-height:1.75; color:#444; white-space:pre-line;"&gt;</span><span class="sc">${</span>desc<span class="op">.</span><span class="at">texto</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
-<span id="cb5-339"><a href="#cb5-339" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div class="ods-vals"&gt;</span></span>
-<span id="cb5-340"><a href="#cb5-340" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div class="ods-val-item"&gt;</span></span>
-<span id="cb5-341"><a href="#cb5-341" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-val-label" style="color:#e74c3c;"&gt;CDMX&lt;/span&gt;</span></span>
-<span id="cb5-342"><a href="#cb5-342" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-val-num"&gt;</span><span class="sc">${</span>cdmxVal<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"es-MX"</span><span class="op">,</span> {<span class="dt">maximumFractionDigits</span><span class="op">:</span> <span class="dv">2</span>})<span class="sc">}</span><span class="vs">&lt;/span&gt;</span></span>
-<span id="cb5-343"><a href="#cb5-343" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb5-344"><a href="#cb5-344" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div class="ods-val-item"&gt;</span></span>
-<span id="cb5-345"><a href="#cb5-345" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-val-label" style="color:#f39c12;"&gt;Promedio Nacional&lt;/span&gt;</span></span>
-<span id="cb5-346"><a href="#cb5-346" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-val-num"&gt;</span><span class="sc">${</span>ind<span class="op">.</span><span class="at">nacional</span><span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"es-MX"</span><span class="op">,</span> {<span class="dt">maximumFractionDigits</span><span class="op">:</span> <span class="dv">2</span>})<span class="sc">}</span><span class="vs">&lt;/span&gt;</span></span>
-<span id="cb5-347"><a href="#cb5-347" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb5-348"><a href="#cb5-348" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div class="ods-val-item" style="grid-column: 1 / -1;"&gt;</span></span>
-<span id="cb5-349"><a href="#cb5-349" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-badge" style="background:</span><span class="sc">${</span>isBetter <span class="op">?</span> <span class="st">'#27ae60'</span> <span class="op">:</span> <span class="st">'#c0392b'</span><span class="sc">}</span><span class="vs">;"&gt;</span></span>
-<span id="cb5-350"><a href="#cb5-350" aria-hidden="true" tabindex="-1"></a><span class="vs">          </span><span class="sc">${</span>(isBetter <span class="op">?</span> <span class="st">"✓ "</span> <span class="op">:</span> <span class="st">"✗ "</span>) <span class="op">+</span> (cdmxVal <span class="op">&gt;=</span> ind<span class="op">.</span><span class="at">nacional</span></span>
-<span id="cb5-351"><a href="#cb5-351" aria-hidden="true" tabindex="-1"></a>            <span class="op">?</span> <span class="st">"CDMX por encima del promedio nacional"</span></span>
-<span id="cb5-352"><a href="#cb5-352" aria-hidden="true" tabindex="-1"></a>            <span class="op">:</span> <span class="st">"CDMX por debajo del promedio nacional"</span>)<span class="sc">}</span></span>
-<span id="cb5-353"><a href="#cb5-353" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;/span&gt;</span></span>
-<span id="cb5-354"><a href="#cb5-354" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
-<span id="cb5-355"><a href="#cb5-355" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
-<span id="cb5-356"><a href="#cb5-356" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span><span class="op">;</span></span>
-<span id="cb5-357"><a href="#cb5-357" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="527" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 526;"><span id="cb5-527"><a href="#cb5-527" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb5-528"><a href="#cb5-528" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> ind  <span class="op">=</span> ods_data[ods_idx]<span class="op">;</span></span>
+<span id="cb5-529"><a href="#cb5-529" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> desc <span class="op">=</span> ods_texts[ods_idx]<span class="op">;</span></span>
+<span id="cb5-530"><a href="#cb5-530" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> cdmxEntry <span class="op">=</span> ind<span class="op">.</span><span class="at">datos</span><span class="op">.</span><span class="fu">find</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">cvegeo</span> <span class="op">===</span> <span class="st">"09"</span>)<span class="op">;</span></span>
+<span id="cb5-531"><a href="#cb5-531" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> cdmxVal   <span class="op">=</span> cdmxEntry <span class="op">?</span> cdmxEntry<span class="op">.</span><span class="at">valor</span> <span class="op">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-532"><a href="#cb5-532" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> isBetter  <span class="op">=</span> desc<span class="op">.</span><span class="at">mejor</span> <span class="op">===</span> <span class="st">"menor"</span></span>
+<span id="cb5-533"><a href="#cb5-533" aria-hidden="true" tabindex="-1"></a>    <span class="op">?</span> cdmxVal <span class="op">&lt;=</span> ind<span class="op">.</span><span class="at">nacional</span></span>
+<span id="cb5-534"><a href="#cb5-534" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> cdmxVal <span class="op">&gt;=</span> ind<span class="op">.</span><span class="at">nacional</span><span class="op">;</span></span>
+<span id="cb5-535"><a href="#cb5-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-536"><a href="#cb5-536" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;div class="ods-text-col"&gt;</span></span>
+<span id="cb5-537"><a href="#cb5-537" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h4 style="color:#2c3e50; border-bottom:2px solid #3498db; padding-bottom:8px; margin-top:16px;"&gt;</span></span>
+<span id="cb5-538"><a href="#cb5-538" aria-hidden="true" tabindex="-1"></a><span class="vs">      </span><span class="sc">${</span>desc<span class="op">.</span><span class="at">titulo</span><span class="sc">}</span></span>
+<span id="cb5-539"><a href="#cb5-539" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/h4&gt;</span></span>
+<span id="cb5-540"><a href="#cb5-540" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p style="line-height:1.75; color:#444; white-space:pre-line;"&gt;</span><span class="sc">${</span>desc<span class="op">.</span><span class="at">texto</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb5-541"><a href="#cb5-541" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;div class="ods-vals"&gt;</span></span>
+<span id="cb5-542"><a href="#cb5-542" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div class="ods-val-item"&gt;</span></span>
+<span id="cb5-543"><a href="#cb5-543" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-val-label" style="color:#e74c3c;"&gt;CDMX&lt;/span&gt;</span></span>
+<span id="cb5-544"><a href="#cb5-544" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-val-num"&gt;</span><span class="sc">${</span>cdmxVal<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"es-MX"</span><span class="op">,</span> {<span class="dt">maximumFractionDigits</span><span class="op">:</span> <span class="dv">2</span>})<span class="sc">}</span><span class="vs">&lt;/span&gt;</span></span>
+<span id="cb5-545"><a href="#cb5-545" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
+<span id="cb5-546"><a href="#cb5-546" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div class="ods-val-item"&gt;</span></span>
+<span id="cb5-547"><a href="#cb5-547" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-val-label" style="color:#f39c12;"&gt;Promedio Nacional&lt;/span&gt;</span></span>
+<span id="cb5-548"><a href="#cb5-548" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-val-num"&gt;</span><span class="sc">${</span>ind<span class="op">.</span><span class="at">nacional</span><span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"es-MX"</span><span class="op">,</span> {<span class="dt">maximumFractionDigits</span><span class="op">:</span> <span class="dv">2</span>})<span class="sc">}</span><span class="vs">&lt;/span&gt;</span></span>
+<span id="cb5-549"><a href="#cb5-549" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
+<span id="cb5-550"><a href="#cb5-550" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div class="ods-val-item" style="grid-column: 1 / -1;"&gt;</span></span>
+<span id="cb5-551"><a href="#cb5-551" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span class="ods-badge" style="background:</span><span class="sc">${</span>isBetter <span class="op">?</span> <span class="st">'#27ae60'</span> <span class="op">:</span> <span class="st">'#c0392b'</span><span class="sc">}</span><span class="vs">;"&gt;</span></span>
+<span id="cb5-552"><a href="#cb5-552" aria-hidden="true" tabindex="-1"></a><span class="vs">          </span><span class="sc">${</span>(isBetter <span class="op">?</span> <span class="st">"✓ "</span> <span class="op">:</span> <span class="st">"✗ "</span>) <span class="op">+</span> (cdmxVal <span class="op">&gt;=</span> ind<span class="op">.</span><span class="at">nacional</span></span>
+<span id="cb5-553"><a href="#cb5-553" aria-hidden="true" tabindex="-1"></a>            <span class="op">?</span> <span class="st">"CDMX por encima del promedio nacional"</span></span>
+<span id="cb5-554"><a href="#cb5-554" aria-hidden="true" tabindex="-1"></a>            <span class="op">:</span> <span class="st">"CDMX por debajo del promedio nacional"</span>)<span class="sc">}</span></span>
+<span id="cb5-555"><a href="#cb5-555" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;/span&gt;</span></span>
+<span id="cb5-556"><a href="#cb5-556" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
+<span id="cb5-557"><a href="#cb5-557" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/div&gt;</span></span>
+<span id="cb5-558"><a href="#cb5-558" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;`</span><span class="op">;</span></span>
+<span id="cb5-559"><a href="#cb5-559" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="expression">
 
@@ -625,8 +827,8 @@ eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwt
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
 window._ojs.paths.runtimeToDoc = "../../..";
-window._ojs.paths.runtimeToRoot = "../../../..";
-window._ojs.paths.docToRoot = "..";
+window._ojs.paths.runtimeToRoot = "../../..";
+window._ojs.paths.docToRoot = "";
 window._ojs.selfContained = false;
 window._ojs.runtime.interpretFromScriptTags();
 </script>

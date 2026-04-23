@@ -218,7 +218,7 @@ m1
   <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
     <label style="font-size:11px;font-weight:600;text-transform:uppercase;color:#555;">Alcaldía</label>
     <select id="acc-alc" style="padding:7px 10px;border:1px solid #ccc;border-radius:4px;font-size:13px;">
-      <option value="">— Selecciona alcaldía —</option>
+      <option value="">— Toda la CDMX —</option>
     </select>
   </div>
   <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
@@ -228,18 +228,200 @@ m1
     </select>
   </div>
 </div>
-<div id="acc-map" style="width:100%;height:450px;border-radius:4px;border:1px solid #e0e0e0;"></div>
+<div id="acc-map" style="width:100%;flex:1;min-height:0;border-radius:4px;border:1px solid #e0e0e0;"></div>
 <div id="acc-legend" class="acc-legend"></div>
 
 <script>
 (function () {
   var COLORS = { 'Muy bajo': '#fc8d59', 'Bajo': '#fee08b', 'Medio': '#e6f598', 'Alto': '#99d594' };
   var CLASES  = ['Muy bajo', 'Bajo', 'Medio', 'Alto'];
-  var accMap = null, accLayer = null, accIndex = null;
+
+  /*
+   * Breakpoints de zoom — resolución automática independiente del filtro:
+   *   < 12  → vista CDMX   (4 polígonos por clase)
+   *   12–13 → vista alcaldías (~55 features)
+   *   14–15 → colonias simplificadas para las alcaldías visibles en el viewport
+   *   ≥ 16  → manzanas originales (solo si hay colonia seleccionada en el filtro)
+   *
+   * El filtro de alcaldía/colonia únicamente hace zoom hacia la selección;
+   * la resolución siempre la determina el nivel de zoom actual.
+   */
+  var ZOOM_ALC = 12;
+  var ZOOM_COL = 14;
+  var ZOOM_MNZ = 16;
+
+  var accMap = null, activeLayer = null, accIndex = null;
+  var currentLevel    = null;
+  var currentAlcaldia = null;  /* nombre alcaldía seleccionada (solo para manzanas y fitBounds) */
+  var currentColonia  = null;  /* nombre colonia seleccionada  (solo para manzanas y fitBounds) */
+  var currentColArch  = null;  /* archivo .geojson de la colonia seleccionada                   */
+  var currentVisKey   = null;  /* key de alcaldías visibles — evita re-render innecesario       */
+
+  var cdmxCache     = null;
+  var vistaAlcCache = null;
+  var alcBounds     = {};   /* { nombreAlcaldia: L.LatLngBounds } — índice espacial ligero */
+  var vistaColCache = {};   /* keyed por carpeta                                            */
+  var mnzCache      = {};   /* keyed por ruta completa                                      */
+
+  /* ---- utilidades -------------------------------------------------------- */
+
+  function styleFeature(f) {
+    return { fillColor: COLORS[f.properties.clasificacion] || '#ccc',
+             color: '#fff', weight: 0.5, fillOpacity: 0.8 };
+  }
+
+  function tooltipFor(f, nivel) {
+    var p = f.properties;
+    if (nivel === 'manzana')  return p.clasificacion + '<br><small>' + (p.clavegeo || '') + '</small>';
+    if (nivel === 'colonia')  return '<b>' + (p.colonia  || '') + '</b><br>' + p.clasificacion;
+    if (nivel === 'alcaldia') return '<b>' + (p.alcaldia || '') + '</b><br>' + p.clasificacion;
+    return '<b>' + p.clasificacion + '</b>';
+  }
+
+  function pintarCapa(features, nivel) {
+    if (activeLayer) { accMap.removeLayer(activeLayer); activeLayer = null; }
+    if (!features || !features.length) return;
+    activeLayer = L.geoJSON({ type: 'FeatureCollection', features: features }, {
+      style: styleFeature,
+      onEachFeature: function(f, l) { l.bindTooltip(tooltipFor(f, nivel), { sticky: true }); }
+    }).addTo(accMap);
+  }
+
+  /* Construye el índice de bounding boxes por alcaldía (se llama una vez) */
+  function buildAlcBounds(gj) {
+    if (Object.keys(alcBounds).length) return;
+    gj.features.forEach(function(f) {
+      var nombre = f.properties.alcaldia;
+      try {
+        var b = L.geoJSON({ type: 'FeatureCollection', features: [f] }).getBounds();
+        if (!b || !b.isValid()) return;
+        if (!alcBounds[nombre]) alcBounds[nombre] = b;
+        else alcBounds[nombre].extend(b);
+      } catch (e) {}
+    });
+  }
+
+  /* Devuelve los nombres de alcaldías cuyo bounding box intersecta el viewport */
+  function alcaldiasEnViewport() {
+    var mb = accMap.getBounds();
+    return Object.keys(alcBounds).filter(function(n) {
+      return alcBounds[n] && mb.intersects(alcBounds[n]);
+    });
+  }
+
+  /* fetch con caché en memoria */
+  function fetchJSON(url, cached, onDone) {
+    if (cached !== null && cached !== undefined) { onDone(cached); return; }
+    fetch(url)
+      .then(function(r) { return r.json(); })
+      .then(onDone)
+      .catch(function(e) { console.error(url, e); });
+  }
+
+  /* ---- nivel objetivo (zoom manda, filtro solo activa manzanas) ---------- */
+
+  function nivelObjetivo() {
+    var z = accMap.getZoom();
+    if (z >= ZOOM_MNZ && currentColonia) return 'manzana';
+    if (z >= ZOOM_COL)                   return 'colonia';
+    if (z >= ZOOM_ALC)                   return 'alcaldia';
+    return 'cdmx';
+  }
+
+  /* ---- actualización de capa (llamado por zoom, pan y cambios de filtro) - */
+
+  function actualizarCapa() {
+    if (!accIndex) return;
+    var nivel = nivelObjetivo();
+
+    /* CDMX ----------------------------------------------------------------- */
+    if (nivel === 'cdmx') {
+      if (nivel === currentLevel) return;
+      currentLevel = nivel; currentVisKey = null;
+      fetchJSON('datos/vistas/vista_cdmx.geojson', cdmxCache, function(gj) {
+        cdmxCache = gj;
+        pintarCapa(gj.features, 'cdmx');
+      });
+
+    /* ALCALDÍA ------------------------------------------------------------- */
+    } else if (nivel === 'alcaldia') {
+      if (nivel === currentLevel) return;
+      currentLevel = nivel; currentVisKey = null;
+      fetchJSON('datos/vistas/vista_alcaldias.geojson', vistaAlcCache, function(gj) {
+        vistaAlcCache = gj;
+        buildAlcBounds(gj);
+        pintarCapa(gj.features, 'alcaldia');
+      });
+
+    /* COLONIA SIMPLIFICADA (dinámica por viewport) -------------------------- */
+    } else if (nivel === 'colonia') {
+      /* vistaAlcCache se pre-carga en init; si aún no llegó (race condition muy rara)
+         el callback de pre-carga llamará actualizarCapa() al terminar */
+      if (!vistaAlcCache) return;
+      var visAlcs = alcaldiasEnViewport();
+      var visKey  = visAlcs.slice().sort().join('|');
+      if (nivel === currentLevel && visKey === currentVisKey) return;
+      currentLevel = nivel; currentVisKey = visKey;
+
+      if (!visAlcs.length) { pintarCapa([], 'colonia'); return; }
+
+      var pendientes    = visAlcs.length;
+      var todosFeatures = [];
+      visAlcs.forEach(function(alcNombre) {
+        var entry = accIndex.find(function(a) { return a.nombre === alcNombre; });
+        if (!entry) { if (!--pendientes) pintarCapa(todosFeatures, 'colonia'); return; }
+        var url = 'datos/vistas/colonias/' + entry.carpeta + '.geojson';
+        fetchJSON(url, vistaColCache[entry.carpeta], function(gj) {
+          vistaColCache[entry.carpeta] = gj;
+          todosFeatures = todosFeatures.concat(gj.features);
+          if (!--pendientes) pintarCapa(todosFeatures, 'colonia');
+        });
+      });
+
+    /* MANZANAS (solo con colonia seleccionada en filtro) -------------------- */
+    } else if (nivel === 'manzana') {
+      if (nivel === currentLevel) return;
+      currentLevel = nivel; currentVisKey = null;
+      var entry = accIndex.find(function(a) { return a.nombre === currentAlcaldia; });
+      if (!entry || !currentColArch) return;
+      var ruta = 'datos/colonias/' + entry.carpeta + '/' + currentColArch;
+      fetchJSON(ruta, mnzCache[ruta], function(gj) {
+        mnzCache[ruta] = gj;
+        pintarCapa(gj.features, 'manzana');
+      });
+    }
+  }
+
+  /* ---- funciones de navegación (solo mueven el mapa; zoomend actualiza) -- */
+
+  function zoomAAlcaldia(alcNombre) {
+    /* vistaAlcCache siempre pre-cargado en init */
+    if (alcBounds[alcNombre] && alcBounds[alcNombre].isValid()) {
+      currentLevel = null;
+      accMap.fitBounds(alcBounds[alcNombre], { padding: [30, 30] });
+    }
+  }
+
+  function zoomAColonia(alcNombre, colNombre) {
+    var entry = accIndex.find(function(a) { return a.nombre === alcNombre; });
+    if (!entry) return;
+    var url = 'datos/vistas/colonias/' + entry.carpeta + '.geojson';
+    fetchJSON(url, vistaColCache[entry.carpeta], function(gj) {
+      vistaColCache[entry.carpeta] = gj;
+      var features = gj.features.filter(function(f) { return f.properties.colonia === colNombre; });
+      if (!features.length) return;
+      try {
+        var bounds = L.geoJSON({ type: 'FeatureCollection', features: features }).getBounds();
+        if (bounds && bounds.isValid()) { currentLevel = null; accMap.fitBounds(bounds, { padding: [30, 30] }); }
+      } catch (e) {}
+    });
+  }
+
+  /* ---- inicialización ---------------------------------------------------- */
 
   function init() {
-    /* El panel usa visibility:hidden (no display:none), así el div tiene dimensiones reales */
-    accMap = L.map('acc-map').setView([19.4326, -99.1332], 11);
+    accMap = L.map('acc-map');
+    accMap.fitBounds([[19.13, -99.341], [19.579, -98.948]], { padding: [0, 0] });
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; CARTO', maxZoom: 19
     }).addTo(accMap);
@@ -249,51 +431,71 @@ m1
              COLORS[c] + '"></span>' + c + '</span>';
     }).join('');
 
+    /* zoom y pan disparan actualización de resolución automáticamente */
+    accMap.on('zoomend moveend', function() { actualizarCapa(); });
+
+    /* Pre-cargar vista_alcaldias en paralelo para tener alcBounds listos
+       antes de que el usuario haga zoom a nivel colonia (sin esperar filtros) */
+    fetchJSON('datos/vistas/vista_alcaldias.geojson', null, function(gj) {
+      vistaAlcCache = gj;
+      buildAlcBounds(gj);
+      /* Si el usuario ya hizo zoom a nivel colonia mientras cargaba, renderizar */
+      if (accIndex && nivelObjetivo() === 'colonia' && currentLevel !== 'colonia') {
+        actualizarCapa();
+      }
+    });
+
     fetch('datos/colonias/index.json')
       .then(function(r) { return r.json(); })
       .then(function(idx) {
         accIndex = idx;
         var alcSel = document.getElementById('acc-alc');
+        var colSel = document.getElementById('acc-col');
+
         idx.forEach(function(a) {
           var o = document.createElement('option');
           o.value = a.nombre; o.textContent = a.nombre;
           alcSel.appendChild(o);
         });
+
+        /* Alcaldía: pobla colonias y hace zoom, el resto lo resuelve zoomend */
         alcSel.addEventListener('change', function() {
-          var colSel = document.getElementById('acc-col');
+          var alcNombre = alcSel.value;
           colSel.innerHTML = '<option value="">— Selecciona colonia —</option>';
           colSel.disabled = true;
-          var entry = accIndex.find(function(a) { return a.nombre === alcSel.value; });
-          if (!entry) return;
-          entry.colonias.forEach(function(c) {
-            var o = document.createElement('option');
-            o.value = entry.carpeta + '/' + c.archivo;
-            o.textContent = c.nombre;
-            colSel.appendChild(o);
-          });
-          colSel.disabled = false;
+          currentAlcaldia = null; currentColonia = null; currentColArch = null; currentLevel = null;
+
+          if (!alcNombre) { actualizarCapa(); return; }
+
+          currentAlcaldia = alcNombre;
+          var entry = accIndex.find(function(a) { return a.nombre === alcNombre; });
+          if (entry) {
+            entry.colonias.forEach(function(c) {
+              var o = document.createElement('option');
+              o.value = c.nombre; o.textContent = c.nombre;
+              colSel.appendChild(o);
+            });
+            colSel.disabled = false;
+          }
+          zoomAAlcaldia(alcNombre);
         });
-        document.getElementById('acc-col').addEventListener('change', function() {
-          var val = document.getElementById('acc-col').value;
-          if (!val) return;
-          fetch('datos/colonias/' + val)
-            .then(function(r) { return r.json(); })
-            .then(function(gj) {
-              if (accLayer) accMap.removeLayer(accLayer);
-              accLayer = L.geoJSON(gj, {
-                style: function(f) {
-                  return { fillColor: COLORS[f.properties.clasificacion] || '#ccc',
-                           color: '#fff', weight: 0.5, fillOpacity: 0.8 };
-                },
-                onEachFeature: function(f, l) {
-                  l.bindTooltip('<b>' + f.properties.clasificacion + '</b><br>' +
-                                '<small>' + f.properties.clavegeo + '</small>', { sticky: true });
-                }
-              }).addTo(accMap);
-              accMap.fitBounds(accLayer.getBounds(), { padding: [20, 20] });
-            })
-            .catch(function(e) { console.error('colonia:', e); });
+
+        /* Colonia: activa el nivel manzana al llegar a zoom ≥ 16 */
+        colSel.addEventListener('change', function() {
+          var colNombre = this.value;
+          currentColonia = null; currentColArch = null; currentLevel = null;
+
+          if (!colNombre || !currentAlcaldia) { actualizarCapa(); return; }
+
+          var entry    = accIndex.find(function(a) { return a.nombre === currentAlcaldia; });
+          var colEntry = entry && entry.colonias.find(function(c) { return c.nombre === colNombre; });
+          if (!colEntry) return;
+          currentColonia = colNombre;
+          currentColArch = colEntry.archivo;
+          zoomAColonia(currentAlcaldia, colNombre);
         });
+
+        actualizarCapa();  /* render inicial */
       })
       .catch(function(e) { console.error('index.json:', e); });
   }
