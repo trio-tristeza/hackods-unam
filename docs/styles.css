@@ -1,0 +1,28 @@
+/* Personalización del Header con Set3 */
+.navbar {
+  background-color: #ffffb3 !important;
+}
+
+.navbar-title, .navbar-brand {
+  color: #2c3e50 !important;
+  font-weight: 600;
+}
+
+/* Ajustes para las tarjetas */
+.card {
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.value-box-title {
+  font-size: 0.9em !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Mapa Folium: forzar iframe a llenar 100% del card */
+.bslib-card .html-fill-container iframe {
+  height: 100% !important;
+  min-height: 400px;
+  width: 100% !important;
+}

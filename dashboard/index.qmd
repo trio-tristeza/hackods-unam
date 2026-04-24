@@ -1,12 +1,6 @@
 ---
 title: "La Asimetría Invisible: ODS 11 en la CDMX"
 author: "Trío Tristeza"
-format: 
-  dashboard:
-    theme: cosmo
-    orientation: rows
-    css: styles.css
-    scrolling: true
 ---
 
 ```{python}
@@ -76,9 +70,20 @@ def make_ods_chart(idx: int, height: int = 430) -> go.Figure:
         y0=0, y1=1, yref="paper",
         line=dict(color=COLOR_NAC, width=2.5, dash="dash"),
     ))
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+        marker=dict(size=10, color=COLOR_CDMX, symbol="square"),
+        name="CDMX"))
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+        marker=dict(size=10, color=COLOR_OTROS, symbol="square"),
+        name="Otros estados"))
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="lines",
+        line=dict(color=COLOR_NAC, width=2.5, dash="dash"),
+        name="Promedio Nacional"))
     fig.update_layout(
         height=height,
         margin=dict(l=50, r=15, t=15, b=20),
+        legend=dict(orientation="h", y=1.02, x=0, font=dict(size=9),
+                    bgcolor="rgba(0,0,0,0)"),
         xaxis=dict(title=ODS_TITULOS[idx], showgrid=True,
                    gridcolor="#f0f0f0", autorange=True),
         yaxis=dict(showgrid=False, tickfont=dict(size=9)),
@@ -87,7 +92,143 @@ def make_ods_chart(idx: int, height: int = 430) -> go.Figure:
     )
     return fig
 ```
-# Introducción 
+# Introducción
+
+```{python}
+with open("datos/resumen_alcaldias.json") as f:
+    alc_data = json.load(f)
+
+df_alc = pd.DataFrame(alc_data)
+df_alc["pct_accesible"] = df_alc["pct_alto"] + df_alc["pct_medio"]
+
+COLORS_ACC = {
+    "Alto":     "#2ca25f",
+    "Medio":    "#99d8c9",
+    "Bajo":     "#fec44f",
+    "Muy_bajo": "#e34a33",
+}
+LABELS_ACC = {"Alto": "Alto", "Medio": "Medio", "Bajo": "Bajo", "Muy_bajo": "Muy bajo"}
+
+_total_mzn = int(df_alc["n_manzanas"].sum())
+_pct_bajo_total = round(
+    ((df_alc["pct_bajo"] + df_alc["pct_muy_bajo"]) * df_alc["n_manzanas"]).sum() / _total_mzn, 1
+)
+_pct_alto_city  = round((df_alc["pct_alto"]    * df_alc["n_manzanas"]).sum() / _total_mzn, 1)
+_pct_medio_city = round((df_alc["pct_medio"]   * df_alc["n_manzanas"]).sum() / _total_mzn, 1)
+_pct_bajo_city  = round((df_alc["pct_bajo"]    * df_alc["n_manzanas"]).sum() / _total_mzn, 1)
+_pct_muyb_city  = round((df_alc["pct_muy_bajo"]* df_alc["n_manzanas"]).sum() / _total_mzn, 1)
+```
+
+## Row {height="8%"}
+
+### {width="100%"}
+
+::: {style="text-align: center; font-size: 1.35em; font-weight: 700; color: #333; padding: 0.3rem 0;"}
+¿La Ciudad de México es igual de accesible para todas y todos?
+:::
+
+## Row {height="60%"}
+
+### {width="35%"}
+
+La Ciudad de México parece tenerlo todo, pero no todos viven esa ciudad. Mientras en algunas zonas puedes caminar, moverte en bici y tener todo cerca, en otras, acceder a lo básico implica tiempo, distancia y esfuerzo.
+
+El ODS 11 plantea ciudades inclusivas, seguras y sostenibles, pero ¿qué tan cierto es eso en la práctica?
+
+Este tablero explora esta pregunta en los apartados:
+
+---
+
+**La asimetría (in)visible**: La CDMX parece un referente de progreso; al atomizar los datos, las desigualdades aparecen.
+
+**La ciudad de 15 minutos**: ¿Es posible? ¿Dónde sí, dónde no, para quién y cómo lo medimos?
+
+**Nuestra propuesta**: Qué encontramos, qué significa en el contexto de la asimetría urbana y como podemos seguir mejorando.
+
+```{python}
+fig_kpi = go.Figure(data=[go.Table(
+    header=dict(
+        values=[
+            f"<b>{_total_mzn:,}</b>",
+            f"<b>{_pct_bajo_total:.0f}%</b>",
+            "<b>0.89</b>",
+            "<b>8</b>",
+        ],
+        fill_color=["#8dd3c7", "#fb8072", "#bebada", "#b3de69"],
+        align="center",
+        font=dict(size=15, color="#333"),
+        height=38,
+    ),
+    cells=dict(
+        values=[
+            ["Manzanas analizadas"],
+            ["Acceso Bajo o Muy bajo"],
+            ["I de Moran espacial"],
+            ["Tipos de servicio"],
+        ],
+        fill_color="rgba(248,248,248,0.9)",
+        align="center",
+        font=dict(size=9, color="#555"),
+        height=26,
+    ),
+)])
+_ = fig_kpi.update_layout(
+    height=85,
+    margin=dict(l=0, r=0, t=0, b=0),
+    paper_bgcolor="white",
+)
+fig_kpi
+```
+
+### Colonias clasificadas por accesibilidad {width="35%"}
+
+![](datos/mapas/mapa_colonias.png){width="100%" style="object-fit: contain; max-height: 100%;"}
+
+### Accesibilidad en la CDMX {width="30%"}
+
+```{python}
+_dona_labels = [
+    f"Alto — {_pct_alto_city:.1f}%",
+    f"Medio — {_pct_medio_city:.1f}%",
+    f"Bajo — {_pct_bajo_city:.1f}%",
+    f"Muy bajo — {_pct_muyb_city:.1f}%",
+]
+fig_dona = go.Figure(go.Pie(
+    labels=_dona_labels,
+    values=[_pct_alto_city, _pct_medio_city, _pct_bajo_city, _pct_muyb_city],
+    hole=0.55,
+    marker_colors=["#2ca25f", "#99d8c9", "#fec44f", "#e34a33"],
+    marker_line=dict(color="white", width=2),
+    textinfo="none",
+    hovertemplate="%{label}<extra></extra>",
+    sort=False,
+))
+_ = fig_dona.update_layout(
+    autosize=True,
+    title=dict(
+        text="Accesibilidad caminable — distribución por manzana",
+        font=dict(size=12, color="#333"),
+        x=0.5, xanchor="center", y=0.97,
+    ),
+    margin=dict(l=20, r=20, t=45, b=80),
+    legend=dict(
+        orientation="h",
+        x=0.5, y=-0.12,
+        xanchor="center", yanchor="top",
+        font=dict(size=13),
+        entrywidth=0.45,
+        entrywidthmode="fraction",
+        bgcolor="rgba(255,255,255,0)",
+    ),
+    annotations=[dict(
+        text=f"<b>{_pct_bajo_total:.0f}%</b><br>Bajo o<br>Muy bajo",
+        x=0.5, y=0.5, font=dict(size=13, color="#555"),
+        showarrow=False,
+    )],
+    paper_bgcolor="white",
+)
+fig_dona
+```
 
 # La asimetría (in)visible
 
@@ -199,12 +340,6 @@ make_ods_chart(9)
 
 :::
 
-<div style="margin-top:4px; font-size:11px; color:#666;">
-  <span style="color:#bc80bd">■</span> CDMX &nbsp;&nbsp;
-  <span style="color:#80b1d3">■</span> Otros estados &nbsp;&nbsp;
-  <span style="color:#fdb462; font-weight:bold">---</span> Promedio Nacional (INEGI)
-</div>
-
 ### Contexto {width="40%"}
 
 La ciudad, entendida como el resultado de dinámicas productivas inscritas en un modelo de desarrollo característico de la economía neoliberal, perpetúa e incrementa las desigualdades sociales.
@@ -232,7 +367,8 @@ La Ciudad de México suele pensarse como un referente de progreso en América La
 **11.r.2.1b — Traslado Población Indígena:** Refleja la exclusión espacial de grupos originarios, quienes enfrentan tiempos de traslado mayores al promedio general.
 
 ---
-*Fuente: Elaboración con datos del Banco de Indicadores (BISE) - INEGI.*
+
+Fuente: Elaboración con datos del Banco de Indicadores (BISE) - INEGI.
 
 
 # La ciudad de los 15 min
@@ -246,16 +382,11 @@ with open("datos/resumen_insumos.json") as f:
 
 ### {width="55%"}
 
-Es un modelo propuesto por Carlos Moreno (2021)[^1] que plantea que los servicios esenciales, educación, salud, empleo, entre otros, deberían ser accesibles en recorridos máximos de 15 minutos a pie o en bicicleta desde la vivienda. Repensar la ciudad para que la proximidad no sea un privilegio sino un derecho.
+Es un modelo propuesto por Carlos Moreno (2021)^[Moreno, C., Allam, Z., Chabaud, D., Gall, C., & Pratlong, F. (2021). Introducing the "15-Minute City": Sustainability, resilience and place identity in future post-pandemic cities. Smart cities, 4(1), 93-111.] que plantea que los servicios esenciales, educación, salud, empleo, entre otros, deberían ser accesibles en recorridos máximos de 15 minutos a pie o en bicicleta desde la vivienda. Repensar la ciudad para que la proximidad no sea un privilegio sino un derecho.
 
-Para el caso específico de este trabajo se considero unicamente la distancia a pie que fue calculada considerando una velocidad de 3 km/h, según los registros de Google Maps [^2], resultando así en una distancia calculada de 1,250 m caminando durante 15 minutos.
+Para el caso específico de este trabajo se consideró únicamente la distancia a pie, calculada con una velocidad de 3 km/h según los registros de Google Maps^[Google. (s.f.). Velocidad promedio considerada para una persona caminando. Google Maps. Recuperado el 14 de abril de 2026.], resultando en una distancia de 1,250 m caminando durante 15 minutos.
 
-Se propone para una siguiente etapa realizar un procedimiento similar pero considerando el uso de la bicileta.
-
-[^1]: Moreno, C., Allam, Z., Chabaud, D., Gall, C., & Pratlong, F. (2021). Introducing the “15-Minute City”: Sustainability, resilience and place identity in future post-pandemic cities. Smart cities, 4(1), 93-111.
-[^2]: Google. (s.f.). [Velocidad promedio considerada par auna persona]. Google Maps. Recuperado el 14 de abril de 2026, de goo.gl
-
----
+Se propone para una siguiente etapa realizar un procedimiento similar considerando el uso de la bicicleta.
 
 Para operacionalizar el modelo se consideraron cuatro dimensiones. No todas las variables fueron incorporadas en el análisis final por disponibilidad de datos o complejidad computacional.
 
@@ -298,13 +429,16 @@ _ = fig_ins.update_layout(
     plot_bgcolor="white",
     paper_bgcolor="white",
 )
+for _cat, _col in [("Diversidad", "#80b1d3"), ("Proximidad", "#fdb462"), ("Digitalización", "#b3de69")]:
+    fig_ins.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+        marker=dict(size=10, color=_col, symbol="square"),
+        name=_cat))
+_ = fig_ins.update_layout(
+    legend=dict(orientation="h", y=1.02, x=0, font=dict(size=9),
+                bgcolor="rgba(0,0,0,0)"),
+)
 fig_ins
 ```
-<div style="margin-top:6px; font-size:11px; color:#666;">
-  <span style="color:#80b1d3">■</span> Diversidad &nbsp;
-  <span style="color:#fdb462">■</span> Proximidad &nbsp;
-  <span style="color:#b3de69">■</span> Digitalización
-</div>
 
 ## Row {height="20%"}
 
@@ -358,31 +492,17 @@ dict(value="6", color="#80b1d3")
 
 # Nuestra propuesta
 
-```{python}
-with open("datos/resumen_alcaldias.json") as f:
-    alc_data = json.load(f)
-
-df_alc = pd.DataFrame(alc_data)
-df_alc["pct_accesible"] = df_alc["pct_alto"] + df_alc["pct_medio"]
-
-COLORS_ACC = {
-    "Alto":     "#2ca25f",
-    "Medio":    "#99d8c9",
-    "Bajo":     "#fec44f",
-    "Muy_bajo": "#e34a33",
-}
-LABELS_ACC = {"Alto": "Alto", "Medio": "Medio", "Bajo": "Bajo", "Muy_bajo": "Muy bajo"}
-```
-
 ## Row
 
 ### Conclusión {width="30%"}
 
 Primer esfuerzo de aproximación a la ciudad de 15 minutos para la CDMX, analizado a nivel manzana y visualizado por colonia y alcaldía.
 
----
+El uso de la manzana como unidad basica de analisis permite visualizar con mayor alcance el impacto en la accesibilidad de los servicios basicos; mientras que el uso de la colonia como unidad de visualización, da un sentido de pertenencia hacía con el ususario.
 
 El análisis confirma una asimetría espacial estructural en la Ciudad de México: el acceso a una mayor diversidad de servicios urbanos en recorridos a pie se concentra en las alcaldías centrales, mientras la periferia queda sistemáticamente excluida. No se encontró ninguna zona de la ciudad que cumpliera simultáneamente con acceso caminable a los ocho tipos de servicio considerados, lo que evidencia que la ciudad de 15 minutos —en su sentido pleno— no existe aún en la CDMX para ningún habitante. Los resultados apuntan a la urgencia de pensar la integración urbana no como excepción sino como principio de planificación.
+
+Se evidencian a las poblaciones de la periferías como les principales afectades por esta inaccesibilidd a servicios básicos cerca de casa.
 
 > En la Ciudad de México, la proximidad a los servicios urbanos no es un derecho compartido: es un privilegio que se distribuye desde el centro hacia afuera, y que la periferia aún espera.
 
@@ -558,14 +678,6 @@ _ = _mm.get_root().html.add_child(folium.Element(
 ))
 _mm
 ```
-
-<div style="margin-top:4px; font-size:11px; color:#666;">
-  <span style="color:#d7191c">■</span> Alto-Alto &nbsp;
-  <span style="color:#2c7bb6">■</span> Bajo-Bajo &nbsp;
-  <span style="color:#abd9e9">■</span> Bajo-Alto &nbsp;
-  <span style="color:#fdae61">■</span> Alto-Bajo &nbsp;
-  <span style="color:#cccccc">■</span> No significativo
-</div>
 
 ## Estático
 
