@@ -1,6 +1,6 @@
 ---
 title: "La Asimetría Invisible: ODS 11 en la CDMX"
-author: "Trío Tristeza ODS"
+author: "Trío Tristeza"
 format: 
   dashboard:
     theme: cosmo
@@ -30,10 +30,16 @@ ODS_TITULOS = [
     "11.r.2.1b — Traslado de Población Indígena (min)",
 ]
 
-# ── Paleta Set3 ───────────────────────────────────────────────────────────────
-COLOR_CDMX = "#fb8072"  # Salmon
-COLOR_OTROS = "#80b1d3" # Blue
-COLOR_NAC = "#fdb462"   # Orange
+ODS_TABS = [
+    "11.1.1", "11.2.1", "11.3.1", "11.r.2.1a",
+    "11.6.1.a", "11.6.2.a", "11.6.2.b",
+    "11.4.1", "11.7.1", "11.r.2.1b",
+]
+
+# ── Paleta ────────────────────────────────────────────────────────────────────
+COLOR_CDMX  = "#bc80bd"  # Set3 purple — distinto del header #fb8072
+COLOR_OTROS = "#80b1d3"
+COLOR_NAC   = "#fdb462"
 
 # ── Funciones de utilidad ─────────────────────────────────────────────────────
 def get_val(substr):
@@ -45,6 +51,38 @@ val_viv, nac_viv, _ = get_val("11.1.1")
 val_tra, nac_tra, _ = get_val("11.2.1")
 val_tme, nac_tme, _ = get_val("11.r.2.1a")
 val_esp, nac_esp, _ = get_val("11.7.1")
+
+def make_ods_chart(idx: int, height: int = 430) -> go.Figure:
+    ind = ods[idx]
+    datos_s = sorted(ind["datos"], key=lambda d: d["valor"], reverse=True)
+    fig = go.Figure()
+    fig.add_trace(go.Bar(
+        x=[d["valor"] for d in datos_s],
+        y=[d["cvegeo"] for d in datos_s],
+        orientation="h",
+        marker_color=[COLOR_CDMX if d["cvegeo"] == "09" else COLOR_OTROS
+                      for d in datos_s],
+        marker_line_width=0,
+        showlegend=False,
+        name="",
+        hovertemplate="Estado %{y}: %{x:.3g}<extra></extra>",
+    ))
+    fig.add_shape(dict(
+        type="line",
+        x0=ind["nacional"], x1=ind["nacional"],
+        y0=0, y1=1, yref="paper",
+        line=dict(color=COLOR_NAC, width=2.5, dash="dash"),
+    ))
+    fig.update_layout(
+        height=height,
+        margin=dict(l=50, r=15, t=15, b=20),
+        xaxis=dict(title=ODS_TITULOS[idx], showgrid=True,
+                   gridcolor="#f0f0f0", autorange=True),
+        yaxis=dict(showgrid=False, tickfont=dict(size=9)),
+        plot_bgcolor="white",
+        paper_bgcolor="white",
+    )
+    return fig
 ```
 # Introducción 
 
@@ -84,7 +122,7 @@ dict(
 dict(
     value = f"{val_tme:.1f} min",
     icon = "clock-history",
-    color = "#ffffb3" # Yellow
+    color = "#fb8072"
 )
 ```
 
@@ -104,71 +142,62 @@ dict(
 
 ### Posicionamiento de la CDMX frente a los 32 estados {width="60%"}
 
+::: {.panel-tabset}
+
+## 11.1.1
 ```{python}
-fig_ods = go.Figure()
-
-for i, ind in enumerate(ods):
-    datos_s = sorted(ind["datos"], key=lambda d: d["valor"], reverse=True)
-    
-    fig_ods.add_trace(go.Bar(
-        x=[d["valor"] for d in datos_s],
-        y=[d["cvegeo"] for d in datos_s],
-        orientation="h",
-        visible=(i == 0),
-        marker_color=[COLOR_CDMX if d["cvegeo"] == "09" else COLOR_OTROS for d in datos_s],
-        marker_line_width=0,
-        name="",
-        hovertemplate="Estado %{y}: %{x:.2f}<extra></extra>"
-    ))
-
-# Línea de promedio nacional
-fig_ods.update_layout(shapes=[dict(
-    type="line",
-    x0=ods[0]["nacional"], x1=ods[0]["nacional"],
-    y0=0, y1=1, yref="paper",
-    line=dict(color=COLOR_NAC, width=3, dash="dash"),
-)])
-
-# Dropdown de indicadores
-buttons = []
-for i, ind in enumerate(ods):
-    vis = [j == i for j in range(len(ods))]
-    buttons.append(dict(
-        label=ind["nombre"].split(" ")[0] + "...",
-        method="update",
-        args=[
-            {"visible": vis},
-            {
-                "xaxis.title.text": ODS_TITULOS[i],
-                "shapes[0].x0": ind["nacional"],
-                "shapes[0].x1": ind["nacional"]
-            }
-        ]
-    ))
-
-fig_ods.update_layout(
-    updatemenus=[dict(
-        buttons=buttons,
-        direction="down",
-        showactive=True,
-        x=1.0, y=1.1,
-        xanchor="right", yanchor="top",
-        bgcolor="white", bordercolor="#ccc",
-        font=dict(size=11)
-    )],
-    margin=dict(l=50, r=20, t=40, b=40),
-    xaxis=dict(title=ODS_TITULOS[0], showgrid=True, gridcolor="#f0f0f0"),
-    yaxis=dict(showgrid=False, tickfont=dict(size=9)),
-    plot_bgcolor="white",
-    paper_bgcolor="white",
-    showlegend=False
-)
-
-fig_ods.show()
+make_ods_chart(0)
 ```
 
-<div style="margin-top:4px; font-size:11px; color:#666; text-align: right;">
-  <span style="color:#fb8072">■</span> CDMX &nbsp;&nbsp;
+## 11.2.1
+```{python}
+make_ods_chart(1)
+```
+
+## 11.3.1
+```{python}
+make_ods_chart(2)
+```
+
+## 11.r.2.1a
+```{python}
+make_ods_chart(3)
+```
+
+## 11.6.1.a
+```{python}
+make_ods_chart(4)
+```
+
+## 11.6.2.a
+```{python}
+make_ods_chart(5)
+```
+
+## 11.6.2.b
+```{python}
+make_ods_chart(6)
+```
+
+## 11.4.1
+```{python}
+make_ods_chart(7)
+```
+
+## 11.7.1
+```{python}
+make_ods_chart(8)
+```
+
+## 11.r.2.1b
+```{python}
+make_ods_chart(9)
+```
+
+:::
+
+<div style="margin-top:4px; font-size:11px; color:#666;">
+  <span style="color:#bc80bd">■</span> CDMX &nbsp;&nbsp;
   <span style="color:#80b1d3">■</span> Otros estados &nbsp;&nbsp;
   <span style="color:#fdb462; font-weight:bold">---</span> Promedio Nacional (INEGI)
 </div>
