@@ -550,12 +550,6 @@ _ = folium.GeoJson(
         style="font-size:12px",
     ),
 ).add_to(_m)
-_ = _m.get_root().html.add_child(folium.Element(
-    '<div style="position:absolute;z-index:9999;left:50%;transform:translateX(-50%);'
-    'top:10px;background:rgba(255,255,255,0.85);padding:4px 12px;border-radius:4px;'
-    'font-size:12px;font-weight:600;color:#222;pointer-events:none;">'
-    'Accesibilidad urbana por colonia — Ciudad de México</div>'
-))
 _m
 ```
 
@@ -673,12 +667,6 @@ _ = folium.GeoJson(
         style="font-size:12px",
     ),
 ).add_to(_mm)
-_ = _mm.get_root().html.add_child(folium.Element(
-    '<div style="position:absolute;z-index:9999;left:50%;transform:translateX(-50%);'
-    'top:10px;background:rgba(255,255,255,0.85);padding:4px 12px;border-radius:4px;'
-    'font-size:12px;font-weight:600;color:#222;pointer-events:none;">'
-    'Autocorrelación espacial (I de Moran Local — LISA)</div>'
-))
 _mm
 ```
 
