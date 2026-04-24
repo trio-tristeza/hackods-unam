@@ -241,7 +241,7 @@ La Ciudad de México suele pensarse como un referente de progreso en América La
 # Nuestra propuesta
 
 ```{python}
-with open("../dashboardPy/datos/resumen_alcaldias.json") as f:
+with open("datos/resumen_alcaldias.json") as f:
     alc_data = json.load(f)
 
 df_alc = pd.DataFrame(alc_data)

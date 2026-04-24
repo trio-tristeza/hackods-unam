@@ -1,10 +1,10 @@
 /* Personalización del Header con Set3 */
 .navbar {
-  background-color: #8dd3c7 !important;
+  background-color: #ffffb3 !important;
 }
 
 .navbar-title, .navbar-brand {
-  color: #2c3e50 !important; /* Texto oscuro para contraste con el teal */
+  color: #2c3e50 !important;
   font-weight: 600;
 }
 
@@ -18,4 +18,11 @@
   font-size: 0.9em !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+/* Mapa Folium: forzar iframe a llenar 100% del card */
+.bslib-card .html-fill-container iframe {
+  height: 100% !important;
+  min-height: 400px;
+  width: 100% !important;
 }

@@ -1,0 +1,130 @@
+[
+  {
+    "alcaldia": "Azcapotzalco",
+    "pct_alto": 16.6,
+    "pct_medio": 59.7,
+    "pct_bajo": 23.6,
+    "pct_muy_bajo": 0.0,
+    "n_manzanas": 3036
+  },
+  {
+    "alcaldia": "Benito Juárez",
+    "pct_alto": 4.9,
+    "pct_medio": 90.9,
+    "pct_bajo": 4.2,
+    "pct_muy_bajo": 0.0,
+    "n_manzanas": 2206
+  },
+  {
+    "alcaldia": "Coyoacán",
+    "pct_alto": 0.4,
+    "pct_medio": 31.5,
+    "pct_bajo": 68.0,
+    "pct_muy_bajo": 0.2,
+    "n_manzanas": 4497
+  },
+  {
+    "alcaldia": "Cuajimalpa de Morelos",
+    "pct_alto": 0.0,
+    "pct_medio": 21.8,
+    "pct_bajo": 71.3,
+    "pct_muy_bajo": 7.0,
+    "n_manzanas": 933
+  },
+  {
+    "alcaldia": "Cuauhtémoc",
+    "pct_alto": 5.9,
+    "pct_medio": 93.1,
+    "pct_bajo": 1.0,
+    "pct_muy_bajo": 0.0,
+    "n_manzanas": 2559
+  },
+  {
+    "alcaldia": "Gustavo A. Madero",
+    "pct_alto": 0.0,
+    "pct_medio": 40.8,
+    "pct_bajo": 54.6,
+    "pct_muy_bajo": 4.7,
+    "n_manzanas": 8223
+  },
+  {
+    "alcaldia": "Iztacalco",
+    "pct_alto": 0.1,
+    "pct_medio": 42.8,
+    "pct_bajo": 57.0,
+    "pct_muy_bajo": 0.1,
+    "n_manzanas": 2806
+  },
+  {
+    "alcaldia": "Iztapalapa",
+    "pct_alto": 0.0,
+    "pct_medio": 48.9,
+    "pct_bajo": 51.1,
+    "pct_muy_bajo": 0.0,
+    "n_manzanas": 14540
+  },
+  {
+    "alcaldia": "La Magdalena Contreras",
+    "pct_alto": 0.0,
+    "pct_medio": 18.7,
+    "pct_bajo": 76.9,
+    "pct_muy_bajo": 4.5,
+    "n_manzanas": 1292
+  },
+  {
+    "alcaldia": "Miguel Hidalgo",
+    "pct_alto": 7.8,
+    "pct_medio": 46.1,
+    "pct_bajo": 34.9,
+    "pct_muy_bajo": 11.1,
+    "n_manzanas": 2333
+  },
+  {
+    "alcaldia": "Milpa Alta",
+    "pct_alto": 2.8,
+    "pct_medio": 22.5,
+    "pct_bajo": 61.2,
+    "pct_muy_bajo": 13.5,
+    "n_manzanas": 787
+  },
+  {
+    "alcaldia": "Tlalpan",
+    "pct_alto": 0.0,
+    "pct_medio": 36.7,
+    "pct_bajo": 56.1,
+    "pct_muy_bajo": 7.1,
+    "n_manzanas": 4637
+  },
+  {
+    "alcaldia": "Tláhuac",
+    "pct_alto": 0.5,
+    "pct_medio": 12.4,
+    "pct_bajo": 81.7,
+    "pct_muy_bajo": 5.4,
+    "n_manzanas": 2977
+  },
+  {
+    "alcaldia": "Venustiano Carranza",
+    "pct_alto": 3.2,
+    "pct_medio": 38.4,
+    "pct_bajo": 58.3,
+    "pct_muy_bajo": 0.1,
+    "n_manzanas": 3376
+  },
+  {
+    "alcaldia": "Xochimilco",
+    "pct_alto": 0.0,
+    "pct_medio": 8.4,
+    "pct_bajo": 80.2,
+    "pct_muy_bajo": 11.4,
+    "n_manzanas": 2494
+  },
+  {
+    "alcaldia": "Álvaro Obregón",
+    "pct_alto": 0.2,
+    "pct_medio": 41.5,
+    "pct_bajo": 57.4,
+    "pct_muy_bajo": 1.0,
+    "n_manzanas": 5176
+  }
+]
