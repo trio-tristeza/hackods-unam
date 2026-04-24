@@ -95,11 +95,12 @@ El análisis se estructura en distintas etapas:
 El proyecto utiliza las siguientes librerías principales:
 
 - `pandas`: procesamiento y análisis de datos
-- `geopandas`: Visualización de archivos espaciales
-- `folium`: Mapas interactivos
-- `plotly` y `matplotlib`: Visualización de datos
-- `mapclassify`: Clasificación de variables espaciales
-- `jupyter` / `notebook`: Exploración y desarrollo del análisis
+- `geopandas`: manejo de datos vectoriales y análisis espacial
+- `folium`: mapas interactivos
+- `plotly` y `matplotlib`: visualización de datos
+- `mapclassify`: clasificación de variables espaciales
+- `esda` y `libpysal`: autocorrelación espacial (I de Moran Local — LISA)
+- `jupyter` / `notebook`: exploración y desarrollo del análisis
 
 Todo el entorno es gestionado mediante `uv` para garantizar reproducibilidad.
 
@@ -107,18 +108,61 @@ Todo el entorno es gestionado mediante `uv` para garantizar reproducibilidad.
 
 ```text
 .
-├── .github/workflows/       # Automatización de despliegue (CI/CD)
-├── dashboard/               # Archivos fuente del dashboard Quarto
-├── presentacion/            # Diapositivas en Quarto (RevealJS)
-├── datos/                   # Gestión de conjuntos de datos
-│   ├── crudos/              # Datos originales sin procesar
-│   └── procesados/          # Datos limpios para el dashboard
-├── notebooks/               # Cuadernos Jupyter para exploración
-├── scripts/                 # Scripts Python de automatización
-├── main.py                  # Script orquestador del flujo
-├── ai-log.md                # Registro de uso de Inteligencia Artificial
-├── LICENSE                  # Licencia Creative Commons CC BY-SA 4.0
-└── README.md                # Documentación del proyecto
+├── .github/
+│   └── workflows/
+│       └── publish.yml          # CI/CD: renderizado y despliegue a GitHub Pages
+├── dashboard/                   # Fuente del dashboard Quarto
+│   ├── _quarto.yml              # Configuración de Quarto (salida → docs/)
+│   ├── index.qmd                # Dashboard principal (4 secciones)
+│   ├── styles.css               # Estilos del dashboard
+│   └── datos/                   # Datos pre-procesados para el dashboard
+│       ├── ods11_final.json         # Indicadores ODS 11 por entidad
+│       ├── resumen_alcaldias.json   # Accesibilidad agregada por alcaldía
+│       ├── resumen_colonias.json    # Accesibilidad agregada por colonia
+│       ├── resumen_insumos.json     # Conteo de registros por insumo
+│       ├── mapas/                   # Mapas PNG estáticos
+│       │   ├── mapa_colonias.png
+│       │   └── mapa_moran.png
+│       └── vistas/                  # GeoJSONs simplificados para mapas interactivos
+│           ├── colonias/            # GeoJSON por alcaldía (clasificación por colonia)
+│           ├── vista_alcaldias.geojson
+│           ├── vista_moran_alcaldias.geojson
+│           └── vista_moran_colonias.geojson
+├── docs/                        # Salida del render (publicada en GitHub Pages)
+│   ├── index.html               # Dashboard compilado
+│   ├── index_files/             # Dependencias JS/CSS generadas por Quarto
+│   ├── datos/mapas/             # Imágenes estáticas referenciadas por el dashboard
+│   └── styles.css
+├── presentacion/                # Diapositivas en Quarto (RevealJS)
+│   ├── index.qmd
+│   └── _site/                   # Presentación compilada
+├── datos/                       # Datos del proyecto
+│   ├── crudos/                  # Datos originales sin procesar
+│   └── procesados/              # Capas procesadas por etapa
+│       ├── procesados_1_etapa/  # Insumos base (catastro, manzanas, DENUE…)
+│       ├── procesados_2_etapa/  # Insumos temáticos (transporte, escuelas, WiFi…)
+│       ├── procesados_2.5_etapa/# Indicadores ODS 11 (JSON)
+│       ├── procesados_3_etapa/  # Cruces de accesibilidad por alcaldía
+│       ├── procesados_4_etapa/  # Clasificación de manzanas + división por colonia
+│       └── procesados_5_etapa/  # Análisis de autocorrelación (I de Moran LISA)
+├── notebooks/                   # Cuadernos Jupyter para exploración
+├── scripts/                     # Scripts Python de automatización
+│   ├── cruce_accesibilidad.py       # Cálculo de accesibilidad por manzana (Dijkstra)
+│   ├── asignar_geometrias.py        # Asignación de geometrías y clasificación
+│   ├── dividir_colonias.py          # División de resultados por colonia
+│   ├── calcular_moran_lisa.py       # Autocorrelación espacial (I de Moran)
+│   ├── generar_indicadores_ods11.py # Consulta a la API BISE de INEGI
+│   ├── generar_vistas_clasificacion.py  # GeoJSONs simplificados por alcaldía
+│   ├── generar_vista_moran.py       # GeoJSONs del análisis LISA
+│   ├── generar_mapas_estaticos.py   # PNG de colonias y Moran para el dashboard
+│   ├── generar_resumen_insumos.py   # JSON de conteo de registros por insumo
+│   └── generar_resumenes_dashboard.py # JSONs de resumen por alcaldía y colonia
+├── main.py                      # Script orquestador del flujo
+├── pyproject.toml               # Dependencias del proyecto (gestionadas con uv)
+├── ai-log.md                    # Registro de uso de Inteligencia Artificial
+├── METADATOS.md                 # Linaje y documentación de cada fuente de datos
+├── LICENSE                      # Licencia Creative Commons CC BY-SA 4.0
+└── README.md                    # Documentación del proyecto
 ```
 
 ## Cómo empezar
@@ -130,15 +174,16 @@ Este proyecto utiliza `uv` para la gestión de dependencias. Para configurar el 
    ```bash
    uv sync
    ```
-3. Para renderizar el dashboard:
+3. Para renderizar el dashboard (la salida se genera en `docs/`):
    ```bash
    cd dashboard
-   quarto render
+   uv run quarto render index.qmd
    ```
 
 ## Despliegue
 
-El proyecto se publica automáticamente mediante GitHub Actions en las siguientes rutas:
+El proyecto se publica automáticamente mediante GitHub Actions al hacer push a `main`. El workflow renderiza el dashboard (salida en `docs/`) y la presentación, y los despliega en:
+
 - **Dashboard**: `https://trio-tristeza.github.io/hackods-unam/`
 - **Presentación**: `https://trio-tristeza.github.io/hackods-unam/presentacion/`
 
