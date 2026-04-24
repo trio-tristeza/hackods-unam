@@ -81,9 +81,10 @@ def make_ods_chart(idx: int, height: int = 430) -> go.Figure:
         name="Promedio Nacional"))
     fig.update_layout(
         height=height,
-        margin=dict(l=50, r=15, t=15, b=20),
-        legend=dict(orientation="h", y=1.02, x=0, font=dict(size=9),
-                    bgcolor="rgba(0,0,0,0)"),
+        margin=dict(l=50, r=15, t=15, b=60),
+        legend=dict(orientation="h", y=-0.18, x=0.5, xanchor="center",
+                    yanchor="top", font=dict(size=9), bgcolor="rgba(0,0,0,0)",
+                    entrywidth=0.45, entrywidthmode="fraction"),
         xaxis=dict(title=ODS_TITULOS[idx], showgrid=True,
                    gridcolor="#f0f0f0", autorange=True),
         yaxis=dict(showgrid=False, tickfont=dict(size=9)),
@@ -500,9 +501,9 @@ Primer esfuerzo de aproximación a la ciudad de 15 minutos para la CDMX, analiza
 
 El uso de la manzana como unidad basica de analisis permite visualizar con mayor alcance el impacto en la accesibilidad de los servicios basicos; mientras que el uso de la colonia como unidad de visualización, da un sentido de pertenencia hacía con el ususario.
 
-El análisis confirma una asimetría espacial estructural en la Ciudad de México: el acceso a una mayor diversidad de servicios urbanos en recorridos a pie se concentra en las alcaldías centrales, mientras la periferia queda sistemáticamente excluida. No se encontró ninguna zona de la ciudad que cumpliera simultáneamente con acceso caminable a los ocho tipos de servicio considerados, lo que evidencia que la ciudad de 15 minutos —en su sentido pleno— no existe aún en la CDMX para ningún habitante. Los resultados apuntan a la urgencia de pensar la integración urbana no como excepción sino como principio de planificación.
+El análisis confirma una asimetría espacial estructural en la Ciudad de México: el acceso a una mayor diversidad de servicios urbanos en recorridos a pie se concentra en las alcaldías centrales, mientras la periferia queda sistemáticamente excluida. No se encontró ninguna zona de la ciudad que cumpliera simultáneamente con acceso caminable a los ocho tipos de servicio considerados, lo que evidencia que la ciudad de 15 minutos, en su sentido pleno, no existe aún en la CDMX para ningún habitante. Los resultados apuntan a la urgencia de pensar la integración urbana no como excepción sino como principio de planificación.
 
-Se evidencian a las poblaciones de la periferías como les principales afectades por esta inaccesibilidd a servicios básicos cerca de casa.
+De acuerdo con el Censo 2020 y el análisis propuesto, Xochimilco, Milpa Alta y Tláhuac presentan la menor diversidad de servicios. En estas alcaldías se concentran poblaciones jóvenes, por unidad de análisis se encuentran: infancias (20–22), adolescencias (11–12) y juventudes (14–16) así como una presencia relevante de adultos mayores (21.8, 15.3 y 14.4 respectivamente). Esto demanda una necesidad de equipamientos educativos y espacios de recreación para la población vulnerable.
 
 > En la Ciudad de México, la proximidad a los servicios urbanos no es un derecho compartido: es un privilegio que se distribuye desde el centro hacia afuera, y que la periferia aún espera.
 
