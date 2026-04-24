@@ -105,6 +105,12 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Resultado**: Se entregó una propuesta de estructura de árbol de directorios con descripción de cada componente, incluyendo la nueva carpeta `docs/` como salida del render de Quarto, el archivo `_quarto.yml` en `dashboard/`, el desglose de las etapas de procesamiento de datos, los scripts de generación de vistas e insumos para el dashboard, y las dependencias actualizadas (`esda`, `libpysal`). Se actualizaron además las instrucciones de "Cómo empezar" y la sección de despliegue.
 - **Decisión**: Se revisó, verificó y aprobó la propuesta de estructura sin modificaciones, ya que corresponde fielmente al estado actual del repositorio.
 
+### 2026-04-24 | Claude Code (claude-sonnet-4-6) | Actualización de metadatos para las etapas 5 y preparación del dashboard
+- **Tarea**: Actualizar el archivo `METADATOS.md` con las entradas faltantes correspondientes a la etapa 5 (autocorrelación espacial) y los scripts de preparación de datos para el dashboard.
+- **Prompt**: "puedes actualizar el archivo de metadatos con los cambios realizados en las fases 4 y 5 que no estén registrados usando los scripts como base de los procedimientos".
+- **Resultado**: Se inspeccionaron los scripts `calcular_moran_lisa.py`, `generar_vistas_clasificacion.py`, `generar_vista_moran.py`, `generar_resumenes_dashboard.py`, `generar_resumen_insumos.py` y `generar_mapas_estaticos.py` para detallar con precisión cada procedimiento. Se generaron 6 nuevas entradas (items 23–28) en `METADATOS.md` que documentan: el análisis LISA con KNN k=8 y clasificación de cuadrantes, las vistas GeoJSON simplificadas en tres niveles, los resúmenes JSON por alcaldía y colonia, el conteo de insumos y los mapas PNG estáticos.
+- **Decisión**: Se aprobó la propuesta al validar la concordancia con los procedimientos empleados en cada script, sin necesidad de modificaciones.
+
 ### 2026-04-24 | Claude Code (claude-sonnet-4-6) | Generación de mapas estáticos con simbología equivalente a los mapas dinámicos
 - **Tarea**: Generar mapas estáticos a nivel colonia con la misma simbología de los mapas interactivos para incluirlos como alternativa de visualización en el dashboard.
 - **Prompt**: "puedes apoyarme a generar una propuesta de script que genere mapas estáticos a nivel manzana con la misma simbología de los mapas dinámicos pero con mayor detalle y líneas de contorno transparentes".
