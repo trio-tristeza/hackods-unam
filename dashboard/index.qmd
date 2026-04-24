@@ -237,6 +237,89 @@ La Ciudad de México suele pensarse como un referente de progreso en América La
 
 # La ciudad de los 15 min
 
+```{python}
+with open("datos/resumen_insumos.json") as f:
+    _insumos_data = json.load(f)
+```
+
+## Row {height="50%"}
+
+### {width="55%"}
+
+Es un modelo propuesto por Carlos Moreno (2021)[^1] que plantea que los servicios esenciales, educación, salud, empleo, entre otros, deberían ser accesibles en recorridos máximos de 15 minutos a pie o en bicicleta desde la vivienda. Repensar la ciudad para que la proximidad no sea un privilegio sino un derecho.
+
+Para el caso específico de este trabajo se considero unicamente la distancia a pie que fue calculada considerando una velocidad de 3 km/h, según los registros de Google Maps [^2], resultando así en una distancia calculada de 1,250 m caminando durante 15 minutos.
+
+Se propone para una siguiente etapa realizar un procedimiento similar pero considerando el uso de la bicileta.
+
+[^1]: Moreno, C., Allam, Z., Chabaud, D., Gall, C., & Pratlong, F. (2021). Introducing the “15-Minute City”: Sustainability, resilience and place identity in future post-pandemic cities. Smart cities, 4(1), 93-111.
+[^2]: Google. (s.f.). [Velocidad promedio considerada par auna persona]. Google Maps. Recuperado el 14 de abril de 2026, de goo.gl
+
+---
+
+Para operacionalizar el modelo se consideraron cuatro dimensiones. No todas las variables fueron incorporadas en el análisis final por disponibilidad de datos o complejidad computacional.
+
+| Dimensión | Variables consideradas |
+|-----------|------------------------|
+| Proximidad | Infraestructura ciclista, Metro, Metrobús, RTP, transporte eléctrico, vialidades primarias |
+| Diversidad | Escuelas públicas y privadas, hospitales, centros de salud, áreas verdes, DENUE (INEGI) |
+| Densidad | Grupos poblacionales (Censo 2020, INEGI), densidad de construcción |
+| Digitalización | Puntos WiFi gratuito, módulos Ecobici, módulo de pago de movilidad integrada |
+
+
+### Insumos utilizados {width="45%"}
+
+```{python}
+_df_ins = pd.DataFrame(_insumos_data)
+
+_hover = [
+    f"{row['nombre']}<br>{row['valor']:,} {row['unidad']}<br>Fuente: {row['fuente']}"
+    for _, row in _df_ins.iterrows()
+]
+
+fig_ins = go.Figure(go.Bar(
+    x=_df_ins["valor"],
+    y=_df_ins["nombre"],
+    orientation="h",
+    marker_color=_df_ins["color"],
+    marker_line_width=0,
+    text=[f"{row['valor']:,} {row['unidad']}" for _, row in _df_ins.iterrows()],
+    textposition="outside",
+    textfont=dict(size=8),
+    hovertext=_hover,
+    hoverinfo="text",
+))
+_ = fig_ins.update_layout(
+    autosize=True,
+    margin=dict(l=185, r=80, t=8, b=30),
+    xaxis=dict(type="log", showgrid=True, gridcolor="#eee",
+               tickfont=dict(size=8), title="Registros / km (escala log)"),
+    yaxis=dict(showgrid=False, tickfont=dict(size=8), automargin=False),
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+)
+fig_ins
+```
+<div style="margin-top:6px; font-size:11px; color:#666;">
+  <span style="color:#80b1d3">■</span> Diversidad &nbsp;
+  <span style="color:#fdb462">■</span> Proximidad &nbsp;
+  <span style="color:#b3de69">■</span> Digitalización
+</div>
+
+## Row {height="50%"}
+
+### {width="60%"}
+
+| Insumo | Categoría | Fuente | Tipo | Cobertura |
+|--------|-----------|--------|------|----------:|
+| Comercios alta densidad | Diversidad | DENUE, INEGI | Puntos | 8,263 |
+| Comercios media densidad | Diversidad | DENUE, INEGI | Puntos | 690 |
+| Escuelas | Diversidad | Equipamiento INEGI | Puntos | 5,901 |
+| Hospitales y centros de salud | Diversidad | Equipamiento INEGI | Puntos | 27 |
+| Puntos WiFi gratuito | Digitalización | CDMX Abierta | Puntos | 70,419 |
+| Estaciones de transporte | Proximidad | RNC | Puntos | 9,475 |
+| Infraestructura ciclista | Proximidad | RNC | Líneas | 482 km |
+| Rutas de transporte público | Proximidad | RNC | Líneas | 23,181 km |
 
 # Nuestra propuesta
 
@@ -267,12 +350,12 @@ Insumos
 
 1. Comercios de alta densidad (DENUE)
 2. Comercios de media densidad (DENUE)
-3. Escuelas (INEGI Equipamiento)
-4. Hospitales y centros de salud
+3. Escuelas (CDMX)
+4. Hospitales y centros de salud (CDMX)
 5. Puntos WiFi gratuito (CDMX)
-6. Estaciones de transporte público (RNC)
-7. Infraestructura ciclista — ciclovías (RNC)
-8. Rutas de transporte público (RNC)
+6. Estaciones de transporte público (CDMX)
+7. Infraestructura ciclista — ciclovías (CDMX)
+8. Rutas de transporte público (CDMX)
 
 Procesamiento: Cruce espacial simple y correlación espacial
 

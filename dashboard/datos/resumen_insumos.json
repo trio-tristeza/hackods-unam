@@ -1,0 +1,74 @@
+[
+  {
+    "nombre": "Comercios alta densidad",
+    "categoria": "Diversidad",
+    "fuente": "DENUE, INEGI",
+    "tipo": "Puntos",
+    "valor": 8263,
+    "unidad": "registros",
+    "color": "#80b1d3"
+  },
+  {
+    "nombre": "Comercios media densidad",
+    "categoria": "Diversidad",
+    "fuente": "DENUE, INEGI",
+    "tipo": "Puntos",
+    "valor": 690,
+    "unidad": "registros",
+    "color": "#80b1d3"
+  },
+  {
+    "nombre": "Escuelas",
+    "categoria": "Diversidad",
+    "fuente": "Equipamiento INEGI",
+    "tipo": "Puntos",
+    "valor": 5901,
+    "unidad": "registros",
+    "color": "#80b1d3"
+  },
+  {
+    "nombre": "Hospitales y centros de salud",
+    "categoria": "Diversidad",
+    "fuente": "Equipamiento INEGI",
+    "tipo": "Puntos",
+    "valor": 27,
+    "unidad": "registros",
+    "color": "#80b1d3"
+  },
+  {
+    "nombre": "Puntos WiFi gratuito",
+    "categoria": "Digitalización",
+    "fuente": "CDMX Abierta",
+    "tipo": "Puntos",
+    "valor": 70419,
+    "unidad": "registros",
+    "color": "#b3de69"
+  },
+  {
+    "nombre": "Estaciones de transporte",
+    "categoria": "Proximidad",
+    "fuente": "RNC",
+    "tipo": "Puntos",
+    "valor": 9475,
+    "unidad": "registros",
+    "color": "#fdb462"
+  },
+  {
+    "nombre": "Infraestructura ciclista",
+    "categoria": "Proximidad",
+    "fuente": "RNC",
+    "tipo": "Líneas",
+    "valor": 482.3,
+    "unidad": "km",
+    "color": "#fdb462"
+  },
+  {
+    "nombre": "Rutas de transporte público",
+    "categoria": "Proximidad",
+    "fuente": "RNC",
+    "tipo": "Líneas",
+    "valor": 23180.7,
+    "unidad": "km",
+    "color": "#fdb462"
+  }
+]
