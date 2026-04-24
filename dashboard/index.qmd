@@ -125,7 +125,7 @@ dict(
 dict(
     value = f"{val_tme:.1f} min",
     icon = "clock-history",
-    color = "#fb8072"
+    color = "#fdb462"
 )
 ```
 
@@ -306,20 +306,55 @@ fig_ins
   <span style="color:#b3de69">■</span> Digitalización
 </div>
 
-## Row {height="50%"}
+## Row {height="20%"}
 
-### {width="60%"}
+### {width="17%"}
 
-| Insumo | Categoría | Fuente | Tipo | Cobertura |
-|--------|-----------|--------|------|----------:|
-| Comercios alta densidad | Diversidad | DENUE, INEGI | Puntos | 8,263 |
-| Comercios media densidad | Diversidad | DENUE, INEGI | Puntos | 690 |
-| Escuelas | Diversidad | Equipamiento INEGI | Puntos | 5,901 |
-| Hospitales y centros de salud | Diversidad | Equipamiento INEGI | Puntos | 27 |
-| Puntos WiFi gratuito | Digitalización | CDMX Abierta | Puntos | 70,419 |
-| Estaciones de transporte | Proximidad | RNC | Puntos | 9,475 |
-| Infraestructura ciclista | Proximidad | RNC | Líneas | 482 km |
-| Rutas de transporte público | Proximidad | RNC | Líneas | 23,181 km |
+```{python}
+#| content: valuebox
+#| title: "Centroide de manzana censal"
+dict(value="1", color="#8dd3c7")
+```
+
+### {width="17%"}
+
+```{python}
+#| content: valuebox
+#| title: "Isócrona de 1,250 m a pie"
+dict(value="2", color="#ffffb3")
+```
+
+### {width="17%"}
+
+```{python}
+#| content: valuebox
+#| title: "Identificar servicios en el área"
+dict(value="3", color="#bebada")
+```
+
+### {width="17%"}
+
+```{python}
+#| content: valuebox
+#| title: "Contar tipos de servicio"
+dict(value="4", color="#fdb462")
+```
+
+### {width="16%"}
+
+```{python}
+#| content: valuebox
+#| title: "Clasificar: Muy bajo · Bajo · Medio · Alto"
+dict(value="5", color="#b3de69")
+```
+
+### {width="16%"}
+
+```{python}
+#| content: valuebox
+#| title: "Validar con I de Moran"
+dict(value="6", color="#80b1d3")
+```
 
 # Nuestra propuesta
 
@@ -339,35 +374,31 @@ COLORS_ACC = {
 LABELS_ACC = {"Alto": "Alto", "Medio": "Medio", "Bajo": "Bajo", "Muy_bajo": "Muy bajo"}
 ```
 
-## Row {height="50%"}
+## Row
 
-### {width="60%"}
+### Conclusión {width="30%"}
 
-Nuestra propuesta es un primero esfuerzo de aproximación a la ciudad de 15 minutos, analizado a nivel manzana y con opción de visualización a nivel colonia.
-Se puede considerar como una herramienta preliminar que puedes permitir focalizar acciones concretas para disminuir la asimetría urbana en cuestión a los recursos, planificación de transporte y la capacidad de afrontar las adversidades climáticas.
+Primer esfuerzo de aproximación a la ciudad de 15 minutos para la CDMX, analizado a nivel manzana y visualizado por colonia y alcaldía.
 
-Insumos
+---
 
-1. Comercios de alta densidad (DENUE)
-2. Comercios de media densidad (DENUE)
-3. Escuelas (CDMX)
-4. Hospitales y centros de salud (CDMX)
-5. Puntos WiFi gratuito (CDMX)
-6. Estaciones de transporte público (CDMX)
-7. Infraestructura ciclista — ciclovías (CDMX)
-8. Rutas de transporte público (CDMX)
+El análisis confirma una asimetría espacial estructural en la Ciudad de México: el acceso a una mayor diversidad de servicios urbanos en recorridos a pie se concentra en las alcaldías centrales, mientras la periferia queda sistemáticamente excluida. No se encontró ninguna zona de la ciudad que cumpliera simultáneamente con acceso caminable a los ocho tipos de servicio considerados, lo que evidencia que la ciudad de 15 minutos —en su sentido pleno— no existe aún en la CDMX para ningún habitante. Los resultados apuntan a la urgencia de pensar la integración urbana no como excepción sino como principio de planificación.
 
-Procesamiento: Cruce espacial simple y correlación espacial
+> En la Ciudad de México, la proximidad a los servicios urbanos no es un derecho compartido: es un privilegio que se distribuye desde el centro hacia afuera, y que la periferia aún espera.
 
-Desde el centroide de cada manzana censal se proyecta una isócrona de 1,250 metros sobre la red nacional de caminos (distancia real, no euclidiana) y se evalúa la diversidad de servicios alcanzables. El proceso en resumen:
+### Posibles mejoras {width="30%"}
 
-1. Obtener el centroide de cada manzana censal
-2. Calcular la isócrona de 1,250 m sobre la Red Nacional de Caminos
-3. Identificar qué servicios caen dentro del área caminable
-4. Contar la diversidad de tipos de servicio (no cantidad, variedad)
-5. Clasificar: Muy bajo (0–2), Bajo (3–4), Medio (5), Alto (6–8)
+El presente ejercicio sienta una base metodológica replicable. Las siguientes propuestas permitirían fortalecer su alcance y utilidad:
 
-Para validar el patrón se aplicó un I de Moran, un índice que funciona como prueba estadística que mide si las colonias con niveles similares de accesibilidad tienden a estar cerca una de otra o si su distribución es aleatoria.
+* Ampliar los insumos incorporando áreas verdes, mercados públicos, bibliotecas, módulos de gobierno y equipamiento cultural.
+
+* Considerar la bicicleta como modo complementario, extendiendo la isócrona a 3,000–4,000 m, lo que ampliaría significativamente las zonas con acceso potencial a servicios.
+
+* Profundizar en el análisis de por qué ninguna manzana alcanza los ocho tipos de servicio simultáneamente, identificando qué insumos están ausentes en zonas con alto desempeño en los demás.
+
+* Generar visualizaciones de alta resolución a nivel manzana para facilitar la consulta ciudadana y la identificación de brechas concretas en cada territorio.
+
+* Formalizar los resultados como insumo para políticas públicas, priorizando inversión en movilidad activa, equipamiento comunitario y conectividad digital en zonas periféricas.
 
 ### Colonias clasificadas {width="40%"}
 
@@ -412,13 +443,13 @@ _m
 
 ## Interpretación
 
-El mapa muestra el nivel de accesibilidad caminable agregado por colonia. Cada color representa la diversidad de tipos de servicio alcanzables a pie en 1,250 m desde el centroide de cada manzana:
+El mapa muestra el nivel de accesibilidad caminable agregado por colonia. Cada color representa la diversidad de tipos de servicio alcanzables a pie en 1,250 m desde el centroide de cada manzana.
 
-El patrón espacial es claro, las colonias centrales (Cuauhtémoc, Benito Juárez, Miguel Hidalgo, Azcapotzalco) concentran los niveles Alto y Medio, reflejando décadas de inversión urbana y una red de servicios diseñada desde el centro. La periferia (Milpa Alta, Tláhuac, Xochimilco, sur de Tlalpan, oriente de Iztapalapa) presenta predominio de Bajo y Muy bajo, evidenciando la asimetría estructural del acceso urbano en la ciudad.
+El patrón espacial es claro: las colonias centrales (Cuauhtémoc, Benito Juárez, Miguel Hidalgo, Azcapotzalco) concentran los niveles Alto y Medio, reflejando décadas de inversión urbana y una red de servicios diseñada desde el centro. La periferia (Milpa Alta, Tláhuac, Xochimilco, sur de Tlalpan, oriente de Iztapalapa) presenta predominio de Bajo y Muy bajo, evidenciando la asimetría estructural del acceso urbano en la ciudad.
 
 :::
 
-## Row {height="50%"}
+## Row
 
 ### Distribución de accesibilidad {width="30%"}
 
@@ -542,14 +573,15 @@ _mm
 
 ## Interpretación
 
-El índice de Moran global (I = 0.89, p < 0.001) confirma que la distribución de accesibilidad en la CDMX no es aleatoria, las colonias con niveles similares tienden a agruparse. El análisis identifica dónde ocurren esas agrupaciones.
+El índice de Moran global (I = 0.89, p < 0.001) confirma que la distribución de accesibilidad en la CDMX no es aleatoria: las colonias con niveles similares tienden a agruparse. El análisis identifica dónde ocurren esas agrupaciones.
 
 Alto-Alto (rojo): 24,623 manzanas en las alcaldías centrales (Cuauhtémoc, Benito Juárez, Miguel Hidalgo, partes de Coyoacán y Azcapotzalco). Núcleo de alta accesibilidad con acceso caminable a 6–8 tipos de servicio.
 
 Bajo-Bajo (azul): 29,555 manzanas en la periferia (Milpa Alta, Tláhuac, Xochimilco, sur de Tlalpan, oriente de Iztapalapa). Es el clúster más extenso de la ciudad y confirma la exclusión territorial.
 
-Los clústeres de transición o outliers (Bajo-Alto y Alto-Bajo) suman apenas 241 manzanas, lo que indica que los saltos abruptos entre zonas de alto y bajo acceso son escasos: la fragmentación territorial es gradual pero estructural.
+Los clústeres de transición (Bajo-Alto y Alto-Bajo) suman apenas 241 manzanas, lo que indica que los saltos abruptos entre zonas de alto y bajo acceso son escasos: la fragmentación territorial es gradual pero estructural.
 
 :::
+
 
 
