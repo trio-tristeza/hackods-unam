@@ -99,6 +99,12 @@ Utilizamos herramientas de IA para agilizar la descripción de la arquitectura d
 - **Resultado**: Se migró el bloque completo del mapa de accesibilidad a una celda `{ojs}` que carga Leaflet vía `require('leaflet@1.9.4')` e inyecta su CSS en `document.head`. La lógica simplificada muestra: CDMX completa sin selección, colonias simplificadas al seleccionar alcaldía, y manzanas al seleccionar colonia. Se añadió la regla CSS `display: contents` en `styles.css` para que el div envolvente de OJS sea transparente al layout flex del panel.
 - **Decisión**: Se sacrificó la funcionalidad de cambio automático de resolución por nivel de zoom, conservando únicamente la resolución máxima (manzanas) al seleccionar una colonia específica. Se mantuvo el script de scrollytelling como `{=html}` ya que no carga recursos externos.
 
+### 2026-04-24 | Claude Code (claude-sonnet-4-6) | Actualización de la estructura del repositorio en el README
+- **Tarea**: Actualizar el archivo `README.md` para reflejar la estructura real y actualizada del repositorio tras los cambios recientes.
+- **Prompt**: "puedes actualizar la estructura del repositorio con todos los nuevos cambios desde la última versión".
+- **Resultado**: Se entregó una propuesta de estructura de árbol de directorios con descripción de cada componente, incluyendo la nueva carpeta `docs/` como salida del render de Quarto, el archivo `_quarto.yml` en `dashboard/`, el desglose de las etapas de procesamiento de datos, los scripts de generación de vistas e insumos para el dashboard, y las dependencias actualizadas (`esda`, `libpysal`). Se actualizaron además las instrucciones de "Cómo empezar" y la sección de despliegue.
+- **Decisión**: Se revisó, verificó y aprobó la propuesta de estructura sin modificaciones, ya que corresponde fielmente al estado actual del repositorio.
+
 ### 2026-04-24 | Claude Code (claude-sonnet-4-6) | Generación de mapas estáticos con simbología equivalente a los mapas dinámicos
 - **Tarea**: Generar mapas estáticos a nivel colonia con la misma simbología de los mapas interactivos para incluirlos como alternativa de visualización en el dashboard.
 - **Prompt**: "puedes apoyarme a generar una propuesta de script que genere mapas estáticos a nivel manzana con la misma simbología de los mapas dinámicos pero con mayor detalle y líneas de contorno transparentes".
