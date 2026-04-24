@@ -1,638 +1,202 @@
 ---
-title: "Accesibilidad en la CDMX: Un Análisis ODS 11"
-subtitle: "Trío triteza"
-format:
-  html:
+title: "La Asimetría Invisible: ODS 11 en la CDMX"
+author: "Trío Tristeza ODS"
+format: 
+  dashboard:
+    theme: cosmo
+    orientation: rows
     css: styles.css
-    toc: false
-    page-layout: full
-execute:
-  echo: false
 ---
 
-::: {.column-page}
-
-# Introducción
-Este tablero tiene como objetivo el análisis y la visualización de datos para realizar una evaluación de la accesibilidad en la Ciudad de México. Buscando identificar las zonas de la CDMX en las que vivir, trabajar y descansar pueda suceder en en recorridos de menos de 15 minutos.
-
-A través de un análisis de 1,250 metros de caminata desde cada manzana, evaluamos qué tan accesible es la ciudad para sus habitantes.
-
----
-
-::: {.scrolly-container}
-
-::: {.map-sidebar}
-
-::: {#panel-ods .panel-content}
-
-```{ojs}
-//| output: false
-ods_data = FileAttachment("datos/ods11_final.json").json()
-```
-
-```{ojs}
-//| output: false
-ods_texts = [
-  {
-    titulo: "11.1.1 — Viviendas Precarias (%)",
-    texto: `Mide la proporción de la población urbana que habita en asentamientos precarios: sin acceso adecuado a agua potable, saneamiento, espacio habitable suficiente o materiales de construcción duraderos.
-
-La Ciudad de México (3.36%) se ubica por debajo del promedio nacional (4.42%). Sin embargo, las alcaldías periféricas como Milpa Alta, Tláhuac y Xochimilco concentran los rezagos habitacionales más pronunciados, revelando una asimetría estructural al interior de la propia ciudad.`,
-    mejor: "menor"
-  },
-  {
-    titulo: "11.2.1 — Acceso a Transporte Público (%)",
-    texto: `Proporción de la población con acceso conveniente a transporte público según criterios de proximidad y cobertura de red.
-
-A pesar de contar con una red multimodal extensa (Metro, Metrobús, Cablebús, RTP, Trolebús), la CDMX (3.02%) registra un valor por debajo del promedio nacional (4.22%). Esto refleja que la cobertura no es homogénea: las alcaldías centrales concentran la infraestructura mientras las periféricas dependen de transporte concesionado con menor regularidad.`,
-    mejor: "mayor"
-  },
-  {
-    titulo: "11.3.1 — Relación de Expansión del Suelo",
-    texto: `Razón entre la tasa de consumo de suelo urbano y la tasa de crecimiento de la población. Valores más bajos indican un uso más eficiente del territorio, con crecimiento vertical o densificación en lugar de expansión horizontal.
-
-La CDMX (2,162) muestra una expansión más contenida que el promedio nacional (559,262), consistente con su carácter de ciudad densa y consolidada. La presión sobre el suelo de conservación en el sur de la ciudad sigue siendo un reto permanente.`,
-    mejor: "menor"
-  },
-  {
-    titulo: "11.r.2.1a — Tiempo de Traslado al Trabajo (min)",
-    texto: `Tiempo promedio en minutos que tarda la población en llegar a su lugar de trabajo. Este indicador es central para evaluar la propuesta de ciudad de 15 minutos: si vivir, trabajar y descansar puede ocurrir en recorridos cortos.
-
-La CDMX (27.6 min) supera el promedio nacional (23.9 min), evidenciando que la congestión vial y la concentración de empleo en zonas específicas generan trayectos costosos en tiempo, particularmente para quienes habitan en la periferia.`,
-    mejor: "menor"
-  },
-  {
-    titulo: "11.6.1.a — Residuos Sólidos Gestionados (%)",
-    texto: `Proporción de residuos sólidos urbanos que son recolectados y gestionados de manera adecuada (disposición final controlada, reciclaje o tratamiento).
-
-La CDMX (18.0%) se ubica muy por debajo del promedio nacional (35.47%), lo que representa un área de rezago significativo. Una gestión deficiente de residuos impacta directamente en la resiliencia ambiental urbana y el riesgo de contaminación de mantos freáticos.`,
-    mejor: "mayor"
-  },
-  {
-    titulo: "11.6.2.a — Partículas PM2.5",
-    texto: `Concentración de partículas finas en suspensión (PM2.5). Estas partículas, menores a 2.5 micrómetros, penetran profundamente en el sistema respiratorio y cardiovascular, representando uno de los principales riesgos de salud pública en zonas de alta densidad vehicular e industrial.
-
-La CDMX (0.54) registra valores por debajo del promedio nacional (6.48). La distribución de la contaminación atmosférica al interior de la ciudad varía por alcaldía, con zonas de alta actividad industrial y vial que superan los límites recomendados por la OMS.`,
-    mejor: "menor"
-  },
-  {
-    titulo: "11.6.2.b — Partículas PM10",
-    texto: `Concentración de partículas gruesas en suspensión (PM10), asociadas al polvo urbano, emisiones vehiculares, obras de construcción y actividad industrial.
-
-La CDMX (9,375) se ubica muy por debajo del promedio nacional (482,360). La diferencia en escala entre entidades refleja tanto la actividad económica como la capacidad de monitoreo y regulación ambiental. En la CDMX, las condiciones de inversión térmica agravan episodios de contaminación estacional.`,
-    mejor: "menor"
-  },
-  {
-    titulo: "11.4.1 — Gasto en Patrimonio Cultural ($)",
-    texto: `Gasto total destinado a la preservación y salvaguarda del patrimonio cultural y natural. La inversión en patrimonio refleja la apuesta institucional por la identidad colectiva, la memoria urbana y el desarrollo del turismo cultural sostenible.
-
-La CDMX (3,596) se ubica por debajo del promedio nacional (141,305). Esta diferencia puede señalar una brecha en la capacidad de proteger el vasto patrimonio histórico y arquitectónico de la ciudad frente a la presión inmobiliaria y el deterioro urbano.`,
-    mejor: "mayor"
-  },
-  {
-    titulo: "11.7.1 — Espacios Públicos (%)",
-    texto: `Proporción de la superficie urbana dedicada a espacios públicos abiertos, plazas, parques y áreas verdes accesibles a la población. El acceso equitativo a estos espacios es fundamental para la salud mental, la cohesión social y la resiliencia climática.
-
-La CDMX (1.24%) se ubica muy por debajo del promedio nacional (12.19%), reflejo de la alta densidad y la presión inmobiliaria sobre el territorio. Esta brecha refuerza la hipótesis de asimetría urbana: no todas las colonias tienen igual acceso a espacios de recreación y descanso.`,
-    mejor: "mayor"
-  },
-  {
-    titulo: "11.r.2.1b — Traslado de Población Indígena (min)",
-    texto: `Tiempo promedio de traslado al trabajo de la población indígena. Este indicador visibiliza las brechas de accesibilidad que enfrentan los pueblos originarios en contextos urbanos, frecuentemente desplazados hacia zonas con menor infraestructura de movilidad.
-
-La CDMX (1.60 min) supera el promedio nacional (1.29 min), señalando que la población indígena en la ciudad enfrenta tiempos relativamente más altos, un indicador de exclusión espacial vinculado a dinámicas estructurales de segregación urbana.`,
-    mejor: "menor"
-  }
-]
-```
-
-```{ojs}
-viewof ods_idx = {
-  let i = 0;
-  const n = ods_data.length;
-
-  const prevBtn = html`<button class="ods-btn ods-btn-disabled">&#8592; Anterior</button>`;
-  const nextBtn = html`<button class="ods-btn">Siguiente &#8594;</button>`;
-  const label   = html`<span class="ods-nav-label"></span>`;
-
-  function sync() {
-    label.innerHTML = `<strong>${i + 1} de ${n}</strong> &nbsp;&mdash;&nbsp; ${ods_data[i].nombre}`;
-    prevBtn.className = "ods-btn" + (i === 0     ? " ods-btn-disabled" : "");
-    nextBtn.className = "ods-btn" + (i === n - 1 ? " ods-btn-disabled" : "");
-    div.value = i;
-    div.dispatchEvent(new CustomEvent("input", { bubbles: true }));
-  }
-
-  prevBtn.addEventListener("click", () => { if (i > 0)     { i--; sync(); } });
-  nextBtn.addEventListener("click", () => { if (i < n - 1) { i++; sync(); } });
-
-  const div = html`<div class="ods-nav">${prevBtn}${label}${nextBtn}</div>`;
-  div.value = i;
-  sync();
-  return div;
-}
-```
-
-```{ojs}
-{
-  const ind  = ods_data[ods_idx];
-  const cdmxEntry = ind.datos.find(d => d.cvegeo === "09");
-  const cdmxVal   = cdmxEntry ? cdmxEntry.valor : 0;
-
-  const plotH = Math.max(ind.datos.length * 22, Math.round(window.innerHeight * 0.76) - 70);
-
-  return Plot.plot({
-    marginLeft: 75,
-    marginRight: 15,
-    marginTop: 10,
-    marginBottom: 35,
-    width: width,
-    height: plotH,
-    style: { fontSize: "13px", fontFamily: "inherit" },
-    x: { grid: true, label: ind.nombre },
-    y: { label: null },
-    marks: [
-      Plot.barX(ind.datos, {
-        x: "valor",
-        y: "cvegeo",
-        fill: d => d.cvegeo === "09" ? "#e74c3c" : "#3498db",
-        sort: { y: "x", reverse: true },
-        title: d => `Estado ${d.cvegeo}: ${d.valor.toFixed(2)}`
-      }),
-      Plot.ruleX([ind.nacional], {
-        stroke: "#f39c12",
-        strokeWidth: 2.5,
-        strokeDasharray: "6,4"
-      })
-    ]
-  });
-}
-```
-
-<div class="ods-legend">
-  <span style="color:#e74c3c; font-size:15px;">&#9632;</span> CDMX &nbsp;&nbsp;
-  <span style="color:#3498db; font-size:15px;">&#9632;</span> Otros estados &nbsp;&nbsp;
-  <span style="color:#f39c12; font-weight:bold; font-size:15px;">&#8212;</span> Promedio nacional
-</div>
-
-:::
-
-::: {#panel-map .panel-content}
 ```{python}
-import geopandas as gpd
-import folium
-import os
+import pandas as pd
+import json
+import plotly.graph_objects as go
 
-path_gpkg = '../pruebaCrucePreliminar/cruce_accesibilidad.gpkg'
-m1 = folium.Map(location=[19.4326, -99.1332], zoom_start=11, tiles='CartoDB positron')
+# ── Carga de datos ODS 11 ─────────────────────────────────────────────────────
+with open("datos/ods11_final.json", "r") as f:
+    ods = json.load(f)
 
-if os.path.exists(path_gpkg):
-    gdf = gpd.read_file(path_gpkg).to_crs(epsg=4326)
+ODS_TITULOS = [
+    "11.1.1 — Viviendas Precarias (%)",
+    "11.2.1 — Acceso a Transporte Público (%)",
+    "11.3.1 — Relación de Expansión del Suelo",
+    "11.r.2.1a — Tiempo de Traslado al Trabajo (min)",
+    "11.6.1.a — Residuos Sólidos Gestionados (%)",
+    "11.6.2.a — Partículas PM2.5",
+    "11.6.2.b — Partículas PM10",
+    "11.4.1 — Gasto en Patrimonio Cultural ($)",
+    "11.7.1 — Espacios Públicos (%)",
+    "11.r.2.1b — Traslado de Población Indígena (min)",
+]
 
-    def style_fn(feature):
-        n = feature['properties'].get('nivel_accesibilidad', 'Baja')
-        return {
-            'fillColor': 'green' if n == 'Alta' else ('orange' if n == 'Media' else 'red'),
-            'color': 'white', 'weight': 0.5, 'fillOpacity': 0.6
-        }
+# ── Paleta Set3 ───────────────────────────────────────────────────────────────
+COLOR_CDMX = "#fb8072"  # Salmon
+COLOR_OTROS = "#80b1d3" # Blue
+COLOR_NAC = "#fdb462"   # Orange
 
-    folium.GeoJson(
-        gdf,
-        style_function=style_fn,
-        tooltip=folium.GeoJsonTooltip(fields=['colonia', 'nivel_accesibilidad'])
-    ).add_to(m1)
+# ── Funciones de utilidad ─────────────────────────────────────────────────────
+def get_val(substr):
+    ind = next(x for x in ods if substr in x["nombre"])
+    cdmx = next(d["valor"] for d in ind["datos"] if d["cvegeo"] == "09")
+    return cdmx, ind["nacional"], ind["nombre"]
 
-m1
+val_viv, nac_viv, _ = get_val("11.1.1")
+val_tra, nac_tra, _ = get_val("11.2.1")
+val_tme, nac_tme, _ = get_val("11.r.2.1a")
+val_esp, nac_esp, _ = get_val("11.7.1")
 ```
-:::
 
-::: {#panel-accesibilidad .panel-content}
+# La asimetría (in)visible
 
-```{=html}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script>/* Leaflet detecta define() de RequireJS/OJS y falla como módulo AMD; lo ocultamos temporalmente */var _def=window.define;window.define=undefined;</script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>window.define=_def;</script>
+## Row {height="20%"}
 
-<div style="display:flex;gap:12px;padding:8px 0;flex-shrink:0;">
-  <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
-    <label style="font-size:11px;font-weight:600;text-transform:uppercase;color:#555;">Alcaldía</label>
-    <select id="acc-alc" style="padding:7px 10px;border:1px solid #ccc;border-radius:4px;font-size:13px;">
-      <option value="">— Toda la CDMX —</option>
-    </select>
-  </div>
-  <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
-    <label style="font-size:11px;font-weight:600;text-transform:uppercase;color:#555;">Colonia</label>
-    <select id="acc-col" disabled style="padding:7px 10px;border:1px solid #ccc;border-radius:4px;font-size:13px;">
-      <option value="">— Selecciona colonia —</option>
-    </select>
-  </div>
+### Vivienda Precaria {width="25%"}
+
+```{python}
+#| content: valuebox
+#| title: "Vivienda Precaria (11.1.1)"
+dict(
+    value = f"{val_viv:.2f}%",
+    icon = "house-heart",
+    color = "#bebada" # Lavender
+)
+```
+
+### Acceso a Transporte {width="25%"}
+
+```{python}
+#| content: valuebox
+#| title: "Acceso a Transporte (11.2.1)"
+dict(
+    value = f"{val_tra:.2f}%",
+    icon = "truck-front",
+    color = "#8dd3c7" # Teal
+)
+```
+
+### Tiempo de Traslado {width="25%"}
+
+```{python}
+#| content: valuebox
+#| title: "Tiempo al Trabajo (11.r.2.1a)"
+dict(
+    value = f"{val_tme:.1f} min",
+    icon = "clock-history",
+    color = "#ffffb3" # Yellow
+)
+```
+
+### Espacios Públicos {width="25%"}
+
+```{python}
+#| content: valuebox
+#| title: "Espacios Públicos (11.7.1)"
+dict(
+    value = f"{val_esp:.2f}%",
+    icon = "tree",
+    color = "#b3de69" # Green
+)
+```
+
+## Row {height="80%"}
+
+### Posicionamiento de la CDMX frente a los 32 estados {width="60%"}
+
+```{python}
+fig_ods = go.Figure()
+
+for i, ind in enumerate(ods):
+    datos_s = sorted(ind["datos"], key=lambda d: d["valor"], reverse=True)
+    
+    fig_ods.add_trace(go.Bar(
+        x=[d["valor"] for d in datos_s],
+        y=[d["cvegeo"] for d in datos_s],
+        orientation="h",
+        visible=(i == 0),
+        marker_color=[COLOR_CDMX if d["cvegeo"] == "09" else COLOR_OTROS for d in datos_s],
+        marker_line_width=0,
+        name="",
+        hovertemplate="Estado %{y}: %{x:.2f}<extra></extra>"
+    ))
+
+# Línea de promedio nacional
+fig_ods.update_layout(shapes=[dict(
+    type="line",
+    x0=ods[0]["nacional"], x1=ods[0]["nacional"],
+    y0=0, y1=1, yref="paper",
+    line=dict(color=COLOR_NAC, width=3, dash="dash"),
+)])
+
+# Dropdown de indicadores
+buttons = []
+for i, ind in enumerate(ods):
+    vis = [j == i for j in range(len(ods))]
+    buttons.append(dict(
+        label=ind["nombre"].split(" ")[0] + "...",
+        method="update",
+        args=[
+            {"visible": vis},
+            {
+                "xaxis.title.text": ODS_TITULOS[i],
+                "shapes[0].x0": ind["nacional"],
+                "shapes[0].x1": ind["nacional"]
+            }
+        ]
+    ))
+
+fig_ods.update_layout(
+    updatemenus=[dict(
+        buttons=buttons,
+        direction="down",
+        showactive=True,
+        x=1.0, y=1.1,
+        xanchor="right", yanchor="top",
+        bgcolor="white", bordercolor="#ccc",
+        font=dict(size=11)
+    )],
+    margin=dict(l=50, r=20, t=40, b=40),
+    xaxis=dict(title=ODS_TITULOS[0], showgrid=True, gridcolor="#f0f0f0"),
+    yaxis=dict(showgrid=False, tickfont=dict(size=9)),
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    showlegend=False
+)
+
+fig_ods.show()
+```
+
+<div style="margin-top:4px; font-size:11px; color:#666; text-align: right;">
+  <span style="color:#fb8072">■</span> CDMX &nbsp;&nbsp;
+  <span style="color:#80b1d3">■</span> Otros estados &nbsp;&nbsp;
+  <span style="color:#fdb462; font-weight:bold">---</span> Promedio Nacional (INEGI)
 </div>
-<div id="acc-map" style="width:100%;flex:1;min-height:0;border-radius:4px;border:1px solid #e0e0e0;"></div>
-<div id="acc-legend" class="acc-legend"></div>
 
-<script>
-(function () {
-  var COLORS = { 'Muy bajo': '#fc8d59', 'Bajo': '#fee08b', 'Medio': '#e6f598', 'Alto': '#99d594' };
-  var CLASES  = ['Muy bajo', 'Bajo', 'Medio', 'Alto'];
+### Contexto {width="40%"}
 
-  /*
-   * Breakpoints de zoom — resolución automática independiente del filtro:
-   *   < 12  → vista CDMX   (4 polígonos por clase)
-   *   12–13 → vista alcaldías (~55 features)
-   *   14–15 → colonias simplificadas para las alcaldías visibles en el viewport
-   *   ≥ 16  → manzanas originales (solo si hay colonia seleccionada en el filtro)
-   *
-   * El filtro de alcaldía/colonia únicamente hace zoom hacia la selección;
-   * la resolución siempre la determina el nivel de zoom actual.
-   */
-  var ZOOM_ALC = 12;
-  var ZOOM_COL = 14;
-  var ZOOM_MNZ = 16;
+La ciudad, entendida como el resultado de dinámicas productivas inscritas en un modelo de desarrollo característico de la economía neoliberal, perpetúa e incrementa las desigualdades sociales.
 
-  var accMap = null, activeLayer = null, accIndex = null;
-  var currentLevel    = null;
-  var currentAlcaldia = null;  /* nombre alcaldía seleccionada (solo para manzanas y fitBounds) */
-  var currentColonia  = null;  /* nombre colonia seleccionada  (solo para manzanas y fitBounds) */
-  var currentColArch  = null;  /* archivo .geojson de la colonia seleccionada                   */
-  var currentVisKey   = null;  /* key de alcaldías visibles — evita re-render innecesario       */
+La Ciudad de México suele pensarse como un referente de progreso en América Latina. Sin embargo, al analizar la ciudad bajo la lupa del ODS 11, identificamos que este progreso no es uniforme.
 
-  var cdmxCache     = null;
-  var vistaAlcCache = null;
-  var alcBounds     = {};   /* { nombreAlcaldia: L.LatLngBounds } — índice espacial ligero */
-  var vistaColCache = {};   /* keyed por carpeta                                            */
-  var mnzCache      = {};   /* keyed por ruta completa                                      */
+---
 
-  /* ---- utilidades -------------------------------------------------------- */
+**11.1.1 — Vivienda Precaria:** Mide población en asentamientos sin servicios básicos. En CDMX (3.36%) el reto es la gentrificación y el costo del suelo, que expulsa a la población a zonas de riesgo.
 
-  function styleFeature(f) {
-    return { fillColor: COLORS[f.properties.clasificacion] || '#ccc',
-             color: '#fff', weight: 0.5, fillOpacity: 0.8 };
-  }
+**11.2.1 — Transporte Público:** Aunque la red es vasta, solo el 3.02% de la población tiene acceso "óptimo" según proximidad y frecuencia, evidenciando que el centro está sobre-servido frente a la periferia.
 
-  function tooltipFor(f, nivel) {
-    var p = f.properties;
-    if (nivel === 'manzana')  return p.clasificacion + '<br><small>' + (p.clavegeo || '') + '</small>';
-    if (nivel === 'colonia')  return '<b>' + (p.colonia  || '') + '</b><br>' + p.clasificacion;
-    if (nivel === 'alcaldia') return '<b>' + (p.alcaldia || '') + '</b><br>' + p.clasificacion;
-    return '<b>' + p.clasificacion + '</b>';
-  }
+**11.3.1 — Expansión del Suelo:** Evalúa qué tanto crece la mancha urbana vs la población. La CDMX muestra una densificación alta, presionando los recursos hídricos y de servicios.
 
-  function pintarCapa(features, nivel) {
-    if (activeLayer) { accMap.removeLayer(activeLayer); activeLayer = null; }
-    if (!features || !features.length) return;
-    activeLayer = L.geoJSON({ type: 'FeatureCollection', features: features }, {
-      style: styleFeature,
-      onEachFeature: function(f, l) { l.bindTooltip(tooltipFor(f, nivel), { sticky: true }); }
-    }).addTo(accMap);
-  }
+**11.r.2.1a — Tiempo de Traslado:** El promedio de 27.6 min oculta trayectos de más de 2 horas desde alcaldías dormitorio hacia el centro laboral.
 
-  /* Construye el índice de bounding boxes por alcaldía (se llama una vez) */
-  function buildAlcBounds(gj) {
-    if (Object.keys(alcBounds).length) return;
-    gj.features.forEach(function(f) {
-      var nombre = f.properties.alcaldia;
-      try {
-        var b = L.geoJSON({ type: 'FeatureCollection', features: [f] }).getBounds();
-        if (!b || !b.isValid()) return;
-        if (!alcBounds[nombre]) alcBounds[nombre] = b;
-        else alcBounds[nombre].extend(b);
-      } catch (e) {}
-    });
-  }
+**11.6.1.a — Residuos Sólidos:** La gestión de residuos (18%) es muy inferior al promedio nacional (35%), un foco rojo para la resiliencia ambiental.
 
-  /* Devuelve los nombres de alcaldías cuyo bounding box intersecta el viewport */
-  function alcaldiasEnViewport() {
-    var mb = accMap.getBounds();
-    return Object.keys(alcBounds).filter(function(n) {
-      return alcBounds[n] && mb.intersects(alcBounds[n]);
-    });
-  }
+**11.6.2.a/b — Calidad del Aire (PM2.5/PM10):** La concentración de partículas suspendidas sigue siendo un reto de salud pública vinculado a la movilidad motorizada.
 
-  /* fetch con caché en memoria */
-  function fetchJSON(url, cached, onDone) {
-    if (cached !== null && cached !== undefined) { onDone(cached); return; }
-    fetch(url)
-      .then(function(r) { return r.json(); })
-      .then(onDone)
-      .catch(function(e) { console.error(url, e); });
-  }
+**11.4.1 — Gasto en Patrimonio:** La inversión por habitante en cultura es baja comparada con la riqueza histórica de la ciudad, arriesgando la identidad barrial.
 
-  /* ---- nivel objetivo (zoom manda, filtro solo activa manzanas) ---------- */
+**11.7.1 — Espacios Públicos:** Con solo 1.24% de superficie pública abierta, la CDMX enfrenta una crisis de habitabilidad y salud mental para sus ciudadanos.
 
-  function nivelObjetivo() {
-    var z = accMap.getZoom();
-    if (z >= ZOOM_MNZ && currentColonia) return 'manzana';
-    if (z >= ZOOM_COL)                   return 'colonia';
-    if (z >= ZOOM_ALC)                   return 'alcaldia';
-    return 'cdmx';
-  }
+**11.r.2.1b — Traslado Población Indígena:** Refleja la exclusión espacial de grupos originarios, quienes enfrentan tiempos de traslado mayores al promedio general.
 
-  /* ---- actualización de capa (llamado por zoom, pan y cambios de filtro) - */
-
-  function actualizarCapa() {
-    if (!accIndex) return;
-    var nivel = nivelObjetivo();
-
-    /* CDMX ----------------------------------------------------------------- */
-    if (nivel === 'cdmx') {
-      if (nivel === currentLevel) return;
-      currentLevel = nivel; currentVisKey = null;
-      fetchJSON('datos/vistas/vista_cdmx.geojson', cdmxCache, function(gj) {
-        cdmxCache = gj;
-        pintarCapa(gj.features, 'cdmx');
-      });
-
-    /* ALCALDÍA ------------------------------------------------------------- */
-    } else if (nivel === 'alcaldia') {
-      if (nivel === currentLevel) return;
-      currentLevel = nivel; currentVisKey = null;
-      fetchJSON('datos/vistas/vista_alcaldias.geojson', vistaAlcCache, function(gj) {
-        vistaAlcCache = gj;
-        buildAlcBounds(gj);
-        pintarCapa(gj.features, 'alcaldia');
-      });
-
-    /* COLONIA SIMPLIFICADA (dinámica por viewport) -------------------------- */
-    } else if (nivel === 'colonia') {
-      /* vistaAlcCache se pre-carga en init; si aún no llegó (race condition muy rara)
-         el callback de pre-carga llamará actualizarCapa() al terminar */
-      if (!vistaAlcCache) return;
-      var visAlcs = alcaldiasEnViewport();
-      var visKey  = visAlcs.slice().sort().join('|');
-      if (nivel === currentLevel && visKey === currentVisKey) return;
-      currentLevel = nivel; currentVisKey = visKey;
-
-      if (!visAlcs.length) { pintarCapa([], 'colonia'); return; }
-
-      var pendientes    = visAlcs.length;
-      var todosFeatures = [];
-      visAlcs.forEach(function(alcNombre) {
-        var entry = accIndex.find(function(a) { return a.nombre === alcNombre; });
-        if (!entry) { if (!--pendientes) pintarCapa(todosFeatures, 'colonia'); return; }
-        var url = 'datos/vistas/colonias/' + entry.carpeta + '.geojson';
-        fetchJSON(url, vistaColCache[entry.carpeta], function(gj) {
-          vistaColCache[entry.carpeta] = gj;
-          todosFeatures = todosFeatures.concat(gj.features);
-          if (!--pendientes) pintarCapa(todosFeatures, 'colonia');
-        });
-      });
-
-    /* MANZANAS (solo con colonia seleccionada en filtro) -------------------- */
-    } else if (nivel === 'manzana') {
-      if (nivel === currentLevel) return;
-      currentLevel = nivel; currentVisKey = null;
-      var entry = accIndex.find(function(a) { return a.nombre === currentAlcaldia; });
-      if (!entry || !currentColArch) return;
-      var ruta = 'datos/colonias/' + entry.carpeta + '/' + currentColArch;
-      fetchJSON(ruta, mnzCache[ruta], function(gj) {
-        mnzCache[ruta] = gj;
-        pintarCapa(gj.features, 'manzana');
-      });
-    }
-  }
-
-  /* ---- funciones de navegación (solo mueven el mapa; zoomend actualiza) -- */
-
-  function zoomAAlcaldia(alcNombre) {
-    /* vistaAlcCache siempre pre-cargado en init */
-    if (alcBounds[alcNombre] && alcBounds[alcNombre].isValid()) {
-      currentLevel = null;
-      accMap.fitBounds(alcBounds[alcNombre], { padding: [30, 30] });
-    }
-  }
-
-  function zoomAColonia(alcNombre, colNombre) {
-    var entry = accIndex.find(function(a) { return a.nombre === alcNombre; });
-    if (!entry) return;
-    var url = 'datos/vistas/colonias/' + entry.carpeta + '.geojson';
-    fetchJSON(url, vistaColCache[entry.carpeta], function(gj) {
-      vistaColCache[entry.carpeta] = gj;
-      var features = gj.features.filter(function(f) { return f.properties.colonia === colNombre; });
-      if (!features.length) return;
-      try {
-        var bounds = L.geoJSON({ type: 'FeatureCollection', features: features }).getBounds();
-        if (bounds && bounds.isValid()) { currentLevel = null; accMap.fitBounds(bounds, { padding: [30, 30] }); }
-      } catch (e) {}
-    });
-  }
-
-  /* ---- inicialización ---------------------------------------------------- */
-
-  function init() {
-    accMap = L.map('acc-map');
-    accMap.fitBounds([[19.13, -99.341], [19.579, -98.948]], { padding: [0, 0] });
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; CARTO', maxZoom: 19
-    }).addTo(accMap);
-
-    document.getElementById('acc-legend').innerHTML = CLASES.map(function(c) {
-      return '<span class="acc-leg-item"><span class="acc-leg-swatch" style="background:' +
-             COLORS[c] + '"></span>' + c + '</span>';
-    }).join('');
-
-    /* zoom y pan disparan actualización de resolución automáticamente */
-    accMap.on('zoomend moveend', function() { actualizarCapa(); });
-
-    /* Pre-cargar vista_alcaldias en paralelo para tener alcBounds listos
-       antes de que el usuario haga zoom a nivel colonia (sin esperar filtros) */
-    fetchJSON('datos/vistas/vista_alcaldias.geojson', null, function(gj) {
-      vistaAlcCache = gj;
-      buildAlcBounds(gj);
-      /* Si el usuario ya hizo zoom a nivel colonia mientras cargaba, renderizar */
-      if (accIndex && nivelObjetivo() === 'colonia' && currentLevel !== 'colonia') {
-        actualizarCapa();
-      }
-    });
-
-    fetch('datos/colonias/index.json')
-      .then(function(r) { return r.json(); })
-      .then(function(idx) {
-        accIndex = idx;
-        var alcSel = document.getElementById('acc-alc');
-        var colSel = document.getElementById('acc-col');
-
-        idx.forEach(function(a) {
-          var o = document.createElement('option');
-          o.value = a.nombre; o.textContent = a.nombre;
-          alcSel.appendChild(o);
-        });
-
-        /* Alcaldía: pobla colonias y hace zoom, el resto lo resuelve zoomend */
-        alcSel.addEventListener('change', function() {
-          var alcNombre = alcSel.value;
-          colSel.innerHTML = '<option value="">— Selecciona colonia —</option>';
-          colSel.disabled = true;
-          currentAlcaldia = null; currentColonia = null; currentColArch = null; currentLevel = null;
-
-          if (!alcNombre) { actualizarCapa(); return; }
-
-          currentAlcaldia = alcNombre;
-          var entry = accIndex.find(function(a) { return a.nombre === alcNombre; });
-          if (entry) {
-            entry.colonias.forEach(function(c) {
-              var o = document.createElement('option');
-              o.value = c.nombre; o.textContent = c.nombre;
-              colSel.appendChild(o);
-            });
-            colSel.disabled = false;
-          }
-          zoomAAlcaldia(alcNombre);
-        });
-
-        /* Colonia: activa el nivel manzana al llegar a zoom ≥ 16 */
-        colSel.addEventListener('change', function() {
-          var colNombre = this.value;
-          currentColonia = null; currentColArch = null; currentLevel = null;
-
-          if (!colNombre || !currentAlcaldia) { actualizarCapa(); return; }
-
-          var entry    = accIndex.find(function(a) { return a.nombre === currentAlcaldia; });
-          var colEntry = entry && entry.colonias.find(function(c) { return c.nombre === colNombre; });
-          if (!colEntry) return;
-          currentColonia = colNombre;
-          currentColArch = colEntry.archivo;
-          zoomAColonia(currentAlcaldia, colNombre);
-        });
-
-        actualizarCapa();  /* render inicial */
-      })
-      .catch(function(e) { console.error('index.json:', e); });
-  }
-
-  window._accOnActive = function() {
-    if (accMap) setTimeout(function() { accMap.invalidateSize(); }, 50);
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
-```
-
-:::
-
-:::
-
-::: {.story-column}
-
-::: {.story-section data-panel="ods"}
-### 1. Indicadores ODS 11 en México
-
-El cumplimiento de las metas globales de sostenibilidad urbana varía drásticamente en el territorio nacional. Usa los botones **← Anterior / Siguiente →** para explorar el posicionamiento de la CDMX frente a los 32 estados del país en cada indicador.
-
-```{ojs}
-{
-  const ind  = ods_data[ods_idx];
-  const desc = ods_texts[ods_idx];
-  const cdmxEntry = ind.datos.find(d => d.cvegeo === "09");
-  const cdmxVal   = cdmxEntry ? cdmxEntry.valor : 0;
-  const isBetter  = desc.mejor === "menor"
-    ? cdmxVal <= ind.nacional
-    : cdmxVal >= ind.nacional;
-
-  return html`<div class="ods-text-col">
-    <h4 style="color:#2c3e50; border-bottom:2px solid #3498db; padding-bottom:8px; margin-top:16px;">
-      ${desc.titulo}
-    </h4>
-    <p style="line-height:1.75; color:#444; white-space:pre-line;">${desc.texto}</p>
-    <div class="ods-vals">
-      <div class="ods-val-item">
-        <span class="ods-val-label" style="color:#e74c3c;">CDMX</span>
-        <span class="ods-val-num">${cdmxVal.toLocaleString("es-MX", {maximumFractionDigits: 2})}</span>
-      </div>
-      <div class="ods-val-item">
-        <span class="ods-val-label" style="color:#f39c12;">Promedio Nacional</span>
-        <span class="ods-val-num">${ind.nacional.toLocaleString("es-MX", {maximumFractionDigits: 2})}</span>
-      </div>
-      <div class="ods-val-item" style="grid-column: 1 / -1;">
-        <span class="ods-badge" style="background:${isBetter ? '#27ae60' : '#c0392b'};">
-          ${(isBetter ? "✓ " : "✗ ") + (cdmxVal >= ind.nacional
-            ? "CDMX por encima del promedio nacional"
-            : "CDMX por debajo del promedio nacional")}
-        </span>
-      </div>
-    </div>
-  </div>`;
-}
-```
-:::
-
-::: {.story-section data-panel="map"}
-### 2. Insumos y Metodología
-Para este análisis, unificamos capas geoespaciales críticas:
-
-* **DENUE:** Servicios y comercios.
-* **RNC:** Red Nacional de Caminos.
-* **Equipamiento:** Salud, Educación y WiFi.
-
-*Metodología:* Cada manzana proyecta una ruta de 1,250m de caminata real para detectar colindancia con estos servicios.
-:::
-
-::: {.story-section data-panel="accesibilidad"}
-### 3. Resultados de Accesibilidad
-
-Explora la clasificación de accesibilidad urbana manzana a manzana. Selecciona una **alcaldía** y luego una **colonia** para visualizar en el mapa la diversidad de servicios accesibles a pie desde cada manzana.
-
-| Nivel | Diversidad |
-|---|---|
-| Alto | 6 – 8 servicios |
-| Medio | 5 servicios |
-| Bajo | 3 – 4 servicios |
-| Muy bajo | 0 – 2 servicios |
-
-La diversidad mide cuántos tipos de equipamiento —comercios, escuelas, hospitales, WiFi, transporte y ciclovías— son alcanzables en un radio de 1,250 m desde el centroide de cada manzana.
-:::
-
-:::
-
-:::
-
-```{=html}
-<script>
-(function () {
-  function init() {
-    var sections = document.querySelectorAll('.story-section[data-panel]');
-    var panelOds = document.getElementById('panel-ods');
-    var panelMap = document.getElementById('panel-map');
-    var panelAcc = document.getElementById('panel-accesibilidad');
-    if (!sections.length || !panelOds || !panelMap) return;
-
-    function showPanel(name) {
-      panelOds.classList.toggle('active', name === 'ods');
-      panelMap.classList.toggle('active', name === 'map');
-      if (panelAcc) {
-        panelAcc.classList.toggle('active', name === 'accesibilidad');
-        if (name === 'accesibilidad' && typeof window._accOnActive === 'function') {
-          window._accOnActive();
-        }
-      }
-    }
-
-    // Panel inicial
-    showPanel('ods');
-
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          showPanel(entry.target.dataset.panel);
-        }
-      });
-    }, { threshold: 0, rootMargin: '-20% 0px -50% 0px' });
-
-    sections.forEach(function (s) { observer.observe(s); });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
-```
-
-:::
+---
+*Fuente: Elaboración con datos del Banco de Indicadores (BISE) - INEGI.*
