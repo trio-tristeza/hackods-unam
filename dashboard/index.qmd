@@ -6,12 +6,15 @@ format:
     theme: cosmo
     orientation: rows
     css: styles.css
+    scrolling: true
 ---
 
 ```{python}
 import pandas as pd
 import json
 import plotly.graph_objects as go
+import geopandas as gpd
+import folium
 
 # ── Carga de datos ODS 11 ─────────────────────────────────────────────────────
 with open("datos/ods11_final.json", "r") as f:
@@ -234,4 +237,156 @@ La Ciudad de México suele pensarse como un referente de progreso en América La
 
 # La ciudad de los 15 min
 
+
 # Nuestra propuesta
+
+```{python}
+with open("../dashboardPy/datos/resumen_alcaldias.json") as f:
+    alc_data = json.load(f)
+
+df_alc = pd.DataFrame(alc_data)
+df_alc["pct_accesible"] = df_alc["pct_alto"] + df_alc["pct_medio"]
+
+COLORS_ACC = {
+    "Alto":     "#2ca25f",
+    "Medio":    "#99d8c9",
+    "Bajo":     "#fec44f",
+    "Muy_bajo": "#e34a33",
+}
+LABELS_ACC = {"Alto": "Alto", "Medio": "Medio", "Bajo": "Bajo", "Muy_bajo": "Muy bajo"}
+```
+
+## Row {height="50%"}
+
+### {width="60%"}
+
+Nuestra propuesta es un primero esfuerzo de aproximación a la ciudad de 15 minutos, analizado a nivel manzana y con opción de visualización a nivel colonia.
+Se puede considerar como una herramienta preliminar que puedes permitir focalizar acciones concretas para disminuir la asimetría urbana en cuestión a los recursos, planificación de transporte y la capacidad de afrontar las adversidades climáticas.
+
+Insumos
+
+1. Comercios de alta densidad (DENUE)
+2. Comercios de media densidad (DENUE)
+3. Escuelas (INEGI Equipamiento)
+4. Hospitales y centros de salud
+5. Puntos WiFi gratuito (CDMX)
+6. Estaciones de transporte público (RNC)
+7. Infraestructura ciclista — ciclovías (RNC)
+8. Rutas de transporte público (RNC)
+
+Procesamiento: Cruce espacial simple y correlación espacial
+
+Desde el centroide de cada manzana censal se proyecta una isócrona de 1,250 metros sobre la red nacional de caminos (distancia real, no euclidiana) y se evalúa la diversidad de servicios alcanzables. El proceso en resumen:
+
+1. Obtener el centroide de cada manzana censal
+2. Calcular la isócrona de 1,250 m sobre la Red Nacional de Caminos
+3. Identificar qué servicios caen dentro del área caminable
+4. Contar la diversidad de tipos de servicio (no cantidad, variedad)
+5. Clasificar: Muy bajo (0–2), Bajo (3–4), Medio (5), Alto (6–8)
+
+Para validar el patrón se aplicó un I de Moran, un índice que funciona como prueba estadística que mide si las colonias con niveles similares de accesibilidad tienden a estar cerca una de otra o si su distribución es aleatoria.
+
+### Colonias clasificadas {width="40%"}
+
+```{python}
+_MAP_COLORS = {
+    "Alto":     "#2ca25f",
+    "Medio":    "#99d8c9",
+    "Bajo":     "#fec44f",
+    "Muy bajo": "#e34a33",
+}
+_m = folium.Map(location=[19.36, -99.14], zoom_start=11, tiles="CartoDB positron",
+                width="100%", height="100%")
+_gdf_vis = gpd.read_file("datos/vistas/vista_alcaldias.geojson")
+folium.GeoJson(
+    _gdf_vis,
+    style_function=lambda f: {
+        "fillColor": _MAP_COLORS.get(f["properties"].get("clasificacion", ""), "#ccc"),
+        "color": "white", "weight": 0.8, "fillOpacity": 0.75,
+    },
+    tooltip=folium.GeoJsonTooltip(
+        fields=["alcaldia", "clasificacion"],
+        aliases=["Alcaldía", "Clasificación"],
+        style="font-size:12px",
+    ),
+).add_to(_m)
+_m
+```
+
+## Row {height="50%"}
+
+### Distribución de accesibilidad {width="30%"}
+
+```{python}
+_df_r = df_alc.sort_values("pct_alto", ascending=True)
+
+fig_alc = go.Figure(data=[
+    go.Bar(
+        x=_df_r[_col].tolist(),
+        y=_df_r["alcaldia"].tolist(),
+        orientation="h",
+        name=LABELS_ACC[_key],
+        marker_color=COLORS_ACC[_key],
+        marker_line_width=0,
+        hovertemplate="%{y}<br>" + LABELS_ACC[_key] + ": %{x:.1f}%<extra></extra>",
+    )
+    for _key, _col in [
+        ("Muy_bajo", "pct_muy_bajo"),
+        ("Bajo",     "pct_bajo"),
+        ("Medio",    "pct_medio"),
+        ("Alto",     "pct_alto"),
+    ]
+])
+_ = fig_alc.update_layout(
+    barmode="stack",
+    barnorm="percent",
+    bargap=0,
+    autosize=True,
+    margin=dict(l=145, r=4, t=8, b=30),
+    legend=dict(orientation="h", y=-0.06, x=0.5, xanchor="center", font=dict(size=9)),
+    xaxis=dict(ticksuffix="%", range=[0, 100], showgrid=True,
+               gridcolor="#eee", tickfont=dict(size=8)),
+    yaxis=dict(showgrid=False, tickfont=dict(size=8), automargin=False),
+    plot_bgcolor="white", paper_bgcolor="white",
+)
+fig_alc
+```
+
+### Ranking — nivel Alto {width="30%"}
+
+```{python}
+_df_rank = df_alc.sort_values("pct_alto", ascending=False).reset_index(drop=True)
+_centrales = {"Cuauhtémoc", "Benito Juárez", "Miguel Hidalgo", "Azcapotzalco"}
+
+fig_rank = go.Figure(go.Bar(
+    x=_df_rank["alcaldia"],
+    y=_df_rank["pct_alto"],
+    marker_color=[COLOR_CDMX if a in _centrales else COLOR_OTROS for a in _df_rank["alcaldia"]],
+    marker_line_width=0,
+    text=[f"{v:.1f}%" for v in _df_rank["pct_alto"]],
+    textposition="outside",
+    customdata=_df_rank[["pct_medio", "n_manzanas"]].values,
+    hovertemplate=(
+        "<b>%{x}</b><br>"
+        "Nivel Alto: %{y:.1f}%<br>"
+        "Nivel Medio: %{customdata[0]:.1f}%<br>"
+        "Manzanas: %{customdata[1]:,}<extra></extra>"
+    ),
+))
+_ = fig_rank.update_layout(
+    autosize=True,
+    margin=dict(l=4, r=4, t=8, b=90),
+    xaxis=dict(tickangle=-45, showgrid=False, tickfont=dict(size=8)),
+    yaxis=dict(title="% nivel Alto", ticksuffix="%",
+               showgrid=True, gridcolor="#eee", range=[0, 22]),
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+)
+fig_rank
+```
+
+### I de Moran — Autocorrelación espacial {width="40%"}
+
+Mapa pendiente de generación (I de Moran).
+
+
