@@ -46,6 +46,7 @@ val_tra, nac_tra, _ = get_val("11.2.1")
 val_tme, nac_tme, _ = get_val("11.r.2.1a")
 val_esp, nac_esp, _ = get_val("11.7.1")
 ```
+# Introducción 
 
 # La asimetría (in)visible
 
@@ -200,3 +201,8 @@ La Ciudad de México suele pensarse como un referente de progreso en América La
 
 ---
 *Fuente: Elaboración con datos del Banco de Indicadores (BISE) - INEGI.*
+
+
+# La ciudad de los 15 min
+
+# Nuestra propuesta
