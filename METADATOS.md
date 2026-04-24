@@ -264,6 +264,89 @@ Este documento detalla el linaje de los datos y los pasos de procesamiento aplic
     4.  **Organización en directorios:** Cada alcaldía genera su propia carpeta dentro de `colonias/`, agrupando todos los GeoJSON de sus colonias.
     5.  **Generación del índice:** Se produce un archivo `index.json` con la lista de alcaldías y, para cada una, el listado de sus colonias con el nombre legible y el nombre del archivo correspondiente. Este índice permite al dashboard construir la selección en cascada (alcaldía → colonia) sin necesidad de cargar ninguna geometría hasta que el usuario la solicite.
 
+## 23. Autocorrelación Espacial — I de Moran Global y Local LISA (Etapa 5)
+*   **Archivo:** `moran_lisa_cdmx.geojson` en `datos/procesados/procesados_5_etapa/`
+*   **Script de Generación:** `scripts/calcular_moran_lisa.py`
+*   **Fuentes:** Clasificación de accesibilidad por manzana (Etapa 4) — `mnz_clas_[ALCALDIA].geojson`
+*   **Dependencias:** `libpysal`, `esda`
+*   **Metodología y Pasos de Procesamiento:**
+    1.  **Carga y unificación:** Se leen los 16 archivos `mnz_clas_[ALCALDIA].geojson` y se concatenan en un único GeoDataFrame con las columnas `alcaldia`, `colonia`, `clasificacion` y `geometry`.
+    2.  **Mapeo numérico:** La variable categórica `clasificacion` se convierte a escala ordinal numérica: Muy bajo = 0, Bajo = 1, Medio = 2, Alto = 3.
+    3.  **Reproyección:** El GeoDataFrame se proyecta a EPSG:32614 (UTM 14N) para el cálculo de distancias en metros.
+    4.  **Matriz de pesos espaciales (KNN, k=8):** Se utiliza K vecinos más cercanos (KNN) en lugar de contigüidad, ya que las manzanas están separadas físicamente por vialidades y no comparten bordes. Los pesos se estandarizan por fila (`transform='r'`).
+    5.  **Moran Global:** Se calcula el índice I de Moran global con 999 permutaciones para obtener el p-valor simulado. Resultado: I = 0.89, p < 0.001.
+    6.  **Moran Local (LISA):** Se calculan los valores locales con 999 permutaciones. Para cada manzana se asigna un cuadrante (q): Alto-Alto (1), Bajo-Alto (2), Bajo-Bajo (3), Alto-Bajo (4). Las manzanas con p > 0.05 se clasifican como "No significativo".
+    7.  **Exportación:** El resultado se exporta a WGS84 (EPSG:4326) como GeoJSON con las columnas `alcaldia`, `colonia`, `clasificacion`, `cluster` y `geometry`.
+
+## 24. Vistas GeoJSON Simplificadas de Clasificación para el Dashboard (Etapa 4 — Vistas)
+*   **Archivos:**
+    *   `datos/procesados/procesados_4_etapa/vistas/vista_cdmx.geojson` — 4 features (CDMX × clasificación)
+    *   `datos/procesados/procesados_4_etapa/vistas/vista_alcaldias.geojson` — ~64 features (alcaldía × clasificación)
+    *   `datos/procesados/procesados_4_etapa/vistas/colonias/[Alcaldia].geojson` — colonia × clasificación (un archivo por alcaldía)
+*   **Dashboard (copia sincronizada):** `dashboard/datos/vistas/`
+*   **Script de Generación:** `scripts/generar_vistas_clasificacion.py`
+*   **Metodología y Pasos de Procesamiento:**
+    1.  **Carga:** Se leen los 16 archivos `mnz_clas_[ALCALDIA].geojson` de la Etapa 4.
+    2.  **Disolución por nivel:** Se generan tres niveles de agregación mediante `dissolve` sobre los grupos correspondientes (`clasificacion`, `alcaldia × clasificacion`, `alcaldia × colonia × clasificacion`).
+    3.  **Pipeline de simplificación:** Para cada nivel se aplica: `buffer(0)` (reparar topología) → `simplify(tol)` (reducir vértices) → `set_precision(grid)` (redondear coordenadas).
+    4.  **Tolerancias:** CDMX y alcaldías: simplify = 0.003°, grid = 0.001°. Colonias: simplify = 0.001°, grid = 0.0003°.
+    5.  **Exportación:** Cada nivel se guarda como GeoJSON independiente. Las vistas de colonia se organizan en un archivo por alcaldía para permitir carga bajo demanda en el dashboard.
+    6.  **Sincronización:** Los archivos generados se copian a `dashboard/datos/vistas/` reemplazando la versión anterior.
+
+## 25. Vistas GeoJSON Simplificadas del Análisis LISA (Etapa 5 — Vistas)
+*   **Archivos:**
+    *   `datos/procesados/procesados_5_etapa/vista_moran_alcaldias.geojson` — alcaldía × cluster
+    *   `datos/procesados/procesados_5_etapa/vista_moran_colonias.geojson` — alcaldía × colonia × cluster
+*   **Dashboard (copia sincronizada):** `dashboard/datos/vistas/`
+*   **Script de Generación:** `scripts/generar_vista_moran.py`
+*   **Fuente:** `datos/procesados/procesados_5_etapa/moran_lisa_cdmx.geojson` (~70 MB)
+*   **Metodología y Pasos de Procesamiento:**
+    1.  **Carga:** Se lee el GeoJSON completo de LISA conservando `alcaldia`, `colonia`, `cluster` y `geometry`.
+    2.  **Vista alcaldías:** `dissolve` por `[alcaldia, cluster]` con simplify = 0.003°, grid = 0.001°. Uso: mapa dinámico Folium en el dashboard.
+    3.  **Vista colonias:** `dissolve` por `[alcaldia, colonia, cluster]` con simplify = 0.001°, grid = 0.0003°. Uso: mapa estático PNG.
+    4.  **Pipeline de simplificación:** `buffer(0)` → `simplify(tol)` → `set_precision(grid)` → filtrado de geometrías inválidas o vacías.
+    5.  **Sincronización:** Ambas vistas se copian a `dashboard/datos/vistas/`.
+
+## 26. Resúmenes JSON de Clasificación por Alcaldía y Colonia
+*   **Archivos:**
+    *   `datos/procesados/procesados_4_etapa/resumen_alcaldias.json`
+    *   `datos/procesados/procesados_4_etapa/resumen_colonias.json`
+*   **Dashboard (copia sincronizada):**
+    *   `dashboard/datos/resumen_alcaldias.json`
+    *   `dashboard/datos/resumen_colonias.json`
+*   **Script de Generación:** `scripts/generar_resumenes_dashboard.py`
+*   **Fuente:** `datos/procesados/procesados_4_etapa/mnz_clas_[ALCALDIA].geojson`
+*   **Metodología y Pasos de Procesamiento:**
+    1.  **Carga:** Se leen las columnas `alcaldia`, `colonia` y `clasificacion` de los 16 archivos de la Etapa 4 (sin cargar geometrías para optimizar memoria).
+    2.  **Resumen por alcaldía:** Para cada alcaldía se calcula el porcentaje de manzanas en cada nivel de clasificación (`pct_alto`, `pct_medio`, `pct_bajo`, `pct_muy_bajo`) y el total de manzanas (`n_manzanas`).
+    3.  **Resumen por colonia:** Mismo cálculo agrupado por `[alcaldia, colonia]`.
+    4.  **Exportación:** Ambos resúmenes se guardan como JSON con indentación y codificación UTF-8, y se sincronizan con `dashboard/datos/`.
+
+## 27. Conteo de Registros por Insumo para el Dashboard
+*   **Archivo:** `dashboard/datos/resumen_insumos.json`
+*   **Script de Generación:** `scripts/generar_resumen_insumos.py`
+*   **Fuentes:** Archivos GeoPackage de la Etapa 2 (`datos/procesados/procesados_2_etapa/`)
+*   **Metodología y Pasos de Procesamiento:**
+    1.  **Carga selectiva:** Se cargan los GeoPackages de los 8 insumos utilizados en el análisis, aplicando filtros donde corresponde (DENUE alta prioridad, DENUE media prioridad).
+    2.  **Cálculo de valor:** Para insumos de tipo punto se cuenta el número de registros; para insumos de tipo línea (infraestructura ciclista, rutas de transporte) se calcula la longitud total en kilómetros reproyectando a EPSG:32614.
+    3.  **Exportación:** Se genera un JSON con los campos `nombre`, `categoria`, `fuente`, `tipo`, `valor`, `unidad` y `color` (por categoría: Diversidad, Proximidad, Digitalización) para consumo directo en el gráfico de barras del dashboard.
+
+## 28. Mapas PNG Estáticos para el Dashboard
+*   **Archivos:**
+    *   `dashboard/datos/mapas/mapa_colonias.png` — clasificación de accesibilidad por colonia
+    *   `dashboard/datos/mapas/mapa_moran.png` — clústeres LISA del I de Moran Local por colonia
+*   **Script de Generación:** `scripts/generar_mapas_estaticos.py`
+*   **Fuentes:**
+    *   Clasificación: `dashboard/datos/vistas/colonias/[Alcaldia].geojson` (16 archivos)
+    *   Moran: `dashboard/datos/vistas/vista_moran_colonias.geojson`
+*   **Metodología y Pasos de Procesamiento:**
+    1.  **Carga:** Se leen los GeoJSONs simplificados de la vista de colonias (clasificación) y la vista de colonias del análisis LISA.
+    2.  **Bordes de alcaldía:** Se genera una capa de alcaldías por disolución del campo `alcaldia`, usada para superponer el límite administrativo como línea gris oscura (linewidth = 0.7).
+    3.  **Paletas de color:** Clasificación: Alto (#2ca25f), Medio (#99d8c9), Bajo (#fec44f), Muy bajo (#e34a33). LISA: Alto-Alto (#d7191c), Bajo-Bajo (#2c7bb6), Bajo-Alto (#abd9e9), Alto-Bajo (#fdae61), No significativo (#cccccc).
+    4.  **Eliminación de contornos entre polígonos:** Se fija `edgecolor=(0,0,0,0)` y `linewidth=0` en las colecciones de matplotlib. Limitación reconocida: matplotlib mantiene hairlines de antialiasing entre polígonos adyacentes independientemente de estos parámetros.
+    5.  **Etiquetas de alcaldía:** Texto en el centroide de cada alcaldía con halo blanco (`path_effects.withStroke`) para legibilidad sobre fondos de color.
+    6.  **Exportación:** PNG a 150 DPI con fondo blanco, guardado en `dashboard/datos/mapas/`.
+
 ---
 **Nota:** Todos los archivos procesados se encuentran documentados en los Notebooks del proyecto, donde se detalla el flujo de trabajo, la limpieza y el análisis de los datos.
 
