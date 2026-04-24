@@ -369,7 +369,7 @@ La Ciudad de México suele pensarse como un referente de progreso en América La
 
 ---
 
-Fuente: Elaboración con datos del Banco de Indicadores (BISE) - INEGI.
+Fuente: Elaboración propia con datos del Banco de Indicadores del Sistema de Evaluación del Desempeño (BISE) — INEGI^[INEGI. (2023). Banco de Indicadores del Sistema de Evaluación del Desempeño (BISE). Cobertura: nacional y 32 entidades federativas; los indicadores corresponden a diferentes años de referencia según la disponibilidad de cada encuesta o registro administrativo. Limitación reconocida: periodicidad irregular entre indicadores. Disponible en: https://www.inegi.org.mx/app/bise/].
 
 
 # La ciudad de los 15 min
@@ -393,10 +393,10 @@ Para operacionalizar el modelo se consideraron cuatro dimensiones. No todas las 
 
 | Dimensión | Variables consideradas |
 |-----------|------------------------|
-| Proximidad | Infraestructura ciclista, Metro, Metrobús, RTP, transporte eléctrico, vialidades primarias |
-| Diversidad | Escuelas públicas y privadas, hospitales, centros de salud, áreas verdes, DENUE (INEGI) |
-| Densidad | Grupos poblacionales (Censo 2020, INEGI), densidad de construcción |
-| Digitalización | Puntos WiFi gratuito, módulos Ecobici, módulo de pago de movilidad integrada |
+| Proximidad | Infraestructura ciclista^[SEMOVI. (2024). Infraestructura Vial Ciclista — en operación. Portal de Datos Abiertos CDMX. Cobertura: red ciclista activa en la CDMX. Limitación: no incluye infraestructura en proyecto o fuera de operación.], Metro^[STC Metro CDMX. (2024). Líneas y estaciones del Metro. Portal de Datos Abiertos CDMX. Cobertura: red completa del Sistema de Transporte Colectivo Metro.], Metrobús^[Metrobús CDMX. (2024). Geolocalización de líneas y estaciones. Portal de Datos Abiertos CDMX.], RTP^[Red de Transporte de Pasajeros (RTP). (2024). Rutas y paradas activas. Portal de Datos Abiertos CDMX. Limitación: se incorporaron únicamente rutas con estatus "ACTIVO".], transporte eléctrico^[Servicio de Transportes Eléctricos (STE) CDMX. (2024). Líneas y estaciones de Cablebús, Tren Ligero y Trolebús. Portal de Datos Abiertos CDMX.], vialidades^[Instituto Mexicano del Transporte (IMT / SCT). (2023). Red Nacional de Caminos, recorte CDMX. Disponible en: gob.mx/imt. Cobertura: red vial federal y estatal vigente. Limitación: las velocidades máximas por tipo de vialidad son aproximaciones basadas en la normativa de SEMOVI.] |
+| Diversidad | Escuelas públicas y privadas^[SEP / Secretaría de Educación CDMX. (2024). Escuelas públicas y privadas. Portal de Datos Abiertos CDMX. Cobertura: establecimientos con coordenadas registradas. Limitación: se eliminaron 141 registros sin georreferencia.], hospitales y centros de salud^[Secretaría de Salud CDMX. (2024). Hospitales y Centros de Salud. Portal de Datos Abiertos CDMX. Cobertura: unidades de atención médica públicas en la CDMX.], áreas verdes, DENUE^[INEGI. (2024). Directorio Estadístico Nacional de Unidades Económicas (DENUE), Ciudad de México. Portal de Datos Abiertos CDMX. Cobertura: unidades económicas activas. Limitación: puede incluir establecimientos cerrados no actualizados en el padrón.] |
+| Densidad | Grupos poblacionales (Censo de Población y Vivienda 2020^[INEGI. (2020). Censo de Población y Vivienda 2020. Cobertura: nacional, desagregado a nivel manzana. Limitación: los valores protegidos (*) por confidencialidad fueron sustituidos por 0 para permitir cálculos numéricos. Disponible en: https://www.inegi.org.mx/programas/ccpv/2020/.], INEGI), densidad de construcción |
+| Digitalización | Puntos WiFi gratuito^[SECTEI / Gobierno CDMX. (2025). Puntos de acceso WiFi gratuito en la Ciudad de México. Integración de 11 conjuntos de datos del Portal de Datos Abiertos CDMX (enero–marzo 2025). Cobertura: puntos activos al momento de la descarga. Limitación: la cobertura real de señal no fue validada en campo.], módulos Ecobici, módulo de pago de movilidad integrada |
 
 
 ### Insumos utilizados {width="45%"}
@@ -503,7 +503,7 @@ El uso de la manzana como unidad basica de analisis permite visualizar con mayor
 
 El análisis confirma una asimetría espacial estructural en la Ciudad de México: el acceso a una mayor diversidad de servicios urbanos en recorridos a pie se concentra en las alcaldías centrales, mientras la periferia queda sistemáticamente excluida. No se encontró ninguna zona de la ciudad que cumpliera simultáneamente con acceso caminable a los ocho tipos de servicio considerados, lo que evidencia que la ciudad de 15 minutos, en su sentido pleno, no existe aún en la CDMX para ningún habitante. Los resultados apuntan a la urgencia de pensar la integración urbana no como excepción sino como principio de planificación.
 
-De acuerdo con el Censo 2020 y el análisis propuesto, Xochimilco, Milpa Alta y Tláhuac presentan la menor diversidad de servicios. En estas alcaldías se concentran poblaciones jóvenes, por unidad de análisis se encuentran: infancias (20–22), adolescencias (11–12) y juventudes (14–16) así como una presencia relevante de adultos mayores (21.8, 15.3 y 14.4 respectivamente). Esto demanda una necesidad de equipamientos educativos y espacios de recreación para la población vulnerable.
+De acuerdo con el Censo de Población y Vivienda 2020^[INEGI. (2020). Censo de Población y Vivienda 2020. Cobertura: nacional, desagregado a nivel manzana. Disponible en: https://www.inegi.org.mx/programas/ccpv/2020/.] y el análisis propuesto, Xochimilco, Milpa Alta y Tláhuac presentan la menor diversidad de servicios. En estas alcaldías se concentran poblaciones jóvenes, por unidad de análisis se encuentran: infancias (20–22), adolescencias (11–12) y juventudes (14–16) así como una presencia relevante de adultos mayores (21.8, 15.3 y 14.4 respectivamente). Esto demanda una necesidad de equipamientos educativos y espacios de recreación para la población vulnerable.
 
 > En la Ciudad de México, la proximidad a los servicios urbanos no es un derecho compartido: es un privilegio que se distribuye desde el centro hacia afuera, y que la periferia aún espera.
 
