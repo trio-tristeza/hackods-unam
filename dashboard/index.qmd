@@ -435,8 +435,9 @@ for _cat, _col in [("Diversidad", "#80b1d3"), ("Proximidad", "#fdb462"), ("Digit
         marker=dict(size=10, color=_col, symbol="square"),
         name=_cat))
 _ = fig_ins.update_layout(
-    legend=dict(orientation="h", y=1.02, x=0, font=dict(size=9),
-                bgcolor="rgba(0,0,0,0)"),
+    legend=dict(orientation="h", y=-0.12, x=0.5, xanchor="center", yanchor="top",
+                font=dict(size=9), bgcolor="rgba(0,0,0,0)",
+                entrywidth=0.45, entrywidthmode="fraction"),
 )
 fig_ins
 ```
@@ -599,8 +600,9 @@ _ = fig_alc.update_layout(
     barnorm="percent",
     bargap=0,
     autosize=True,
-    margin=dict(l=145, r=4, t=8, b=30),
-    legend=dict(orientation="h", y=-0.06, x=0.5, xanchor="center", font=dict(size=9)),
+    margin=dict(l=145, r=4, t=8, b=55),
+    legend=dict(orientation="h", y=-0.18, x=0.5, xanchor="center", yanchor="top",
+                font=dict(size=9), entrywidth=0.45, entrywidthmode="fraction"),
     xaxis=dict(ticksuffix="%", range=[0, 100], showgrid=True,
                gridcolor="#eee", tickfont=dict(size=8)),
     yaxis=dict(showgrid=False, tickfont=dict(size=8), automargin=False),
