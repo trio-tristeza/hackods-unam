@@ -327,6 +327,12 @@ _m
 
 ![](datos/mapas/mapa_colonias.png){width="100%"}
 
+## Interpretación
+
+El mapa muestra el nivel de accesibilidad caminable agregado por colonia. Cada color representa la diversidad de tipos de servicio alcanzables a pie en 1,250 m desde el centroide de cada manzana:
+
+El patrón espacial es claro, las colonias centrales (Cuauhtémoc, Benito Juárez, Miguel Hidalgo, Azcapotzalco) concentran los niveles Alto y Medio, reflejando décadas de inversión urbana y una red de servicios diseñada desde el centro. La periferia (Milpa Alta, Tláhuac, Xochimilco, sur de Tlalpan, oriente de Iztapalapa) presenta predominio de Bajo y Muy bajo, evidenciando la asimetría estructural del acceso urbano en la ciudad.
+
 :::
 
 ## Row {height="50%"}
@@ -450,6 +456,16 @@ _mm
 ## Estático
 
 ![](datos/mapas/mapa_moran.png){width="100%"}
+
+## Interpretación
+
+El índice de Moran global (I = 0.89, p < 0.001) confirma que la distribución de accesibilidad en la CDMX no es aleatoria, las colonias con niveles similares tienden a agruparse. El análisis identifica dónde ocurren esas agrupaciones.
+
+Alto-Alto (rojo): 24,623 manzanas en las alcaldías centrales (Cuauhtémoc, Benito Juárez, Miguel Hidalgo, partes de Coyoacán y Azcapotzalco). Núcleo de alta accesibilidad con acceso caminable a 6–8 tipos de servicio.
+
+Bajo-Bajo (azul): 29,555 manzanas en la periferia (Milpa Alta, Tláhuac, Xochimilco, sur de Tlalpan, oriente de Iztapalapa). Es el clúster más extenso de la ciudad y confirma la exclusión territorial.
+
+Los clústeres de transición o outliers (Bajo-Alto y Alto-Bajo) suman apenas 241 manzanas, lo que indica que los saltos abruptos entre zonas de alto y bajo acceso son escasos: la fragmentación territorial es gradual pero estructural.
 
 :::
 
