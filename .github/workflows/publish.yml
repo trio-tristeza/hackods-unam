@@ -56,11 +56,8 @@ jobs:
         run: |
           mkdir -p public
 
-          # Dashboard (format: html): copiar artefactos renderizados in-place
-          cp dashboard/index.html public/
-          cp dashboard/styles.css public/
-          cp -r dashboard/index_files public/
-          cp -r dashboard/datos     public/
+          # Dashboard: la salida se genera en docs/ según _quarto.yml
+          cp -r docs/. public/
 
           # Presentación (type: website): copiar desde _site/
           mkdir -p public/presentacion
